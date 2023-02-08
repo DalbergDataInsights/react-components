@@ -1,5 +1,5 @@
 {
-  "name": "react-components",
+  "name": "@DalbergDataInsights/react-components",
   "version": "1.0.0",
   "description": "Dalberg Data Insight's Library of React Components",
   "main": "index.js",
