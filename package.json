@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DalbergDataInsights/react-components/issues"
   },
-  "homepage": "https://github.com/DalbergDataInsights/react-components#readme"
+  "homepage": "https://github.com/DalbergDataInsights/react-components#readme",
+  "publishConfig": {
+    "@DalbergDataInsights:registry": "https://npm.pkg.github.com"
+  }
 }
