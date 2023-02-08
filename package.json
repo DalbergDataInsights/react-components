@@ -1,0 +1,19 @@
+{
+  "name": "react-components",
+  "version": "1.0.0",
+  "description": "Dalberg Data Insight's Library of React Components",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DalbergDataInsights/react-components.git"
+  },
+  "author": "Denys Sementsov denys.sementsov@outlook.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DalbergDataInsights/react-components/issues"
+  },
+  "homepage": "https://github.com/DalbergDataInsights/react-components#readme"
+}
