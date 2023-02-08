@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/DalbergDataInsights/react-components#readme",
   "publishConfig": {
-    "@dsementsov:registry": "https://npm.pkg.github.com"
+    "dsementsov:registry": "https://npm.pkg.github.com"
   }
 }
