@@ -1,8 +1,8 @@
 {
   "name": "@dalbergdatainsights/react-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Dalberg Data Insight's Library of React Components",
-  "main": "index.js",
+  "main": "index.d.ts",
   "scripts": {
     "test": "exit 0"
   },
