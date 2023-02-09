@@ -17,6 +17,6 @@ always-auth=true
 
 # TODO
 
-[ ] - come up with a better props drill ideas
-[ ] - decide on the GridLayout directly into the container / new component
-[ ] - decide on the container defaults locations
+- [ ] come up with a better props drill ideas
+- [ ] decide on the GridLayout directly into the container / new component
+- [ ] decide on the container defaults locations
