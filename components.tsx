@@ -1,5 +1,5 @@
 import React from "react"
-import { Wrapper } from "./core/wrapper"
+import { Wrapper } from "./core"
 
 import { manifest as tableManifest, iTable } from "./components/Table"
 import { iHeader } from "./components/Table/tableComponent"

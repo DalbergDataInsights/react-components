@@ -1,3 +1,3 @@
 export * from "./components"
-export * from "./core/context"
+export * from "./core"
 export * from "./layouts"
