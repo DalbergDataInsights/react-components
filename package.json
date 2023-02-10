@@ -27,5 +27,8 @@
   },
   "devDependencies": {
     "typedoc": "^0.23.24"
+  },
+  "dependencies": {
+    "typedoc-plugin-markdown": "^3.14.0"
   }
 }
