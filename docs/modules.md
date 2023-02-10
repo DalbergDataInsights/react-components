@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[core/context.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/2626a4c/core/context.tsx#L3)
+[core/context.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/e91b2bd/core/context.tsx#L3)
 
 ## Functions
 
@@ -57,7 +57,7 @@
 
 #### Defined in
 
-[core/context.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/2626a4c/core/context.tsx#L4)
+[core/context.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/e91b2bd/core/context.tsx#L4)
 
 ___
 
@@ -77,13 +77,61 @@ ___
 
 #### Defined in
 
-[layouts.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/2626a4c/layouts.tsx#L7)
+[layouts.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/e91b2bd/layouts.tsx#L7)
 
 ___
 
 ### Table
 
 ▸ **Table**(`props`): [`Element`](interfaces/internal_.Element.md)
+
+**`Example`**
+
+```jsx
+    <Table
+   container={{
+   // pass container props. Please be careful as container should be standard
+     style: {
+       // one common usecase is to pass gridArea to component
+       gridArea: "table",
+     },
+   }}
+   data={[
+     { id: 5, name: "banana", value: 0.53, qt: 10 },
+     { id: 2, name: "orange", value: 0.52, qt: 20 },
+   ]}
+   header={[
+     // list of dictionaries [iHeader]
+     {
+       index: "id",
+       name: "Product ID",
+       type: "text", // you can pass custom here, then you need to pass renderer
+       // renderer: (props) => <div>{props.data //data is a value of a cell}</div> example of simple div around the value
+       // props: {}, // any props you want to send to each cell of a given column
+       hidden: false, // set this to true if you want to hide the column
+     },
+     // limitation: you need to provide dictionaries equal to the number of column
+     // if you want to change the order of columns, it should contain at least index
+     {},
+     {},
+     {},
+   ]}
+   props={{
+     table: {
+       // passed in table container [Mui Grid]
+       // xs: 2, //other mui-grid properties
+       style: { backgroundColor: "white" },
+     },
+     row: {
+       // passed to each cell that in a row [Mui Item]
+     },
+     cell: {
+       // passed to each cell
+     },
+   }}
+   displayHeader={true}
+ />
+ ```
 
 #### Parameters
 
@@ -97,7 +145,7 @@ ___
 
 #### Defined in
 
-[components.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/2626a4c/components.tsx#L6)
+[components.tsx:55](https://github.com/DalbergDataInsights/react-components/blob/e91b2bd/components.tsx#L55)
 
 ___
 
@@ -117,7 +165,7 @@ ___
 
 #### Defined in
 
-[core/wrapper.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/2626a4c/core/wrapper.tsx#L17)
+[core/wrapper.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/e91b2bd/core/wrapper.tsx#L17)
 
 ___
 
@@ -143,7 +191,7 @@ ___
 
 #### Defined in
 
-[core/eventManager.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/2626a4c/core/eventManager.tsx#L8)
+[core/eventManager.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/e91b2bd/core/eventManager.tsx#L8)
 
 ___
 
@@ -169,4 +217,4 @@ ___
 
 #### Defined in
 
-[core/stateListener.tsx:22](https://github.com/DalbergDataInsights/react-components/blob/2626a4c/core/stateListener.tsx#L22)
+[core/stateListener.tsx:22](https://github.com/DalbergDataInsights/react-components/blob/e91b2bd/core/stateListener.tsx#L22)
