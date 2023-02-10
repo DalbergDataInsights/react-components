@@ -23,9 +23,15 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.8",
-    "react": "^18.2.0"
+    "@types/react": "^18.0.27",
+    "react": "16 - 18",
+    "typedoc-plugin-missing-exports": "^1.0.0"
   },
   "devDependencies": {
+    "@types/react": "*",
+    "better-docs": "^2.7.2",
+    "jsdoc": "^4.0.0",
+    "taffydb": "^2.7.3",
     "typedoc": "^0.23.24"
   },
   "dependencies": {

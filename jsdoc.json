@@ -1,0 +1,22 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "source": {
+    "include": [
+      "components",
+      "core",
+      "layouts"
+    ],
+    "exclude": [
+      "node_modules"
+    ],
+    "includePattern": "\\.(js|doc|x|jsx|js|ts|tsx)$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "plugins": [
+    "node_modules/better-docs/typescript",
+    "plugins/markdown",
+    "better-docs/component"
+  ]
+}

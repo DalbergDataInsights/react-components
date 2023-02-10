@@ -12,5 +12,11 @@
   "typedocOptions": {
     "entryPoints": ["index.d.ts"],
     "out": "docs"
+  },
+  "tags": {
+    "allowUnknownTags": ["optional"]
+  },
+  "source": {
+    "includePattern": "\\.(jsx|js|ts|tsx)$"
   }
 }

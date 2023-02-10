@@ -8,4 +8,4 @@ export const manifest = {
   Component: TableComponent,
 }
 
-export type { iTable } from "./tableComponent"
+export type { iTable, iHeader } from "./tableComponent"
