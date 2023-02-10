@@ -1,4 +1,4 @@
-import { TableComponent, iTable } from "./tableComponent"
+import { TableComponent } from "./tableComponent"
 import { defaults } from "./tableConfig"
 
 export const manifest = {
@@ -6,5 +6,6 @@ export const manifest = {
   version: "0.1",
   defaults: defaults,
   Component: TableComponent,
-  // interface: iTable
 }
+
+export type { iTable } from "./tableComponent"

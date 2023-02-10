@@ -7,8 +7,10 @@ import { ComponentContext } from "./context"
 
 const wrapperDefaults = {
   style: {
-    height: "100%",
-    width: "100%",
+    height: "calc(100% - 16px)",
+    width: "calc(100% - 16px)",
+    padding: "8px",
+    overflow: "auto",
   },
 }
 
@@ -16,7 +18,7 @@ export const Wrapper = ({
   Component,
   defaults,
   name,
-  init = () => {},
+  init = ([], [], {}) => {},
   subscribers = [],
   observers = [],
   ...props
@@ -24,7 +26,7 @@ export const Wrapper = ({
   const config = useContext(ComponentContext) // default: {}
   props = mergeDicts(
     props,
-    mergeDicts(JSON.parse(JSON.stringify(config[name])), defaults) // 2 left joins component props & application config & default
+    mergeDicts(JSON.parse(JSON.stringify(config[name] || {})), defaults) // 2 left joins component props & application config & default
   )
   props.container = mergeDicts(
     props.container || {},

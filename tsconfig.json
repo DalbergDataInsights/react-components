@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node"
+  },
+  "include": ["./*", "core", "components", "layouts"],
+  "exclude": ["node_modules", ".github", ".npmrc", ".gitignore"],
+  "typedocOptions": {
+    "entryPoints": ["index.d.ts"],
+    "out": "docs"
+  }
+}

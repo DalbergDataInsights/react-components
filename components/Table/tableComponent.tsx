@@ -13,10 +13,10 @@ export interface iHeader {
 }
 
 export interface iTable {
-  data: Array<Object>
-  header?: Array<iHeader>
+  data: {}[] | (number[] | string[])[]
+  header?: iHeader[]
   displayHeader?: boolean
-  props?: any
+  props?: { head: {}; cell: {}; row: {} } & any
 }
 
 export const TableComponent = ({
@@ -58,7 +58,7 @@ export const TableComponent = ({
   return (
     <Grid container {...props.table}>
       {displayHeader &&
-        header.map((head) =>
+        header.map((head: any) =>
           head.hidden ? (
             ""
           ) : (
@@ -68,7 +68,7 @@ export const TableComponent = ({
           )
         )}
       {data.map((row) =>
-        header.map((cell) =>
+        header.map((cell: { renderer: React.ReactNode } & any) =>
           cell.hidden ? (
             ""
           ) : (

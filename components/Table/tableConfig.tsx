@@ -2,27 +2,34 @@ export const defaults = {
   props: {
     table: {
       spacing: 2,
-      justifyContent: "space-around",
-      direction: "row",
+      justifyContent: "space-evenly",
       alignItems: "stretch",
-      height: "99%",
-      width: "95%",
-      marginRight: "2.5%",
-      marginLeft: "2.5%",
-      padding: "0.5%",
+      direction: "row",
+      height: "auto",
+      width: "auto",
+      maxHeight: "99%",
+      maxWidth: "95%",
+      margin: "0.5% 2.5%",
+      overflow: "auto",
       style: {
-        backgroundColor: "rgb(243, 243, 243)",
-        border: "1px solid rgb(208, 208, 208)",
-        boxShadow: "rgb(175 175 175) -0.5px 1px 2px 0.5px",
+        color: "#5D5E5F",
+        borderRadius: "4px",
+        boxShadow: "rgb(175 175 175) -0.5px 0.5px 2px 0.5px",
+        textAlign: "left",
       },
     },
-    row: {},
+    row: {
+      style: { borderTop: "1px solid #D7D9DE", backgroundColor: "#FFFFF" },
+    },
     cell: {
       xs: 1,
       style: {},
     },
     head: {
-      style: { fontWeight: "bold" },
+      style: {
+        fontWeight: "bold",
+        backgroundColor: "#F4F5F6",
+      },
     },
   },
 }
