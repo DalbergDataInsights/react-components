@@ -12,6 +12,6 @@ import { iHeader } from "./components/Table/tableComponent"
  * @see Wrapper for extended container parameters
  * @returns
  */
-export const Table = (props: iTable & any) => (
+export const Table = ({ ...props }: iTable & any) => (
   <Wrapper {...tableManifest} {...props} />
 )
