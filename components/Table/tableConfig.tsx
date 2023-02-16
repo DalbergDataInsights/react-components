@@ -12,14 +12,14 @@ export const defaults = {
       margin: "0.5% 2.5%",
       overflow: "auto",
       style: {
-        color: "#5D5E5F",
+        backgroundColor: "#F4F5F6",
         borderRadius: "4px",
         boxShadow: "rgb(175 175 175) -0.5px 0.5px 2px 0.5px",
         textAlign: "left",
       },
     },
     row: {
-      style: { borderTop: "1px solid #D7D9DE", backgroundColor: "#FFFFF" },
+      style: { borderTop: "1px solid #5D5E5F", color: "#5D5E5F" },
     },
     cell: {
       xs: 1,
@@ -28,7 +28,7 @@ export const defaults = {
     head: {
       style: {
         fontWeight: "bold",
-        backgroundColor: "#F4F5F6",
+        color: "#5D5E5F",
       },
     },
   },
