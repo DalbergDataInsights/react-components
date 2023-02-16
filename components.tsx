@@ -55,3 +55,7 @@ import { manifest as tableManifest, iTable, iHeader } from "./components/Table"
 export const Table = (props: iTable) => (
   <Wrapper {...tableManifest} {...props} />
 )
+
+import { manifest as mapManifest, iMap } from "./components/Map"
+
+export const Map = (props: iMap) => <Wrapper {...mapManifest} {...props} />
