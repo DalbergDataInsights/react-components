@@ -13,39 +13,35 @@ interface StepsLabelsProps {
   suffix?: string
 }
 
-const MapLegend = ({
-  colors,
-  steps,
-  colorsNA,
-  suffix = "",
-  props,
-}: MapLegendProps) => {
+const MapLegend = ({ colors, steps, suffix = "", props }: MapLegendProps) => {
   const stepsLabels = getStepsLabels({ stepList: steps, suffix: suffix })
 
   return (
-    <div className="legend py-1 px-2" {...props?.legendBox}>
-      <label {...props?.title}>Legend</label>
-      <div>
+    <div>
+      <div className="legend py-1 px-2" {...props?.legendBox}>
+        <label {...props?.title}>Legend</label>
         <div>
-          <input
-            className="h-4 w-8 opacity-70"
-            type="color"
-            value={colorsNA}
-            disabled
-          />
-          <label className="ml-1">n.d.</label>
-        </div>
-        {stepsLabels.map((label, index) => (
-          <div key={label}>
+          <div>
             <input
               className="h-4 w-8 opacity-70"
               type="color"
-              value={colors[index]}
+              value={colors.shift()}
               disabled
             />
-            <label className="ml-1"> {label}</label>
+            <label className="ml-1">n.d.</label>
           </div>
-        ))}
+          {stepsLabels.map((label, index) => (
+            <div key={label}>
+              <input
+                className="h-4 w-8 opacity-70"
+                type="color"
+                value={colors[index]}
+                disabled
+              />
+              <label className="ml-1"> {label}</label>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )

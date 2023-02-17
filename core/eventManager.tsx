@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react"
+import { useCallback, ChangeEvent } from "react"
 
 export interface iSubscriber {
   on: string
@@ -22,15 +22,19 @@ export const useEventManagement = ({
     })
   }
   function generateHandler(on: string) {
-    const handler = (event: ChangeEvent<HTMLInputElement>) => {
-      event.preventDefault()
-      subscribe(subscribers, on, event)
-    }
+    const handler = useCallback(
+      (event: ChangeEvent<HTMLInputElement>) => {
+        event.preventDefault()
+        subscribe(subscribers, on, event)
+      },
+      [subscribers]
+    )
     return handler
   }
 
   return {
     onClick: generateHandler("click"),
     onChange: generateHandler("change"),
+    onMove: generateHandler("move"),
   }
 }

@@ -1,14 +1,19 @@
 export const defaults = {
+  bounds: [
+    [-15, 7.3],
+    [-7.5, 12.7],
+  ],
+  padding: { top: 50, bottom: 50 },
   props: {
-    mapstyle: "mapbox://styles/babkouew/ckr299qhb19zd17p8hbm1o3kk",
-    mapboxAccessToken:
-      "pk.eyJ1IjoiYmFia291ZXciLCJhIjoiY2tyMjI0ZG9uMjdoMDJvdDlzMHlsOHJzbCJ9.q0eMs76RUnb8_9z7fr-7XQ",
     map: {
+      mapStyle: "mapbox://styles/babkouew/ckr299qhb19zd17p8hbm1o3kk",
+      mapboxAccessToken:
+        "pk.eyJ1IjoiYmFia291ZXciLCJhIjoiY2tyMjI0ZG9uMjdoMDJvdDlzMHlsOHJzbCJ9.q0eMs76RUnb8_9z7fr-7XQ",
       dragRotate: false,
       dragPan: false,
       scrollZoom: false,
       doubleClickZoom: false,
-      style: { overflowY: "auto" },
+      style: { overflowY: "hidden" },
     },
     tooltip: {
       anchor: {
@@ -27,6 +32,25 @@ export const defaults = {
         pointerEvents: "none",
       },
     },
+    layers: {
+      "data-fill-opacity": 1,
+      "na-fill-color": "#bfbfbf",
+      "filter-blur": [
+        "in",
+        "name",
+        (states) => {
+          return states.click?.noClick || []
+        },
+      ],
+      "blur-fill-color": "#d2d4d4",
+      "blur-fill-opacity": 0.25,
+      "outline-line-color": "#d2d4d4",
+      "outline-line-width": 2,
+      "filter-highlight": ["==", "name", (states) => states.point?.name || ""],
+      "highlight-line-color": "#d2d4d4",
+      "highlight-line-width": 4,
+    },
+
     legend: {
       position: "top-3 left-3", //using tailwind css
       title: {
@@ -38,30 +62,6 @@ export const defaults = {
           opacity: "0.7",
         },
       },
-    },
-    navigationControl: {
-      position: "top-right",
-    },
-    fullscreenControl: {
-      position: "top-right",
-    },
-    clickedInfo: {
-      style: {
-        top: "1.5%",
-        right: "5%",
-        fontWeight: "bold",
-        textTransform: "capitalize",
-      },
-    },
-    layerProps: {
-      "data-fill-opacity": 1,
-      "na-fill-color": "#bfbfbf",
-      "blur-fill-color": "#bcbcbc",
-      "blur-fill-opacity": 0.5,
-      "outline-line-color": "#d2d4d4",
-      "outline-line-width": 0.5,
-      "highlight-line-color": "#d2d4d4",
-      "highlight-line-width": 2,
     },
   },
 }

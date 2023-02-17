@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useRef, forwardRef } from "react"
 
 import { useEventManagement, iSubscriber } from "./eventManager"
 import { useStateListener, iObserver } from "./stateListener"
@@ -13,7 +13,7 @@ const wrapperDefaults = {
     overflow: "auto",
   },
 }
-
+// try wrapping the init function in the callback to avoid mount spam?
 export const Wrapper = ({
   Component,
   defaults,
@@ -32,9 +32,11 @@ export const Wrapper = ({
     props.container || {},
     mergeDicts(config.container || {}, wrapperDefaults)
   )
+  props["controller"] = {}
   init(subscribers, observers, props)
   useStateListener({ observers, ...props })
   const handlers = useEventManagement({ subscribers })
+
   return (
     <div {...props.container}>
       <Component {...props} {...handlers} />

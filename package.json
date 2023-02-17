@@ -25,6 +25,7 @@
     "@mui/material": "^5.11.8",
     "@types/react": "^18.0.27",
     "react": "16 - 18",
+    "react-map-gl": "^7.0.21",
     "typedoc-plugin-missing-exports": "^1.0.0"
   },
   "devDependencies": {

@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 export function mergeDicts(a, b, path = undefined) {
   if (!path) {
     path = []
@@ -14,4 +16,17 @@ export function mergeDicts(a, b, path = undefined) {
     }
   }
   return a
+}
+
+export function checkState(stateString, props) {
+  const propKeys = Object.keys(props)
+  const setStateString = `set${
+    stateString.charAt(0).toUpperCase() + stateString.slice(1)
+  }`
+
+  if (!propKeys.includes(stateString) || !propKeys.includes(setStateString)) {
+    const [state, setState] = useState()
+    props[stateString] = state
+    props[setStateString] = setState
+  }
 }

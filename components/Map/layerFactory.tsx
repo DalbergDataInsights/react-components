@@ -1,4 +1,3 @@
-import React from "recharts"
 import { Layer } from "react-map-gl"
 
 function createLayerObject(layer, props) {
@@ -15,9 +14,27 @@ function createPaintProps(id, props) {
   return { key: id, id, type, paint: layerProps }
 }
 
-export function createLayer(id, props) {
+export function createLayer(id, props, states) {
   const layerProps = createPaintProps(id, props)
-  return createLayerObject(layerProps, {})
+  const filterProps = createFilterProps(id, props, states)
+  return createLayerObject(layerProps, filterProps)
+}
+
+// TODO think how to better align with mapbox documentation
+// this now will work for only very simple filters
+// also it expects 3rd argument to be a function
+function createFilterProps(id, props, states) {
+  const filterKey = Object.keys(props).filter(
+    (e) => e.startsWith("filter") && e.endsWith(id)
+  )
+  if (filterKey.length > 0) {
+    const filter = props[filterKey[0]]
+    let filterEval = filter[2](states)
+    if (filterEval instanceof Array) {
+      return { filter: [filter[0], filter[1], ...filterEval] }
+    }
+    return { filter: [filter[0], filter[1], filterEval] }
+  } else return {}
 }
 
 // add interpolated color palette?

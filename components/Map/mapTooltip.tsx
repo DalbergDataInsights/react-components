@@ -1,6 +1,7 @@
 import React from "react"
 import { mergeDicts } from "../../core/util"
 
+// find a better way to pass variables
 export const Tooltip = ({
   renderer = renderTooltip,
   anchor,
@@ -8,7 +9,9 @@ export const Tooltip = ({
   ...props
 }) => {
   if (info) {
-    let tooltipProps = mergeDicts({ style: anchor }, props.tooltip)
+    let tooltipProps = mergeDicts(JSON.parse(JSON.stringify(props)), {
+      style: anchor,
+    })
     return <div {...tooltipProps}>{renderer({ info, ...props })}</div>
   }
 }
