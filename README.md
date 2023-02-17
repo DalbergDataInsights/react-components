@@ -5,7 +5,7 @@
 1. Install typedoc
 2. Install typedoc-plugin-markdown
 3. Install typedoc-plygin-missing-exports
-4. Run `bash npx typedoc --plugin typedoc-plugin-markdown --plugin typedoc-plugin-missing-exports`
+4. Run `npx typedoc --plugin typedoc-plugin-markdown --plugin typedoc-plugin-missing-exports`
 
 # Consuming packages
 

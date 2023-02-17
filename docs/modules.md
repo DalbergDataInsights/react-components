@@ -20,6 +20,13 @@
 ### Functions
 
 - [ComponentContextProvider](modules.md#componentcontextprovider)
+- [Map](modules.md#map)
+- [MapAttributionControl](modules.md#mapattributioncontrol)
+- [MapFullscreenControl](modules.md#mapfullscreencontrol)
+- [MapGeolocateControl](modules.md#mapgeolocatecontrol)
+- [MapLegend](modules.md#maplegend)
+- [MapNavigationControl](modules.md#mapnavigationcontrol)
+- [MapScaleControl](modules.md#mapscalecontrol)
 - [NamedGrid](modules.md#namedgrid)
 - [Table](modules.md#table)
 - [Wrapper](modules.md#wrapper)
@@ -34,7 +41,7 @@
 
 #### Defined in
 
-[core/context.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/e91b2bd/core/context.tsx#L3)
+[core/context.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/core/context.tsx#L3)
 
 ## Functions
 
@@ -57,7 +64,159 @@
 
 #### Defined in
 
-[core/context.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/e91b2bd/core/context.tsx#L4)
+[core/context.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/core/context.tsx#L4)
+
+___
+
+### Map
+
+▸ **Map**(`props`): [`Element`](interfaces/internal_.Element.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | [`iMap`](interfaces/internal_.iMap.md) |
+
+#### Returns
+
+[`Element`](interfaces/internal_.Element.md)
+
+#### Defined in
+
+[components.tsx:21](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/components.tsx#L21)
+
+___
+
+### MapAttributionControl
+
+▸ **MapAttributionControl**(`props`): [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+
+**NOTE**: Exotic components are not callable.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | [`AttributionControlProps`](modules/internal_.md#attributioncontrolprops) |
+
+#### Returns
+
+[`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+
+#### Defined in
+
+node_modules/@types/react/index.d.ts:351
+
+___
+
+### MapFullscreenControl
+
+▸ **MapFullscreenControl**(`props`): [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+
+**NOTE**: Exotic components are not callable.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | [`FullscreenControlProps`](modules/internal_.md#fullscreencontrolprops) |
+
+#### Returns
+
+[`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+
+#### Defined in
+
+node_modules/@types/react/index.d.ts:351
+
+___
+
+### MapGeolocateControl
+
+▸ **MapGeolocateControl**(`props`): [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+
+**NOTE**: Exotic components are not callable.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | [`GeolocateControlProps`](modules/internal_.md#geolocatecontrolprops) & [`RefAttributes`](interfaces/internal_.RefAttributes.md)<[`GeolocateControlRef`](modules/internal_.md#geolocatecontrolref)\> |
+
+#### Returns
+
+[`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+
+#### Defined in
+
+node_modules/@types/react/index.d.ts:351
+
+___
+
+### MapLegend
+
+▸ **MapLegend**(`props`): [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+
+**NOTE**: Exotic components are not callable.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | [`MapLegendProps`](interfaces/internal_.MapLegendProps.md) |
+
+#### Returns
+
+[`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+
+#### Defined in
+
+node_modules/@types/react/index.d.ts:351
+
+___
+
+### MapNavigationControl
+
+▸ **MapNavigationControl**(`props`): [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+
+**NOTE**: Exotic components are not callable.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | [`NavigationControlProps`](modules/internal_.md#navigationcontrolprops) |
+
+#### Returns
+
+[`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+
+#### Defined in
+
+node_modules/@types/react/index.d.ts:351
+
+___
+
+### MapScaleControl
+
+▸ **MapScaleControl**(`props`): [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+
+**NOTE**: Exotic components are not callable.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | [`ScaleControlProps`](modules/internal_.md#scalecontrolprops) |
+
+#### Returns
+
+[`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+
+#### Defined in
+
+node_modules/@types/react/index.d.ts:351
 
 ___
 
@@ -77,61 +236,13 @@ ___
 
 #### Defined in
 
-[layouts.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/e91b2bd/layouts.tsx#L7)
+[layouts.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/layouts.tsx#L7)
 
 ___
 
 ### Table
 
 ▸ **Table**(`props`): [`Element`](interfaces/internal_.Element.md)
-
-**`Example`**
-
-```jsx
-    <Table
-   container={{
-   // pass container props. Please be careful as container should be standard
-     style: {
-       // one common usecase is to pass gridArea to component
-       gridArea: "table",
-     },
-   }}
-   data={[
-     { id: 5, name: "banana", value: 0.53, qt: 10 },
-     { id: 2, name: "orange", value: 0.52, qt: 20 },
-   ]}
-   header={[
-     // list of dictionaries [iHeader]
-     {
-       index: "id",
-       name: "Product ID",
-       type: "text", // you can pass custom here, then you need to pass renderer
-       // renderer: (props) => <div>{props.data //data is a value of a cell}</div> example of simple div around the value
-       // props: {}, // any props you want to send to each cell of a given column
-       hidden: false, // set this to true if you want to hide the column
-     },
-     // limitation: you need to provide dictionaries equal to the number of column
-     // if you want to change the order of columns, it should contain at least index
-     {},
-     {},
-     {},
-   ]}
-   props={{
-     table: {
-       // passed in table container [Mui Grid]
-       // xs: 2, //other mui-grid properties
-       style: { backgroundColor: "white" },
-     },
-     row: {
-       // passed to each cell that in a row [Mui Item]
-     },
-     cell: {
-       // passed to each cell
-     },
-   }}
-   displayHeader={true}
- />
- ```
 
 #### Parameters
 
@@ -145,7 +256,7 @@ ___
 
 #### Defined in
 
-[components.tsx:55](https://github.com/DalbergDataInsights/react-components/blob/e91b2bd/components.tsx#L55)
+[components.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/components.tsx#L6)
 
 ___
 
@@ -165,7 +276,7 @@ ___
 
 #### Defined in
 
-[core/wrapper.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/e91b2bd/core/wrapper.tsx#L17)
+[core/wrapper.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/core/wrapper.tsx#L17)
 
 ___
 
@@ -188,10 +299,11 @@ ___
 | :------ | :------ |
 | `onChange` | (`event`: [`ChangeEvent`](interfaces/internal_.ChangeEvent.md)<`HTMLInputElement`\>) => `void` |
 | `onClick` | (`event`: [`ChangeEvent`](interfaces/internal_.ChangeEvent.md)<`HTMLInputElement`\>) => `void` |
+| `onMove` | (`event`: [`ChangeEvent`](interfaces/internal_.ChangeEvent.md)<`HTMLInputElement`\>) => `void` |
 
 #### Defined in
 
-[core/eventManager.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/e91b2bd/core/eventManager.tsx#L8)
+[core/eventManager.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/core/eventManager.tsx#L8)
 
 ___
 
@@ -217,4 +329,4 @@ ___
 
 #### Defined in
 
-[core/stateListener.tsx:22](https://github.com/DalbergDataInsights/react-components/blob/e91b2bd/core/stateListener.tsx#L22)
+[core/stateListener.tsx:22](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/core/stateListener.tsx#L22)
