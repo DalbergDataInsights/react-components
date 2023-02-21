@@ -258,6 +258,77 @@ const useMapStates = (subscribers, observers, props) => {
 
 # Layouts
 
+## NamedGrid
+
+Component that allows to map areas of the screen arbitrary. More on css grids and grid templates can be red here: https://css-tricks.com/wp-content/uploads/2022/02/css-grid-poster.png
+
+## NamedGrid Props
+
+areas - list of lists of grid areas (see example)
+columns - list of column sizes
+rows - list of row sizes
+sizes support all grid sizes, including common px, rem, vh as well as relative as fr
+children and style are passed through as usual
+
+## NameGrid Example
+
+```tsx
+<ComponentContextProvider config={{}}>
+  <div style={{ height: "100vh", width: "100vw", backgroundColor: "white" }}>
+    <NamedGrid
+      columns={["5fr", "3fr", "4fr"]} // divide into 5,3 and 4 fractions of the screen
+      rows={["2fr", "5fr", "5fr", "1fr"]} // divide into 2, 5, 5, 1 fraction
+      // define grid areas to attach components do
+      areas={[
+        ["area1", "area3"],
+        ["area2", "area3"],
+        ["footer", "footer"],
+      ]}
+    >
+      <Table
+        data={[{ index: 2, name: "orange", value: 0.52, qt: 20 }]}
+        // unmarked components will go in the first available area, but only in 1 slot
+      />
+      <Table
+        // you can pass gridArea to any component's style
+        container={{
+          style: { gridArea: "area3" },
+        }}
+        data={[
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+          { index: 2, name: "apple", value: 0.52, qt: 20 },
+        ]}
+      />
+      <Table data={[{ index: 2, name: "lemon", value: 0.52, qt: 20 }]} />
+      <Empty
+        gridArea="footer"
+        color="yellow"
+        // or define a component that takes gridArea in props
+      />
+    </NamedGrid>
+  </div>
+</ComponentContextProvider>
+```
+
+## NamedGrid TODO
+
+- [ ] Make table to take breakpoints
+
 # Contribution
 
 ## Follow library structure to benefit from core functions

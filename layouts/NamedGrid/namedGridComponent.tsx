@@ -25,10 +25,6 @@ export const NamedGridLayout = ({
   )
 }
 
-/**
- *
- * @param areas Array of Arrays [["head", "head", "head"], ["body . viz"]]
- */
 function getGridTeamplateAreasString(areas: Array<Array<string>>) {
   const rowTemplateAreas = areas.map((a) => a.join(" "))
   const gridTemplateAreaString = `'${rowTemplateAreas.join("' '")}'`
