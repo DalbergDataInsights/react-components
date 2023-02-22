@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[components/Table/tableComponent.tsx:16](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/components/Table/tableComponent.tsx#L16)
+[components/Table/tableComponent.tsx:16](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/components/Table/tableComponent.tsx#L16)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-[components/Table/tableComponent.tsx:18](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/components/Table/tableComponent.tsx#L18)
+[components/Table/tableComponent.tsx:18](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/components/Table/tableComponent.tsx#L18)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-[components/Table/tableComponent.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/components/Table/tableComponent.tsx#L17)
+[components/Table/tableComponent.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/components/Table/tableComponent.tsx#L17)
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 #### Defined in
 
-[components/Table/tableComponent.tsx:19](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/components/Table/tableComponent.tsx#L19)
+[components/Table/tableComponent.tsx:19](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/components/Table/tableComponent.tsx#L19)

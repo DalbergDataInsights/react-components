@@ -1,9 +1,9 @@
 import React from "react"
-import { Wrapper } from "./core"
+import { Wrapper, iWrapper } from "./core"
 
 import { manifest as tableManifest, iTable, iHeader } from "./components/Table"
 
-export const Table = (props: iTable) => (
+export const Table = (props: iTable & iWrapper) => (
   <Wrapper {...tableManifest} {...props} />
 )
 
@@ -18,4 +18,14 @@ export {
   ScaleControl as MapScaleControl,
 } from "react-map-gl"
 export { MapLegend } from "./components/Map"
-export const Map = (props: iMap) => <Wrapper {...mapManifest} {...props} />
+export const Map = (props: iMap & iWrapper) => (
+  <Wrapper {...mapManifest} {...props} />
+)
+
+import {
+  manifest as toggleButtonGroupManifest,
+  iToggleButtonGroup,
+} from "./components/ToggleButtonGroup"
+export const ToggleButtonGroup = (props: iToggleButtonGroup & iWrapper) => (
+  <Wrapper {...toggleButtonGroupManifest} {...props} />
+)

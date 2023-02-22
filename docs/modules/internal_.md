@@ -87,6 +87,7 @@
 - [FitBoundsOptions](../interfaces/internal_.FitBoundsOptions.md)
 - [FlyToOptions](../interfaces/internal_.FlyToOptions.md)
 - [Fog](../interfaces/internal_.Fog.md)
+- [FunctionComponent](../interfaces/internal_.FunctionComponent.md)
 - [GeoJSONSourceOptions](../interfaces/internal_.GeoJSONSourceOptions.md)
 - [GeoJSONSourceRaw](../interfaces/internal_.GeoJSONSourceRaw.md)
 - [GeoJsonObject](../interfaces/internal_.GeoJsonObject.md)
@@ -183,6 +184,8 @@
 - [iMapInfo](../interfaces/internal_.iMapInfo.md)
 - [iNamedGrid](../interfaces/internal_.iNamedGrid.md)
 - [iTable](../interfaces/internal_.iTable.md)
+- [iToggleButtonGroup](../interfaces/internal_.iToggleButtonGroup.md)
+- [iToggleButtonGroupOption](../interfaces/internal_.iToggleButtonGroupOption.md)
 
 ### Type Aliases
 
@@ -374,6 +377,7 @@
 - [Expression](internal_.md#expression)
 - [ExpressionName](internal_.md#expressionname)
 - [ExpressionSpecification](internal_.md#expressionspecification)
+- [FC](internal_.md#fc)
 - [Fill](internal_.md#fill)
 - [FillOpacity](internal_.md#fillopacity)
 - [FillRule](internal_.md#fillrule)
@@ -658,6 +662,7 @@
 - [PageBreakInside](internal_.md#pagebreakinside)
 - [Paint](internal_.md#paint)
 - [PaintOrder](internal_.md#paintorder)
+- [Partial](internal_.md#partial)
 - [Perspective](internal_.md#perspective)
 - [PerspectiveOrigin](internal_.md#perspectiveorigin)
 - [Pick](internal_.md#pick)
@@ -796,6 +801,7 @@
 - [Translate](internal_.md#translate)
 - [UnicodeBidi](internal_.md#unicodebidi)
 - [UserSelect](internal_.md#userselect)
+- [ValidationMap](internal_.md#validationmap)
 - [Validator](internal_.md#validator)
 - [VectorEffect](internal_.md#vectoreffect)
 - [VerticalAlign](internal_.md#verticalalign)
@@ -3114,6 +3120,22 @@ ___
 #### Defined in
 
 node_modules/@types/mapbox-gl/index.d.ts:1543
+
+___
+
+### FC
+
+Ƭ **FC**<`P`\>: [`FunctionComponent`](../interfaces/internal_.FunctionComponent.md)<`P`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `P` | {} |
+
+#### Defined in
+
+node_modules/@types/react/index.d.ts:518
 
 ___
 
@@ -6603,6 +6625,24 @@ node_modules/csstype/index.d.ts:18937
 
 ___
 
+### Partial
+
+Ƭ **Partial**<`T`\>: { [P in keyof T]?: T[P] }
+
+Make all properties in T optional
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Defined in
+
+node_modules/typescript/lib/lib.es5.d.ts:1562
+
+___
+
 ### Perspective
 
 Ƭ **Perspective**<`TLength`\>: [`Globals`](internal_.md#globals) \| `TLength` \| ``"none"``
@@ -8366,6 +8406,22 @@ ___
 #### Defined in
 
 node_modules/csstype/index.d.ts:19171
+
+___
+
+### ValidationMap
+
+Ƭ **ValidationMap**<`T`\>: { [K in keyof T]?: Validator<T[K]\> }
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Defined in
+
+node_modules/@types/prop-types/index.d.ts:50
 
 ___
 

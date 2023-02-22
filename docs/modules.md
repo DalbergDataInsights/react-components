@@ -12,6 +12,7 @@
 
 - [iObserver](interfaces/iObserver.md)
 - [iSubscriber](interfaces/iSubscriber.md)
+- [iWrapper](interfaces/iWrapper.md)
 
 ### Variables
 
@@ -29,6 +30,7 @@
 - [MapScaleControl](modules.md#mapscalecontrol)
 - [NamedGrid](modules.md#namedgrid)
 - [Table](modules.md#table)
+- [ToggleButtonGroup](modules.md#togglebuttongroup)
 - [Wrapper](modules.md#wrapper)
 - [useEventManagement](modules.md#useeventmanagement)
 - [useStateListener](modules.md#usestatelistener)
@@ -41,7 +43,7 @@
 
 #### Defined in
 
-[core/context.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/core/context.tsx#L3)
+[core/context.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/core/context.tsx#L3)
 
 ## Functions
 
@@ -64,7 +66,7 @@
 
 #### Defined in
 
-[core/context.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/core/context.tsx#L4)
+[core/context.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/core/context.tsx#L4)
 
 ___
 
@@ -76,7 +78,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`iMap`](interfaces/internal_.iMap.md) |
+| `props` | [`iMap`](interfaces/internal_.iMap.md) & [`iWrapper`](interfaces/iWrapper.md) |
 
 #### Returns
 
@@ -84,7 +86,7 @@ ___
 
 #### Defined in
 
-[components.tsx:21](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/components.tsx#L21)
+[components.tsx:21](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/components.tsx#L21)
 
 ___
 
@@ -228,7 +230,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`iNamedGrid`](interfaces/internal_.iNamedGrid.md) |
+| `props` | [`iNamedGrid`](interfaces/internal_.iNamedGrid.md) & [`iWrapper`](interfaces/iWrapper.md) |
 
 #### Returns
 
@@ -236,7 +238,7 @@ ___
 
 #### Defined in
 
-[layouts.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/layouts.tsx#L7)
+[layouts.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/layouts.tsx#L7)
 
 ___
 
@@ -248,7 +250,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`iTable`](interfaces/internal_.iTable.md) |
+| `props` | [`iTable`](interfaces/internal_.iTable.md) & [`iWrapper`](interfaces/iWrapper.md) |
 
 #### Returns
 
@@ -256,19 +258,19 @@ ___
 
 #### Defined in
 
-[components.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/components.tsx#L6)
+[components.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/components.tsx#L6)
 
 ___
 
-### Wrapper
+### ToggleButtonGroup
 
-▸ **Wrapper**(`«destructured»`): [`Element`](interfaces/internal_.Element.md)
+▸ **ToggleButtonGroup**(`props`): [`Element`](interfaces/internal_.Element.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `«destructured»` | `Object` |
+| `props` | [`iToggleButtonGroup`](interfaces/internal_.iToggleButtonGroup.md) & [`iWrapper`](interfaces/iWrapper.md) |
 
 #### Returns
 
@@ -276,7 +278,29 @@ ___
 
 #### Defined in
 
-[core/wrapper.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/core/wrapper.tsx#L17)
+[components.tsx:29](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/components.tsx#L29)
+
+___
+
+### Wrapper
+
+▸ **Wrapper**(`props`): [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+
+**NOTE**: Exotic components are not callable.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | [`iWrapper`](interfaces/iWrapper.md) |
+
+#### Returns
+
+[`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+
+#### Defined in
+
+node_modules/@types/react/index.d.ts:351
 
 ___
 
@@ -303,7 +327,7 @@ ___
 
 #### Defined in
 
-[core/eventManager.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/core/eventManager.tsx#L8)
+[core/eventManager.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/core/eventManager.tsx#L8)
 
 ___
 
@@ -329,4 +353,4 @@ ___
 
 #### Defined in
 
-[core/stateListener.tsx:22](https://github.com/DalbergDataInsights/react-components/blob/d372ccf/core/stateListener.tsx#L22)
+[core/stateListener.tsx:22](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/core/stateListener.tsx#L22)
