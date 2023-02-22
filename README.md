@@ -16,6 +16,7 @@
   * [Toggle Button Component](#toggle-button-component)
     + [Toggle Button States](#toggle-button-states)
     + [Toggle Button Props](#toggle-button-props)
+    + [Toggle Button Props Passthrough](#toggle-button-props-passthrough)
     + [Toggle Button Example](#toggle-button-example)
   * [Table](#table-1)
     + [Table Props](#table-props)
@@ -25,6 +26,7 @@
     + [Map Assumptions](#map-assumptions)
     + [Map States](#map-states)
     + [Map Props](#map-props)
+    + [Map Props Passthrough](#map-props-passthrough)
     + [Map Example](#map-example)
 - [Layouts](#layouts)
   * [NamedGrid](#namedgrid-1)
@@ -556,6 +558,7 @@ Make sure that you follow philosophy and the assumptions of the framework
 3. Define component manifest
 4. Instantiate export with wrapper from related file (components/core/layouts)
 5. Add README section for the component
+6. Generate new table of content (https://ecotrust-canada.github.io/markdown-toc/)
 
 ## Generating documentation
 
