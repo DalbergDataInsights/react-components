@@ -512,3 +512,5 @@ Make sure that you follow philosophy and the assumptions of the framework
 2. Install typedoc-plugin-markdown
 3. Install typedoc-plugin-missing-exports
 4. Run `npx typedoc --plugin typedoc-plugin-markdown --plugin typedoc-plugin-missing-exports`
+
+> Don't forget to increment your version before publishing!
