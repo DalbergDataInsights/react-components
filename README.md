@@ -201,6 +201,13 @@ Switch/Radio style button with one active button at a time.
 
 - options - list of iToggleButtonOption objects with at least value, possibly name and active boolean
 
+### Toggle Button Props Passthrough
+
+- group - root component (div)
+- button - option (button)
+- click - css of the clicked button (merge with button)
+- point - css of the pointed button (merge with button)
+
 ### Toggle Button Example
 
 ```jsx
@@ -369,10 +376,16 @@ Basic map usage only consists of data, colors and steps
 > still deciding whether color and steps should be a config prop passed together > with values. Exposing createPalette method and leave it for a user to generate
 > palette might just be a simpler solution
 
-data - geojson with feature properties\
-colors - a list of colors in hex or rgb\
-steps - a list of color steps\
+- data - geojson with feature properties\
+- colors - a list of colors in hex or rgb\
+- steps - a list of color steps\
 !important Since colors are fit in the gaps, there should be 1 more color than steps
+
+### Map Props Passthrough
+
+- map - root map component (react-map-gl Map)
+- layers - each map layer
+- tooltip - both point and click tolltips (Tooltip component, wrapper for rendering function)
 
 ### Map Example
 
