@@ -31,7 +31,7 @@
 
 #### Defined in
 
-[core/eventManager.tsx:5](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/core/eventManager.tsx#L5)
+[core/eventManager.tsx:5](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/eventManager.tsx#L5)
 
 ___
 
@@ -41,4 +41,4 @@ ___
 
 #### Defined in
 
-[core/eventManager.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/core/eventManager.tsx#L4)
+[core/eventManager.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/eventManager.tsx#L4)

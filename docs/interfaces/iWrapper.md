@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[core/wrapper.tsx:51](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/core/wrapper.tsx#L51)
+[core/wrapper.tsx:52](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/wrapper.tsx#L52)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[core/wrapper.tsx:52](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/core/wrapper.tsx#L52)
+[core/wrapper.tsx:53](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/wrapper.tsx#L53)
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 #### Defined in
 
-[core/wrapper.tsx:54](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/core/wrapper.tsx#L54)
+[core/wrapper.tsx:55](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/wrapper.tsx#L55)
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 #### Defined in
 
-[core/wrapper.tsx:53](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/core/wrapper.tsx#L53)
+[core/wrapper.tsx:54](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/wrapper.tsx#L54)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-[core/wrapper.tsx:56](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/core/wrapper.tsx#L56)
+[core/wrapper.tsx:57](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/wrapper.tsx#L57)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[core/wrapper.tsx:57](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/core/wrapper.tsx#L57)
+[core/wrapper.tsx:58](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/wrapper.tsx#L58)
 
 ___
 
@@ -98,4 +98,4 @@ ___
 
 #### Defined in
 
-[core/wrapper.tsx:55](https://github.com/DalbergDataInsights/react-components/blob/05f04a8/core/wrapper.tsx#L55)
+[core/wrapper.tsx:56](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/wrapper.tsx#L56)

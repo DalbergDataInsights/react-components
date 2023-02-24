@@ -22,7 +22,7 @@ export const defaults = {
         padding: "0",
         whiteSpace: "nowrap",
         borderRadius: "16px",
-        height: "30px",
+        height: "28px",
         border: "none",
         background: "none",
         transition: "all 0.1s linear",

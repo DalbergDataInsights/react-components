@@ -29,3 +29,8 @@ import {
 export const ToggleButtonGroup = (props: iToggleButtonGroup & iWrapper) => (
   <Wrapper {...toggleButtonGroupManifest} {...props} />
 )
+
+import { manifest as dropdownManifest, iDropdown } from "./components/Dropdown"
+export const Dropdown = (props: iDropdown & iWrapper) => (
+  <Wrapper {...dropdownManifest} {...props} />
+)

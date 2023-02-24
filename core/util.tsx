@@ -18,14 +18,14 @@ export function mergeDicts(a, b, path = undefined) {
   return a
 }
 
-export function checkState(stateString, props) {
+export function checkState(stateString, props, initValue = {}) {
   const propKeys = Object.keys(props)
   const setStateString = `set${
     stateString.charAt(0).toUpperCase() + stateString.slice(1)
   }`
 
   if (!propKeys.includes(stateString) || !propKeys.includes(setStateString)) {
-    const [state, setState] = useState()
+    const [state, setState] = useState(initValue)
     props[stateString] = state
     props[setStateString] = setState
   }

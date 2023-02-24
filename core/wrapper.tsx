@@ -11,6 +11,7 @@ const wrapperDefaults = {
     width: "calc(100% - 16px)",
     padding: "8px",
     overflow: "auto",
+    fontSize: "12pt",
   },
 }
 // try wrapping the init function in the callback to avoid mount spam?

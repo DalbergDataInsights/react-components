@@ -179,6 +179,8 @@
 - [VideoSourceRaw](../interfaces/internal_.VideoSourceRaw.md)
 - [WebGLContextEvent](../interfaces/internal_.WebGLContextEvent.md)
 - [WebGLContextEventInit](../interfaces/internal_.WebGLContextEventInit.md)
+- [iDropdown](../interfaces/internal_.iDropdown.md)
+- [iDropdownOption](../interfaces/internal_.iDropdownOption.md)
 - [iHeader](../interfaces/internal_.iHeader.md)
 - [iMap](../interfaces/internal_.iMap.md)
 - [iMapInfo](../interfaces/internal_.iMapInfo.md)

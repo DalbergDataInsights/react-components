@@ -1,42 +1,46 @@
 - [Consuming packages](#consuming-packages)
 - [Developer TODO and Roadmap](#developer-todo-and-roadmap)
-  * [NamedGrid](#namedgrid)
-  * [Table](#table)
+  - [NamedGrid](#namedgrid)
+  - [Table](#table)
 - [Core Library](#core-library)
-  * [Wrapper](#wrapper)
-  * [Event management](#event-management)
-  * [State observation](#state-observation)
-  * [Component initialization](#component-initialization)
-  * [Props passthrough](#props-passthrough)
-  * [Component styling](#component-styling)
-  * [Utility](#utility)
-    + [mergeDicts(a,b)](#mergedicts-a-b-)
-    + [checkStates(name, props)](#checkstates-name--props-)
+  - [Wrapper](#wrapper)
+  - [Event management](#event-management)
+  - [State observation](#state-observation)
+  - [Component initialization](#component-initialization)
+  - [Props passthrough](#props-passthrough)
+  - [Component styling](#component-styling)
+  - [Utility](#utility)
+    - [mergeDicts(a,b)](#mergedicts-a-b-)
+    - [checkStates(name, props)](#checkstates-name--props-)
 - [Components](#components)
-  * [Toggle Button Component](#toggle-button-component)
-    + [Toggle Button States](#toggle-button-states)
-    + [Toggle Button Props](#toggle-button-props)
-    + [Toggle Button Props Passthrough](#toggle-button-props-passthrough)
-    + [Toggle Button Example](#toggle-button-example)
-  * [Table](#table-1)
-    + [Table Props](#table-props)
-    + [Table Props Passthrough](#table-props-passthrough)
-    + [Table Example](#table-example)
-  * [Map](#map)
-    + [Map Assumptions](#map-assumptions)
-    + [Map States](#map-states)
-    + [Map Props](#map-props)
-    + [Map Props Passthrough](#map-props-passthrough)
-    + [Map Example](#map-example)
+  - [DropdownButton Component](#dropdownbutton-component)
+    - [DropdownButton States](#dropdownbutton-states)
+    - [DropdownButton Props](#dropdownbutton-props)
+    - [DropdownButton Props Passthrough](#dropdownbutton-props-passthrough)
+    - [DropdownButton Example](#dropdownbutton-example)
+  - [Toggle Button Component](#toggle-button-component)
+    - [Toggle Button States](#toggle-button-states)
+    - [Toggle Button Props](#toggle-button-props)
+    - [Toggle Button Props Passthrough](#toggle-button-props-passthrough)
+    - [Toggle Button Example](#toggle-button-example)
+  - [Table](#table-1)
+    - [Table Props](#table-props)
+    - [Table Props Passthrough](#table-props-passthrough)
+    - [Table Example](#table-example)
+  - [Map](#map)
+    - [Map Assumptions](#map-assumptions)
+    - [Map States](#map-states)
+    - [Map Props](#map-props)
+    - [Map Props Passthrough](#map-props-passthrough)
+    - [Map Example](#map-example)
 - [Layouts](#layouts)
-  * [NamedGrid](#namedgrid-1)
-  * [NamedGrid Props](#namedgrid-props)
-  * [NameGrid Example](#namegrid-example)
+  - [NamedGrid](#namedgrid-1)
+  - [NamedGrid Props](#namedgrid-props)
+  - [NameGrid Example](#namegrid-example)
 - [Contribution](#contribution)
-  * [Integrate with framework](#integrate-with-framework)
-  * [Embed your code](#embed-your-code)
-  * [Generating documentation](#generating-documentation)
-
+  - [Integrate with framework](#integrate-with-framework)
+  - [Embed your code](#embed-your-code)
+  - [Generating documentation](#generating-documentation)
 
 # Consuming packages
 
@@ -59,6 +63,8 @@ always-auth=true
 - [ ] decide on the GridLayout directly into the container / new component
 - [ ] decide on the container defaults locations
 - [ ] Wrapper component still rerenders => research React docs for causes
+- [ ] Hover and focus application is problematic
+- [ ] Integrating tailwind in the framework would be beneficial, but requires className merge tech
 
 ## NamedGrid
 
@@ -190,6 +196,52 @@ checks if the name & setName are present in props and adds it there if not -- us
 
 For full list of props please see generated documentation in [./docs]
 
+## DropdownButton Component
+
+React select that exposes click and point properties. Allows for custom tooltips of each value / component name.
+
+### DropdownButton States
+
+- click - feature properties of currently active (clicked) button
+- point - feature properties of currently hovered (mouseover) button
+
+### DropdownButton Props
+
+- options - list of iDropdownOptions objects with at least value, possibly name and selected boolean
+
+  - value: string
+  - selected: boolean
+  - label?: string
+  - name?: string
+  - tooltip?: string
+
+- label - string to append to a selected label
+
+### DropdownButton Props Passthrough
+
+- dropdown - root component (div)
+- button - container for label and arrow icon (div)
+- label - label and selected name (div)
+- icon - svg container (mui SvgIcon)
+- menu - container with dropdown options (div)
+- option - item in menu (a)
+
+It is essential for the integrity of the component to not overwrite the display: flex and flex flow css.
+
+### DropdownButton Example
+
+```jsx
+<Dropdown
+  label="Coverage: "
+  options={[
+    { value: "BCG", name: "BCG" },
+    { value: "VAR", name: "VAR", selected: true, label: "(1)" },
+    { value: "PENTA1", name: "Penta 1" },
+    { value: "PENTA3", name: "Penta 3", tooltip: "Second Penta vaccine" },
+  ]}
+/>
+```
+
 ## Toggle Button Component
 
 Switch/Radio style button with one active button at a time.
@@ -201,7 +253,7 @@ Switch/Radio style button with one active button at a time.
 
 ### Toggle Button Props
 
-- options - list of iToggleButtonOption objects with at least value, possibly name and active boolean
+- options - list of iToggleButtonOption objects with at least value, possibly name and selected boolean
 
 ### Toggle Button Props Passthrough
 
@@ -360,7 +412,7 @@ variable: value units
 current tooltips are generated using method that take in corresponding info state
 and can be easily overridden (see iMap)
 
-> I am still deciding whether it's better to pass label and variable in props
+> I am still deciding whether it's better to pass label/name and variable in props
 > and override it, decision pending
 
 ### Map States
@@ -381,7 +433,7 @@ Basic map usage only consists of data, colors and steps
 - data - geojson with feature properties\
 - colors - a list of colors in hex or rgb\
 - steps - a list of color steps\
-!important Since colors are fit in the gaps, there should be 1 more color than steps
+  !important Since colors are fit in the gaps, there should be 1 more color than steps
 
 ### Map Props Passthrough
 
