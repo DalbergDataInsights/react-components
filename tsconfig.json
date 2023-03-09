@@ -14,18 +14,11 @@
     "esModuleInterop": true,
     "strict": true,
     "declaration": true,
+    "declarationMap": true,
     "declarationDir": "types",
     "emitDeclarationOnly": true,
     "outDir": "dist"
   },
-  "include": [
-    "./*",
-    "src/core",
-    "src/components",
-    "src/layouts",
-    "src/components",
-    "src/index.ts"
-  ],
   "exclude": ["node_modules", ".github", ".npmrc", ".gitignore"],
   "typedocOptions": {
     "entryPoints": ["src/index.ts"],

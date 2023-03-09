@@ -1,6 +1,6 @@
 {
   "name": "@dalbergdatainsights/react-components",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Dalberg Data Insight's Library of React Components",
   "type": "module",
   "main": "dist/cjs/index.js",
@@ -29,8 +29,6 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.8",
-    "@types/react": "^18.0.27",
-    "react": "16 - 18",
     "react-map-gl": "^7.0.21"
   },
   "devDependencies": {
@@ -45,5 +43,9 @@
     "typedoc": "^0.23.24",
     "typedoc-plugin-markdown": "^3.14.0",
     "typedoc-plugin-missing-exports": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": "16 - 18",
+    "react-dom": "16 - 18"
   }
 }

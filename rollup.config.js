@@ -5,14 +5,18 @@ import dts from "rollup-plugin-dts"
 
 import packageJson from "./package.json" assert { type: "json" }
 
+const EXTENSIONS = [".ts", ".tsx", ".js", ".jsx", ".json"]
+
 export default [
   {
+    external: ["react", "react-dom"],
     input: "./src/index.ts",
     output: [
       {
         file: packageJson.main,
         format: "cjs",
         sourcemap: true,
+        exports: "named",
         inlineDynamicImports: true,
       },
       {
@@ -23,7 +27,7 @@ export default [
       },
     ],
     plugins: [
-      resolve(),
+      resolve({ extensions: EXTENSIONS, preferBuiltins: false }),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
     ],
