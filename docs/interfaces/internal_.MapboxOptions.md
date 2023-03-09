@@ -428,7 +428,7 @@ ___
 
 ### logoPosition
 
-• `Optional` **logoPosition**: ``"top-left"`` \| ``"top-right"`` \| ``"bottom-left"`` \| ``"bottom-right"``
+• `Optional` **logoPosition**: ``"top-right"`` \| ``"top-left"`` \| ``"bottom-right"`` \| ``"bottom-left"``
 
 A string representing the position of the Mapbox wordmark on the map.
 

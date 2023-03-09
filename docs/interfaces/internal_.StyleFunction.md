@@ -69,7 +69,7 @@ ___
 
 ### type
 
-• `Optional` **type**: ``"interval"`` \| ``"exponential"`` \| ``"identity"`` \| ``"categorical"``
+• `Optional` **type**: ``"identity"`` \| ``"exponential"`` \| ``"interval"`` \| ``"categorical"``
 
 #### Defined in
 

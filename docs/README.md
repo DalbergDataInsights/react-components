@@ -612,6 +612,8 @@ Make sure that you follow philosophy and the assumptions of the framework
 4. Instantiate export with wrapper from related file (components/core/layouts)
 5. Add README section for the component
 6. Generate new table of content (https://ecotrust-canada.github.io/markdown-toc/)
+7. Generate documentation
+8. Iterate a version
 
 ## Generating documentation
 

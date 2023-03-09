@@ -83,7 +83,7 @@ ___
 
 ### sourceDataType
 
-• **sourceDataType**: ``"content"`` \| ``"metadata"``
+• **sourceDataType**: ``"metadata"`` \| ``"content"``
 
 #### Defined in
 

@@ -16,7 +16,7 @@
 
 ### buffer
 
-• **buffer**: [`ArrayBufferLike`](../modules/internal_.md#arraybufferlike)
+• **buffer**: `ArrayBuffer`
 
 The ArrayBuffer instance referenced by the array.
 

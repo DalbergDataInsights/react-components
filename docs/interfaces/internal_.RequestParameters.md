@@ -28,7 +28,7 @@ ___
 
 ### credentials
 
-• `Optional` **credentials**: ``"include"`` \| ``"same-origin"``
+• `Optional` **credentials**: ``"same-origin"`` \| ``"include"``
 
 Use `'include'` to send cookies with cross-origin requests.
 

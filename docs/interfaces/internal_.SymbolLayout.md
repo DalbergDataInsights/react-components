@@ -71,7 +71,7 @@ ___
 
 ### icon-anchor
 
-• `Optional` **icon-anchor**: [`Expression`](../modules/internal_.md#expression) \| [`Anchor`](../modules/internal_.md#anchor) \| [`StyleFunction`](internal_.StyleFunction.md)
+• `Optional` **icon-anchor**: [`Expression`](../modules/internal_.md#expression) \| [`StyleFunction`](internal_.StyleFunction.md) \| [`Anchor`](../modules/internal_.md#anchor)
 
 #### Defined in
 
@@ -181,7 +181,7 @@ ___
 
 ### icon-text-fit
 
-• `Optional` **icon-text-fit**: ``"both"`` \| ``"none"`` \| ``"height"`` \| ``"width"``
+• `Optional` **icon-text-fit**: ``"height"`` \| ``"width"`` \| ``"none"`` \| ``"both"``
 
 #### Defined in
 
@@ -261,7 +261,7 @@ ___
 
 ### text-anchor
 
-• `Optional` **text-anchor**: [`Expression`](../modules/internal_.md#expression) \| [`Anchor`](../modules/internal_.md#anchor) \| [`StyleFunction`](internal_.StyleFunction.md)
+• `Optional` **text-anchor**: [`Expression`](../modules/internal_.md#expression) \| [`StyleFunction`](internal_.StyleFunction.md) \| [`Anchor`](../modules/internal_.md#anchor)
 
 #### Defined in
 
@@ -301,7 +301,7 @@ ___
 
 ### text-justify
 
-• `Optional` **text-justify**: ``"auto"`` \| ``"center"`` \| ``"left"`` \| ``"right"`` \| [`Expression`](../modules/internal_.md#expression)
+• `Optional` **text-justify**: ``"center"`` \| ``"auto"`` \| ``"left"`` \| ``"right"`` \| [`Expression`](../modules/internal_.md#expression)
 
 #### Defined in
 

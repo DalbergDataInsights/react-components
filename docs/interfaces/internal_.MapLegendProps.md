@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[components/Map/MapLegend.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/components/Map/MapLegend.tsx#L4)
+[components/Map/MapLegend.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/MapLegend.tsx#L4)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[components/Map/MapLegend.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/components/Map/MapLegend.tsx#L6)
+[components/Map/MapLegend.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/MapLegend.tsx#L6)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[components/Map/MapLegend.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/components/Map/MapLegend.tsx#L8)
+[components/Map/MapLegend.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/MapLegend.tsx#L8)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[components/Map/MapLegend.tsx:5](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/components/Map/MapLegend.tsx#L5)
+[components/Map/MapLegend.tsx:5](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/MapLegend.tsx#L5)
 
 ___
 
@@ -62,4 +62,4 @@ ___
 
 #### Defined in
 
-[components/Map/MapLegend.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/components/Map/MapLegend.tsx#L7)
+[components/Map/MapLegend.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/MapLegend.tsx#L7)

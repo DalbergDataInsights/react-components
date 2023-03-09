@@ -11,6 +11,7 @@
 ### Interfaces
 
 - [iObserver](interfaces/iObserver.md)
+- [iReactive](interfaces/iReactive.md)
 - [iSubscriber](interfaces/iSubscriber.md)
 - [iWrapper](interfaces/iWrapper.md)
 
@@ -44,7 +45,7 @@
 
 #### Defined in
 
-[core/context.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/context.tsx#L3)
+[core/context.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/context.tsx#L3)
 
 ## Functions
 
@@ -67,7 +68,7 @@
 
 #### Defined in
 
-[core/context.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/context.tsx#L4)
+[core/context.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/context.tsx#L4)
 
 ___
 
@@ -79,7 +80,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`iDropdown`](interfaces/internal_.iDropdown.md) & [`iWrapper`](interfaces/iWrapper.md) |
+| `props` | [`iDropdown`](interfaces/internal_.iDropdown.md) & [`iReactive`](interfaces/iReactive.md) |
 
 #### Returns
 
@@ -87,7 +88,7 @@ ___
 
 #### Defined in
 
-[components.tsx:34](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/components.tsx#L34)
+[components.tsx:34](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components.tsx#L34)
 
 ___
 
@@ -107,7 +108,7 @@ ___
 
 #### Defined in
 
-[components.tsx:21](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/components.tsx#L21)
+[components.tsx:21](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components.tsx#L21)
 
 ___
 
@@ -251,7 +252,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`iNamedGrid`](interfaces/internal_.iNamedGrid.md) & [`iWrapper`](interfaces/iWrapper.md) |
+| `props` | [`iNamedGrid`](interfaces/internal_.iNamedGrid.md) & [`iReactive`](interfaces/iReactive.md) |
 
 #### Returns
 
@@ -259,7 +260,7 @@ ___
 
 #### Defined in
 
-[layouts.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/layouts.tsx#L7)
+[layouts.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/ff81224/layouts.tsx#L7)
 
 ___
 
@@ -279,7 +280,7 @@ ___
 
 #### Defined in
 
-[components.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/components.tsx#L6)
+[components.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components.tsx#L6)
 
 ___
 
@@ -291,7 +292,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`iToggleButtonGroup`](interfaces/internal_.iToggleButtonGroup.md) & [`iWrapper`](interfaces/iWrapper.md) |
+| `props` | [`iToggleButtonGroup`](interfaces/internal_.iToggleButtonGroup.md) & [`iReactive`](interfaces/iReactive.md) |
 
 #### Returns
 
@@ -299,7 +300,7 @@ ___
 
 #### Defined in
 
-[components.tsx:29](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/components.tsx#L29)
+[components.tsx:29](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components.tsx#L29)
 
 ___
 
@@ -313,7 +314,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`iWrapper`](interfaces/iWrapper.md) |
+| `props` | [`iWrapper`](interfaces/iWrapper.md) & [`iReactive`](interfaces/iReactive.md) |
 
 #### Returns
 
@@ -348,7 +349,7 @@ ___
 
 #### Defined in
 
-[core/eventManager.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/eventManager.tsx#L8)
+[core/eventManager.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/eventManager.tsx#L8)
 
 ___
 
@@ -374,4 +375,4 @@ ___
 
 #### Defined in
 
-[core/stateListener.tsx:22](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/stateListener.tsx#L22)
+[core/stateListener.tsx:22](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/stateListener.tsx#L22)

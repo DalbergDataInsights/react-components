@@ -10,9 +10,6 @@
 - [defaults](iWrapper.md#defaults)
 - [init](iWrapper.md#init)
 - [name](iWrapper.md#name)
-- [observers](iWrapper.md#observers)
-- [props](iWrapper.md#props)
-- [subscribers](iWrapper.md#subscribers)
 
 ## Properties
 
@@ -22,7 +19,7 @@
 
 #### Defined in
 
-[core/wrapper.tsx:52](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/wrapper.tsx#L52)
+[core/wrapper.tsx:52](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/wrapper.tsx#L52)
 
 ___
 
@@ -32,13 +29,13 @@ ___
 
 #### Defined in
 
-[core/wrapper.tsx:53](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/wrapper.tsx#L53)
+[core/wrapper.tsx:53](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/wrapper.tsx#L53)
 
 ___
 
 ### init
 
-• **init**: (`__namedParameters`: [`Iterable`](internal_.Iterable.md)<`any`\>, `__namedParameters`: [`Iterable`](internal_.Iterable.md)<`any`\>, `__namedParameters`: `Object`) => `void`
+• `Optional` **init**: (`__namedParameters`: [`Iterable`](internal_.Iterable.md)<`any`\>, `__namedParameters`: [`Iterable`](internal_.Iterable.md)<`any`\>, `__namedParameters`: `Object`) => `void`
 
 #### Type declaration
 
@@ -58,7 +55,7 @@ ___
 
 #### Defined in
 
-[core/wrapper.tsx:55](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/wrapper.tsx#L55)
+[core/wrapper.tsx:55](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/wrapper.tsx#L55)
 
 ___
 
@@ -68,34 +65,4 @@ ___
 
 #### Defined in
 
-[core/wrapper.tsx:54](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/wrapper.tsx#L54)
-
-___
-
-### observers
-
-• **observers**: [`iObserver`](iObserver.md)[]
-
-#### Defined in
-
-[core/wrapper.tsx:57](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/wrapper.tsx#L57)
-
-___
-
-### props
-
-• **props**: `any`
-
-#### Defined in
-
-[core/wrapper.tsx:58](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/wrapper.tsx#L58)
-
-___
-
-### subscribers
-
-• **subscribers**: [`iSubscriber`](iSubscriber.md)[]
-
-#### Defined in
-
-[core/wrapper.tsx:56](https://github.com/DalbergDataInsights/react-components/blob/d32d0bb/core/wrapper.tsx#L56)
+[core/wrapper.tsx:54](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/wrapper.tsx#L54)

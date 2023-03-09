@@ -101,7 +101,7 @@ ___
 
 ### type
 
-• **type**: ``"click"`` \| ``"contextmenu"`` \| ``"dblclick"`` \| ``"mousedown"`` \| ``"mouseenter"`` \| ``"mouseleave"`` \| ``"mousemove"`` \| ``"mouseout"`` \| ``"mouseover"`` \| ``"mouseup"``
+• **type**: ``"click"`` \| ``"dblclick"`` \| ``"mousedown"`` \| ``"mouseup"`` \| ``"mousemove"`` \| ``"mouseenter"`` \| ``"mouseleave"`` \| ``"mouseover"`` \| ``"mouseout"`` \| ``"contextmenu"``
 
 #### Overrides
 

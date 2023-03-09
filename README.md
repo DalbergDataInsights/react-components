@@ -621,4 +621,8 @@ Make sure that you follow philosophy and the assumptions of the framework
 3. Install typedoc-plugin-missing-exports
 4. Run `npx typedoc --plugin typedoc-plugin-markdown --plugin typedoc-plugin-missing-exports`
 
+## Publishing
+
+1. Rollup
+
 > Don't forget to increment your version before publishing!
