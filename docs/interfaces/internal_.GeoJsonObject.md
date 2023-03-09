@@ -61,7 +61,7 @@ ___
 
 ### type
 
-• **type**: ``"Point"`` \| ``"MultiPoint"`` \| ``"LineString"`` \| ``"MultiLineString"`` \| ``"Polygon"`` \| ``"MultiPolygon"`` \| ``"GeometryCollection"`` \| ``"Feature"`` \| ``"FeatureCollection"``
+• **type**: ``"Feature"`` \| ``"Point"`` \| ``"MultiPoint"`` \| ``"LineString"`` \| ``"MultiLineString"`` \| ``"Polygon"`` \| ``"MultiPolygon"`` \| ``"GeometryCollection"`` \| ``"FeatureCollection"``
 
 Specifies the type of GeoJSON object.
 

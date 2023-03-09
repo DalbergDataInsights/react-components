@@ -311,7 +311,7 @@ node_modules/@types/mapbox-gl/index.d.ts:597
 | Name | Type |
 | :------ | :------ |
 | `control` | [`Control`](internal_.Control.md) \| [`IControl`](../interfaces/internal_.IControl.md) |
-| `position?` | ``"top-left"`` \| ``"top-right"`` \| ``"bottom-left"`` \| ``"bottom-right"`` |
+| `position?` | ``"top-right"`` \| ``"top-left"`` \| ``"bottom-right"`` \| ``"bottom-left"`` |
 
 #### Returns
 
@@ -332,7 +332,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `name` | `string` |
-| `image` | [`ArrayBufferView`](../interfaces/internal_.ArrayBufferView.md) \| [`ImageBitmap`](../modules/internal_.md#imagebitmap) \| `HTMLImageElement` \| [`ImageData`](../modules/internal_.md#imagedata) \| { `data`: `Uint8Array` \| `Uint8ClampedArray` ; `height`: `number` ; `width`: `number`  } |
+| `image` | `HTMLImageElement` \| [`ImageData`](../modules/internal_.md#imagedata) \| [`ImageBitmap`](../modules/internal_.md#imagebitmap) \| [`ArrayBufferView`](../interfaces/internal_.ArrayBufferView.md) \| { `data`: `Uint8Array` \| `Uint8ClampedArray` ; `height`: `number` ; `width`: `number`  } |
 | `options?` | `Object` |
 | `options.content?` | [`number`, `number`, `number`, `number`] |
 | `options.pixelRatio?` | `number` |
@@ -1156,7 +1156,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `url` | `string` |
-| `callback` | (`error?`: [`Error`](../modules/internal_.md#error), `result?`: [`ImageBitmap`](../modules/internal_.md#imagebitmap) \| `HTMLImageElement`) => `void` |
+| `callback` | (`error?`: [`Error`](../modules/internal_.md#error), `result?`: `HTMLImageElement` \| [`ImageBitmap`](../modules/internal_.md#imagebitmap)) => `void` |
 
 #### Returns
 
@@ -2455,7 +2455,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `name` | `string` |
-| `image` | [`ArrayBufferView`](../interfaces/internal_.ArrayBufferView.md) \| [`ImageBitmap`](../modules/internal_.md#imagebitmap) \| `HTMLImageElement` \| [`ImageData`](../modules/internal_.md#imagedata) \| { `data`: `Uint8Array` \| `Uint8ClampedArray` ; `height`: `number` ; `width`: `number`  } |
+| `image` | `HTMLImageElement` \| [`ImageData`](../modules/internal_.md#imagedata) \| [`ImageBitmap`](../modules/internal_.md#imagebitmap) \| [`ArrayBufferView`](../interfaces/internal_.ArrayBufferView.md) \| { `data`: `Uint8Array` \| `Uint8ClampedArray` ; `height`: `number` ; `width`: `number`  } |
 
 #### Returns
 

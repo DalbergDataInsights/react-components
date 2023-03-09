@@ -120,7 +120,7 @@ Extend the bounds to include a given LngLat or LngLatBounds.
 
 | Name | Type |
 | :------ | :------ |
-| `obj` | [`number`, `number`] \| [`number`, `number`, `number`, `number`] \| [`LngLat`](internal_.LngLat.md) \| { `lat`: `number` ; `lng`: `number`  } \| { `lat`: `number` ; `lon`: `number`  } \| [`LngLatBounds`](internal_.LngLatBounds.md) \| [[`LngLatLike`](../modules/internal_.md#lnglatlike), [`LngLatLike`](../modules/internal_.md#lnglatlike)] |
+| `obj` | [`LngLatBounds`](internal_.LngLatBounds.md) \| [[`LngLatLike`](../modules/internal_.md#lnglatlike), [`LngLatLike`](../modules/internal_.md#lnglatlike)] \| [`number`, `number`, `number`, `number`] \| [`number`, `number`] \| [`LngLat`](internal_.LngLat.md) \| { `lat`: `number` ; `lng`: `number`  } \| { `lat`: `number` ; `lon`: `number`  } |
 
 #### Returns
 

@@ -217,7 +217,6 @@
 - [AnySourceData](internal_.md#anysourcedata)
 - [AnySourceImpl](internal_.md#anysourceimpl)
 - [Appearance](internal_.md#appearance)
-- [ArrayBufferLike](internal_.md#arraybufferlike)
 - [AspectRatio](internal_.md#aspectratio)
 - [Attachment](internal_.md#attachment)
 - [AttributionControlProps](internal_.md#attributioncontrolprops)
@@ -1145,16 +1144,6 @@ ___
 #### Defined in
 
 node_modules/csstype/index.d.ts:18066
-
-___
-
-### ArrayBufferLike
-
-Ƭ **ArrayBufferLike**: `ArrayBufferTypes`[keyof `ArrayBufferTypes`]
-
-#### Defined in
-
-node_modules/typescript/lib/lib.es5.d.ts:1683
 
 ___
 

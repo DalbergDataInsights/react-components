@@ -1,10 +1,16 @@
 {
   "name": "@dalbergdatainsights/react-components",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Dalberg Data Insight's Library of React Components",
-  "main": "index.d.ts",
+  "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "exit 0"
+    "rollup": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -23,17 +29,23 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.8",
-    "@types/react": "^18.0.27",
-    "react": "16 - 18",
     "react-map-gl": "^7.0.21"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
     "@types/react": "*",
-    "better-docs": "^2.7.2",
     "jsdoc": "^4.0.0",
-    "taffydb": "^2.7.3",
+    "rollup": "^3.18.0",
+    "rollup-plugin-dts": "^5.2.0",
+    "tslib": "^2.5.0",
     "typedoc": "^0.23.24",
     "typedoc-plugin-markdown": "^3.14.0",
     "typedoc-plugin-missing-exports": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": "16 - 18",
+    "react-dom": "16 - 18"
   }
 }

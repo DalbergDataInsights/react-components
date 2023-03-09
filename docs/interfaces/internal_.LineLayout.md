@@ -25,7 +25,7 @@
 
 ### line-cap
 
-• `Optional` **line-cap**: ``"square"`` \| ``"butt"`` \| ``"round"`` \| [`Expression`](../modules/internal_.md#expression)
+• `Optional` **line-cap**: ``"round"`` \| ``"butt"`` \| ``"square"`` \| [`Expression`](../modules/internal_.md#expression)
 
 #### Defined in
 

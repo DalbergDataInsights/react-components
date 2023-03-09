@@ -123,7 +123,7 @@ ___
 
 ### type
 
-• **type**: ``"touchcancel"`` \| ``"touchend"`` \| ``"touchstart"``
+• **type**: ``"touchstart"`` \| ``"touchend"`` \| ``"touchcancel"``
 
 #### Overrides
 
