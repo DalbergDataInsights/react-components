@@ -1,5 +1,5 @@
 import React from "react"
-import { Wrapper, iWrapper } from "./core"
+import { Wrapper, iWrapper, iReactive } from "./core"
 
 import { manifest as tableManifest, iTable, iHeader } from "./components/Table"
 
@@ -26,11 +26,11 @@ import {
   manifest as toggleButtonGroupManifest,
   iToggleButtonGroup,
 } from "./components/ToggleButtonGroup"
-export const ToggleButtonGroup = (props: iToggleButtonGroup & iWrapper) => (
+export const ToggleButtonGroup = (props: iToggleButtonGroup & iReactive) => (
   <Wrapper {...toggleButtonGroupManifest} {...props} />
 )
 
 import { manifest as dropdownManifest, iDropdown } from "./components/Dropdown"
-export const Dropdown = (props: iDropdown & iWrapper) => (
+export const Dropdown = (props: iDropdown & iReactive) => (
   <Wrapper {...dropdownManifest} {...props} />
 )

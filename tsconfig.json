@@ -1,16 +1,27 @@
 {
   "compilerOptions": {
-    "target": "ES2018",
+    "module": "ESNext",
+    "target": "es5",
+
     "allowJs": true,
     "jsx": "react-jsx",
-    "sourceMap": true,
+
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node"
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "declaration": true,
+    "declarationDir": "types",
+    "emitDeclarationOnly": true,
+    "outDir": "dist"
   },
   "include": ["./*", "core", "components", "layouts"],
   "exclude": ["node_modules", ".github", ".npmrc", ".gitignore"],
   "typedocOptions": {
-    "entryPoints": ["index.d.ts"],
+    "entryPoints": ["index.ts"],
     "out": "docs"
   },
   "tags": {

@@ -23,7 +23,7 @@ const WrapperComponent = ({
   subscribers = [],
   observers = [],
   ...props
-}: iWrapper) => {
+}: iWrapper & iReactive) => {
   const config = useContext(ComponentContext) // default: {}
 
   props = mergeDicts(
@@ -52,10 +52,13 @@ export interface iWrapper {
   Component: React.FC<any>
   defaults: any
   name: string
-  init: ([], [], {}) => void
-  subscribers: iSubscriber[]
-  observers: iObserver[]
-  props: any
+  init?: ([], [], {}) => void
+}
+
+export interface iReactive {
+  subscribers?: iSubscriber[]
+  observers?: iObserver[]
+  props?: Object
 }
 
 function arePropsEqual(prevProp, newProps) {
