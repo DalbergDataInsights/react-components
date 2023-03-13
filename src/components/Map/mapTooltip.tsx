@@ -16,18 +16,20 @@ export const Tooltip = ({
   }
 }
 
-export const renderTooltip = ({ info, ...props }) => {
+export const renderTooltip = ({ info, arrow, ...props }) => {
   return (
     <>
       <div {...props.label}>
-        {info.label ? `${info.label}: ` : ""}
-        {info.name || ""}
+        <span style={{...props.labelSpan}}>{info.label ? `${info.label}: ` : ""}</span>
+        <span style={{...props.valueSpan}}>{info.name || ""} </span>
       </div>
       <div {...props.value}>
-        {info.variable ? `${info.variable}: ` : ""}
-        {info.value ? Math.round(info.value) : "N/A"}
+        <span style={{...props.labelSpan}}>{info.variable ? `${info.variable}: ` : ""}</span>
+        <span style={{...props.valueSpan}}>{info.value ? Math.round(info.value) : "N/A"}
         {info.units ? info.units : ""}
+        </span>
       </div>
+      {arrow && <span style={{ ...props.arrowStyle }}></span>}
     </>
   )
 }
