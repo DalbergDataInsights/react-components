@@ -1,13 +1,18 @@
+import { LngLatBoundsLike } from "react-map-gl"
 import { checkState } from "../../core/util"
 
-export const useMapStates = (subscribers, observers, props) => {
+export const useMapStates = (
+  subscribers: object[],
+  observers: object[],
+  props: any
+) => {
   // adding states
   checkState("point", props)
   checkState("click", props)
   // adding onMove sub
   subscribers.unshift({
     on: "move",
-    func: (event) => {
+    func: (event: any) => {
       const featureData = getInfoFromMapEvent(event)
       props["setPoint"](featureData)
     },
@@ -15,7 +20,7 @@ export const useMapStates = (subscribers, observers, props) => {
 
   subscribers.unshift({
     on: "click",
-    func: (event) => {
+    func: (event: any) => {
       let featureData = getInfoFromMapEvent(event)
       if (featureData) {
         featureData =
@@ -27,11 +32,11 @@ export const useMapStates = (subscribers, observers, props) => {
 
   observers.unshift({
     args: ["controller", "click", "bounds", "data"],
-    func: (args) => {
-      if (args.click) {
+    func: (args: any) => {
+      if (args.click && Object.keys(args.click).length > 0) {
         const newBound = getBound(args.click?.feature?.geometry.coordinates)
         const noClickRegions = args.controller.allLabels.filter(
-          (l) => l !== args.click.name
+          (l: string) => l !== args.click.name
         )
         args.click["noClick"] = noClickRegions
         args.controller?.fitBounds(newBound)
@@ -43,7 +48,7 @@ export const useMapStates = (subscribers, observers, props) => {
   })
 }
 
-function getInfoFromMapEvent(event) {
+function getInfoFromMapEvent(event: any) {
   const {
     features,
     lngLat: { lng, lat },
@@ -62,10 +67,10 @@ function getInfoFromMapEvent(event) {
     : undefined
 }
 
-function getBound(coordinates) {
-  const allLat = []
-  const allLng = []
-  collapse(coordinates).forEach((e, i) => {
+function getBound(coordinates: any) {
+  const allLat: number[] = []
+  const allLng: number[] = []
+  collapse(coordinates).forEach((e: number, i: number) => {
     if (i % 2 == 0) {
       allLat.push(e)
     } else {
@@ -87,7 +92,7 @@ function getBound(coordinates) {
 // input is like multiple nested arrays
 // desired ouput is a array of arrays
 // of values [[v1, v2], [v1, v2], [v1, v2]]
-function collapse(arrayOfArrays) {
+function collapse(arrayOfArrays: any): number[] {
   if (!(arrayOfArrays[0] instanceof Array)) return arrayOfArrays
   else return collapse(arrayOfArrays.flat())
 }

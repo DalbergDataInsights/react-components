@@ -18,7 +18,8 @@ export {
   ScaleControl as MapScaleControl,
 } from "react-map-gl"
 export { MapLegend } from "./components/Map"
-export const Map = (props: iMap & iWrapper) => (
+
+export const Map = (props: iMap & iReactive): JSX.Element => (
   <Wrapper {...mapManifest} {...props} />
 )
 

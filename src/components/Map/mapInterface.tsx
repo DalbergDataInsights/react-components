@@ -1,8 +1,10 @@
+import { LngLatBoundsLike } from "react-map-gl"
+
 export interface iMap {
   data: any
   steps: number[]
   colors: string[]
-  bounds?: number[][]
+  bounds?: LngLatBoundsLike
   controller?: object
   layers?: string[]
   point?: iMapInfo
