@@ -45,7 +45,7 @@ export const Dropdown = ({
                   setOpen(false)
                   onClick(event)
                   setButtonLabel(
-                    label ? `${label}${event.target.name}` : event.taget.name
+                    label ? `${label}${event.target.name}` : event.target.name
                   )
                 }}
                 onMove={onMove}

@@ -1,11 +1,12 @@
 import { LngLatBoundsLike } from "react-map-gl"
 import { checkState } from "../../core/util"
+import { iReactive } from "../../core"
 
-export const useMapStates = (
-  subscribers: object[],
-  observers: object[],
-  props: any
-) => {
+export const useMapStates = ({
+  subscribers = [],
+  observers = [],
+  props = {},
+}: iReactive) => {
   // adding states
   checkState("point", props)
   checkState("click", props)

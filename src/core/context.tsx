@@ -1,12 +1,16 @@
 import React, { createContext } from "react"
 
-export const ComponentContext = createContext({ container: {} })
+interface iConfig {
+  [index: string]: {}
+}
+
+export const ComponentContext = createContext({})
 export const ComponentContextProvider = ({
   children,
   config,
 }: {
   children: React.ReactNode
-  config: { container: {} }
+  config: iConfig
 }) => {
   return (
     <ComponentContext.Provider value={config}>
