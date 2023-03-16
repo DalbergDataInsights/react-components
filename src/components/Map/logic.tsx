@@ -28,7 +28,7 @@ export const useMapStates = (subscribers, observers, props) => {
   observers.unshift({
     args: ["controller", "click", "bounds", "data"],
     func: (args) => {
-      if (args.click) {
+      if (Object.keys(args.click).length > 0) {
         const newBound = getBound(args.click?.feature?.geometry.coordinates)
         const noClickRegions = args.controller.allLabels.filter(
           (l) => l !== args.click.name
