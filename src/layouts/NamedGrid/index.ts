@@ -9,7 +9,7 @@ export const manifest = {
       overflow: "hidden",
       height: "100%",
       margin: "auto",
-      gap: "8px",
+      gap: "1rem",
     },
   },
   Component: NamedGridLayout,

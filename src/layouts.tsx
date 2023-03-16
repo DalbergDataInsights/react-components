@@ -7,3 +7,4 @@ import { iNamedGrid } from "./layouts/NamedGrid"
 export const NamedGrid = (props: iNamedGrid & iReactive) => (
   <Wrapper {...namedGridManifest} {...props} />
 )
+export { NamedGridArea as NamedArea } from "./layouts/NamedGrid/namedGridAreaElement"

@@ -11,7 +11,7 @@ import { useMapStates } from "./mapLogic"
 
 export const manifest = {
   name: "Map",
-  version: "0.1",
+  version: "0.4",
   defaults: defaults,
   Component: MapComponent,
   init: useMapStates,
