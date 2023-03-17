@@ -1,6 +1,6 @@
 import { MapComponent } from "./mapComponent"
 import { defaults } from "./mapConfig"
-import { useMapStates } from "./logic"
+import { useMapStates } from "./mapLogic"
 
 /**
  * Creates Map React component
@@ -11,7 +11,7 @@ import { useMapStates } from "./logic"
 
 export const manifest = {
   name: "Map",
-  version: "0.1",
+  version: "0.4",
   defaults: defaults,
   Component: MapComponent,
   init: useMapStates,

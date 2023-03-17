@@ -1,6 +1,11 @@
 import { checkState } from "../../core/util"
+import { iReactive } from "../../core/interface"
 
-export function useDropdown(subscribers, observers, props) {
+export function useDropdown({
+  subscribers = [],
+  observers = [],
+  props = {},
+}: iReactive) {
   checkState("click", props, props.options.filter((o) => o.selected)[0] || {})
   checkState("point", props)
 
@@ -20,13 +25,6 @@ export function useDropdown(subscribers, observers, props) {
       }
     },
   })
-
-  // subscribers.unshift({
-  //   on: "change",
-  //   func: (event) => {
-  //     props["setClick"](getInfo(event))
-  //   },
-  // })
 }
 
 function getInfo(event) {
