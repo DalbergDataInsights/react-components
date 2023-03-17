@@ -25,3 +25,13 @@ export interface iMapInfo {
   offsetX?: number
   offsetY?: number
 }
+
+export interface iMapColorLegend {
+  colors: string[]
+  steps: Array<any>
+  suffix?: string
+  naColor?: string
+  props?: any
+  naText?: string
+  borderRadius?: string | number
+}
