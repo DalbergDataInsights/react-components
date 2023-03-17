@@ -18,5 +18,5 @@ export const manifest = {
 }
 
 export { default as MapLegend } from "./MapLegend"
-export { default as MapColorLegend} from "./MapColorLegend"
+export { default as MapColorLegend} from "./mapColorLegendComponent"
 export type { iMap } from "./mapInterface"
