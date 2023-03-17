@@ -3,68 +3,66 @@ import { defaults } from "./colorLegendConfig"
 import { mergeDicts } from "../../core/util"
 
 export interface iColorLegend {
-  colors?: string[]
-  labels: Array<any>
+  colors: string[]
+  steps: Array<any>
   suffix?: string
   title?: string
+  naColor?: string
   props?: any
-  colorNA?: string
+  naText?: string
+  borderRadius?: string | number
 }
 
 const ColorLegendComponent = ({
   colors = [],
-  labels = [],
+  steps = [],
   suffix = " ",
   title = "",
   props,
-  colorNA = "#6C6C6D",
+  naColor = "#6C6C6D",
+  naText = "n.d",
+  borderRadius = "2rem"
 }: iColorLegend) => {
-  colors = labels.length > 1 ? colors.slice(0, labels.length - 1) : colors
-  props = mergeDicts(JSON.parse(JSON.stringify(defaults.props)), props)
+  colors = steps.length > 1 ? colors.slice(1, steps.length - 1) : colors
+  props = mergeDicts(defaults.props, props)
 
-  // COLOR NA styling
-  const colorNAStyle = mergeDicts(JSON.parse(JSON.stringify(props.colorNA)), {
-    style: {
-      backgroundColor: colorNA,
-      borderTopRightRadius: colors.length === 0 ? "0.5rem" : "",
-      borderBottomRightRadius: colors.length === 0 ? "0.5rem" : "",
-    },
-  })
-
-  console.log(colorNAStyle)
   return (
     <div {...props.legend}>
-      <div {...props.scale}>
+      <div {...props.colors}>
         <div {...props.empty}></div>
-        <div {...colorNAStyle}></div>
+        <div
+          {...mergeDicts(
+            {
+              style: {
+                backgroundColor: naColor,
+                borderRadius: `${borderRadius} 0 0 ${borderRadius}`,
+              },
+            },
+            props.color
+          )}
+        ></div>
         {colors &&
-          colors.map((color, index) => {
-            const borderStyle =
-              index === colors.length - 1
-                ? {
-                    borderTopRightRadius: "0.5rem",
-                    borderBottomRightRadius: "0.5rem",
-                  }
-                : {}
-            return (
-              <div
-                style={{ backgroundColor: color, flexGrow: 2, ...borderStyle }}
-              ></div>
-            )
-          })}
+          colors.map((color, index) => (
+            <div
+              {...mergeDicts(
+                {
+                  style: {
+                    backgroundColor: color,
+                    borderRadius:
+                      index === colors.length - 1 ? `0 ${borderRadius} ${borderRadius} 0` : "0",
+                  },
+                },
+                props.color
+              )}
+            ></div>
+          ))}
         <div {...props.empty}></div>
       </div>
-      <div {...props.scale}>
-        <div {...props.label}>n.d</div>
-        {labels &&
-          labels.map((label) => (
-            <div {...props.label}>
-              {label}
-              {suffix}
-            </div>
-          ))}
+      <div {...props.steps}>
+        <div {...props.step}>{naText}</div>
+        {steps &&
+          steps.map((step) => <div {...props.step}>{`${step}${suffix}`}</div>)}
       </div>
-      {title && <div {...props.title}>{title}</div>}
     </div>
   )
 }

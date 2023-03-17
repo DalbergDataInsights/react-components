@@ -2,44 +2,51 @@ export const defaults = {
   props: {
     legend: {
       style: {
-        alignItems: "center",
-        position: "absolute",
         width: "100%",
-        bottom: "1rem",
+        padding: 0,
+        margin: 0,
+        overflow: "hidden",
+        borderRadius: "2rem",
       },
     },
-    title: {
-      style: {textAlign:"center", fontSize: "70%", fontWeight:"bold", color: "#777", clear: "both"},
-    },
-    scale: {
+    steps: {
       style: {
         display: "flex",
-        justifyContent: "space-around",
-        flexFlow: "row wrap",
-        alignItems: "stretch",
-        minHeight: ".8rem",
-        minWidth: "1ch",
         flexDirection: "row",
-        verticalAlign: "middle",
-
+        alignItems: "baseline",
+        justifyContent: "center",
       },
     },
-    label: {
+    step: {
+      style: {
+        display: "block",
+        flexGrow: 1,
+        flexBasis: 0,
+        textAlign: "center",
+        fontSize: "0.8rem",
+        lineHeight: "1rem",
+      },
+    },
+    colors: {
+      style: {
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "stretch",
+      },
+    },
+    color: {
       style: {
         flexGrow: 2,
-        textAlign: "center",
-        fontSize: ".6rem",
+        height: "1rem",
+        minWidth: "2rem",
       },
     },
     empty: {
       style: {
-        flexGrow: 1
-      }
+        flexGrow: 1,
+        height: "1rem",
+        minWidth: "1rem",
+      },
     },
-    colorNA: {
-      style:{flexGrow: 2,
-      borderTopLeftRadius: "0.5rem",
-      borderBottomLeftRadius: "0.5rem",}
-    }
   },
 }
