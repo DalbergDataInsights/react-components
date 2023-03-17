@@ -5,7 +5,7 @@ import { iMapColorLegend } from "./mapInterface"
 export const ColorLegendComponent = ({
   colors = [],
   steps = [],
-  suffix = " ",
+  suffix = "%",
   props,
   naColor = "#6C6C6D",
   naText = "n.d",

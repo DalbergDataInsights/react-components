@@ -6,8 +6,6 @@ export const defaults = {
         padding: 0,
         margin: 0,
         overflow: "hidden",
-        borderRadius: "2rem",
-        position:"absolute",
       },
     },
     steps: {
@@ -16,6 +14,7 @@ export const defaults = {
         flexDirection: "row",
         alignItems: "baseline",
         justifyContent: "center",
+        paddingTop: "0.25rem",
       },
     },
     step: {
@@ -38,14 +37,14 @@ export const defaults = {
     color: {
       style: {
         flexGrow: 2,
-        height: "1rem",
+        height: "0.75rem",
         minWidth: "2rem",
       },
     },
     empty: {
       style: {
         flexGrow: 1,
-        height: "1rem",
+        height: "0.75rem",
         minWidth: "1rem",
       },
     },
