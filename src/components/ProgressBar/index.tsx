@@ -5,7 +5,7 @@ export const manifest = {
   name: "ProgressBar",
   version: "0.1",
   defaults: defaults,
-  Component: ProgressBarComponent
+  Component: ProgressBarComponent,
 }
 
-export type { iProgressBar} from "./progressBarComponent"
+export type { iProgressBar } from "./progressBarInterface"
