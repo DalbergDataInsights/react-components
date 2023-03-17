@@ -7,6 +7,7 @@ export const defaults = {
         margin: 0,
         overflow: "hidden",
         borderRadius: "2rem",
+        position:"absolute",
       },
     },
     steps: {

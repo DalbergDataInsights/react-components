@@ -18,10 +18,14 @@ export {
   NavigationControl as MapNavigationControl,
   ScaleControl as MapScaleControl,
 } from "react-map-gl"
-export { MapLegend } from "./components/Map"
 
 export const Map = (props: iMap & iReactive): JSX.Element => (
   <Wrapper {...mapManifest} {...props} />
+)
+
+import { mapColorLegendManifest, iMapColorLegend } from "./components/Map"
+export const MapColorLegend = (props: iMapColorLegend & iReactive) => (
+  <Wrapper {...mapColorLegendManifest} {...props} />
 )
 
 import {

@@ -1,5 +1,7 @@
 import { MapComponent } from "./mapComponent"
 import { defaults } from "./mapConfig"
+import { ColorLegendComponent } from "./mapColorLegendComponent"
+import {defaults as colorLegendDefaults} from "./colorLegendConfig"
 import { useMapStates } from "./mapLogic"
 
 /**
@@ -17,6 +19,11 @@ export const manifest = {
   init: useMapStates,
 }
 
-export { default as MapLegend } from "./MapLegend"
-export { default as MapColorLegend} from "./mapColorLegendComponent"
-export type { iMap } from "./mapInterface"
+export const mapColorLegendManifest = {
+  name: "MapColorLegend",
+  version: "0.4",
+  defaults: colorLegendDefaults,
+  Component: ColorLegendComponent
+}
+
+export type { iMap, iMapColorLegend } from "./mapInterface"
