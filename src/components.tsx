@@ -40,3 +40,11 @@ import { manifest as dropdownManifest, iDropdown } from "./components/Dropdown"
 export const Dropdown = (props: iDropdown & iReactive) => (
   <Wrapper {...dropdownManifest} {...props} />
 )
+
+import {
+  manifest as progressBarManifest,
+  iProgressBar,
+} from "./components/ProgressBar"
+export const ProgressBar = (props: iProgressBar & iReactive) => (
+  <Wrapper {...progressBarManifest} {...props} />
+)
