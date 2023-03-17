@@ -1,7 +1,7 @@
 export interface iDropdown {
-  label: string
   options: iDropdownOption[]
-  DropdownOptionComponent: Function
+  label?: string
+  DropdownOptionComponent?: Function
   click?: iDropdownOption
   point?: iDropdownOption
   onMove?: Function
@@ -11,7 +11,7 @@ export interface iDropdown {
 
 export interface iDropdownOption {
   value: string
-  selected: boolean
+  selected?: boolean
   label?: string
   name?: string
   tooltip?: string

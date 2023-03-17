@@ -1,10 +1,10 @@
 import { Layer } from "react-map-gl"
 
-function createLayerObject(layer, props) {
+function createLayerObject(layer: any, props: any) {
   return <Layer {...layer} {...props} />
 }
 
-function createPaintProps(id, props) {
+function createPaintProps(id: string, props: any) {
   const layerPropertiesKeys = Object.keys(props).filter((e) => e.startsWith(id))
   const type = layerPropertiesKeys[0].split("-")[1]
   const layerProps = {}
@@ -14,7 +14,7 @@ function createPaintProps(id, props) {
   return { key: id, id, type, paint: layerProps }
 }
 
-export function createLayer(id, props, states) {
+export function createLayer(id: string, props: any, states: any) {
   const layerProps = createPaintProps(id, props)
   const filterProps = createFilterProps(id, props, states)
   return createLayerObject(layerProps, filterProps)
@@ -23,7 +23,7 @@ export function createLayer(id, props, states) {
 // TODO think how to better align with mapbox documentation
 // this now will work for only very simple filters
 // also it expects 3rd argument to be a function
-function createFilterProps(id, props, states) {
+function createFilterProps(id: string, props: any, states: any) {
   const filterKey = Object.keys(props).filter(
     (e) => e.startsWith("filter") && e.endsWith(id)
   )
@@ -39,8 +39,19 @@ function createFilterProps(id, props, states) {
 
 // add interpolated color palette?
 export function createDataLyer(
-  id,
-  { steps, colors, naColor = "#BFBFBF", valueColumn = "value", ...props }
+  id: string,
+  {
+    steps,
+    colors,
+    naColor = "#BFBFBF",
+    valueColumn = "value",
+    ...props
+  }: {
+    steps: number[]
+    colors: string[]
+    naColor: string
+    valueColumn: string
+  }
 ) {
   const layerProps = createPaintProps(id, {
     ...{
@@ -57,7 +68,7 @@ export function createDataLyer(
   return createLayerObject(layerProps, props)
 }
 
-export function createPalette(steps, colors) {
+export function createPalette(steps: number[], colors: string[]) {
   const palette: Array<string | number> = colors ? [colors[0]] : []
   if (steps && colors) {
     steps.forEach((s, i) => {

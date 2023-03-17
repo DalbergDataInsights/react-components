@@ -1,10 +1,5 @@
-import { ChangeEvent, useEffect, useRef } from "react"
-
-export interface iObserver {
-  args: Array<string>
-  func: (args: Record<string | number, unknown>) => void
-  prop: string | unknown
-}
+import { useEffect, useRef } from "react"
+import { iObserver } from "./interface"
 
 interface StateProps<T> {
   observers: Array<iObserver>

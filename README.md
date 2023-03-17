@@ -41,6 +41,8 @@
   - [Integrate with framework](#integrate-with-framework)
   - [Embed your code](#embed-your-code)
   - [Generating documentation](#generating-documentation)
+  - [Publishing](#publishing)
+- [Known issues](#known-issues)
 
 # Consuming packages
 
@@ -434,6 +436,7 @@ Basic map usage only consists of data, colors and steps
 - colors - a list of colors in hex or rgb\
 - steps - a list of color steps\
   !important Since colors are fit in the gaps, there should be 1 more color than steps
+- bounds - a list of lists with coordinates that bound the country. (if using Google maps, the lat and lng are swapped places!) [[left, top], [right, bottom]]
 
 ### Map Props Passthrough
 

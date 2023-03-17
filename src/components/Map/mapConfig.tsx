@@ -3,7 +3,6 @@ export const defaults = {
     [-15, 7.3],
     [-7.5, 12.7],
   ],
-  padding: { top: 50, bottom: 50 },
   props: {
     map: {
       mapStyle: "mapbox://styles/babkouew/ckr299qhb19zd17p8hbm1o3kk",
@@ -13,7 +12,7 @@ export const defaults = {
       dragPan: false,
       scrollZoom: false,
       doubleClickZoom: false,
-      style: { overflowY: "hidden" },
+      style: {},
     },
     tooltip: {
       anchor: {
@@ -65,17 +64,21 @@ export const defaults = {
       "filter-blur": [
         "in",
         "name",
-        (states) => {
+        (states: any) => {
           return states.click?.noClick || []
         },
       ],
       "blur-fill-color": "#d2d4d4",
-      "blur-fill-opacity": 0.25,
+      "blur-fill-opacity": 0.5,
       "outline-line-color": "#d2d4d4",
-      "outline-line-width": 2,
-      "filter-highlight": ["==", "name", (states) => states.point?.name || ""],
+      "outline-line-width": 1,
+      "filter-highlight": [
+        "==",
+        "name",
+        (states: any) => states.point?.name || "",
+      ],
       "highlight-line-color": "#d2d4d4",
-      "highlight-line-width": 4,
+      "highlight-line-width": 2,
     },
 
     legend: {

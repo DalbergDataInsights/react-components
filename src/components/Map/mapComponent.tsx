@@ -1,6 +1,6 @@
-import React, { useRef, useMemo } from "react"
+import React, { useRef, useMemo, useEffect } from "react"
 
-import Map, { Source, MapRef } from "react-map-gl"
+import Map, { Source, MapRef, LngLatBoundsLike } from "react-map-gl"
 // import MapLegend from "./mapLegend"
 
 import { iMap } from "./mapInterface"
@@ -37,7 +37,7 @@ export const MapComponent = ({
   onMove,
   onClick,
   // customization
-  fitBoundsOptions = { padding: 0, duration: 2000 },
+  fitBoundsOptions = { padding: 20, duration: 3000 },
   children,
   props,
 }: iMap) => {
@@ -49,14 +49,17 @@ export const MapComponent = ({
   // basically every interaction with the component outside of component
   // as for example with observers
   // should be done through contorller
-  function fitBounds(bounds) {
+  function fitBounds(bounds: LngLatBoundsLike) {
     if (mapRef.current) {
       mapRef.current.fitBounds(bounds, fitBoundsOptions)
     }
   }
   controller["fitBounds"] = fitBounds
   controller["allLabels"] = useMemo(
-    () => data.features.map((f) => f.properties.name),
+    () =>
+      data.features.map(
+        (f: { properties: { name: string } }) => f.properties.name
+      ),
     [data]
   )
 
@@ -64,11 +67,17 @@ export const MapComponent = ({
     <Map
       ref={mapRef}
       initialViewState={{
-        bounds,
+        longitude: 0,
+        latitude: 0,
+        zoom: 2,
       }}
       interactiveLayerIds={["data"]}
       onMouseMove={onMove}
       onClick={onClick}
+      onLoad={() => {
+        fitBounds(bounds)
+      }}
+      attributionControl={false}
       {...props.map}
     >
       <Source type="geojson" data={data}>
@@ -84,7 +93,7 @@ export const MapComponent = ({
         })}
       </Source>
 
-      {pointTooltip && point ? (
+      {pointTooltip && point && point.feature ? (
         <Tooltip
           type="point"
           renderer={pointTooltip}
@@ -96,7 +105,7 @@ export const MapComponent = ({
         ""
       )}
 
-      {clickTooltip && click ? (
+      {clickTooltip && click && click.feature ? (
         <Tooltip renderer={clickTooltip} {...props.tooltip} info={click} />
       ) : (
         ""

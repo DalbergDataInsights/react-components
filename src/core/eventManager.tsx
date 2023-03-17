@@ -1,9 +1,5 @@
 import { useCallback, ChangeEvent } from "react"
-
-export interface iSubscriber {
-  on: string
-  func: (event: ChangeEvent<HTMLInputElement>) => void
-}
+import { iSubscriber } from "./interface"
 
 export const useEventManagement = ({
   subscribers,
