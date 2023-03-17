@@ -20,36 +20,43 @@ export const defaults = {
         top: "2%",
         right: "5%",
       },
-      style: {
+      container:{
+        style: {
         position: "absolute",
         margin: "8px",
         padding: "4px",
-        background: "rgba(31, 69, 110, 0.75)",
-        borderRadius: "4px",
+        backgroundColor: "rgba(31, 69, 110)",
+        opacity: "0.75",
+        borderRadius: ".8rem",
         color: "#fff",
-        minWidth: "108px",
-        fontSize: "10px",
+        minWidth: "5rem",
+        fontSize: "0.7rem",
         zIndex: "9",
         pointerEvents: "none",
-        minHeight: "48px",
+        minHeight: "3rem",
+      }},
+      arrow: {
+        style: {
+          content: "",
+          position: "absolute",
+          top: "50%",
+          right: "100%",
+          marginTop: "-5px",
+          borderWidth: "5px",
+          borderStyle: "solid",
+          borderColor:
+            "transparent rgba(31, 69, 110) transparent transparent",
+        },
       },
-      arrowStyle: {
-        content: "",
-        position: "absolute",
-        top: "50%",
-        right: "100%",
-        marginTop: "-5px",
-        borderWidth: "5px",
-        borderStyle: "solid",
-        borderColor:
-          "transparent rgba(31, 69, 110, 0.75) transparent transparent",
-      },
-      labelSpan: { textAlign: "left" },
-      valueSpan: {
-        fontWeight: "bold",
-        textAlign: "right",
-        clear: "right",
-        float: 'right',
+      label: { style: {textAlign: "left", lineHeight:"1.5rem" } },
+      value: {
+        style: {
+          fontWeight: "700",
+          textAlign: "right",
+          clear: "right",
+          float: "right",
+          lineHeight:"1rem"
+        },
       },
     },
     layers: {

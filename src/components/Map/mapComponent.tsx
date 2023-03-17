@@ -86,7 +86,7 @@ export const MapComponent = ({
 
       {pointTooltip && point ? (
         <Tooltip
-          arrow
+          type="point"
           renderer={pointTooltip}
           {...props.tooltip}
           info={point}
