@@ -30,3 +30,15 @@ export function checkState(stateString, props, initValue = {}) {
     props[setStateString] = setState
   }
 }
+
+function getColor(value, colors, steps) {
+	let color = colors[0];
+  steps.forEach((step, index) => {
+    if (step > value) {
+      color = colors[index+1];
+    } else {
+    return;
+    }
+});
+return color
+}
