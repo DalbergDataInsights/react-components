@@ -32,6 +32,32 @@ export function checkState(stateString, props, initValue = {}) {
   }
 }
 
+
+export function getColor({
+  value,
+  colors,
+  steps,
+  naColor,
+}: {
+  value: number
+  colors: string[]
+  steps: number[]
+  naColor: string
+}) {
+  if (value == undefined || value == null || Number.isNaN(value)) {
+    return naColor
+  }
+  let color = colors[0]
+  steps.forEach((step: number, index: number) => {
+    if (step > value) {
+      color = colors[index + 1]
+    } else {
+      return color
+    }
+  })
+  return color
+}
+
 export function getBounds(coordinates: any) {
   const allLat: number[] = []
   const allLng: number[] = []
@@ -69,5 +95,3 @@ function collapse(arrayOfArrays: any): number[] {
   if (!(arrayOfArrays[0] instanceof Array)) return arrayOfArrays
   else return collapse(arrayOfArrays.flat())
 }
-
-// [[[v1,v2]], [[v1, v2], [v1, v2], [[v1,v2]]]]
