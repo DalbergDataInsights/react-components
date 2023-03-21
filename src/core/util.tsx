@@ -31,14 +31,27 @@ export function checkState(stateString, props, initValue = {}) {
   }
 }
 
-export function getColor(value, colors, steps) {
-	let color = colors[0];
-  steps.forEach((step, index) => {
+export function getColor({
+  value,
+  colors,
+  steps,
+  naColor,
+}: {
+  value: number
+  colors: string[]
+  steps: number[]
+  naColor: string
+}) {
+  if (value == undefined || value == null || Number.isNaN(value)) {
+    return naColor
+  }
+  let color = colors[0]
+  steps.forEach((step: number, index: number) => {
     if (step > value) {
-      color = colors[index+1];
+      color = colors[index + 1]
     } else {
-    return;
+      return color
     }
-});
-return color
+  })
+  return color
 }
