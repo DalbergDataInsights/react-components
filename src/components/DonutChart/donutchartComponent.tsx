@@ -1,76 +1,83 @@
-import React, { useState, useEffect } from 'react'
-import { iDonutChart } from './donutchartInterface'
-
+import React, { useState, useEffect } from "react"
+import { iDonutChart } from "./donutchartInterface"
+import CountUp from "react-countup"
+import { useDim } from "../../hooks/useDim"
+// TODO
+// 1. Move the background color to props
+// 2. Move most of the props to the config
+// 3. Fix the interface
+// 4. Make sure responsive values are solid
+// 5. Props passthrough setup
+// 6. Rename the component to ProgressCircle to stay consistent with progressbar
 export const DonutChartComponent = ({
-    size = 250,
-    progress = 75,
-    maxValue = 100,
-    strokeWidth = 15,
-    cirlceOneStroke="#E5E5EA",
-    circleTwoStroke="#D1D1D6",
-    suffix = "%",
-    props,
+  value,
+  color = "#D1D1D6",
+  minValue = 0,
+  maxValue = 100,
+  suffix = "%",
+  props,
 }: iDonutChart) => {
-    const [offset, setOffset] = useState(0)
-    const center = size / 2
-    const radius = size / 2 - strokeWidth * 2
-    const circumference = 2 * Math.PI * radius
-    console.log("radius", radius)
+  const { ref, prop: radius } = useDim({ getter: (c) => c.r.baseVal.value })
+  const circumference = Math.round(radius * 2 * Math.PI)
+  const [offset, setOffset] = useState("300%")
 
+  useEffect(() => {
+    const progress = (value - minValue) / maxValue
+    const offset = (1 - progress) * circumference
+    setOffset(`${offset}`)
+  }, [radius])
 
+  // move this to defaults!
+  const cirlceOneStroke = "#E5E5EA"
 
-    useEffect(() => {
-    setOffset(((maxValue - progress) / maxValue) * circumference)
-    }, [setOffset, progress, circumference, maxValue])
-
-    return (
-        // <div {...props.chart}>
-        <div>
-            <svg width={size} height={size} {...props}>
-                <circle
-                    stroke={cirlceOneStroke}
-                    cx={center}
-                    cy={center}
-                    r={radius}
-                    fill="transparent"
-                    strokeWidth={strokeWidth}
-                />
-                <circle
-                    stroke={circleTwoStroke}
-                    cx={center}
-                    cy={center}
-                    r={radius}
-                    rx={10}
-                    ry={10}
-                    fill="transparent"
-                    strokeWidth={strokeWidth}
-                    strokeDasharray={circumference}
-                    strokeDashoffset={offset}
-                    style = {{
-                        transition: "stroke-dashoffset 3s ease-in-out",
-                        transform: "rotate(-90deg)",
-                        transformOrigin: "50% 50%",
-                        borderRadius: "1rem",
-                    }}
-                />
-                <text
-                    x={center}
-                    y={center}
-                    textAnchor="middle"
-                    style={{
-                        fontSize: "0.8rem",
-                        lineHeight: "1rem",
-                        textAlign: "right",
-                        float: "left",
-                        transition: "width 3s",
-                    }}
-                    >
-                    {progress}
-                    {suffix}
-                </text>
-            </svg>
-        </div>
-    )
+  return (
+    // get rid of this div because you have a wrapper anyway?
+    <div style={{ width: "100%", height: "100%" }}>
+      {/* props.circle */}
+      <svg width={"100%"} height={"100%"} {...props}>
+        {/* props.total */}
+        <circle
+          stroke={cirlceOneStroke}
+          cx={"50%"}
+          cy={"50%"}
+          r={"calc(50% - 0.5rem)"}
+          fill="transparent"
+          strokeWidth={"1rem"}
+          strokeLinecap="round"
+          ref={ref}
+        />
+        {/* props.progress */}
+        <circle
+          stroke={color}
+          cx={"50%"}
+          cy={"50%"}
+          r={"calc(50% - 0.5rem)"}
+          fill="transparent"
+          strokeWidth={"1rem"}
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          strokeLinecap="round"
+          style={{
+            transition: "stroke-dashoffset 3s",
+            transform: "rotate(-90deg)",
+            transformOrigin: "center",
+          }}
+        />
+      </svg>
+      <div
+        // props.value
+        style={{
+          position: "absolute",
+          top: "calc(50% - 0.5rem)",
+          textAlign: "center",
+          left: `calc(50% - ${0.25 * (value.toString().length + 1)}rem)`,
+          color: "black",
+          fontSize: "0.8rem",
+          lineHeight: "1rem",
+        }}
+      >
+        <CountUp start={minValue} end={value} duration={3} suffix={suffix} />
+      </div>
+    </div>
+  )
 }
-
-export default DonutChartComponent

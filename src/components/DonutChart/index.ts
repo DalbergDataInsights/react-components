@@ -1,4 +1,4 @@
-import DonutChartComponent from './donutchartComponent'
+import { DonutChartComponent } from './donutchartComponent'
 import { defaults } from './donutchartConfig'
 
 export const manifest = {
