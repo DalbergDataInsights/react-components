@@ -1,6 +1,7 @@
 import { LngLatBoundsLike } from "react-map-gl"
 import { checkState } from "../../core/util"
 import { iReactive } from "../../core"
+import { getBounds } from "../../core/util"
 
 export const useMapStates = ({
   subscribers = [],
@@ -35,7 +36,7 @@ export const useMapStates = ({
     args: ["controller", "click", "bounds", "data"],
     func: (args: any) => {
       if (args.click && Object.keys(args.click).length > 0) {
-        const newBound = getBound(args.click?.feature?.geometry.coordinates)
+        const newBound = getBounds(args.click?.feature?.geometry.coordinates)
         const noClickRegions = args.controller.allLabels.filter(
           (l: string) => l !== args.click.name
         )
@@ -67,35 +68,3 @@ function getInfoFromMapEvent(event: any) {
       }
     : undefined
 }
-
-function getBound(coordinates: any) {
-  const allLat: number[] = []
-  const allLng: number[] = []
-  collapse(coordinates).forEach((e: number, i: number) => {
-    if (i % 2 == 0) {
-      allLat.push(e)
-    } else {
-      allLng.push(e)
-    }
-  })
-
-  const minLat = Math.min(...allLat)
-  const maxLat = Math.max(...allLat)
-  const maxLng = Math.max(...allLng)
-  const minLng = Math.min(...allLng)
-
-  return [
-    [minLat, minLng],
-    [maxLat, maxLng],
-  ]
-}
-
-// input is like multiple nested arrays
-// desired ouput is a array of arrays
-// of values [[v1, v2], [v1, v2], [v1, v2]]
-function collapse(arrayOfArrays: any): number[] {
-  if (!(arrayOfArrays[0] instanceof Array)) return arrayOfArrays
-  else return collapse(arrayOfArrays.flat())
-}
-
-// [[[v1,v2]], [[v1, v2], [v1, v2], [[v1,v2]]]]

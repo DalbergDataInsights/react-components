@@ -99,13 +99,13 @@ export const MapComponent = ({
           {...props.tooltip}
           info={point}
           anchor={{ left: point.offsetX, top: point.offsetY }}
-        />
+          />
       ) : (
         ""
       )}
 
       {clickTooltip && click && click.feature ? (
-        <Tooltip renderer={clickTooltip} {...props.tooltip} info={click} />
+        <Tooltip renderer={clickTooltip} {...props.tooltip} info={click} pointer={{display:"none"}}/>
       ) : (
         ""
       )}

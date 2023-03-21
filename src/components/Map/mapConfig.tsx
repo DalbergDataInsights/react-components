@@ -16,19 +16,55 @@ export const defaults = {
     },
     tooltip: {
       anchor: {
-        top: "2%",
+        top: "5%",
         right: "5%",
       },
       style: {
+        display: "flex",
         position: "absolute",
-        margin: "8px",
-        padding: "4px",
-        background: "rgba(0, 0, 0, 0.8)",
+        width: "fit-content",
+        gap: "0.5rem",
+        padding: "0.5rem",
+        borderRadius: ".5rem",
+        fontSize: "0.75rem",
+        lineHeight: "1rem",
+        marginTop: "-1rem",
+        marginLeft: "1rem",
+        backgroundColor: "#1F456E",
+        opacity: "0.8",
         color: "#fff",
-        maxWidth: "300px",
-        fontSize: "10px",
         zIndex: "9",
         pointerEvents: "none",
+      },
+      pointer: {
+        style: {
+          content: "",
+          position: "absolute",
+          top: "25%",
+          right: "100%",
+          borderWidth: "0.3rem",
+          borderStyle: "solid",
+          borderColor: "transparent #1F456E transparent transparent",
+        },
+      },
+      label: {
+        style: {
+          textAlign: "left",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          rowGap: "0.5rem",
+        },
+      },
+      value: {
+        style: {
+          fontWeight: "500",
+          textAlign: "right",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-end",
+          rowGap: "0.5rem",
+        },
       },
     },
     layers: {
@@ -52,19 +88,6 @@ export const defaults = {
       ],
       "highlight-line-color": "#d2d4d4",
       "highlight-line-width": 2,
-    },
-
-    legend: {
-      position: "top-3 left-3", //using tailwind css
-      title: {
-        style: { fontWeight: "bold", color: "blue", alignSelf: "flex-end" },
-      },
-      legendBox: {
-        style: {
-          backgroundColor: "rgb(229 231 235)",
-          opacity: "0.7",
-        },
-      },
     },
   },
 }
