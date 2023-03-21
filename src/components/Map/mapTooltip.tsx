@@ -1,23 +1,44 @@
 import React from "react"
 import { mergeDicts } from "../../core/util"
 
+interface iTooltip {
+  renderer: React.FC<iTooltipRenderer>
+  anchor: {}
+  info: {}
+  pointer?: {}
+}
+
+interface iTooltipRenderer {
+  info: Record<string|number, any>
+  props?: any
+}
+
+
 // find a better way to pass variables
 export const Tooltip = ({
   renderer = renderTooltip,
   anchor,
   info,
-  type,
   ...props
-}) => {
+}: iTooltip) => {
   if (info) {
-    let tooltipProps = mergeDicts(JSON.parse(JSON.stringify(props.container)), {
+    let tooltipProps = mergeDicts(JSON.parse(JSON.stringify(props)), {
       style: anchor,
     })
-    return <div {...tooltipProps}>{renderer({ info, type, ...props })}</div>
+
+    return <div {...tooltipProps}>{renderer({ info, props })}</div>
   }
 }
 
-export const renderTooltip = ({ info, type, ...props }) => {
+// pointer
+export const Pointer = ({ props }: { props: any }) => {
+  return <span {...props}></span>
+}
+
+export const renderTooltip = ({
+  info,
+  props,
+}: iTooltipRenderer): JSX.Element => {
   return (
     <>
       <div {...props.label}>
@@ -31,7 +52,7 @@ export const renderTooltip = ({ info, type, ...props }) => {
           {info.units ? info.units : ""}
         </div>
       </div>
-      {type === "point" && <span {...props.arrow}></span>}
+      <Pointer props={props.pointer} />
     </>
   )
 }
