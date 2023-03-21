@@ -18,10 +18,14 @@ export {
   NavigationControl as MapNavigationControl,
   ScaleControl as MapScaleControl,
 } from "react-map-gl"
-export { MapLegend } from "./components/Map"
 
 export const Map = (props: iMap & iReactive): JSX.Element => (
   <Wrapper {...mapManifest} {...props} />
+)
+
+import { mapColorLegendManifest, iMapColorLegend } from "./components/Map"
+export const MapColorLegend = (props: iMapColorLegend & iReactive) => (
+  <Wrapper {...mapColorLegendManifest} {...props} />
 )
 
 import {
@@ -35,4 +39,12 @@ export const ToggleButtonGroup = (props: iToggleButtonGroup & iReactive) => (
 import { manifest as dropdownManifest, iDropdown } from "./components/Dropdown"
 export const Dropdown = (props: iDropdown & iReactive) => (
   <Wrapper {...dropdownManifest} {...props} />
+)
+
+import {
+  manifest as progressBarManifest,
+  iProgressBar,
+} from "./components/ProgressBar"
+export const ProgressBar = (props: iProgressBar & iReactive) => (
+  <Wrapper {...progressBarManifest} {...props} />
 )
