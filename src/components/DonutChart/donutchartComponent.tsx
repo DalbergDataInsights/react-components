@@ -4,7 +4,6 @@ import { iDonutChart } from './donutchartInterface'
 export const DonutChartComponent = ({
     size = 250,
     progress = 75,
-    color = "#7AA995",
     maxValue = 100,
     strokeWidth = 15,
     cirlceOneStroke="#E5E5EA",
