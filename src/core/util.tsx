@@ -1,5 +1,6 @@
 import { useState } from "react"
 
+// merge two dictionaries - used to merge props and keeping all default values
 export function mergeDicts(a, b, path = undefined) {
   if (!path) {
     path = []
@@ -31,6 +32,7 @@ export function checkState(stateString, props, initValue = {}) {
   }
 }
 
+
 export function getColor({
   value,
   colors,
@@ -54,4 +56,42 @@ export function getColor({
     }
   })
   return color
+}
+
+export function getBounds(coordinates: any) {
+  const allLat: number[] = []
+  const allLng: number[] = []
+  collapse(coordinates).forEach((e: number, i: number) => {
+    if (i % 2 == 0) {
+      allLat.push(e)
+    } else {
+      allLng.push(e)
+    }
+  })
+
+  const minLat = getMin(allLat)
+  const maxLat = getMax(allLat)
+  const maxLng = getMax(allLng)
+  const minLng = getMin(allLng)
+
+  return [
+    [minLat, minLng],
+    [maxLat, maxLng],
+  ]
+}
+
+function getMax(arr: number[]) {
+  return arr.reduce((max, v) => (max >= v ? max : v), -Infinity)
+}
+
+function getMin(arr: number[]) {
+  return arr.reduce((min, v) => (min <= v ? min : v), +Infinity)
+}
+
+// input is like multiple nested arrays
+// desired ouput is a array of arrays
+// of values [[v1, v2], [v1, v2], [v1, v2]]
+function collapse(arrayOfArrays: any): number[] {
+  if (!(arrayOfArrays[0] instanceof Array)) return arrayOfArrays
+  else return collapse(arrayOfArrays.flat())
 }
