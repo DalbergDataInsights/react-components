@@ -16,7 +16,7 @@ export const defaults = {
     },
     tooltip: {
       anchor: {
-        top: "2%",
+        top: "5%",
         right: "5%",
       },
       style: {
@@ -30,8 +30,8 @@ export const defaults = {
         lineHeight: "1rem",
         marginTop: "-1rem",
         marginLeft: "1rem",
-        backgroundColor: "#3473B7",
-        opacity: "0.75",
+        backgroundColor: "#1F456E",
+        opacity: "0.8",
         color: "#fff",
         zIndex: "9",
         pointerEvents: "none",
@@ -44,7 +44,7 @@ export const defaults = {
           right: "100%",
           borderWidth: "0.3rem",
           borderStyle: "solid",
-          borderColor: "transparent #3473B7 transparent transparent",
+          borderColor: "transparent #1F456E transparent transparent",
         },
       },
       label: {
@@ -58,7 +58,7 @@ export const defaults = {
       },
       value: {
         style: {
-          fontWeight: "600",
+          fontWeight: "500",
           textAlign: "right",
           display: "flex",
           flexDirection: "column",
@@ -88,19 +88,6 @@ export const defaults = {
       ],
       "highlight-line-color": "#d2d4d4",
       "highlight-line-width": 2,
-    },
-
-    legend: {
-      position: "top-3 left-3", //using tailwind css
-      title: {
-        style: { fontWeight: "bold", color: "blue", alignSelf: "flex-end" },
-      },
-      legendBox: {
-        style: {
-          backgroundColor: "rgb(229 231 235)",
-          opacity: "0.7",
-        },
-      },
     },
   },
 }

@@ -9,10 +9,9 @@ interface iTooltip {
 }
 
 interface iTooltipRenderer {
-  info: Record<string|number, any>
+  info: Record<string | number, any>
   props?: any
 }
-
 
 // find a better way to pass variables
 export const Tooltip = ({
@@ -28,11 +27,6 @@ export const Tooltip = ({
 
     return <div {...tooltipProps}>{renderer({ info, props })}</div>
   }
-}
-
-// pointer
-export const Pointer = ({ props }: { props: any }) => {
-  return <span {...props}></span>
 }
 
 export const renderTooltip = ({
@@ -52,7 +46,7 @@ export const renderTooltip = ({
           {info.units ? info.units : ""}
         </div>
       </div>
-      <Pointer props={props.pointer} />
+      <span {...props.pointer}></span>
     </>
   )
 }
