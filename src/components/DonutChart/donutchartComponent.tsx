@@ -47,7 +47,7 @@ export const DonutChartComponent = ({
                     strokeDasharray={circumference}
                     strokeDashoffset={offset}
                     style = {{
-                        transition: "stroke-dashoffset 2s ease-in-out",
+                        transition: "stroke-dashoffset 3s ease-in-out",
                         transform: "rotate(-90deg)",
                         transformOrigin: "50% 50%",
                         borderRadius: "1rem",
@@ -57,6 +57,13 @@ export const DonutChartComponent = ({
                     x={center}
                     y={center}
                     textAnchor="middle"
+                    style={{
+                        fontSize: "0.8rem",
+                        lineHeight: "1rem",
+                        textAlign: "right",
+                        float: "left",
+                        transition: "width 3s",
+                    }}
                     >
                     {progress}
                     {suffix}
