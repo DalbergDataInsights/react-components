@@ -14,7 +14,7 @@ export const ProgressBarComponent = ({
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    setProgress(((value - minValue) / maxValue) * 100)
+    setProgress(((value - minValue) / (maxValue - minValue)) * 100)
   }, [])
 
   return (
