@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { iDonutChart } from "./donutchartInterface"
+import { iProgressCircle } from "./progressCircleInterface"
 import CountUp from "react-countup"
 import { useDim } from "../../hooks/useDim"
 // TODO
@@ -9,14 +9,15 @@ import { useDim } from "../../hooks/useDim"
 // 4. Make sure responsive values are solid
 // 5. Props passthrough setup
 // 6. Rename the component to ProgressCircle to stay consistent with progressbar
-export const DonutChartComponent = ({
+// 7. rename label into value on the probs to stay consistent with other component - on the progress bar too
+export const ProgressCircleComponent = ({
   value,
   color = "#D1D1D6",
   minValue = 0,
   maxValue = 100,
   suffix = "%",
   props,
-}: iDonutChart) => {
+}: iProgressCircle) => {
   const { ref, prop: radius } = useDim({ getter: (c) => c.r.baseVal.value })
   const circumference = Math.round(radius * 2 * Math.PI)
   const [offset, setOffset] = useState("300%")
@@ -27,57 +28,40 @@ export const DonutChartComponent = ({
     setOffset(`${offset}`)
   }, [radius])
 
-  // move this to defaults!
-  const cirlceOneStroke = "#E5E5EA"
-
   return (
-    // get rid of this div because you have a wrapper anyway?
-    <div style={{ width: "100%", height: "100%" }}>
-      {/* props.circle */}
-      <svg width={"100%"} height={"100%"} {...props}>
-        {/* props.total */}
+    <>
+      <svg {...props.circle}>
         <circle
-          stroke={cirlceOneStroke}
+          {...props.total}
           cx={"50%"}
           cy={"50%"}
           r={"calc(50% - 0.5rem)"}
-          fill="transparent"
-          strokeWidth={"1rem"}
-          strokeLinecap="round"
           ref={ref}
         />
-        {/* props.progress */}
         <circle
+          {...props.progress}
           stroke={color}
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
           cx={"50%"}
           cy={"50%"}
           r={"calc(50% - 0.5rem)"}
-          fill="transparent"
-          strokeWidth={"1rem"}
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-          strokeLinecap="round"
-          style={{
-            transition: "stroke-dashoffset 3s",
-            transform: "rotate(-90deg)",
-            transformOrigin: "center",
-          }}
         />
       </svg>
       <div
-        // props.value
+        {...props.value}
         style={{
-          position: "absolute",
-          top: "calc(50% - 0.5rem)",
-          textAlign: "center",
-          left: `calc(50% - ${0.25 * (value.toString().length + 1)}rem)`,
-          color: "black",
-          fontSize: "0.8rem",
-          lineHeight: "1rem",
+          ...{
+            position: "absolute",
+            top: "calc(50% - 0.5rem)",
+            left: `calc(50% - ${0.25 * (value.toString().length + 1)}rem)`,
+            textAlign: "center",
+          },
+          ...props.value.style,
         }}
       >
         <CountUp start={minValue} end={value} duration={3} suffix={suffix} />
       </div>
-    </div>
+    </>
   )
 }

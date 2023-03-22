@@ -50,5 +50,14 @@ export const defaults = {
         transition: "width 3s",
       },
     },
+    value: {
+      style: {
+        fontSize: "0.8rem",
+        lineHeight: "1rem",
+        textAlign: "right",
+        float: "left",
+        transition: "width 3s",
+      },
+    },
   },
 }

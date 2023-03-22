@@ -24,6 +24,7 @@ export const useDim = ({ getter = defaultGetter, on = "resize" }) => {
     })
 
     return () => {
+      window.removeEventListener("load", handleWindowSizeChange)
       window.removeEventListener("resize", handleWindowSizeChange)
     }
   }, [])

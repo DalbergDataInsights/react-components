@@ -48,3 +48,11 @@ import {
 export const ProgressBar = (props: iProgressBar & iReactive) => (
   <Wrapper {...progressBarManifest} {...props} />
 )
+
+import {
+  manifest as progressCircleManifest,
+  iProgressCircle,
+} from "./components/ProgressCircle"
+export const ProgressCircle = (props: iProgressCircle & iReactive) => (
+  <Wrapper {...progressCircleManifest} {...props} />
+)
