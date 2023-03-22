@@ -49,7 +49,7 @@ export const ProgressBarComponent = ({
             props.label
           )}
         >
-          <CountUp start={minValue} end={value} duration={3} suffix={suffix} />
+          <CountUp start={minValue} end={value} suffix={suffix} {...props.counter} />
         </div>
         <div {...mergeDicts({ style: { float: "right" } }, props.value)}>
           {maxValue}

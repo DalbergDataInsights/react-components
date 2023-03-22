@@ -30,5 +30,9 @@ export const defaults = {
         lineHeight: "1rem",
       },
     },
+    counter: {
+      duration:"3",
+      prefix: "",
+    }
   },
 }
