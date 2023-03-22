@@ -105,7 +105,7 @@ To register your own event, pass a list of subscribers in the prop of any compon
       on: "click",
       // console.log the click event (will contain click target)
       func: (event) => {
-        console.log(event)
+        console.log(event);
       },
     },
   ]}
@@ -130,16 +130,16 @@ State events are triggered when a dependency is changing instead of when a commo
         // click was requested above
         // don't forget to avoid unnecessary rerendering
         if (args.click) {
-          const newBound = getBound(args.click?.feature?.geometry.coordinates)
+          const newBound = getBound(args.click?.feature?.geometry.coordinates);
           const noClickRegions = args.controller.allLabels.filter(
             (l) => l !== args.click.name
-          )
+          );
           // you can even set new properties to states!
-          args.click["noClick"] = noClickRegions
+          args.click["noClick"] = noClickRegions;
           // and access functions that would usually be enabled only with refs!
-          args.controller?.fitBounds(newBound)
+          args.controller?.fitBounds(newBound);
         } else {
-          args.controller?.fitBounds(args.bounds)
+          args.controller?.fitBounds(args.bounds);
         }
       },
     },
@@ -487,46 +487,46 @@ there is an example coming from the default logic of the map
 ```javascript
 const useMapStates = (subscribers, observers, props) => {
   // adding states
-  checkState("point", props)
-  checkState("click", props)
+  checkState("point", props);
+  checkState("click", props);
   // adding onMove sub
   subscribers.unshift({
     on: "move",
     func: (event) => {
-      const featureData = getInfoFromMapEvent(event)
-      props["setPoint"](featureData)
+      const featureData = getInfoFromMapEvent(event);
+      props["setPoint"](featureData);
     },
-  })
+  });
 
   subscribers.unshift({
     on: "click",
     func: (event) => {
-      let featureData = getInfoFromMapEvent(event)
+      let featureData = getInfoFromMapEvent(event);
       if (featureData) {
         featureData =
-          props.click?.name === featureData.name ? undefined : featureData
+          props.click?.name === featureData.name ? undefined : featureData;
       }
-      props["setClick"](featureData)
+      props["setClick"](featureData);
     },
-  })
+  });
 
   observers.unshift({
     args: ["controller", "click", "bounds", "data"],
     func: (args) => {
       if (args.click) {
-        const newBound = getBound(args.click?.feature?.geometry.coordinates)
+        const newBound = getBound(args.click?.feature?.geometry.coordinates);
         const noClickRegions = args.controller.allLabels.filter(
           (l) => l !== args.click.name
-        )
-        args.click["noClick"] = noClickRegions
-        args.controller?.fitBounds(newBound)
+        );
+        args.click["noClick"] = noClickRegions;
+        args.controller?.fitBounds(newBound);
       } else {
-        args.controller?.fitBounds(args.bounds)
+        args.controller?.fitBounds(args.bounds);
       }
     },
     prop: "click",
-  })
-}
+  });
+};
 ```
 
 # Layouts
@@ -596,6 +596,79 @@ children and style are passed through as usual
     </NamedGrid>
   </div>
 </ComponentContextProvider>
+```
+
+# Progress Bar
+
+-React component that displays a progress bar based on a given value
+
+## Progress Bar Props
+
+- Value - required - represents the current value of the progress bar.
+- Color - optional - sets the color of the progress bar. The default value is "#7AA995".
+- maxValue – optional - sets the maximum value of the progress bar. The default value is 100.
+- minValue - optional - sets the minimum value of the progress bar. The default value is 0.
+- Suffix – optional - sets the suffix to be added to the value displayed in the progress bar. The default value is "%".
+- Props – optional – allows for additional properties to be passed to the element
+
+## Progress Bar Props Passthrough
+
+- bar – root component (div)
+- total – container for current progress (div)
+- progress – style formatting on current progress
+- labels – container for the labels(div)
+- label – style formatting on each label
+
+### Progress Bar Example Usage
+
+```jsx
+import React from "react";
+import { ProgressBar } from "./ProgressBarComponent";
+function App() {
+return (
+  <ProgressBar
+    Value = ‘85’
+
+    //you can change the css or layout by passing components styling
+
+    props: {
+        //wrapper container
+        bar: {
+          style: {
+            padding: 0,
+            margin: 0,
+          },
+        },
+        //root component element
+        total: {
+        //properties of the progress bar component
+          style: {
+            //additive styling formats
+          },
+        },
+        progress: {
+        //properties of the progress which is shown based on value passed
+          style: {
+            //additive styling formats
+          },
+        },
+
+        labels: {
+        //properties of the container that holds the progress bar labels
+          style: {
+            //additive styling formats
+          },
+        },
+        label: {
+          style: {
+            //additive styling formats
+          },
+        },
+      },
+    };
+    />
+)
+}
 ```
 
 # Contribution
