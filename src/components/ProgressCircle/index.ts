@@ -3,7 +3,7 @@ import { defaults } from './progressCircleConfig'
 
 export const manifest = {
   name: "DonutChart",
-  version: "0.1",
+  version: "0.2",
   defaults: defaults,
   Component: ProgressCircleComponent,
 }
