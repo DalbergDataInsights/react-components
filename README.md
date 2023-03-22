@@ -1,3 +1,5 @@
+@dalbergdatainsights/react-components / [Exports](modules.md)
+
 - [Consuming packages](#consuming-packages)
 - [Developer TODO and Roadmap](#developer-todo-and-roadmap)
   - [NamedGrid](#namedgrid)
@@ -10,8 +12,8 @@
   - [Props passthrough](#props-passthrough)
   - [Component styling](#component-styling)
   - [Utility](#utility)
-    - [mergeDicts(a,b)](#mergedicts-a-b-)
-    - [checkStates(name, props)](#checkstates-name--props-)
+    - [mergeDicts(a,b)](#mergedictsab)
+    - [checkStates(name, props)](#checkstatesname-props)
 - [Components](#components)
   - [DropdownButton Component](#dropdownbutton-component)
     - [DropdownButton States](#dropdownbutton-states)
@@ -33,6 +35,10 @@
     - [Map Props](#map-props)
     - [Map Props Passthrough](#map-props-passthrough)
     - [Map Example](#map-example)
+  - [Progress Circle](#progress-circle)
+    - [Progress Circle Props](#progress-circle-props)
+    - [Progress Circle Props Passthrough](#progress-circle-props-passthrough)
+    - [ProgressCircle Example](#progresscircle-example)
 - [Layouts](#layouts)
   - [NamedGrid](#namedgrid-1)
   - [NamedGrid Props](#namedgrid-props)
@@ -41,8 +47,6 @@
   - [Integrate with framework](#integrate-with-framework)
   - [Embed your code](#embed-your-code)
   - [Generating documentation](#generating-documentation)
-  - [Publishing](#publishing)
-- [Known issues](#known-issues)
 
 # Consuming packages
 
@@ -193,6 +197,44 @@ advantage is that if both dictionaries have for example {style: {}}, it will be 
 ### checkStates(name, props)
 
 checks if the name & setName are present in props and adds it there if not -- useful for controlled component initialization
+
+## Hooks
+
+### useDim
+
+useDim hook gets updated component prop on window load and resize. Commonly used within the framework to response on the viewport or container values.
+
+```jsx
+import { useDim } from "../../hooks/useDim"
+
+export const Component = () => {
+  // by default it will return width and height of the component
+  const { ref, prop: {width, height} } = useDim()
+  // but it can be anything with a custom getter - for example a radius of an svg circle
+  const { ref: refCircle, prop: {width, height} } = useDim({ getter: (c) => c.r.baseVal.value })
+
+  return (
+    <>
+      <div
+      // pass to a div directly
+      ref={ref}>
+        <svg>
+          <circle
+            cx={"50%"}
+            cy={"50%"}
+            r={"calc(50% - 0.5rem)"}
+            // you need to pass ref to the target component
+            ref={refCircle}
+          />
+        </svg>
+      </div>
+    </>
+  )
+}
+
+
+```
+
 
 # Components
 
@@ -436,7 +478,6 @@ Basic map usage only consists of data, colors and steps
 - colors - a list of colors in hex or rgb\
 - steps - a list of color steps\
   !important Since colors are fit in the gaps, there should be 1 more color than steps
-- bounds - a list of lists with coordinates that bound the country. (if using Google maps, the lat and lng are swapped places!) [[left, top], [right, bottom]]
 
 ### Map Props Passthrough
 
@@ -463,7 +504,6 @@ const colors = [
   "#006837",
 ]
 const steps = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-
 
 <div style={{ height: "100vh", width: "100vw" }}>
   // consume config here
@@ -529,6 +569,33 @@ const useMapStates = (subscribers, observers, props) => {
     prop: "click",
   })
 }
+```
+
+## Progress Circle
+
+React component built around SVG to help visualize data conviniently. Has the ability to visualize infinite progress and render customized content at the center.
+
+### Progress Circle Props
+
+- value - required - the proportion of the whole to be represented.
+- color?: string
+- minValue?: number
+- maxValue?: number
+- suffix?: string | any
+- props?: Any
+
+### Progress Circle Props Passthrough
+
+- circle - the SVG element representing the whole
+- total - the SVG element representing the total
+- progress - the SVG element representing the progress
+- value - the element containing the value
+
+### ProgressCircle Example
+
+```jsx
+// progress into my savings
+<ProgressCircle value={100} minValue={10} maxValue={150} suffix={"$"} />
 ```
 
 # Layouts
@@ -623,9 +690,5 @@ Make sure that you follow philosophy and the assumptions of the framework
 2. Install typedoc-plugin-markdown
 3. Install typedoc-plugin-missing-exports
 4. Run `npx typedoc --plugin typedoc-plugin-markdown --plugin typedoc-plugin-missing-exports`
-
-## Publishing
-
-1. Rollup
 
 > Don't forget to increment your version before publishing!

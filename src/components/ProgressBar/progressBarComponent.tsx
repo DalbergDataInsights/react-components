@@ -14,7 +14,7 @@ export const ProgressBarComponent = ({
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    setProgress(((value - minValue) / maxValue) * 100)
+    setProgress(((value - minValue) / (maxValue - minValue)) * 100)
   }, [])
 
   return (
@@ -51,7 +51,7 @@ export const ProgressBarComponent = ({
         >
           <CountUp start={minValue} end={value} duration={3} suffix={suffix} />
         </div>
-        <div {...mergeDicts({ style: { float: "right" } }, props.label)}>
+        <div {...mergeDicts({ style: { float: "right" } }, props.value)}>
           {maxValue}
           {suffix}
         </div>
