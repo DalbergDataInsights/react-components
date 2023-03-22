@@ -121,7 +121,6 @@
 - [LineString](../interfaces/internal_.LineString.md)
 - [MapBoxZoomEvent](../interfaces/internal_.MapBoxZoomEvent.md)
 - [MapContextEvent](../interfaces/internal_.MapContextEvent.md)
-- [MapLegendProps](../interfaces/internal_.MapLegendProps.md)
 - [MapSourceDataEvent](../interfaces/internal_.MapSourceDataEvent.md)
 - [MapStyleDataEvent](../interfaces/internal_.MapStyleDataEvent.md)
 - [MapboxOptions](../interfaces/internal_.MapboxOptions.md)
@@ -179,12 +178,18 @@
 - [VideoSourceRaw](../interfaces/internal_.VideoSourceRaw.md)
 - [WebGLContextEvent](../interfaces/internal_.WebGLContextEvent.md)
 - [WebGLContextEventInit](../interfaces/internal_.WebGLContextEventInit.md)
+- [iConfig](../interfaces/internal_.iConfig.md)
 - [iDropdown](../interfaces/internal_.iDropdown.md)
 - [iDropdownOption](../interfaces/internal_.iDropdownOption.md)
 - [iHeader](../interfaces/internal_.iHeader.md)
 - [iMap](../interfaces/internal_.iMap.md)
+- [iMapColorLegend](../interfaces/internal_.iMapColorLegend.md)
 - [iMapInfo](../interfaces/internal_.iMapInfo.md)
 - [iNamedGrid](../interfaces/internal_.iNamedGrid.md)
+- [iNamedGridArea](../interfaces/internal_.iNamedGridArea.md)
+- [iProgressBar](../interfaces/internal_.iProgressBar.md)
+- [iProgressCircle](../interfaces/internal_.iProgressCircle.md)
+- [iStatusColor](../interfaces/internal_.iStatusColor.md)
 - [iTable](../interfaces/internal_.iTable.md)
 - [iToggleButtonGroup](../interfaces/internal_.iToggleButtonGroup.md)
 - [iToggleButtonGroupOption](../interfaces/internal_.iToggleButtonGroupOption.md)
@@ -6954,7 +6959,7 @@ ___
 
 ### RefCallback
 
-Ƭ **RefCallback**<`T`\>: { `bivarianceHack`: (`instance`: `T`) => `void`  }[``"bivarianceHack"``]
+Ƭ **RefCallback**<`T`\>: { `bivarianceHack`: (`instance`: ``null`` \| `T`) => `void`  }[``"bivarianceHack"``]
 
 #### Type parameters
 

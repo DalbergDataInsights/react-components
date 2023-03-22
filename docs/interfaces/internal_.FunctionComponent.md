@@ -14,7 +14,7 @@
 
 ### FunctionComponent
 
-▸ **FunctionComponent**(`props`, `context?`): [`ReactElement`](internal_.ReactElement.md)<`any`, `any`\>
+▸ **FunctionComponent**(`props`, `context?`): ``null`` \| [`ReactElement`](internal_.ReactElement.md)<`any`, `any`\>
 
 #### Parameters
 
@@ -25,7 +25,7 @@
 
 #### Returns
 
-[`ReactElement`](internal_.ReactElement.md)<`any`, `any`\>
+``null`` \| [`ReactElement`](internal_.ReactElement.md)<`any`, `any`\>
 
 #### Defined in
 

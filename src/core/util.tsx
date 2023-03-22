@@ -1,7 +1,11 @@
 import { useState } from "react"
 
 // merge two dictionaries - used to merge props and keeping all default values
-export function mergeDicts(a, b, path = undefined) {
+export function mergeDicts(
+  a: { [key: string]: any },
+  b: { [key: string]: any },
+  path: string[] | undefined = undefined
+) {
   if (!path) {
     path = []
   }
@@ -19,7 +23,7 @@ export function mergeDicts(a, b, path = undefined) {
   return a
 }
 
-export function checkState(stateString, props, initValue = {}) {
+export function checkState(stateString: string, props: any, initValue = {}) {
   const propKeys = Object.keys(props)
   const setStateString = `set${
     stateString.charAt(0).toUpperCase() + stateString.slice(1)
@@ -31,7 +35,6 @@ export function checkState(stateString, props, initValue = {}) {
     props[setStateString] = setState
   }
 }
-
 
 export function getColor({
   value,

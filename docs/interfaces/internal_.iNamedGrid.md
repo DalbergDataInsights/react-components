@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[layouts/NamedGrid/namedGridInterface.tsx:2](https://github.com/DalbergDataInsights/react-components/blob/ff81224/layouts/NamedGrid/namedGridInterface.tsx#L2)
+[src/layouts/NamedGrid/namedGridInterface.tsx:2](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/layouts/NamedGrid/namedGridInterface.tsx#L2)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[layouts/NamedGrid/namedGridInterface.tsx:5](https://github.com/DalbergDataInsights/react-components/blob/ff81224/layouts/NamedGrid/namedGridInterface.tsx#L5)
+[src/layouts/NamedGrid/namedGridInterface.tsx:5](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/layouts/NamedGrid/namedGridInterface.tsx#L5)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[layouts/NamedGrid/namedGridInterface.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/ff81224/layouts/NamedGrid/namedGridInterface.tsx#L3)
+[src/layouts/NamedGrid/namedGridInterface.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/layouts/NamedGrid/namedGridInterface.tsx#L3)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[layouts/NamedGrid/namedGridInterface.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/ff81224/layouts/NamedGrid/namedGridInterface.tsx#L4)
+[src/layouts/NamedGrid/namedGridInterface.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/layouts/NamedGrid/namedGridInterface.tsx#L4)
 
 ___
 
@@ -62,4 +62,4 @@ ___
 
 #### Defined in
 
-[layouts/NamedGrid/namedGridInterface.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/ff81224/layouts/NamedGrid/namedGridInterface.tsx#L6)
+[src/layouts/NamedGrid/namedGridInterface.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/layouts/NamedGrid/namedGridInterface.tsx#L6)

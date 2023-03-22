@@ -167,7 +167,7 @@ ___
 
 ### currentTarget
 
-• `Readonly` **currentTarget**: `EventTarget`
+• `Readonly` **currentTarget**: ``null`` \| `EventTarget`
 
 Returns the object whose event listener's callback is currently being invoked.
 
@@ -247,7 +247,7 @@ ___
 
 ### srcElement
 
-• `Readonly` **srcElement**: `EventTarget`
+• `Readonly` **srcElement**: ``null`` \| `EventTarget`
 
 **`Deprecated`**
 
@@ -273,7 +273,7 @@ ___
 
 ### target
 
-• `Readonly` **target**: `EventTarget`
+• `Readonly` **target**: ``null`` \| `EventTarget`
 
 Returns the object to which event is dispatched (its target).
 

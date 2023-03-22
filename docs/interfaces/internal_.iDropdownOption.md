@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[components/Dropdown/dropdownInterface.tsx:15](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Dropdown/dropdownInterface.tsx#L15)
+[src/components/Dropdown/dropdownInterface.tsx:15](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Dropdown/dropdownInterface.tsx#L15)
 
 ___
 
@@ -32,17 +32,17 @@ ___
 
 #### Defined in
 
-[components/Dropdown/dropdownInterface.tsx:16](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Dropdown/dropdownInterface.tsx#L16)
+[src/components/Dropdown/dropdownInterface.tsx:16](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Dropdown/dropdownInterface.tsx#L16)
 
 ___
 
 ### selected
 
-• **selected**: `boolean`
+• `Optional` **selected**: `boolean`
 
 #### Defined in
 
-[components/Dropdown/dropdownInterface.tsx:14](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Dropdown/dropdownInterface.tsx#L14)
+[src/components/Dropdown/dropdownInterface.tsx:14](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Dropdown/dropdownInterface.tsx#L14)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[components/Dropdown/dropdownInterface.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Dropdown/dropdownInterface.tsx#L17)
+[src/components/Dropdown/dropdownInterface.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Dropdown/dropdownInterface.tsx#L17)
 
 ___
 
@@ -62,4 +62,4 @@ ___
 
 #### Defined in
 
-[components/Dropdown/dropdownInterface.tsx:13](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Dropdown/dropdownInterface.tsx#L13)
+[src/components/Dropdown/dropdownInterface.tsx:13](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Dropdown/dropdownInterface.tsx#L13)

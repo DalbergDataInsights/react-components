@@ -67,7 +67,7 @@ export const TableComponent = ({
             </Grid>
           )
         )}
-      {data.map((row) =>
+      {data.map((row: any) =>
         header.map((cell: { renderer: React.ReactNode } & any) =>
           cell.hidden ? (
             ""

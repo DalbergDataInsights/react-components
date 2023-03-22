@@ -28,11 +28,11 @@
 
 ### bounds
 
-• `Optional` **bounds**: `number`[][]
+• `Optional` **bounds**: [`LngLatBoundsLike`](../modules/internal_.md#lnglatboundslike)
 
 #### Defined in
 
-[components/Map/mapInterface.tsx:5](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/mapInterface.tsx#L5)
+[src/components/Map/mapInterface.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Map/mapInterface.tsx#L7)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[components/Map/mapInterface.tsx:15](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/mapInterface.tsx#L15)
+[src/components/Map/mapInterface.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Map/mapInterface.tsx#L17)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[components/Map/mapInterface.tsx:10](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/mapInterface.tsx#L10)
+[src/components/Map/mapInterface.tsx:12](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Map/mapInterface.tsx#L12)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[components/Map/mapInterface.tsx:11](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/mapInterface.tsx#L11)
+[src/components/Map/mapInterface.tsx:13](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Map/mapInterface.tsx#L13)
 
 ___
 
@@ -72,17 +72,21 @@ ___
 
 #### Defined in
 
-[components/Map/mapInterface.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/mapInterface.tsx#L4)
+[src/components/Map/mapInterface.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Map/mapInterface.tsx#L6)
 
 ___
 
 ### controller
 
-• `Optional` **controller**: `object`
+• `Optional` **controller**: `Object`
+
+#### Index signature
+
+▪ [key: `string`]: `any`
 
 #### Defined in
 
-[components/Map/mapInterface.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/mapInterface.tsx#L6)
+[src/components/Map/mapInterface.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Map/mapInterface.tsx#L8)
 
 ___
 
@@ -92,7 +96,7 @@ ___
 
 #### Defined in
 
-[components/Map/mapInterface.tsx:2](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/mapInterface.tsx#L2)
+[src/components/Map/mapInterface.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Map/mapInterface.tsx#L4)
 
 ___
 
@@ -102,7 +106,7 @@ ___
 
 #### Defined in
 
-[components/Map/mapInterface.tsx:14](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/mapInterface.tsx#L14)
+[src/components/Map/mapInterface.tsx:16](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Map/mapInterface.tsx#L16)
 
 ___
 
@@ -112,7 +116,7 @@ ___
 
 #### Defined in
 
-[components/Map/mapInterface.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/mapInterface.tsx#L7)
+[src/components/Map/mapInterface.tsx:9](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Map/mapInterface.tsx#L9)
 
 ___
 
@@ -122,7 +126,7 @@ ___
 
 #### Defined in
 
-[components/Map/mapInterface.tsx:13](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/mapInterface.tsx#L13)
+[src/components/Map/mapInterface.tsx:15](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Map/mapInterface.tsx#L15)
 
 ___
 
@@ -132,7 +136,7 @@ ___
 
 #### Defined in
 
-[components/Map/mapInterface.tsx:12](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/mapInterface.tsx#L12)
+[src/components/Map/mapInterface.tsx:14](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Map/mapInterface.tsx#L14)
 
 ___
 
@@ -142,7 +146,7 @@ ___
 
 #### Defined in
 
-[components/Map/mapInterface.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/mapInterface.tsx#L8)
+[src/components/Map/mapInterface.tsx:10](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Map/mapInterface.tsx#L10)
 
 ___
 
@@ -152,7 +156,7 @@ ___
 
 #### Defined in
 
-[components/Map/mapInterface.tsx:9](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/mapInterface.tsx#L9)
+[src/components/Map/mapInterface.tsx:11](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Map/mapInterface.tsx#L11)
 
 ___
 
@@ -162,7 +166,7 @@ ___
 
 #### Defined in
 
-[components/Map/mapInterface.tsx:16](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/mapInterface.tsx#L16)
+[src/components/Map/mapInterface.tsx:18](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Map/mapInterface.tsx#L18)
 
 ___
 
@@ -172,4 +176,4 @@ ___
 
 #### Defined in
 
-[components/Map/mapInterface.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Map/mapInterface.tsx#L3)
+[src/components/Map/mapInterface.tsx:5](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Map/mapInterface.tsx#L5)

@@ -105,7 +105,7 @@ ___
 
 ### data
 
-• `Optional` **data**: `string` \| [`Geometry`](../modules/internal_.md#geometry) \| [`Feature`](internal_.Feature.md)<[`Geometry`](../modules/internal_.md#geometry), { `[name: string]`: `any`;  }\> \| [`FeatureCollection`](internal_.FeatureCollection.md)<[`Geometry`](../modules/internal_.md#geometry), { `[name: string]`: `any`;  }\>
+• `Optional` **data**: `string` \| [`Geometry`](../modules/internal_.md#geometry) \| [`Feature`](internal_.Feature.md)<[`Geometry`](../modules/internal_.md#geometry), [`GeoJsonProperties`](../modules/internal_.md#geojsonproperties)\> \| [`FeatureCollection`](internal_.FeatureCollection.md)<[`Geometry`](../modules/internal_.md#geometry), [`GeoJsonProperties`](../modules/internal_.md#geojsonproperties)\>
 
 #### Defined in
 

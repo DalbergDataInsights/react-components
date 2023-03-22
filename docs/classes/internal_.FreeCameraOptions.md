@@ -66,7 +66,7 @@ node_modules/@types/mapbox-gl/index.d.ts:900
 
 ### position
 
-• **position**: [`MercatorCoordinate`](internal_.MercatorCoordinate.md)
+• **position**: `undefined` \| [`MercatorCoordinate`](internal_.MercatorCoordinate.md)
 
 #### Defined in
 

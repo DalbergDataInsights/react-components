@@ -49,6 +49,6 @@ const WrapperComponent = ({
 
 export const Wrapper = memo(WrapperComponent, arePropsEqual)
 
-function arePropsEqual(prevProp, newProps) {
+function arePropsEqual(prevProp: {}, newProps: {}) {
   return true
 }

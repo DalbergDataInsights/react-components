@@ -24,4 +24,4 @@
 
 #### Defined in
 
-[core/stateListener.tsx:10](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/stateListener.tsx#L10)
+[src/core/stateListener.tsx:5](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/stateListener.tsx#L5)

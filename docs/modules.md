@@ -25,15 +25,23 @@
 - [Dropdown](modules.md#dropdown)
 - [Map](modules.md#map)
 - [MapAttributionControl](modules.md#mapattributioncontrol)
+- [MapColorLegend](modules.md#mapcolorlegend)
 - [MapFullscreenControl](modules.md#mapfullscreencontrol)
 - [MapGeolocateControl](modules.md#mapgeolocatecontrol)
-- [MapLegend](modules.md#maplegend)
 - [MapNavigationControl](modules.md#mapnavigationcontrol)
 - [MapScaleControl](modules.md#mapscalecontrol)
+- [NamedArea](modules.md#namedarea)
 - [NamedGrid](modules.md#namedgrid)
+- [ProgressBar](modules.md#progressbar)
+- [ProgressCircle](modules.md#progresscircle)
+- [StatusColor](modules.md#statuscolor)
 - [Table](modules.md#table)
 - [ToggleButtonGroup](modules.md#togglebuttongroup)
 - [Wrapper](modules.md#wrapper)
+- [checkState](modules.md#checkstate)
+- [getBounds](modules.md#getbounds)
+- [getColor](modules.md#getcolor)
+- [mergeDicts](modules.md#mergedicts)
 - [useEventManagement](modules.md#useeventmanagement)
 - [useStateListener](modules.md#usestatelistener)
 
@@ -41,11 +49,11 @@
 
 ### ComponentContext
 
-• `Const` **ComponentContext**: [`Context`](interfaces/internal_.Context.md)<{ `container`: {} = {} }\>
+• `Const` **ComponentContext**: [`Context`](interfaces/internal_.Context.md)<{}\>
 
 #### Defined in
 
-[core/context.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/context.tsx#L3)
+[src/core/context.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/context.tsx#L7)
 
 ## Functions
 
@@ -59,8 +67,7 @@
 | :------ | :------ |
 | `«destructured»` | `Object` |
 | › `children` | [`ReactNode`](modules/internal_.md#reactnode) |
-| › `config` | `Object` |
-| › `config.container` | `Object` |
+| › `config` | [`iConfig`](interfaces/internal_.iConfig.md) |
 
 #### Returns
 
@@ -68,7 +75,7 @@
 
 #### Defined in
 
-[core/context.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/context.tsx#L4)
+[src/core/context.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/context.tsx#L8)
 
 ___
 
@@ -88,7 +95,7 @@ ___
 
 #### Defined in
 
-[components.tsx:34](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components.tsx#L34)
+[src/components.tsx:40](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components.tsx#L40)
 
 ___
 
@@ -100,7 +107,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`iMap`](interfaces/internal_.iMap.md) & [`iWrapper`](interfaces/iWrapper.md) |
+| `props` | [`iMap`](interfaces/internal_.iMap.md) & [`iReactive`](interfaces/iReactive.md) |
 
 #### Returns
 
@@ -108,13 +115,13 @@ ___
 
 #### Defined in
 
-[components.tsx:21](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components.tsx#L21)
+[src/components.tsx:22](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components.tsx#L22)
 
 ___
 
 ### MapAttributionControl
 
-▸ **MapAttributionControl**(`props`): [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+▸ **MapAttributionControl**(`props`): ``null`` \| [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
 
 **NOTE**: Exotic components are not callable.
 
@@ -126,7 +133,7 @@ ___
 
 #### Returns
 
-[`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+``null`` \| [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
 
 #### Defined in
 
@@ -134,9 +141,29 @@ node_modules/@types/react/index.d.ts:351
 
 ___
 
+### MapColorLegend
+
+▸ **MapColorLegend**(`props`): [`Element`](interfaces/internal_.Element.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | [`iMapColorLegend`](interfaces/internal_.iMapColorLegend.md) & [`iReactive`](interfaces/iReactive.md) |
+
+#### Returns
+
+[`Element`](interfaces/internal_.Element.md)
+
+#### Defined in
+
+[src/components.tsx:27](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components.tsx#L27)
+
+___
+
 ### MapFullscreenControl
 
-▸ **MapFullscreenControl**(`props`): [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+▸ **MapFullscreenControl**(`props`): ``null`` \| [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
 
 **NOTE**: Exotic components are not callable.
 
@@ -148,7 +175,7 @@ ___
 
 #### Returns
 
-[`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+``null`` \| [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
 
 #### Defined in
 
@@ -158,7 +185,7 @@ ___
 
 ### MapGeolocateControl
 
-▸ **MapGeolocateControl**(`props`): [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+▸ **MapGeolocateControl**(`props`): ``null`` \| [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
 
 **NOTE**: Exotic components are not callable.
 
@@ -170,29 +197,7 @@ ___
 
 #### Returns
 
-[`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
-
-#### Defined in
-
-node_modules/@types/react/index.d.ts:351
-
-___
-
-### MapLegend
-
-▸ **MapLegend**(`props`): [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
-
-**NOTE**: Exotic components are not callable.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `props` | [`MapLegendProps`](interfaces/internal_.MapLegendProps.md) |
-
-#### Returns
-
-[`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+``null`` \| [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
 
 #### Defined in
 
@@ -202,7 +207,7 @@ ___
 
 ### MapNavigationControl
 
-▸ **MapNavigationControl**(`props`): [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+▸ **MapNavigationControl**(`props`): ``null`` \| [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
 
 **NOTE**: Exotic components are not callable.
 
@@ -214,7 +219,7 @@ ___
 
 #### Returns
 
-[`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+``null`` \| [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
 
 #### Defined in
 
@@ -224,7 +229,7 @@ ___
 
 ### MapScaleControl
 
-▸ **MapScaleControl**(`props`): [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+▸ **MapScaleControl**(`props`): ``null`` \| [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
 
 **NOTE**: Exotic components are not callable.
 
@@ -236,11 +241,31 @@ ___
 
 #### Returns
 
-[`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+``null`` \| [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
 
 #### Defined in
 
 node_modules/@types/react/index.d.ts:351
+
+___
+
+### NamedArea
+
+▸ **NamedArea**(`«destructured»`): [`Element`](interfaces/internal_.Element.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | [`iNamedGridArea`](interfaces/internal_.iNamedGridArea.md) |
+
+#### Returns
+
+[`Element`](interfaces/internal_.Element.md)
+
+#### Defined in
+
+[src/layouts/NamedGrid/namedGridAreaElement.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/layouts/NamedGrid/namedGridAreaElement.tsx#L3)
 
 ___
 
@@ -260,7 +285,67 @@ ___
 
 #### Defined in
 
-[layouts.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/ff81224/layouts.tsx#L7)
+[src/layouts.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/layouts.tsx#L8)
+
+___
+
+### ProgressBar
+
+▸ **ProgressBar**(`props`): [`Element`](interfaces/internal_.Element.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | [`iProgressBar`](interfaces/internal_.iProgressBar.md) & [`iReactive`](interfaces/iReactive.md) |
+
+#### Returns
+
+[`Element`](interfaces/internal_.Element.md)
+
+#### Defined in
+
+[src/components.tsx:48](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components.tsx#L48)
+
+___
+
+### ProgressCircle
+
+▸ **ProgressCircle**(`props`): [`Element`](interfaces/internal_.Element.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | [`iProgressCircle`](interfaces/internal_.iProgressCircle.md) & [`iReactive`](interfaces/iReactive.md) |
+
+#### Returns
+
+[`Element`](interfaces/internal_.Element.md)
+
+#### Defined in
+
+[src/components.tsx:66](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components.tsx#L66)
+
+___
+
+### StatusColor
+
+▸ **StatusColor**(`props`): [`Element`](interfaces/internal_.Element.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `props` | [`iStatusColor`](interfaces/internal_.iStatusColor.md) & [`iReactive`](interfaces/iReactive.md) |
+
+#### Returns
+
+[`Element`](interfaces/internal_.Element.md)
+
+#### Defined in
+
+[src/components.tsx:57](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components.tsx#L57)
 
 ___
 
@@ -280,7 +365,7 @@ ___
 
 #### Defined in
 
-[components.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components.tsx#L6)
+[src/components.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components.tsx#L7)
 
 ___
 
@@ -300,13 +385,13 @@ ___
 
 #### Defined in
 
-[components.tsx:29](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components.tsx#L29)
+[src/components.tsx:35](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components.tsx#L35)
 
 ___
 
 ### Wrapper
 
-▸ **Wrapper**(`props`): [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+▸ **Wrapper**(`props`): ``null`` \| [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
 
 **NOTE**: Exotic components are not callable.
 
@@ -318,11 +403,99 @@ ___
 
 #### Returns
 
-[`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
+``null`` \| [`ReactElement`](interfaces/internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](modules/internal_.md#jsxelementconstructor)<`any`\>\>
 
 #### Defined in
 
 node_modules/@types/react/index.d.ts:351
+
+___
+
+### checkState
+
+▸ **checkState**(`stateString`, `props`, `initValue?`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `stateString` | `string` |
+| `props` | `any` |
+| `initValue` | `Object` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[src/core/util.tsx:26](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/util.tsx#L26)
+
+___
+
+### getBounds
+
+▸ **getBounds**(`coordinates`): `number`[][]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `coordinates` | `any` |
+
+#### Returns
+
+`number`[][]
+
+#### Defined in
+
+[src/core/util.tsx:64](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/util.tsx#L64)
+
+___
+
+### getColor
+
+▸ **getColor**(`«destructured»`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `colors` | `string`[] |
+| › `naColor` | `string` |
+| › `steps` | `number`[] |
+| › `value` | `number` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+[src/core/util.tsx:39](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/util.tsx#L39)
+
+___
+
+### mergeDicts
+
+▸ **mergeDicts**(`a`, `b`, `path?`): `Object`
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `a` | `Object` | `undefined` |
+| `b` | `Object` | `undefined` |
+| `path` | `undefined` \| `string`[] | `undefined` |
+
+#### Returns
+
+`Object`
+
+#### Defined in
+
+[src/core/util.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/util.tsx#L4)
 
 ___
 
@@ -349,7 +522,7 @@ ___
 
 #### Defined in
 
-[core/eventManager.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/eventManager.tsx#L8)
+[src/core/eventManager.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/eventManager.tsx#L4)
 
 ___
 
@@ -375,4 +548,4 @@ ___
 
 #### Defined in
 
-[core/stateListener.tsx:22](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/stateListener.tsx#L22)
+[src/core/stateListener.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/stateListener.tsx#L17)

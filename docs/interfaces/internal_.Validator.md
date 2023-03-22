@@ -14,7 +14,7 @@
 
 ### Validator
 
-▸ **Validator**(`props`, `propName`, `componentName`, `location`, `propFullName`): [`Error`](../modules/internal_.md#error)
+▸ **Validator**(`props`, `propName`, `componentName`, `location`, `propFullName`): ``null`` \| [`Error`](../modules/internal_.md#error)
 
 #### Parameters
 
@@ -28,7 +28,7 @@
 
 #### Returns
 
-[`Error`](../modules/internal_.md#error)
+``null`` \| [`Error`](../modules/internal_.md#error)
 
 #### Defined in
 

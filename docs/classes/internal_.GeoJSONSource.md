@@ -68,7 +68,7 @@ node_modules/@types/mapbox-gl/index.d.ts:1403
 | Name | Type |
 | :------ | :------ |
 | `clusterId` | `number` |
-| `callback` | (`error`: `any`, `features`: [`Feature`](../interfaces/internal_.Feature.md)<[`Geometry`](../modules/internal_.md#geometry), { `[name: string]`: `any`;  }\>[]) => `void` |
+| `callback` | (`error`: `any`, `features`: [`Feature`](../interfaces/internal_.Feature.md)<[`Geometry`](../modules/internal_.md#geometry), [`GeoJsonProperties`](../modules/internal_.md#geojsonproperties)\>[]) => `void` |
 
 #### Returns
 
@@ -112,7 +112,7 @@ ___
 | `cluserId` | `number` |
 | `limit` | `number` |
 | `offset` | `number` |
-| `callback` | (`error`: `any`, `features`: [`Feature`](../interfaces/internal_.Feature.md)<[`Geometry`](../modules/internal_.md#geometry), { `[name: string]`: `any`;  }\>[]) => `void` |
+| `callback` | (`error`: `any`, `features`: [`Feature`](../interfaces/internal_.Feature.md)<[`Geometry`](../modules/internal_.md#geometry), [`GeoJsonProperties`](../modules/internal_.md#geojsonproperties)\>[]) => `void` |
 
 #### Returns
 
@@ -132,7 +132,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `data` | `String` \| [`Feature`](../interfaces/internal_.Feature.md)<[`Geometry`](../modules/internal_.md#geometry), { `[name: string]`: `any`;  }\> \| [`FeatureCollection`](../interfaces/internal_.FeatureCollection.md)<[`Geometry`](../modules/internal_.md#geometry), { `[name: string]`: `any`;  }\> |
+| `data` | `String` \| [`Feature`](../interfaces/internal_.Feature.md)<[`Geometry`](../modules/internal_.md#geometry), [`GeoJsonProperties`](../modules/internal_.md#geojsonproperties)\> \| [`FeatureCollection`](../interfaces/internal_.FeatureCollection.md)<[`Geometry`](../modules/internal_.md#geometry), [`GeoJsonProperties`](../modules/internal_.md#geojsonproperties)\> |
 
 #### Returns
 

@@ -32,7 +32,7 @@ ___
 
 ### altitude
 
-• `Readonly` **altitude**: `number`
+• `Readonly` **altitude**: ``null`` \| `number`
 
 #### Defined in
 
@@ -42,7 +42,7 @@ ___
 
 ### altitudeAccuracy
 
-• `Readonly` **altitudeAccuracy**: `number`
+• `Readonly` **altitudeAccuracy**: ``null`` \| `number`
 
 #### Defined in
 
@@ -52,7 +52,7 @@ ___
 
 ### heading
 
-• `Readonly` **heading**: `number`
+• `Readonly` **heading**: ``null`` \| `number`
 
 #### Defined in
 
@@ -82,7 +82,7 @@ ___
 
 ### speed
 
-• `Readonly` **speed**: `number`
+• `Readonly` **speed**: ``null`` \| `number`
 
 #### Defined in
 
