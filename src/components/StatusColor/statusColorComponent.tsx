@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react"
-import { iStatusCircle } from "./statusCircleInterface"
+import { iStatusColor } from "./statusColorInterface"
 
-export const StatusCircleComponent = ({
+export const StatusColorComponent = ({
   color,
   size = "1rem",
   props,
-}: iStatusCircle) => {
+}: iStatusColor) => {
   const [dim, setDim] = useState("0rem")
 
   useEffect(() => {

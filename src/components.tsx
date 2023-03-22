@@ -50,10 +50,10 @@ export const ProgressBar = (props: iProgressBar & iReactive) => (
 )
 
 import {
-  manifest as colorCircleManifest,
-  iStatusCircle,
-} from "./components/StatusCircle"
+  manifest as statusColorManifest,
+  iStatusColor,
+} from "./components/StatusColor"
 
-export const StatusCircle = (props: iStatusCircle & iReactive) => (
-  <Wrapper {...colorCircleManifest} {...props} />
+export const StatusColor = (props: iStatusColor & iReactive) => (
+  <Wrapper {...statusColorManifest} {...props} />
 )
