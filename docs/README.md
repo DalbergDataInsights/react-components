@@ -39,10 +39,6 @@
   - [NamedGrid](#namedgrid-1)
   - [NamedGrid Props](#namedgrid-props)
   - [NameGrid Example](#namegrid-example)
-- [Progress Bar](#progress-bar)
-  - [Progress Bar Props](#progress-bar-props)
-  - [Progress Bar Props Passthrough](#progress-bar-props-passthrough)
-  - [Progress Bar Example Usage](#progress-bar-example-usage)
 - [Contribution](#contribution)
   - [Integrate with framework](#integrate-with-framework)
   - [Embed your code](#embed-your-code)
@@ -533,6 +529,68 @@ const useMapStates = (subscribers, observers, props) => {
 };
 ```
 
+## Progress Bar
+
+-React component that displays a progress bar based on a given value
+
+### Progress Bar Props
+
+- Value - required - represents the current value of the progress bar.
+- Color - optional - sets the color of the progress bar. The default value is "#7AA995".
+- maxValue – optional - sets the maximum value of the progress bar. The default value is 100.
+- minValue - optional - sets the minimum value of the progress bar. The default value is 0.
+- Suffix – optional - sets the suffix to be added to the value displayed in the progress bar. The default value is "%".
+- Props – optional – allows for additional properties to be passed to the element
+
+### Progress Bar Props Passthrough
+
+- bar – root component (div)
+- total – container for current progress (div)
+- progress – style formatting on current progress
+- labels – container for the labels(div)
+- label – style formatting on each label
+
+### Progress Bar Example Usage
+
+```jsx
+import React from "react";
+import { ProgressBar } from "./ProgressBarComponent";
+function App() {
+return (
+  <ProgressBar
+    Value = ‘85’
+
+    //you can change the css or layout by passing components styling
+
+    props: {
+        //wrapper container
+        bar: {
+          style: {
+            padding: 0,
+            margin: 0,
+          },
+        },
+        //root component element
+        total: {
+        //properties of the progress bar component
+        },
+        progress: {
+        //properties of the progress which is shown based on value passed
+        },
+
+        labels: {
+        //properties of the container that holds the progress bar labels
+        },
+        label: {
+        //additive styling formats for the labels used
+        },
+      },
+    };
+    />
+)
+}
+```
+
 # Layouts
 
 ## NamedGrid
@@ -600,68 +658,6 @@ children and style are passed through as usual
     </NamedGrid>
   </div>
 </ComponentContextProvider>
-```
-
-# Progress Bar
-
--React component that displays a progress bar based on a given value
-
-## Progress Bar Props
-
-- Value - required - represents the current value of the progress bar.
-- Color - optional - sets the color of the progress bar. The default value is "#7AA995".
-- maxValue – optional - sets the maximum value of the progress bar. The default value is 100.
-- minValue - optional - sets the minimum value of the progress bar. The default value is 0.
-- Suffix – optional - sets the suffix to be added to the value displayed in the progress bar. The default value is "%".
-- Props – optional – allows for additional properties to be passed to the element
-
-## Progress Bar Props Passthrough
-
-- bar – root component (div)
-- total – container for current progress (div)
-- progress – style formatting on current progress
-- labels – container for the labels(div)
-- label – style formatting on each label
-
-### Progress Bar Example Usage
-
-```jsx
-import React from "react";
-import { ProgressBar } from "./ProgressBarComponent";
-function App() {
-return (
-  <ProgressBar
-    Value = ‘85’
-
-    //you can change the css or layout by passing components styling
-
-    props: {
-        //wrapper container
-        bar: {
-          style: {
-            padding: 0,
-            margin: 0,
-          },
-        },
-        //root component element
-        total: {
-        //properties of the progress bar component
-        },
-        progress: {
-        //properties of the progress which is shown based on value passed
-        },
-
-        labels: {
-        //properties of the container that holds the progress bar labels
-        },
-        label: {
-        //additive styling formats for the labels used
-        },
-      },
-    };
-    />
-)
-}
 ```
 
 # Contribution
