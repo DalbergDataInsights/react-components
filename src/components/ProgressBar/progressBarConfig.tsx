@@ -59,5 +59,9 @@ export const defaults = {
         transition: "width 3s",
       },
     },
+    counter: {
+      duration: "3",
+      prefix: "",
+    }
   },
 }

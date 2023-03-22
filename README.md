@@ -1,21 +1,22 @@
 # Dalberg Data Insights React Components Library
 
+- [Dalberg Data Insights React Components Library](#dalberg-data-insights-react-components-library)
 - [Consuming packages](#consuming-packages)
 - [Developer TODO and Roadmap](#developer-todo-and-roadmap)
-  * [NamedGrid](#namedgrid)
-  * [Table](#table)
+  - [NamedGrid](#namedgrid)
+  - [Table](#table)
 - [Core Library](#core-library)
-  * [Wrapper](#wrapper)
-  * [Event management](#event-management)
-  * [State observation](#state-observation)
-  * [Component initialization](#component-initialization)
-  * [Props passthrough](#props-passthrough)
-  * [Component styling](#component-styling)
-  * [Utility](#utility)
-    + [mergeDicts(a,b)](#mergedicts-a-b-)
-    + [checkStates(name, props)](#checkstates-name--props-)
-  * [Hooks](#hooks)
-    + [useDim](#usedim)
+  - [Wrapper](#wrapper)
+  - [Event management](#event-management)
+  - [State observation](#state-observation)
+  - [Component initialization](#component-initialization)
+  - [Props passthrough](#props-passthrough)
+  - [Component styling](#component-styling)
+  - [Utility](#utility)
+    - [mergeDicts(a,b)](#mergedictsab)
+    - [checkStates(name, props)](#checkstatesname-props)
+  - [Hooks](#hooks)
+    - [useDim](#usedim)
 - [Components](#components)
   * [StatusColor Component](#statuscolor-component)
     + [StatusColor Props](#statuscolor-props)
@@ -50,13 +51,13 @@
   * [Progress Bar Props Passthrough](#progress-bar-props-passthrough)
     + [Progress Bar Example Usage](#progress-bar-example-usage)
 - [Layouts](#layouts)
-  * [NamedGrid](#namedgrid-1)
-  * [NamedGrid Props](#namedgrid-props)
-  * [NameGrid Example](#namegrid-example)
+  - [NamedGrid](#namedgrid-1)
+  - [NamedGrid Props](#namedgrid-props)
+  - [NameGrid Example](#namegrid-example)
 - [Contribution](#contribution)
-  * [Integrate with framework](#integrate-with-framework)
-  * [Embed your code](#embed-your-code)
-  * [Generating documentation](#generating-documentation)
+  - [Integrate with framework](#integrate-with-framework)
+  - [Embed your code](#embed-your-code)
+  - [Generating documentation](#generating-documentation)
 
 # Consuming packages
 
@@ -631,6 +632,7 @@ React component built around SVG to help visualize data conviniently. Has the ab
 - total - the SVG element representing the total
 - progress - the SVG element representing the progress
 - value - the element containing the value
+- counter - a counter value to aid in animations (from react-countup)
 
 ### ProgressCircle Example
 
