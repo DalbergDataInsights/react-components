@@ -57,3 +57,12 @@ import {
 export const StatusColor = (props: iStatusColor & iReactive) => (
   <Wrapper {...statusColorManifest} {...props} />
 )
+
+import {
+  manifest as progressCircleManifest,
+  iProgressCircle,
+} from "./components/ProgressCircle"
+
+export const ProgressCircle = (props: iProgressCircle & iReactive) => (
+  <Wrapper {...progressCircleManifest} {...props} />
+)
