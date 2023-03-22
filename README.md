@@ -1,52 +1,58 @@
-@dalbergdatainsights/react-components / [Exports](modules.md)
+# Dalberg Data Insights React Components Library
 
 - [Consuming packages](#consuming-packages)
 - [Developer TODO and Roadmap](#developer-todo-and-roadmap)
-  - [NamedGrid](#namedgrid)
-  - [Table](#table)
+  * [NamedGrid](#namedgrid)
+  * [Table](#table)
 - [Core Library](#core-library)
-  - [Wrapper](#wrapper)
-  - [Event management](#event-management)
-  - [State observation](#state-observation)
-  - [Component initialization](#component-initialization)
-  - [Props passthrough](#props-passthrough)
-  - [Component styling](#component-styling)
-  - [Utility](#utility)
-    - [mergeDicts(a,b)](#mergedictsab)
-    - [checkStates(name, props)](#checkstatesname-props)
+  * [Wrapper](#wrapper)
+  * [Event management](#event-management)
+  * [State observation](#state-observation)
+  * [Component initialization](#component-initialization)
+  * [Props passthrough](#props-passthrough)
+  * [Component styling](#component-styling)
+  * [Utility](#utility)
+    + [mergeDicts(a,b)](#mergedicts-a-b-)
+    + [checkStates(name, props)](#checkstates-name--props-)
+  * [Hooks](#hooks)
+    + [useDim](#usedim)
 - [Components](#components)
-  - [DropdownButton Component](#dropdownbutton-component)
-    - [DropdownButton States](#dropdownbutton-states)
-    - [DropdownButton Props](#dropdownbutton-props)
-    - [DropdownButton Props Passthrough](#dropdownbutton-props-passthrough)
-    - [DropdownButton Example](#dropdownbutton-example)
-  - [Toggle Button Component](#toggle-button-component)
-    - [Toggle Button States](#toggle-button-states)
-    - [Toggle Button Props](#toggle-button-props)
-    - [Toggle Button Props Passthrough](#toggle-button-props-passthrough)
-    - [Toggle Button Example](#toggle-button-example)
-  - [Table](#table-1)
-    - [Table Props](#table-props)
-    - [Table Props Passthrough](#table-props-passthrough)
-    - [Table Example](#table-example)
-  - [Map](#map)
-    - [Map Assumptions](#map-assumptions)
-    - [Map States](#map-states)
-    - [Map Props](#map-props)
-    - [Map Props Passthrough](#map-props-passthrough)
-    - [Map Example](#map-example)
-  - [Progress Circle](#progress-circle)
-    - [Progress Circle Props](#progress-circle-props)
-    - [Progress Circle Props Passthrough](#progress-circle-props-passthrough)
-    - [ProgressCircle Example](#progresscircle-example)
+  * [StatusColor Component](#statuscolor-component)
+    + [StatusColor Props](#statuscolor-props)
+    + [StatusColor Props Passthrough](#statuscolor-props-passthrough)
+    + [StatusColor Example](#statuscolor-example)
+  * [DropdownButton Component](#dropdownbutton-component)
+    + [DropdownButton States](#dropdownbutton-states)
+    + [DropdownButton Props](#dropdownbutton-props)
+    + [DropdownButton Props Passthrough](#dropdownbutton-props-passthrough)
+    + [DropdownButton Example](#dropdownbutton-example)
+  * [Toggle Button Component](#toggle-button-component)
+    + [Toggle Button States](#toggle-button-states)
+    + [Toggle Button Props](#toggle-button-props)
+    + [Toggle Button Props Passthrough](#toggle-button-props-passthrough)
+    + [Toggle Button Example](#toggle-button-example)
+  * [Table](#table-1)
+    + [Table Props](#table-props)
+    + [Table Props Passthrough](#table-props-passthrough)
+    + [Table Example](#table-example)
+  * [Map](#map)
+    + [Map Assumptions](#map-assumptions)
+    + [Map States](#map-states)
+    + [Map Props](#map-props)
+    + [Map Props Passthrough](#map-props-passthrough)
+    + [Map Example](#map-example)
+  * [Progress Circle](#progress-circle)
+    + [Progress Circle Props](#progress-circle-props)
+    + [Progress Circle Props Passthrough](#progress-circle-props-passthrough)
+    + [ProgressCircle Example](#progresscircle-example)
 - [Layouts](#layouts)
-  - [NamedGrid](#namedgrid-1)
-  - [NamedGrid Props](#namedgrid-props)
-  - [NameGrid Example](#namegrid-example)
+  * [NamedGrid](#namedgrid-1)
+  * [NamedGrid Props](#namedgrid-props)
+  * [NameGrid Example](#namegrid-example)
 - [Contribution](#contribution)
-  - [Integrate with framework](#integrate-with-framework)
-  - [Embed your code](#embed-your-code)
-  - [Generating documentation](#generating-documentation)
+  * [Integrate with framework](#integrate-with-framework)
+  * [Embed your code](#embed-your-code)
+  * [Generating documentation](#generating-documentation)
 
 # Consuming packages
 
@@ -239,6 +245,37 @@ export const Component = () => {
 # Components
 
 For full list of props please see generated documentation in [./docs]
+
+## StatusColor Component
+
+Span of a given size and color to imitate the semaphore status. Animated and centered inside the container.
+
+### StatusColor Props
+
+- color: color of the circle
+
+### StatusColor Props Passthrough
+
+It is necessary to mention that this component edits default container properties, initializing wrapper ans flexbox to make sure it's tightly centered in the middle of the wrapper.
+
+- size - diameter of the span
+- circle - span props
+
+### StatusColor Example
+
+```jsx
+<Status
+  color={"#F6BC8E"}
+  // pass size directly in the component to make it bigger
+  size="2rem"
+  props={{
+    // alternatively size in the root props if you want to make it bigger
+    // size: "2rem",
+    // style it like a square with rounded corners and longer transition
+    circle: { style: { borderRadius: "0.25rem", transition: "1.5s" } },
+  }}
+/>
+```
 
 ## DropdownButton Component
 
