@@ -53,7 +53,7 @@ export const ProgressCircleComponent = ({
           ...props.value.style,
         }}
       >
-        <CountUp start={minValue} end={value} suffix={suffix} {...props.counter} />
+        <CountUp {...props.counter} start={minValue} end={value} suffix={suffix} />
       </div>
     </>
   )
