@@ -1,11 +1,7 @@
 import { useState } from "react"
 
 // merge two dictionaries - used to merge props and keeping all default values
-export function mergeDicts(
-  a: { [key: string]: any },
-  b: { [key: string]: any },
-  path: string[] | undefined = undefined
-) {
+export function mergeDicts(a, b, path: string[] | undefined = undefined) {
   if (!path) {
     path = []
   }
