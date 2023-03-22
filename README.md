@@ -45,6 +45,10 @@
     + [Progress Circle Props](#progress-circle-props)
     + [Progress Circle Props Passthrough](#progress-circle-props-passthrough)
     + [ProgressCircle Example](#progresscircle-example)
+- [Progress Bar](#progress-bar)
+  * [Progress Bar Props](#progress-bar-props)
+  * [Progress Bar Props Passthrough](#progress-bar-props-passthrough)
+    + [Progress Bar Example Usage](#progress-bar-example-usage)
 - [Layouts](#layouts)
   * [NamedGrid](#namedgrid-1)
   * [NamedGrid Props](#namedgrid-props)
@@ -633,6 +637,59 @@ React component built around SVG to help visualize data conviniently. Has the ab
 ```jsx
 // progress into my savings
 <ProgressCircle value={100} minValue={10} maxValue={150} suffix={"$"} />
+```
+
+# Progress Bar
+
+React component that displays a progress bar based on a given value\
+
+## Progress Bar Props
+
+- value - required - represents the current value of the progress bar.
+- color - optional - sets the color of the progress bar. The default value is "#7AA995".
+- maxValue – optional - sets the maximum value of the progress bar. The default value is 100.
+- minValue - optional - sets the minimum value of the progress bar. The default value is 0.
+- suffix – optional - sets the suffix to be added to the value displayed in the progress bar. The default value is "%".
+- props – optional – allows for additional properties to be passed to the element
+
+## Progress Bar Props Passthrough
+
+- bar – root component (div)
+- total – container for current progress (div)
+- progress – style formatting on current progress
+- labels – container for the labels(div)
+- label – style formatting on each label
+
+### Progress Bar Example Usage
+
+```jsx
+  <ProgressBar
+    value="85"
+    props={{
+        // root component container
+        bar: {
+          style: {
+            padding: 0,
+            margin: 0,
+          },
+        },
+        // total div wraps progress bar
+        total: {
+        },
+        progress: {
+        // progress bar is set to a % of a total div
+        },
+        labels: {
+        // holds the progress bar labels (min and max value)
+        },
+        label: {
+        // additive styling formats for the labels used (min, max, progress value)
+        },
+        value: {
+        // specific styling for progress value
+        }
+      }}
+    />
 ```
 
 # Layouts
