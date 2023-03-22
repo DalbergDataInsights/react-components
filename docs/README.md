@@ -642,27 +642,16 @@ return (
         //root component element
         total: {
         //properties of the progress bar component
-          style: {
-            //additive styling formats
-          },
         },
         progress: {
         //properties of the progress which is shown based on value passed
-          style: {
-            //additive styling formats
-          },
         },
 
         labels: {
         //properties of the container that holds the progress bar labels
-          style: {
-            //additive styling formats
-          },
         },
         label: {
-          style: {
-            //additive styling formats
-          },
+        //additive styling formats for the labels used
         },
       },
     };
