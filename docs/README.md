@@ -12,8 +12,8 @@
   - [Props passthrough](#props-passthrough)
   - [Component styling](#component-styling)
   - [Utility](#utility)
-    - [mergeDicts(a,b)](#mergedicts-a-b-)
-    - [checkStates(name, props)](#checkstates-name--props-)
+    - [mergeDicts(a,b)](#mergedictsab)
+    - [checkStates(name, props)](#checkstatesname-props)
 - [Components](#components)
   - [DropdownButton Component](#dropdownbutton-component)
     - [DropdownButton States](#dropdownbutton-states)
@@ -35,6 +35,10 @@
     - [Map Props](#map-props)
     - [Map Props Passthrough](#map-props-passthrough)
     - [Map Example](#map-example)
+  - [Progress Circle](#progress-circle)
+    - [Progress Circle Props](#progress-circle-props)
+    - [Progress Circle Props Passthrough](#progress-circle-props-passthrough)
+    - [ProgressCircle Example](#progresscircle-example)
 - [Layouts](#layouts)
   - [NamedGrid](#namedgrid-1)
   - [NamedGrid Props](#namedgrid-props)
@@ -527,6 +531,29 @@ const useMapStates = (subscribers, observers, props) => {
     prop: "click",
   })
 }
+```
+
+## Progress Circle
+React component built around SVG to help visualize data conviniently. Has the ability to visualize infinite progress and render customized content at the center.
+
+### Progress Circle Props
+- value - required - the proportion of the whole to be represented. 
+- color?: string 
+- minValue?: number
+- maxValue?: number
+- suffix?: string | any
+- props?: Any 
+
+### Progress Circle Props Passthrough
+- circle - the SVG element representing the whole
+- total - the SVG element representing the total 
+- progress - the SVG element representing the progress
+- value - the element containing the value
+  
+### ProgressCircle Example
+
+```jsx
+<ProgressCircle value={70} />
 ```
 
 # Layouts
