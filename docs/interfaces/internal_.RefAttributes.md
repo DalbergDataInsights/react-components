@@ -30,7 +30,7 @@ inside your component or have to validate them.
 
 ### key
 
-• `Optional` **key**: [`Key`](../modules/internal_.md#key)
+• `Optional` **key**: ``null`` \| [`Key`](../modules/internal_.md#key)
 
 #### Inherited from
 

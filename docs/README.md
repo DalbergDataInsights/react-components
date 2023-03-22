@@ -1,52 +1,64 @@
 @dalbergdatainsights/react-components / [Exports](modules.md)
 
+# Dalberg Data Insights React Components Library
+
 - [Consuming packages](#consuming-packages)
 - [Developer TODO and Roadmap](#developer-todo-and-roadmap)
-  - [NamedGrid](#namedgrid)
-  - [Table](#table)
+  * [NamedGrid](#namedgrid)
+  * [Table](#table)
 - [Core Library](#core-library)
-  - [Wrapper](#wrapper)
-  - [Event management](#event-management)
-  - [State observation](#state-observation)
-  - [Component initialization](#component-initialization)
-  - [Props passthrough](#props-passthrough)
-  - [Component styling](#component-styling)
-  - [Utility](#utility)
-    - [mergeDicts(a,b)](#mergedictsab)
-    - [checkStates(name, props)](#checkstatesname-props)
+  * [Wrapper](#wrapper)
+  * [Event management](#event-management)
+  * [State observation](#state-observation)
+  * [Component initialization](#component-initialization)
+  * [Props passthrough](#props-passthrough)
+  * [Component styling](#component-styling)
+  * [Utility](#utility)
+    + [mergeDicts(a,b)](#mergedicts-a-b-)
+    + [checkStates(name, props)](#checkstates-name--props-)
+  * [Hooks](#hooks)
+    + [useDim](#usedim)
 - [Components](#components)
-  - [DropdownButton Component](#dropdownbutton-component)
-    - [DropdownButton States](#dropdownbutton-states)
-    - [DropdownButton Props](#dropdownbutton-props)
-    - [DropdownButton Props Passthrough](#dropdownbutton-props-passthrough)
-    - [DropdownButton Example](#dropdownbutton-example)
-  - [Toggle Button Component](#toggle-button-component)
-    - [Toggle Button States](#toggle-button-states)
-    - [Toggle Button Props](#toggle-button-props)
-    - [Toggle Button Props Passthrough](#toggle-button-props-passthrough)
-    - [Toggle Button Example](#toggle-button-example)
-  - [Table](#table-1)
-    - [Table Props](#table-props)
-    - [Table Props Passthrough](#table-props-passthrough)
-    - [Table Example](#table-example)
-  - [Map](#map)
-    - [Map Assumptions](#map-assumptions)
-    - [Map States](#map-states)
-    - [Map Props](#map-props)
-    - [Map Props Passthrough](#map-props-passthrough)
-    - [Map Example](#map-example)
-  - [Progress Circle](#progress-circle)
-    - [Progress Circle Props](#progress-circle-props)
-    - [Progress Circle Props Passthrough](#progress-circle-props-passthrough)
-    - [ProgressCircle Example](#progresscircle-example)
+  * [StatusColor Component](#statuscolor-component)
+    + [StatusColor Props](#statuscolor-props)
+    + [StatusColor Props Passthrough](#statuscolor-props-passthrough)
+    + [StatusColor Example](#statuscolor-example)
+  * [DropdownButton Component](#dropdownbutton-component)
+    + [DropdownButton States](#dropdownbutton-states)
+    + [DropdownButton Props](#dropdownbutton-props)
+    + [DropdownButton Props Passthrough](#dropdownbutton-props-passthrough)
+    + [DropdownButton Example](#dropdownbutton-example)
+  * [Toggle Button Component](#toggle-button-component)
+    + [Toggle Button States](#toggle-button-states)
+    + [Toggle Button Props](#toggle-button-props)
+    + [Toggle Button Props Passthrough](#toggle-button-props-passthrough)
+    + [Toggle Button Example](#toggle-button-example)
+  * [Table](#table-1)
+    + [Table Props](#table-props)
+    + [Table Props Passthrough](#table-props-passthrough)
+    + [Table Example](#table-example)
+  * [Map](#map)
+    + [Map Assumptions](#map-assumptions)
+    + [Map States](#map-states)
+    + [Map Props](#map-props)
+    + [Map Props Passthrough](#map-props-passthrough)
+    + [Map Example](#map-example)
+  * [Progress Circle](#progress-circle)
+    + [Progress Circle Props](#progress-circle-props)
+    + [Progress Circle Props Passthrough](#progress-circle-props-passthrough)
+    + [ProgressCircle Example](#progresscircle-example)
+- [Progress Bar](#progress-bar)
+  * [Progress Bar Props](#progress-bar-props)
+  * [Progress Bar Props Passthrough](#progress-bar-props-passthrough)
+    + [Progress Bar Example Usage](#progress-bar-example-usage)
 - [Layouts](#layouts)
-  - [NamedGrid](#namedgrid-1)
-  - [NamedGrid Props](#namedgrid-props)
-  - [NameGrid Example](#namegrid-example)
+  * [NamedGrid](#namedgrid-1)
+  * [NamedGrid Props](#namedgrid-props)
+  * [NameGrid Example](#namegrid-example)
 - [Contribution](#contribution)
-  - [Integrate with framework](#integrate-with-framework)
-  - [Embed your code](#embed-your-code)
-  - [Generating documentation](#generating-documentation)
+  * [Integrate with framework](#integrate-with-framework)
+  * [Embed your code](#embed-your-code)
+  * [Generating documentation](#generating-documentation)
 
 # Consuming packages
 
@@ -198,9 +210,76 @@ advantage is that if both dictionaries have for example {style: {}}, it will be 
 
 checks if the name & setName are present in props and adds it there if not -- useful for controlled component initialization
 
+## Hooks
+
+### useDim
+
+useDim hook gets updated component prop on window load and resize. Commonly used within the framework to response on the viewport or container values.
+
+```jsx
+import { useDim } from "../../hooks/useDim"
+
+export const Component = () => {
+  // by default it will return width and height of the component
+  const { ref, prop: {width, height} } = useDim()
+  // but it can be anything with a custom getter - for example a radius of an svg circle
+  const { ref: refCircle, prop: {width, height} } = useDim({ getter: (c) => c.r.baseVal.value })
+
+  return (
+    <>
+      <div
+      // pass to a div directly
+      ref={ref}>
+        <svg>
+          <circle
+            cx={"50%"}
+            cy={"50%"}
+            r={"calc(50% - 0.5rem)"}
+            // you need to pass ref to the target component
+            ref={refCircle}
+          />
+        </svg>
+      </div>
+    </>
+  )
+}
+
+```
+
 # Components
 
 For full list of props please see generated documentation in [./docs]
+
+## StatusColor Component
+
+Span of a given size and color to imitate the semaphore status. Animated and centered inside the container.
+
+### StatusColor Props
+
+- color: color of the circle
+
+### StatusColor Props Passthrough
+
+It is necessary to mention that this component edits default container properties, initializing wrapper ans flexbox to make sure it's tightly centered in the middle of the wrapper.
+
+- size - diameter of the span
+- circle - span props
+
+### StatusColor Example
+
+```jsx
+<Status
+  color={"#F6BC8E"}
+  // pass size directly in the component to make it bigger
+  size="2rem"
+  props={{
+    // alternatively size in the root props if you want to make it bigger
+    // size: "2rem",
+    // style it like a square with rounded corners and longer transition
+    circle: { style: { borderRadius: "0.25rem", transition: "1.5s" } },
+  }}
+/>
+```
 
 ## DropdownButton Component
 
@@ -534,26 +613,83 @@ const useMapStates = (subscribers, observers, props) => {
 ```
 
 ## Progress Circle
+
 React component built around SVG to help visualize data conviniently. Has the ability to visualize infinite progress and render customized content at the center.
 
 ### Progress Circle Props
-- value - required - the proportion of the whole to be represented. 
-- color?: string 
+
+- value - required - the proportion of the whole to be represented.
+- color?: string
 - minValue?: number
 - maxValue?: number
 - suffix?: string | any
-- props?: Any 
+- props?: Any
 
 ### Progress Circle Props Passthrough
+
 - circle - the SVG element representing the whole
-- total - the SVG element representing the total 
+- total - the SVG element representing the total
 - progress - the SVG element representing the progress
 - value - the element containing the value
-  
+
 ### ProgressCircle Example
 
 ```jsx
-<ProgressCircle value={70} />
+// progress into my savings
+<ProgressCircle value={100} minValue={10} maxValue={150} suffix={"$"} />
+```
+
+# Progress Bar
+
+React component that displays a progress bar based on a given value\
+
+## Progress Bar Props
+
+- value - required - represents the current value of the progress bar.
+- color - optional - sets the color of the progress bar. The default value is "#7AA995".
+- maxValue – optional - sets the maximum value of the progress bar. The default value is 100.
+- minValue - optional - sets the minimum value of the progress bar. The default value is 0.
+- suffix – optional - sets the suffix to be added to the value displayed in the progress bar. The default value is "%".
+- props – optional – allows for additional properties to be passed to the element
+
+## Progress Bar Props Passthrough
+
+- bar – root component (div)
+- total – container for current progress (div)
+- progress – style formatting on current progress
+- labels – container for the labels(div)
+- label – style formatting on each label
+
+### Progress Bar Example Usage
+
+```jsx
+  <ProgressBar
+    value="85"
+    props={{
+        // root component container
+        bar: {
+          style: {
+            padding: 0,
+            margin: 0,
+          },
+        },
+        // total div wraps progress bar
+        total: {
+        },
+        progress: {
+        // progress bar is set to a % of a total div
+        },
+        labels: {
+        // holds the progress bar labels (min and max value)
+        },
+        label: {
+        // additive styling formats for the labels used (min, max, progress value)
+        },
+        value: {
+        // specific styling for progress value
+        }
+      }}
+    />
 ```
 
 # Layouts

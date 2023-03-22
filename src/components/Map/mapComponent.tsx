@@ -24,7 +24,7 @@ export const MapComponent = ({
   colors,
   // map control
   bounds,
-  controller,
+  controller = {},
   // layer control
   layers = ["outline", "blur", "highlight"],
   // hover & tooltip
@@ -99,13 +99,18 @@ export const MapComponent = ({
           {...props.tooltip}
           info={point}
           anchor={{ left: point.offsetX, top: point.offsetY }}
-          />
+        />
       ) : (
         ""
       )}
 
       {clickTooltip && click && click.feature ? (
-        <Tooltip renderer={clickTooltip} {...props.tooltip} info={click} pointer={{display:"none"}}/>
+        <Tooltip
+          renderer={clickTooltip}
+          {...props.tooltip}
+          info={click}
+          pointer={{ display: "none" }}
+        />
       ) : (
         ""
       )}

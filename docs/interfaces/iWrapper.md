@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[core/wrapper.tsx:52](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/wrapper.tsx#L52)
+[src/core/interface.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/interface.tsx#L4)
 
 ___
 
@@ -29,25 +29,23 @@ ___
 
 #### Defined in
 
-[core/wrapper.tsx:53](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/wrapper.tsx#L53)
+[src/core/interface.tsx:5](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/interface.tsx#L5)
 
 ___
 
 ### init
 
-• `Optional` **init**: (`__namedParameters`: [`Iterable`](internal_.Iterable.md)<`any`\>, `__namedParameters`: [`Iterable`](internal_.Iterable.md)<`any`\>, `__namedParameters`: `Object`) => `void`
+• `Optional` **init**: (`__namedParameters`: [`iReactive`](iReactive.md)) => `void`
 
 #### Type declaration
 
-▸ (`«destructured»`, `«destructured»`, `«destructured»`): `void`
+▸ (`«destructured»`): `void`
 
 ##### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `«destructured»` | [`Iterable`](internal_.Iterable.md)<`any`\> |
-| `«destructured»` | [`Iterable`](internal_.Iterable.md)<`any`\> |
-| `«destructured»` | `Object` |
+| `«destructured»` | [`iReactive`](iReactive.md) |
 
 ##### Returns
 
@@ -55,7 +53,7 @@ ___
 
 #### Defined in
 
-[core/wrapper.tsx:55](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/wrapper.tsx#L55)
+[src/core/interface.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/interface.tsx#L7)
 
 ___
 
@@ -65,4 +63,4 @@ ___
 
 #### Defined in
 
-[core/wrapper.tsx:54](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/wrapper.tsx#L54)
+[src/core/interface.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/interface.tsx#L6)

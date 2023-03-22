@@ -13,10 +13,10 @@ export const ToggleButtonGroup = ({
   // props
   props,
 }: iToggleButtonGroup) => {
-  function isClicked(element) {
+  function isClicked(element: any) {
     return element.value === click?.value
   }
-  function isPointed(element) {
+  function isPointed(element: any) {
     return element.value === point?.value
   }
 

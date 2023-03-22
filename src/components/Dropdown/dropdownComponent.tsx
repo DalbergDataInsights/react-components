@@ -11,8 +11,8 @@ export const Dropdown = ({
   click,
   point,
   // events
-  onMove,
-  onClick,
+  onMove = (e: any) => {},
+  onClick = (e: any) => {},
   // props
   // dependency inversion
   DropdownOptionComponent = DropdownOption,
@@ -20,7 +20,7 @@ export const Dropdown = ({
 }: iDropdown) => {
   const [isOpen, setOpen] = useState(false)
   const [buttonLabel, setButtonLabel] = useState(
-    (label ? label : "") + click.name || click.value
+    (label ? label : "") + click?.name || click?.value
   )
 
   return (
@@ -41,9 +41,9 @@ export const Dropdown = ({
                 key={index}
                 isPointed={isPointed}
                 option={option}
-                onClick={(event) => {
+                onClick={(event: any) => {
                   setOpen(false)
-                  onClick(event)
+                  onClick(event || {})
                   setButtonLabel(
                     label ? `${label}${event.target.name}` : event.target.name
                   )

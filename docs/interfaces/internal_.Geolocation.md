@@ -45,7 +45,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `successCallback` | [`PositionCallback`](internal_.PositionCallback.md) |
-| `errorCallback?` | [`PositionErrorCallback`](internal_.PositionErrorCallback.md) |
+| `errorCallback?` | ``null`` \| [`PositionErrorCallback`](internal_.PositionErrorCallback.md) |
 | `options?` | [`PositionOptions`](internal_.PositionOptions-1.md) |
 
 #### Returns
@@ -67,7 +67,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `successCallback` | [`PositionCallback`](internal_.PositionCallback.md) |
-| `errorCallback?` | [`PositionErrorCallback`](internal_.PositionErrorCallback.md) |
+| `errorCallback?` | ``null`` \| [`PositionErrorCallback`](internal_.PositionErrorCallback.md) |
 | `options?` | [`PositionOptions`](internal_.PositionOptions-1.md) |
 
 #### Returns

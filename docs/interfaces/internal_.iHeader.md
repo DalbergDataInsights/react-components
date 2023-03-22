@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[components/Table/tableComponent.tsx:12](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Table/tableComponent.tsx#L12)
+[src/components/Table/tableComponent.tsx:12](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Table/tableComponent.tsx#L12)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[components/Table/tableComponent.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Table/tableComponent.tsx#L7)
+[src/components/Table/tableComponent.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Table/tableComponent.tsx#L7)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 #### Defined in
 
-[components/Table/tableComponent.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Table/tableComponent.tsx#L8)
+[src/components/Table/tableComponent.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Table/tableComponent.tsx#L8)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[components/Table/tableComponent.tsx:11](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Table/tableComponent.tsx#L11)
+[src/components/Table/tableComponent.tsx:11](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Table/tableComponent.tsx#L11)
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 #### Defined in
 
-[components/Table/tableComponent.tsx:10](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Table/tableComponent.tsx#L10)
+[src/components/Table/tableComponent.tsx:10](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Table/tableComponent.tsx#L10)
 
 ___
 
@@ -73,4 +73,4 @@ ___
 
 #### Defined in
 
-[components/Table/tableComponent.tsx:9](https://github.com/DalbergDataInsights/react-components/blob/ff81224/components/Table/tableComponent.tsx#L9)
+[src/components/Table/tableComponent.tsx:9](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Table/tableComponent.tsx#L9)

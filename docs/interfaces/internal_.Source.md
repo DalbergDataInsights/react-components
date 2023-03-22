@@ -34,7 +34,7 @@
 
 ### type
 
-• **type**: ``"canvas"`` \| ``"video"`` \| ``"image"`` \| ``"custom"`` \| ``"geojson"`` \| ``"vector"`` \| ``"raster"`` \| ``"raster-dem"``
+• **type**: ``"geojson"`` \| ``"video"`` \| ``"image"`` \| ``"canvas"`` \| ``"vector"`` \| ``"raster"`` \| ``"raster-dem"`` \| ``"custom"``
 
 #### Defined in
 

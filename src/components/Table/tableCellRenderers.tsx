@@ -12,11 +12,18 @@ const LightTooltip = styled(Tooltip)(({}) => ({
   },
 }))
 
-const TextCell = ({ data, ...props }) => {
+const TextCell = ({ data, ...props }: { data: string | number }) => {
   return <Typography {...props}>{data}</Typography>
 }
 
-const TextWithTooltip = ({ data, tooltips, ...props }) => {
+const TextWithTooltip = ({
+  data,
+  tooltips,
+  ...props
+}: {
+  data: string | number
+  tooltips: { [key: string | number]: any }
+}) => {
   const element = <Typography {...props}>{data}</Typography>
 
   if (tooltips[data]) {
@@ -33,31 +40,8 @@ const TextWithTooltip = ({ data, tooltips, ...props }) => {
   return element
 }
 
-const StatusCell = ({
-  data,
-  map = {
-    done: "bg-green-500",
-    prog: "bg-yellow-500",
-    late: "bg-red-600",
-    default: "bg-gray-400",
-  },
-  size = 4,
-  figure = "squared",
-  ...props
-}) => {
-  return (
-    <div
-      className={`${
-        map[data] || map["default"]
-      } ${figure}-full w-${size} h-${size}`}
-      {...props}
-    />
-  )
-}
-
-const cellRenderers = {
+const cellRenderers: { [key: string]: any } = {
   text: TextCell,
-  status: StatusCell,
   tooltip: TextWithTooltip,
 }
 

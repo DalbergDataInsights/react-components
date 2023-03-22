@@ -141,7 +141,7 @@ ___
 
 ### icon-pitch-alignment
 
-• `Optional` **icon-pitch-alignment**: ``"map"`` \| ``"auto"`` \| ``"viewport"``
+• `Optional` **icon-pitch-alignment**: ``"auto"`` \| ``"map"`` \| ``"viewport"``
 
 #### Defined in
 
@@ -161,7 +161,7 @@ ___
 
 ### icon-rotation-alignment
 
-• `Optional` **icon-rotation-alignment**: ``"map"`` \| ``"auto"`` \| ``"viewport"``
+• `Optional` **icon-rotation-alignment**: ``"auto"`` \| ``"map"`` \| ``"viewport"``
 
 #### Defined in
 
@@ -181,7 +181,7 @@ ___
 
 ### icon-text-fit
 
-• `Optional` **icon-text-fit**: ``"height"`` \| ``"width"`` \| ``"none"`` \| ``"both"``
+• `Optional` **icon-text-fit**: ``"both"`` \| ``"none"`` \| ``"width"`` \| ``"height"``
 
 #### Defined in
 
@@ -211,7 +211,7 @@ ___
 
 ### symbol-placement
 
-• `Optional` **symbol-placement**: ``"line"`` \| ``"point"`` \| ``"line-center"``
+• `Optional` **symbol-placement**: ``"point"`` \| ``"line"`` \| ``"line-center"``
 
 #### Defined in
 
@@ -301,7 +301,7 @@ ___
 
 ### text-justify
 
-• `Optional` **text-justify**: ``"center"`` \| ``"auto"`` \| ``"left"`` \| ``"right"`` \| [`Expression`](../modules/internal_.md#expression)
+• `Optional` **text-justify**: ``"auto"`` \| ``"center"`` \| ``"left"`` \| ``"right"`` \| [`Expression`](../modules/internal_.md#expression)
 
 #### Defined in
 
@@ -391,7 +391,7 @@ ___
 
 ### text-pitch-alignment
 
-• `Optional` **text-pitch-alignment**: ``"map"`` \| ``"auto"`` \| ``"viewport"``
+• `Optional` **text-pitch-alignment**: ``"auto"`` \| ``"map"`` \| ``"viewport"``
 
 #### Defined in
 
@@ -421,7 +421,7 @@ ___
 
 ### text-rotation-alignment
 
-• `Optional` **text-rotation-alignment**: ``"map"`` \| ``"auto"`` \| ``"viewport"``
+• `Optional` **text-rotation-alignment**: ``"auto"`` \| ``"map"`` \| ``"viewport"``
 
 #### Defined in
 

@@ -5,7 +5,7 @@ export interface iMap {
   steps: number[]
   colors: string[]
   bounds?: LngLatBoundsLike
-  controller?: object
+  controller?: { [key: string]: any }
   layers?: string[]
   point?: iMapInfo
   pointTooltip?: Function

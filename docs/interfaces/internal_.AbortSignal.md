@@ -43,22 +43,7 @@ ___
 
 ### onabort
 
-• **onabort**: (`this`: [`AbortSignal`](../modules/internal_.md#abortsignal), `ev`: `Event`) => `any`
-
-#### Type declaration
-
-▸ (`this`, `ev`): `any`
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `this` | [`AbortSignal`](../modules/internal_.md#abortsignal) |
-| `ev` | `Event` |
-
-##### Returns
-
-`any`
+• **onabort**: ``null`` \| (`this`: [`AbortSignal`](../modules/internal_.md#abortsignal), `ev`: `Event`) => `any`
 
 #### Defined in
 

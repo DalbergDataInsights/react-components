@@ -55,7 +55,7 @@ ___
 
 ### getSnapshotBeforeUpdate
 
-▸ `Optional` **getSnapshotBeforeUpdate**(`prevProps`, `prevState`): `SS`
+▸ `Optional` **getSnapshotBeforeUpdate**(`prevProps`, `prevState`): ``null`` \| `SS`
 
 Runs before React applies the result of `render` to the document, and
 returns an object to be given to componentDidUpdate. Useful for saving
@@ -73,7 +73,7 @@ lifecycle events from running.
 
 #### Returns
 
-`SS`
+``null`` \| `SS`
 
 #### Defined in
 

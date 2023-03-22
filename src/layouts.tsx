@@ -1,5 +1,6 @@
 import React from "react"
-import { Wrapper, iWrapper, iReactive } from "./core/wrapper"
+import { Wrapper } from "./core"
+import { iReactive } from "./core"
 
 import { manifest as namedGridManifest } from "./layouts/NamedGrid"
 import { iNamedGrid } from "./layouts/NamedGrid"

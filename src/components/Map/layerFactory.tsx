@@ -7,7 +7,7 @@ function createLayerObject(layer: any, props: any) {
 function createPaintProps(id: string, props: any) {
   const layerPropertiesKeys = Object.keys(props).filter((e) => e.startsWith(id))
   const type = layerPropertiesKeys[0].split("-")[1]
-  const layerProps = {}
+  const layerProps: { [key: string]: any } = {}
   layerPropertiesKeys.forEach(
     (key) => (layerProps[key.replace(`${id}-`, "")] = props[key])
   )

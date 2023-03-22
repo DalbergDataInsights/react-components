@@ -19,7 +19,7 @@ export const Tooltip = ({
   anchor,
   info,
   ...props
-}: iTooltip) => {
+}: iTooltip): JSX.Element => {
   if (info) {
     let tooltipProps = mergeDicts(JSON.parse(JSON.stringify(props)), {
       style: anchor,
@@ -27,6 +27,7 @@ export const Tooltip = ({
 
     return <div {...tooltipProps}>{renderer({ info, props })}</div>
   }
+  return <></>
 }
 
 export const renderTooltip = ({

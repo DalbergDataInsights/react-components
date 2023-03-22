@@ -198,11 +198,11 @@ ___
 
 ### prepareTile
 
-• `Optional` **prepareTile**: (`tileID`: { `x`: `number` ; `y`: `number` ; `z`: `number`  }) => `T`
+• `Optional` **prepareTile**: (`tileID`: { `x`: `number` ; `y`: `number` ; `z`: `number`  }) => `undefined` \| `T`
 
 #### Type declaration
 
-▸ (`tileID`): `T`
+▸ (`tileID`): `undefined` \| `T`
 
 ##### Parameters
 
@@ -215,7 +215,7 @@ ___
 
 ##### Returns
 
-`T`
+`undefined` \| `T`
 
 #### Defined in
 

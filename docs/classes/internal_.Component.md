@@ -569,7 +569,7 @@ ___
 
 ### getSnapshotBeforeUpdate
 
-▸ `Optional` **getSnapshotBeforeUpdate**(`prevProps`, `prevState`): `SS`
+▸ `Optional` **getSnapshotBeforeUpdate**(`prevProps`, `prevState`): ``null`` \| `SS`
 
 Runs before React applies the result of `render` to the document, and
 returns an object to be given to componentDidUpdate. Useful for saving
@@ -587,7 +587,7 @@ lifecycle events from running.
 
 #### Returns
 
-`SS`
+``null`` \| `SS`
 
 #### Inherited from
 
@@ -627,7 +627,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `state` | `S` \| (`prevState`: [`Readonly`](../modules/internal_.md#readonly)<`S`\>, `props`: [`Readonly`](../modules/internal_.md#readonly)<`P`\>) => `S` \| [`Pick`](../modules/internal_.md#pick)<`S`, `K`\> \| [`Pick`](../modules/internal_.md#pick)<`S`, `K`\> |
+| `state` | ``null`` \| `S` \| (`prevState`: [`Readonly`](../modules/internal_.md#readonly)<`S`\>, `props`: [`Readonly`](../modules/internal_.md#readonly)<`P`\>) => ``null`` \| `S` \| [`Pick`](../modules/internal_.md#pick)<`S`, `K`\> \| [`Pick`](../modules/internal_.md#pick)<`S`, `K`\> |
 | `callback?` | () => `void` |
 
 #### Returns

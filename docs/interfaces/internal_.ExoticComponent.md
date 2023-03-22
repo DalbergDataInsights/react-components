@@ -20,7 +20,7 @@
 
 ### ExoticComponent
 
-▸ **ExoticComponent**(`props`): [`ReactElement`](internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](../modules/internal_.md#jsxelementconstructor)<`any`\>\>
+▸ **ExoticComponent**(`props`): ``null`` \| [`ReactElement`](internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](../modules/internal_.md#jsxelementconstructor)<`any`\>\>
 
 **NOTE**: Exotic components are not callable.
 
@@ -32,7 +32,7 @@
 
 #### Returns
 
-[`ReactElement`](internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](../modules/internal_.md#jsxelementconstructor)<`any`\>\>
+``null`` \| [`ReactElement`](internal_.ReactElement.md)<`any`, `string` \| [`JSXElementConstructor`](../modules/internal_.md#jsxelementconstructor)<`any`\>\>
 
 #### Defined in
 

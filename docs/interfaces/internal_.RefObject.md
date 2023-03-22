@@ -20,7 +20,7 @@
 
 ### current
 
-• `Readonly` **current**: `T`
+• `Readonly` **current**: ``null`` \| `T`
 
 #### Defined in
 

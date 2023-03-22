@@ -18,17 +18,27 @@
 
 #### Defined in
 
-[core/wrapper.tsx:60](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/wrapper.tsx#L60)
+[src/core/interface.tsx:12](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/interface.tsx#L12)
 
 ___
 
 ### props
 
-• `Optional` **props**: [`Object`](../modules/internal_.md#object)
+• `Optional` **props**: `Object`
+
+#### Index signature
+
+▪ [key: `string`]: `any`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `container?` | `any` |
 
 #### Defined in
 
-[core/wrapper.tsx:61](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/wrapper.tsx#L61)
+[src/core/interface.tsx:13](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/interface.tsx#L13)
 
 ___
 
@@ -38,4 +48,4 @@ ___
 
 #### Defined in
 
-[core/wrapper.tsx:59](https://github.com/DalbergDataInsights/react-components/blob/ff81224/core/wrapper.tsx#L59)
+[src/core/interface.tsx:11](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/interface.tsx#L11)

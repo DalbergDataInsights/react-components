@@ -6,7 +6,11 @@ export function useDropdown({
   observers = [],
   props = {},
 }: iReactive) {
-  checkState("click", props, props.options.filter((o) => o.selected)[0] || {})
+  checkState(
+    "click",
+    props,
+    props.options.filter((o: any) => o.selected)[0] || {}
+  )
   checkState("point", props)
 
   subscribers.unshift({
@@ -27,7 +31,7 @@ export function useDropdown({
   })
 }
 
-function getInfo(event) {
+function getInfo(event: any) {
   return {
     name: event.target.name,
     value: event.target.value || event.target.attributes.value?.value,

@@ -33,7 +33,7 @@ ___
 
 ### key
 
-• **key**: [`Key`](../modules/internal_.md#key)
+• **key**: ``null`` \| [`Key`](../modules/internal_.md#key)
 
 #### Overrides
 

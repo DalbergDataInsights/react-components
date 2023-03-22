@@ -16,7 +16,7 @@ FilterOptions
 
 ### validate
 
-• `Optional` **validate**: `boolean`
+• `Optional` **validate**: ``null`` \| `boolean`
 
 Whether to check if the filter conforms to the Mapbox GL Style Specification.
 Disabling validation is a performance optimization that should only be used

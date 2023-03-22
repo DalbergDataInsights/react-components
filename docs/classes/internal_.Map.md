@@ -408,7 +408,7 @@ ___
 
 ### cameraForBounds
 
-▸ **cameraForBounds**(`bounds`, `options?`): [`CameraForBoundsResult`](../modules/internal_.md#cameraforboundsresult)
+▸ **cameraForBounds**(`bounds`, `options?`): `undefined` \| [`CameraForBoundsResult`](../modules/internal_.md#cameraforboundsresult)
 
 #### Parameters
 
@@ -419,7 +419,7 @@ ___
 
 #### Returns
 
-[`CameraForBoundsResult`](../modules/internal_.md#cameraforboundsresult)
+`undefined` \| [`CameraForBoundsResult`](../modules/internal_.md#cameraforboundsresult)
 
 #### Defined in
 
@@ -666,11 +666,11 @@ ___
 
 ### getFog
 
-▸ **getFog**(): [`Fog`](../interfaces/internal_.Fog.md)
+▸ **getFog**(): ``null`` \| [`Fog`](../interfaces/internal_.Fog.md)
 
 #### Returns
 
-[`Fog`](../interfaces/internal_.Fog.md)
+``null`` \| [`Fog`](../interfaces/internal_.Fog.md)
 
 #### Defined in
 
@@ -757,11 +757,11 @@ ___
 
 ### getMaxBounds
 
-▸ **getMaxBounds**(): [`LngLatBounds`](internal_.LngLatBounds.md)
+▸ **getMaxBounds**(): ``null`` \| [`LngLatBounds`](internal_.LngLatBounds.md)
 
 #### Returns
 
-[`LngLatBounds`](internal_.LngLatBounds.md)
+``null`` \| [`LngLatBounds`](internal_.LngLatBounds.md)
 
 #### Defined in
 
@@ -946,11 +946,11 @@ ___
 
 ### getTerrain
 
-▸ **getTerrain**(): [`TerrainSpecification`](../interfaces/internal_.TerrainSpecification.md)
+▸ **getTerrain**(): ``null`` \| [`TerrainSpecification`](../interfaces/internal_.TerrainSpecification.md)
 
 #### Returns
 
-[`TerrainSpecification`](../interfaces/internal_.TerrainSpecification.md)
+``null`` \| [`TerrainSpecification`](../interfaces/internal_.TerrainSpecification.md)
 
 #### Defined in
 
@@ -1601,7 +1601,7 @@ ___
 
 ### queryTerrainElevation
 
-▸ **queryTerrainElevation**(`lngLat`, `options?`): `number`
+▸ **queryTerrainElevation**(`lngLat`, `options?`): ``null`` \| `number`
 
 #### Parameters
 
@@ -1612,7 +1612,7 @@ ___
 
 #### Returns
 
-`number`
+``null`` \| `number`
 
 The elevation in meters at mean sea level or null
 
@@ -1766,8 +1766,8 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `options?` | [`AnimationOptions`](../interfaces/internal_.AnimationOptions.md) |
-| `eventData?` | [`EventData`](../modules/internal_.md#eventdata) |
+| `options?` | ``null`` \| [`AnimationOptions`](../interfaces/internal_.AnimationOptions.md) |
+| `eventData?` | ``null`` \| [`EventData`](../modules/internal_.md#eventdata) |
 
 #### Returns
 
@@ -1893,8 +1893,8 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `layer` | `string` |
-| `filter?` | `boolean` \| `any`[] |
-| `options?` | [`FilterOptions`](../interfaces/internal_.FilterOptions.md) |
+| `filter?` | ``null`` \| `boolean` \| `any`[] |
+| `options?` | ``null`` \| [`FilterOptions`](../interfaces/internal_.FilterOptions.md) |
 
 #### Returns
 
@@ -2094,7 +2094,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `maxPitch?` | `number` |
+| `maxPitch?` | ``null`` \| `number` |
 
 #### Returns
 
@@ -2114,7 +2114,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `maxZoom?` | `number` |
+| `maxZoom?` | ``null`` \| `number` |
 
 #### Returns
 
@@ -2134,7 +2134,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `minPitch?` | `number` |
+| `minPitch?` | ``null`` \| `number` |
 
 #### Returns
 
@@ -2154,7 +2154,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `minZoom?` | `number` |
+| `minZoom?` | ``null`` \| `number` |
 
 #### Returns
 
@@ -2342,7 +2342,7 @@ map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `terrain?` | [`TerrainSpecification`](../interfaces/internal_.TerrainSpecification.md) | Terrain properties to set. Must conform to the [Mapbox Style Specification](https://www.mapbox.com/mapbox-gl-style-spec/#terrain). If `null` or `undefined` is provided, function removes terrain. |
+| `terrain?` | ``null`` \| [`TerrainSpecification`](../interfaces/internal_.TerrainSpecification.md) | Terrain properties to set. Must conform to the [Mapbox Style Specification](https://www.mapbox.com/mapbox-gl-style-spec/#terrain). If `null` or `undefined` is provided, function removes terrain. |
 
 #### Returns
 
