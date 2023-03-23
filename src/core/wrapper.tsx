@@ -13,6 +13,7 @@ const wrapperDefaults = {
     padding: "0.5rem",
     overflow: "none",
     fontSize: "1rem",
+    margin: "0 auto",
   },
 }
 // try wrapping the init function in the callback to avoid mount spam?
@@ -32,8 +33,8 @@ const WrapperComponent = ({
     mergeDicts(JSON.parse(JSON.stringify(config[name] || {})), defaults) // 2 left joins component props & application config & default
   )
   props["container"] = mergeDicts(
-    props["container"] || {},
-    mergeDicts(config.Wrapper || {}, wrapperDefaults)
+    mergeDicts(wrapperDefaults, config.Wrapper || {}),
+    props["container"]
   )
   props["controller"] = {}
 
