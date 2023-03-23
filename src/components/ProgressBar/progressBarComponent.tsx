@@ -46,12 +46,12 @@ export const ProgressBarComponent = ({
                 width: `calc(${progress}% - 0.5rem)`,
               },
             },
-            props.label
+            props.value
           )}
         >
           <CountUp {...props.counter} start={minValue} end={value} suffix={suffix} />
         </div>
-        <div {...mergeDicts({ style: { float: "right" } }, props.value)}>
+        <div {...mergeDicts({ style: { float: "right" } }, props.label)}>
           {maxValue}
           {suffix}
         </div>
