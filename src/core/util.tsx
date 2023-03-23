@@ -43,12 +43,12 @@ export function getColor({
   steps: number[]
   naColor: string
 }) {
-  if (value == undefined || value == null || Number.isNaN(value)) {
+  if (value == undefined || value == null || isNaN(value)) {
     return naColor
   }
   let color = colors[0]
   steps.forEach((step: number, index: number) => {
-    if (step > value) {
+    if (value > step) {
       color = colors[index + 1]
     } else {
       return color
