@@ -62,6 +62,9 @@ export const defaults = {
     counter: {
       duration: "3",
       prefix: "",
+      style: {
+        fontSize: "0.8rem",
+      }
     }
   },
 }
