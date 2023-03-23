@@ -1,7 +1,4 @@
-import { textAlign } from "@mui/system"
-
 const unit = "1rem"
-const padding = "0.5rem"
 
 export const defaults = {
   props: {
