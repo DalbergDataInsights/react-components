@@ -20,8 +20,8 @@ export const ToggleButtonGroup = ({
     return element.value === point?.value
   }
 
-  const clickStyle = mergeDicts(props.click, props.button)
-  const pointStyle = mergeDicts(props.point, props.button)
+  const clickStyle = mergeDicts(props.button, props.click)
+  const pointStyle = mergeDicts(props.button, props.point)
 
   return (
     <div {...props.group} onMouseMove={onMove} onClick={onClick}>
