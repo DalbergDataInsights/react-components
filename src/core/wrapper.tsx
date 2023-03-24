@@ -33,10 +33,12 @@ const WrapperComponent = ({
     props,
     mergeDicts(JSON.parse(JSON.stringify(config[name] || {})), defaults) // 2 left joins component props & application config & default
   )
-  props["container"] = mergeDicts(
-    mergeDicts(wrapperDefaults, config.Wrapper || {}),
-    props["container"]
+  let containerProps = mergeDicts(
+    JSON.parse(JSON.stringify(wrapperDefaults)),
+    JSON.parse(JSON.stringify(config.Wrapper || {}))
   )
+  props["container"] = mergeDicts(containerProps, props["container"] || {})
+  
   props["controller"] = {}
 
   init({ subscribers, observers, props })
