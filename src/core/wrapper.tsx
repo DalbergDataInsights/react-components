@@ -6,16 +6,6 @@ import { mergeDicts } from "./util"
 import { ComponentContext } from "./context"
 import { iWrapper, iReactive } from "./interface"
 
-const wrapperDefaults = {
-  style: {
-    height: "calc(100% - 1rem)",
-    width: "calc(100% - 1rem)",
-    padding: "0.5rem",
-    overflow: "none",
-    fontSize: "1rem",
-    margin: "0 auto",
-  },
-}
 // try wrapping the init function in the callback to avoid mount spam?
 const WrapperComponent = ({
   Component,
@@ -26,6 +16,17 @@ const WrapperComponent = ({
   observers = [],
   ...props
 }: iWrapper & iReactive) => {
+  let wrapperDefaults = {
+    style: {
+      height: "calc(100% - 1rem)",
+      width: "calc(100% - 1rem)",
+      padding: "0.5rem",
+      overflow: "none",
+      fontSize: "1rem",
+      margin: "0 auto",
+    },
+  }
+
   const config = useContext(ComponentContext) // default: {}
 
   props = mergeDicts(
