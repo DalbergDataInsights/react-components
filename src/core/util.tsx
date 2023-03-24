@@ -11,6 +11,7 @@ export function mergeDicts(a, b, path = undefined) {
         path.push(JSON.stringify(key))
         mergeDicts(a[key], b[key], path)
       } else {
+        a[key] = b[key]
       }
     } else {
       a[key] = b[key]
