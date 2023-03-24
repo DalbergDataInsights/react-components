@@ -37,7 +37,7 @@ const WrapperComponent = ({
     JSON.parse(JSON.stringify(wrapperDefaults)),
     JSON.parse(JSON.stringify(config.Wrapper || {}))
   )
-  props["container"] = mergeDicts(containerProps, props["container"])
+  props["container"] = mergeDicts(containerProps, props["container"] || {})
   
   props["controller"] = {}
 
