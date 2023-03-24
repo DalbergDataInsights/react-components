@@ -30,15 +30,12 @@ const WrapperComponent = ({
   const config = useContext(ComponentContext) // default: {}
 
   props = mergeDicts(
-    props,
-    mergeDicts(JSON.parse(JSON.stringify(config[name] || {})), defaults) // 2 left joins component props & application config & default
+    mergeDicts(defaults || {}, config[name] || {}),
+    props // 2 left joins component props & application config & default
   )
-  let containerProps = mergeDicts(
-    JSON.parse(JSON.stringify(wrapperDefaults)),
-    JSON.parse(JSON.stringify(config.Wrapper || {}))
-  )
+  let containerProps = mergeDicts(wrapperDefaults, config.Wrapper || {})
   props["container"] = mergeDicts(containerProps, props["container"] || {})
-  
+
   props["controller"] = {}
 
   init({ subscribers, observers, props })
