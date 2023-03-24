@@ -29,10 +29,10 @@ const WrapperComponent = ({
 
   const config = useContext(ComponentContext) // default: {}
 
-  props = mergeDicts(
-    mergeDicts(defaults || {}, config[name] || {}),
-    props // 2 left joins component props & application config & default
-  )
+  // this handles general case of the props - defaults < theme config < props
+  props = mergeDicts(mergeDicts(defaults || {}, config[name] || {}), props)
+
+  // this handles wrapper specific properties defaults < theme config < props
   let containerProps = mergeDicts(wrapperDefaults, config.Wrapper || {})
   props["container"] = mergeDicts(containerProps, props["container"] || {})
 

@@ -6,7 +6,13 @@ export function mergeDicts(dict1, dict2) {
 
   for (const key in dict1) {
     if (Object.hasOwnProperty.call(dict1, key)) {
-      if (Object.hasOwnProperty.call(dict2, key) && typeof dict1[key] === 'object' && typeof dict2[key] === 'object') {
+      if (
+        Object.hasOwnProperty.call(dict2, key) &&
+        typeof dict1[key] === "object" &&
+        typeof dict2[key] === "object" &&
+        !Array.isArray(dict2[key]) &&
+        !Array.isArray(dict1[key])
+      ) {
         mergedDict[key] = mergeDicts(dict1[key], dict2[key])
       } else {
         mergedDict[key] = dict1[key]
@@ -16,8 +22,11 @@ export function mergeDicts(dict1, dict2) {
 
   for (const key in dict2) {
     if (Object.hasOwnProperty.call(dict2, key)) {
-      if (typeof dict2[key] === 'object') {
-        if (mergedDict.hasOwnProperty(key) && typeof mergedDict[key] === 'object') {
+      if (typeof dict2[key] === "object" && !Array.isArray(dict2[key])) {
+        if (
+          mergedDict.hasOwnProperty(key) &&
+          typeof mergedDict[key] === "object"
+        ) {
           mergedDict[key] = mergeDicts(mergedDict[key], dict2[key])
         } else {
           mergedDict[key] = { ...dict2[key] }
