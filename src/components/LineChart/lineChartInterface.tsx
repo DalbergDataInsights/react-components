@@ -11,8 +11,8 @@ export interface iLineChart {
 
 export interface iDataPoint {
   hue: string
-  xlabel: string | number
-  ylabel: number
+  xLabel: string | number
+  yLabel: number
 }
 
 export interface iChartData {
