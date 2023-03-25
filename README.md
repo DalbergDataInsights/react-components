@@ -705,7 +705,7 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
 ## Line Chart Props
 - data -required : iDataPoint[] - Data Model used by DDI (List of objects for the rows). 
   The data model has a format shown below.
-  ```{jsx}
+  ```jsx
   [
     {name: "X", pe: "202201", value: "1"},
     {name: "Y", pe: "202201", value: "8"},
@@ -715,7 +715,7 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
   iDataPoint[] is the interface that defines the data model and is later transformed with the help of a utility function
   to convert the data to the required format. 
   The format consumed by this line chart is as shown below.
-  ```{jsx}
+  ```jsx
   {
     id: string
     data: { x: string | number, y: number }[]
@@ -741,7 +741,7 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
 
 ### Line Chart Example usage
 
-```{jsx}
+```jsx
   // visualizing the monthly vaccination levels
   const data = [
             { "name": 'X', "pe": "Jan", "value": 4 },
