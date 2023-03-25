@@ -742,7 +742,7 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
 ### Line Chart Example usage
 
 ```jsx
-  // visualizing the monthly vaccination levels
+  // visualizing the monthly vaccination levels for two drugs X and Y.
   const data = [
             { "name": 'X', "pe": "Jan", "value": 4 },
             { "name": 'X', "pe": "Feb", "value": 5 },
@@ -769,7 +769,9 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
             { "name": 'Y', "pe": "Nov", "value": 96 }, 
             { "name": 'Y', "pe": "Dec", "value": 100 },
   ]
-  const colors = ["#D1D1D6", "#8E8E93"]
+  // define the colors
+  const colors = ["#D1D1D6", "#8E8E93"] // two colors since we only have two names X and Y.
+  // plot the chart
   <LineChart data={data} colors={colors} useGrid={true}/>
 ```
 
