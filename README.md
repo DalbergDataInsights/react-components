@@ -50,7 +50,7 @@
   - [Progress Bar Props](#progress-bar-props)
   - [Progress Bar Props Passthrough](#progress-bar-props-passthrough)
     - [Progress Bar Example Usage](#progress-bar-example-usage)
-  - [Line Chart](#line-chart)
+- [Line Chart](#line-chart)
   - [Line Chart Props](#line-chart-props)
   - [Line Chart Props Passthrough](#line-chart-props-passthrough)
     - [Line Chart Example usage](#line-chart-example-usage)
@@ -698,9 +698,9 @@ React component that displays a progress bar based on a given value\
     />
 ```
 
-## Line Chart
+# Line Chart
 
-React component built using the [Recharts](https://recharts.org/en-US) library to help visualize data on a line chart.
+React component built on top of the [Recharts](https://recharts.org/en-US) library to help visualize data on a line chart.
 
 ## Line Chart Props
 - data -required : iDataPoint[] - Data Model used by DDI (List of objects for the rows). 
@@ -712,19 +712,21 @@ React component built using the [Recharts](https://recharts.org/en-US) library t
     ...
   ]
   ```
-  iDataPoint[] is the interface that defines the data model and is later transformed with the help of a function
+  iDataPoint[] is the interface that defines the data model and is later transformed with the help of a utility function
   to convert the data to the required format. 
   The format consumed by this line chart is as shown below.
   ```{jsx}
-  id: string
-  data: { x: string | number, y: number }[]
+  {
+    id: string
+    data: { x: string | number, y: number }[]
+  }
   ```
 - colors - optional: an array of colors for multiple lines.
 - title - optional: title for your chart
 - xLabel - optional: string label for the x-axis
 - yLabel - optional: string label for the y-axis
 - useGrid - optional: boolean that sets the 
-  ```{jsx}    <CartesianGrid />  ``` component on when `true` and off otherwise
+  `<CartesianGrid />` component on when `true` and off otherwise
 - props - optional: allows for passing additional properties to the component
 
 ## Line Chart Props Passthrough
@@ -740,6 +742,34 @@ React component built using the [Recharts](https://recharts.org/en-US) library t
 ### Line Chart Example usage
 
 ```{jsx}
+  // visualizing the monthly vaccination levels
+  const data = [
+            { "name": 'X', "pe": "Jan", "value": 4 },
+            { "name": 'X', "pe": "Feb", "value": 5 },
+            { "name": 'X', "pe": "Mar", "value": 8 },
+            { "name": 'X', "pe": "Apr", "value": 20 },
+            { "name": 'X', "pe": "May", "value": 35 },
+            { "name": 'X', "pe": "Jun", "value": 37 },
+            { "name": 'X', "pe": "Jul", "value": 45 },
+            { "name": 'X', "pe": "Aug", "value": 39 },
+            { "name": 'X', "pe": "Sep", "value": 46 },
+            { "name": 'X', "pe": "Oct", "value": 53 },
+            { "name": 'X', "pe": "Nov", "value": 54 },
+            { "name": 'X', "pe": "Dec", "value": 60 },
+            { "name": 'Y', "pe": "Jan", "value": 8 },
+            { "name": 'Y', "pe": "Feb", "value": 16 },
+            { "name": 'Y', "pe": "Mar", "value": 32 },
+            { "name": 'Y', "pe": "Apr", "value": 48 },
+            { "name": 'Y', "pe": "May", "value": 56 },
+            { "name": 'Y', "pe": "Jun", "value": 69 },
+            { "name": 'Y', "pe": "Jul", "value": 78 },
+            { "name": 'Y', "pe": "Aug", "value": 89 }, 
+            { "name": 'Y', "pe": "Sep", "value": 88 }, 
+            { "name": 'Y', "pe": "Oct", "value": 94 }, 
+            { "name": 'Y', "pe": "Nov", "value": 96 }, 
+            { "name": 'Y', "pe": "Dec", "value": 100 },
+  ]
+  const colors = ["#D1D1D6", "#8E8E93"]
   <LineChart data={data} colors={colors} useGrid={true}/>
 ```
 
