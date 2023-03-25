@@ -46,14 +46,14 @@
     - [Progress Circle Props](#progress-circle-props)
     - [Progress Circle Props Passthrough](#progress-circle-props-passthrough)
     - [ProgressCircle Example](#progresscircle-example)
-- [Progress Bar](#progress-bar)
-  - [Progress Bar Props](#progress-bar-props)
-  - [Progress Bar Props Passthrough](#progress-bar-props-passthrough)
+  - [Progress Bar](#progress-bar)
+    - [Progress Bar Props](#progress-bar-props)
+    - [Progress Bar Props Passthrough](#progress-bar-props-passthrough)
     - [Progress Bar Example Usage](#progress-bar-example-usage)
-- [Line Chart](#line-chart)
-  - [Line Chart Props](#line-chart-props)
-  - [Line Chart Props Passthrough](#line-chart-props-passthrough)
-    - [Line Chart Example usage](#line-chart-example-usage)
+  - [Line Chart](#line-chart)
+    - [Line Chart Props](#line-chart-props)
+    - [Line Chart Props Passthrough](#line-chart-props-passthrough)
+    - [Line Chart Example](#line-chart-example)
 - [Layouts](#layouts)
   - [NamedGrid](#namedgrid-1)
   - [NamedGrid Props](#namedgrid-props)
@@ -645,11 +645,11 @@ React component built around SVG to help visualize data conviniently. Has the ab
 <ProgressCircle value={100} minValue={10} maxValue={150} suffix={"$"} />
 ```
 
-# Progress Bar
+## Progress Bar
 
 React component that displays a progress bar based on a given value\
 
-## Progress Bar Props
+### Progress Bar Props
 
 - value - required - represents the current value of the progress bar.
 - color - optional - sets the color of the progress bar. The default value is "#7AA995".
@@ -658,7 +658,7 @@ React component that displays a progress bar based on a given value\
 - suffix – optional - sets the suffix to be added to the value displayed in the progress bar. The default value is "%".
 - props – optional – allows for additional properties to be passed to the element
 
-## Progress Bar Props Passthrough
+### Progress Bar Props Passthrough
 
 - bar – root component (div)
 - total – container for current progress (div)
@@ -698,11 +698,11 @@ React component that displays a progress bar based on a given value\
     />
 ```
 
-# Line Chart
+## Line Chart
 
 React component built on top of the [Recharts](https://recharts.org/en-US) library to help visualize data on a line chart.
 
-## Line Chart Props
+### Line Chart Props
 - data -required : iDataPoint[] - Data Model used by DDI (List of objects for the rows). 
   The data model has a format shown below.
   ```jsx
@@ -730,7 +730,7 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
   `<CartesianGrid />` component on when `true` and off otherwise
 - props - optional: allows for passing additional properties to the component
 
-## Line Chart Props Passthrough
+### Line Chart Props Passthrough
 
 - container - div container to habor the responsive line chart
 - chart - `<ResponsiveContainer />` container element
@@ -740,7 +740,7 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
 - line - `<Line />` element
 - legend - `<Legend />` element
 
-### Line Chart Example usage
+### Line Chart Example
 
 ```jsx
   // visualizing the monthly vaccination levels for two drugs X and Y.
