@@ -30,7 +30,8 @@
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.8",
     "react-countup": "^6.4.2",
-    "react-map-gl": "^7.0.21"
+    "react-map-gl": "^7.0.21",
+    "recharts": "^2.5.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.0.1",
