@@ -1,5 +1,5 @@
 export interface iLineChart {
-    data: any
+    data: iDataPoint[]
     colors?: string[]
     title?: string
     xLabel?: string
