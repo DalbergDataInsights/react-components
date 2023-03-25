@@ -1,23 +1,28 @@
-import { iDataPoint, iChartData } from "./lineChartInterface"
+import { iDataPoint, iChartData } from './lineChartInterface'
 
-function transformData(input: iDataPoint[]): iChartData[] {
+function transformData(
+  input: iDataPoint[],
+  xlabel = 'pe',
+  ylabel = 'value',
+  hue='name',
+  ): iChartData[] {
   const output: iChartData[] = []
   const map: { [key: string]: iChartData } = {}
 
   // loop through the input data
   for (let i = 0; i < input.length; i++) {
-    const name = input[i].name
-    const pe = input[i].pe
-    const value = input[i].value
+    const groupBy = input[i][hue as keyof iDataPoint]
+    const xlab = input[i][xlabel as keyof iDataPoint]
+    const ylab = input[i][ylabel as keyof iDataPoint]
 
-    // if name not seen before, add new object to output array and map
-    if (!map[name]) {
-      map[name] = { id: name, data: [] }
-      output.push(map[name])
+    // if groupBy variable not seen before, add new object to output array and map
+    if (!map[groupBy]) {
+      map[groupBy] = { id: groupBy, data: [] }
+      output.push(map[groupBy])
     }
 
     // add data point to data array in map
-    map[name].data.push({ x: pe, y: value })
+    map[groupBy].data.push({ x: xlab, y: ylab })
   }
   return output
 }

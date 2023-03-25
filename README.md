@@ -721,10 +721,11 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
     data: { x: string | number, y: number }[]
   }
   ```
+- xLabel - required: string label for the x-axis
+- yLabel - required: string label for the y-axis
+- hue - required: string label for the grouping variable
 - colors - optional: an array of colors for multiple lines.
 - title - optional: title for your chart
-- xLabel - optional: string label for the x-axis
-- yLabel - optional: string label for the y-axis
 - useGrid - optional: boolean that sets the 
   `<CartesianGrid />` component on when `true` and off otherwise
 - props - optional: allows for passing additional properties to the component

@@ -5,12 +5,15 @@ import transformData from "./lineChartUtils"
 
 export const LineChartComponent = ({
   data,
+  xLabel = 'pe',
+  yLabel = 'value',
+  hue = 'name',
   colors = ["#D1D1D6", "#8E8E93"],
   useGrid = false,
   props,
 }: iLineChart) => {
 
-  const transformedData = useMemo(() => transformData(data), [data])
+  const transformedData = useMemo(() => transformData(data, xLabel, yLabel, hue), [data])
 
   return (
     <div {...props.container}>
