@@ -717,7 +717,7 @@ React component built using the [Recharts](https://recharts.org/en-US) library t
   The format consumed by this line chart is as shown below.
   ```{jsx}
   id: string
-  data: { x: string | number y: number }[]
+  data: { x: string | number, y: number }[]
   ```
 - colors - optional: an array of colors for multiple lines.
 - title - optional: title for your chart
