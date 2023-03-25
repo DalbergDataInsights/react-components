@@ -1,11 +1,11 @@
 export interface iLineChart {
-    data: iDataPoint[]
-    colors?: string[]
-    title?: string
-    xLabel?: string
-    yLabel?: string
-    useGrid?: boolean
-    props?: any
+  data: iDataPoint[]
+  colors?: string[]
+  title?: string
+  xLabel?: string
+  yLabel?: string
+  useGrid?: boolean
+  props?: any
 }
 
 export interface iDataPoint {
