@@ -18,38 +18,42 @@
   - [Hooks](#hooks)
     - [useDim](#usedim)
 - [Components](#components)
-  * [StatusColor Component](#statuscolor-component)
-    + [StatusColor Props](#statuscolor-props)
-    + [StatusColor Props Passthrough](#statuscolor-props-passthrough)
-    + [StatusColor Example](#statuscolor-example)
-  * [DropdownButton Component](#dropdownbutton-component)
-    + [DropdownButton States](#dropdownbutton-states)
-    + [DropdownButton Props](#dropdownbutton-props)
-    + [DropdownButton Props Passthrough](#dropdownbutton-props-passthrough)
-    + [DropdownButton Example](#dropdownbutton-example)
-  * [Toggle Button Component](#toggle-button-component)
-    + [Toggle Button States](#toggle-button-states)
-    + [Toggle Button Props](#toggle-button-props)
-    + [Toggle Button Props Passthrough](#toggle-button-props-passthrough)
-    + [Toggle Button Example](#toggle-button-example)
-  * [Table](#table-1)
-    + [Table Props](#table-props)
-    + [Table Props Passthrough](#table-props-passthrough)
-    + [Table Example](#table-example)
-  * [Map](#map)
-    + [Map Assumptions](#map-assumptions)
-    + [Map States](#map-states)
-    + [Map Props](#map-props)
-    + [Map Props Passthrough](#map-props-passthrough)
-    + [Map Example](#map-example)
-  * [Progress Circle](#progress-circle)
-    + [Progress Circle Props](#progress-circle-props)
-    + [Progress Circle Props Passthrough](#progress-circle-props-passthrough)
-    + [ProgressCircle Example](#progresscircle-example)
+  - [StatusColor Component](#statuscolor-component)
+    - [StatusColor Props](#statuscolor-props)
+    - [StatusColor Props Passthrough](#statuscolor-props-passthrough)
+    - [StatusColor Example](#statuscolor-example)
+  - [DropdownButton Component](#dropdownbutton-component)
+    - [DropdownButton States](#dropdownbutton-states)
+    - [DropdownButton Props](#dropdownbutton-props)
+    - [DropdownButton Props Passthrough](#dropdownbutton-props-passthrough)
+    - [DropdownButton Example](#dropdownbutton-example)
+  - [Toggle Button Component](#toggle-button-component)
+    - [Toggle Button States](#toggle-button-states)
+    - [Toggle Button Props](#toggle-button-props)
+    - [Toggle Button Props Passthrough](#toggle-button-props-passthrough)
+    - [Toggle Button Example](#toggle-button-example)
+  - [Table](#table-1)
+    - [Table Props](#table-props)
+    - [Table Props Passthrough](#table-props-passthrough)
+    - [Table Example](#table-example)
+  - [Map](#map)
+    - [Map Assumptions](#map-assumptions)
+    - [Map States](#map-states)
+    - [Map Props](#map-props)
+    - [Map Props Passthrough](#map-props-passthrough)
+    - [Map Example](#map-example)
+  - [Progress Circle](#progress-circle)
+    - [Progress Circle Props](#progress-circle-props)
+    - [Progress Circle Props Passthrough](#progress-circle-props-passthrough)
+    - [ProgressCircle Example](#progresscircle-example)
 - [Progress Bar](#progress-bar)
-  * [Progress Bar Props](#progress-bar-props)
-  * [Progress Bar Props Passthrough](#progress-bar-props-passthrough)
-    + [Progress Bar Example Usage](#progress-bar-example-usage)
+  - [Progress Bar Props](#progress-bar-props)
+  - [Progress Bar Props Passthrough](#progress-bar-props-passthrough)
+    - [Progress Bar Example Usage](#progress-bar-example-usage)
+  - [Line Chart](#line-chart)
+  - [Line Chart Props](#line-chart-props)
+  - [Line Chart Props Passthrough](#line-chart-props-passthrough)
+    - [Line Chart Example usage](#line-chart-example-usage)
 - [Layouts](#layouts)
   - [NamedGrid](#namedgrid-1)
   - [NamedGrid Props](#namedgrid-props)
@@ -692,6 +696,51 @@ React component that displays a progress bar based on a given value\
         }
       }}
     />
+```
+
+## Line Chart
+
+React component built using the [Recharts](https://recharts.org/en-US) library to help visualize data on a line chart.
+
+## Line Chart Props
+- data -required : iDataPoint[] - Data Model used by DDI (List of objects for the rows). 
+  The data model has a format shown below.
+  ```{jsx}
+  [
+    {name: "X", pe: "202201", value: "1"},
+    {name: "Y", pe: "202201", value: "8"},
+    ...
+  ]
+  ```
+  iDataPoint[] is the interface that defines the data model and is later transformed with the help of a function
+  to convert the data to the required format. 
+  The format consumed by this line chart is as shown below.
+  ```{jsx}
+  id: string
+  data: { x: string | number y: number }[]
+  ```
+- colors - optional: an array of colors for multiple lines.
+- title - optional: title for your chart
+- xLabel - optional: string label for the x-axis
+- yLabel - optional: string label for the y-axis
+- useGrid - optional: boolean that sets the 
+  ```{jsx}    <CartesianGrid />  ``` component on when `true` and off otherwise
+- props - optional: allows for passing additional properties to the component
+
+## Line Chart Props Passthrough
+
+- container - div container to habor the responsive line chart
+- chart - `<ResponsiveContainer />` container element
+- grid - `<CartesianGrid />` element
+- xaxis -  `<XAxis />` element
+- yaxis - `<YAxis />` element
+- line - `<Line />` element
+- legend - `<Legend />` element
+
+### Line Chart Example usage
+
+```{jsx}
+  <LineChart data={data} colors={colors} useGrid={true}/>
 ```
 
 # Layouts
