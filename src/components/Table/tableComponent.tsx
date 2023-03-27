@@ -51,7 +51,7 @@ export const TableComponent = ({
         ref={ref}
       >
         {displayHeader &&
-          headers.map((header) =>
+          headers.map((header, index) =>
             header.hidden ? (
               <></>
             ) : (
@@ -61,6 +61,7 @@ export const TableComponent = ({
                   mergeDicts(props.row, props.header),
                   header.props
                 )}
+                key={`header-${index}`}
               >
                 {header.name}
               </div>
@@ -73,15 +74,16 @@ export const TableComponent = ({
           style: { height: `calc(100% - ${headerHeight}px)` },
         })}
       >
-        {data.map((row) => (
-          <div {...props.rows} _prop-target="rows">
-            {headers.map((header) =>
+        {data.map((row, index) => (
+          <div {...props.rows} key={`rows-${index}`} _prop-target="rows">
+            {headers.map((header, index) =>
               header.hidden ? (
                 <></>
               ) : (
                 <header.renderer
                   _prop-target="row-header.props"
                   {...mergeDicts(props.row, header.props)}
+                  key={`row-${index}`}
                   value={row[header.index]}
                 />
               )
