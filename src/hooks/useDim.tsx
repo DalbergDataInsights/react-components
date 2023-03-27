@@ -32,6 +32,6 @@ export const useDim = ({ getter = defaultGetter, on = "resize" }) => {
   return { ref, prop }
 }
 
-function defaultGetter(current) {
+function defaultGetter(current: any) {
   return { width: current.offsetWidth, height: current.offsetHeight }
 }

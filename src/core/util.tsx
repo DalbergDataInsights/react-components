@@ -1,22 +1,43 @@
 import { useState } from "react"
 
 // merge two dictionaries - used to merge props and keeping all default values
-export function mergeDicts(a, b, path = undefined) {
-  if (!path) {
-    path = []
-  }
-  for (const key in b) {
-    if (key in a) {
-      if (a[key] instanceof Object && b[key] instanceof Object) {
-        path.push(JSON.stringify(key))
-        mergeDicts(a[key], b[key], path)
+export function mergeDicts(dict1, dict2) {
+  const mergedDict = {}
+
+  for (const key in dict1) {
+    if (Object.hasOwnProperty.call(dict1, key)) {
+      if (
+        Object.hasOwnProperty.call(dict2, key) &&
+        typeof dict1[key] === "object" &&
+        typeof dict2[key] === "object" &&
+        !Array.isArray(dict2[key]) &&
+        !Array.isArray(dict1[key])
+      ) {
+        mergedDict[key] = mergeDicts(dict1[key], dict2[key])
       } else {
+        mergedDict[key] = dict1[key]
       }
-    } else {
-      a[key] = b[key]
     }
   }
-  return a
+
+  for (const key in dict2) {
+    if (Object.hasOwnProperty.call(dict2, key)) {
+      if (typeof dict2[key] === "object" && !Array.isArray(dict2[key])) {
+        if (
+          mergedDict.hasOwnProperty(key) &&
+          typeof mergedDict[key] === "object"
+        ) {
+          mergedDict[key] = mergeDicts(mergedDict[key], dict2[key])
+        } else {
+          mergedDict[key] = { ...dict2[key] }
+        }
+      } else {
+        mergedDict[key] = dict2[key]
+      }
+    }
+  }
+
+  return { ...dict1, ...dict2, ...mergedDict }
 }
 
 export function checkState(stateString: string, props: any, initValue = {}) {
@@ -43,12 +64,12 @@ export function getColor({
   steps: number[]
   naColor: string
 }) {
-  if (value == undefined || value == null || Number.isNaN(value)) {
+  if (value == undefined || value == null || isNaN(value)) {
     return naColor
   }
   let color = colors[0]
   steps.forEach((step: number, index: number) => {
-    if (step > value) {
+    if (value > step) {
       color = colors[index + 1]
     } else {
       return color

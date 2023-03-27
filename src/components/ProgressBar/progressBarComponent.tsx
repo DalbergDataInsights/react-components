@@ -21,37 +21,36 @@ export const ProgressBarComponent = ({
     <div {...props.bar}>
       <div {...props.total}>
         <div
-          {...mergeDicts(
-            {
-              style: {
-                width: `${progress}%`,
-                backgroundColor: color,
-              },
+          {...mergeDicts(props.progress, {
+            style: {
+              width: `${progress}%`,
+              backgroundColor: color,
             },
-            { ...props.progress }
-          )}
+          })}
         >
           <div {...props.pointer}></div>
         </div>
       </div>
       <div {...props.labels}>
-        <div {...mergeDicts({ style: {} }, props.label)}>
+        <div {...props.label}>
           {minValue}
           {suffix}
         </div>
         <div
-          {...mergeDicts(
-            {
-              style: {
-                width: `calc(${progress}% - 0.5rem)`,
-              },
+          {...mergeDicts(props.value, {
+            style: {
+              width: `calc(${progress}% - 0.5rem)`,
             },
-            props.value
-          )}
+          })}
         >
-          <CountUp {...props.counter} start={minValue} end={value} suffix={suffix} />
+          <CountUp
+            {...props.counter}
+            start={minValue}
+            end={value}
+            suffix={suffix}
+          />
         </div>
-        <div {...mergeDicts({ style: { float: "right" } }, props.label)}>
+        <div {...mergeDicts(props.label, { style: { float: "right" } })}>
           {maxValue}
           {suffix}
         </div>

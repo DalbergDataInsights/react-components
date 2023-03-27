@@ -6,15 +6,6 @@ import { mergeDicts } from "./util"
 import { ComponentContext } from "./context"
 import { iWrapper, iReactive } from "./interface"
 
-const wrapperDefaults = {
-  style: {
-    height: "calc(100% - 1rem)",
-    width: "calc(100% - 1rem)",
-    padding: "0.5rem",
-    overflow: "none",
-    fontSize: "1rem",
-  },
-}
 // try wrapping the init function in the callback to avoid mount spam?
 const WrapperComponent = ({
   Component,
@@ -25,16 +16,26 @@ const WrapperComponent = ({
   observers = [],
   ...props
 }: iWrapper & iReactive) => {
+  let wrapperDefaults = {
+    style: {
+      height: "calc(100% - 1rem)",
+      width: "calc(100% - 1rem)",
+      padding: "0.5rem",
+      overflow: "none",
+      fontSize: "1rem",
+      margin: "0 auto",
+    },
+  }
+
   const config = useContext(ComponentContext) // default: {}
 
-  props = mergeDicts(
-    props,
-    mergeDicts(JSON.parse(JSON.stringify(config[name] || {})), defaults) // 2 left joins component props & application config & default
-  )
-  props["container"] = mergeDicts(
-    props["container"] || {},
-    mergeDicts(config.Wrapper || {}, wrapperDefaults)
-  )
+  // this handles general case of the props - defaults < theme config < props
+  props = mergeDicts(mergeDicts(defaults || {}, config[name] || {}), props)
+
+  // this handles wrapper specific properties defaults < theme config < props
+  let containerProps = mergeDicts(wrapperDefaults, config.Wrapper || {})
+  props["container"] = mergeDicts(containerProps, props["container"] || {})
+
   props["controller"] = {}
 
   init({ subscribers, observers, props })

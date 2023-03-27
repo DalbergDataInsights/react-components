@@ -74,7 +74,7 @@ export const DropdownOption = ({
   onMove: Function
   props: any
 }) => {
-  const pointOption = mergeDicts(props.point, props.option)
+  const pointOption = mergeDicts(props.option, props.point)
   const element = (
     <a
       onClick={onClick}

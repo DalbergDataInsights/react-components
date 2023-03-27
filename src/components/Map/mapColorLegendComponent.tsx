@@ -18,32 +18,26 @@ export const ColorLegendComponent = ({
       <div {...props.colors}>
         <div {...props.empty}></div>
         <div
-          {...mergeDicts(
-            {
-              style: {
-                backgroundColor: naColor,
-                borderRadius: `${borderRadius} 0 0 ${borderRadius}`,
-              },
+          {...mergeDicts(props.color, {
+            style: {
+              backgroundColor: naColor,
+              borderRadius: `${borderRadius} 0 0 ${borderRadius}`,
             },
-            props.color
-          )}
+          })}
         ></div>
         {colors &&
           colors.map((color, index) => (
             <div
               key={color}
-              {...mergeDicts(
-                {
-                  style: {
-                    backgroundColor: color,
-                    borderRadius:
-                      index === colors.length - 1
-                        ? `0 ${borderRadius} ${borderRadius} 0`
-                        : "0",
-                  },
+              {...mergeDicts(props.color, {
+                style: {
+                  backgroundColor: color,
+                  borderRadius:
+                    index === colors.length - 1
+                      ? `0 ${borderRadius} ${borderRadius} 0`
+                      : "0",
                 },
-                props.color
-              )}
+              })}
             ></div>
           ))}
         <div {...props.empty}></div>
