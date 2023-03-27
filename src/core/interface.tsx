@@ -10,7 +10,12 @@ export interface iWrapper {
 export interface iReactive {
   subscribers?: iSubscriber[]
   observers?: iObserver[]
-  props?: { container?: any; [key: string]: any }
+  props?: {
+    container?: any
+    controller?: any
+    key?: any
+    [key: string]: any
+  } & any
 }
 
 export interface iObserver {

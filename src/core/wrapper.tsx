@@ -42,7 +42,7 @@ const WrapperComponent = ({
   useStateListener({ observers, ...props })
   const handlers = useEventManagement({ subscribers })
   return (
-    <div {...containerProps}>
+    <div {...containerProps} key={props?.key}>
       <Component {...props} {...handlers} />
     </div>
   )

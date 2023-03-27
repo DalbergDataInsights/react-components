@@ -49,6 +49,7 @@ export const TableComponent = ({
         _prop-target="rows-headers"
         {...mergeDicts(props.rows, props.headers)}
         ref={ref}
+        key={"table-headers"}
       >
         {displayHeader &&
           headers.map((header, index) =>
