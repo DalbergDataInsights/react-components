@@ -54,6 +54,10 @@
     - [Line Chart Props](#line-chart-props)
     - [Line Chart Props Passthrough](#line-chart-props-passthrough)
     - [Line Chart Example](#line-chart-example)
+- [Layouts](#layouts)
+  - [NamedGrid](#namedgrid-1)
+  - [NamedGrid Props](#namedgrid-props)
+  - [NameGrid Example](#namegrid-example)
 - [Contribution](#contribution)
   - [Integrate with framework](#integrate-with-framework)
   - [Embed your code](#embed-your-code)
@@ -768,6 +772,7 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
     ]}
     children={<Legend />}
   />
+  ```
 
 # Layouts
 
