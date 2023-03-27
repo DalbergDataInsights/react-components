@@ -524,7 +524,36 @@ Basic map usage only consists of data, colors and steps
 
 - map - root map component (react-map-gl Map)
 - layers - each map layer
-- tooltip - both point and click tolltips (Tooltip component, wrapper for rendering function)
+- tooltip - both point and click tolltips (Tooltip component, wrapper for rendering function). The tooltip has atleast 5 values it sources from the geojson data: label, variable, name, value and units.  
+    * name:- name of highlighted area  
+    * label:- name description/ highlighted area level
+    * variable:- value description  
+    * units:- value suffix  
+
+    These variables can be added to the geojson as given in the example below:
+    ```jsx
+
+    const geoData = geoJson.features.map((e) => ({
+      ...e,
+      properties: {
+        ...e.properties,
+        variable: "BCG",
+        units: "%",
+        label: "Region"
+      },
+    }))
+
+    return  (
+      <div>
+        <Map 
+          data = {{...geoJson, features: geoData }}
+          colors = {colors}
+          steps={steps}
+        />
+      <div/>
+    )
+    
+    ```
 
 ### Map Example
 
@@ -555,7 +584,7 @@ const steps = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
       // you can pass extra children to the map // since legend is only
       connected to a map with colors and not logic, it makes sense to pass
       it separately
-      <MapLegend colors={colors} steps={steps} />
+      <MapColorLegend colors={colors} steps={steps} />
       // controls are reexported from react-map-gl
       <MapFullscreenControl />
     </Map>
