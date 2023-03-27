@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[src/core/interface.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/interface.tsx#L17)
+[src/core/interface.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L17)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[src/core/interface.tsx:18](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/interface.tsx#L18)
+[src/core/interface.tsx:18](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L18)
 
 ___
 
@@ -52,4 +52,4 @@ ___
 
 #### Defined in
 
-[src/core/interface.tsx:19](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/interface.tsx#L19)
+[src/core/interface.tsx:19](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L19)

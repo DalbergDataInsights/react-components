@@ -2,22 +2,23 @@
 
 # Dalberg Data Insights React Components Library
 
+- [Dalberg Data Insights React Components Library](#dalberg-data-insights-react-components-library)
 - [Consuming packages](#consuming-packages)
 - [Developer TODO and Roadmap](#developer-todo-and-roadmap)
-  * [NamedGrid](#namedgrid)
-  * [Table](#table)
+  - [NamedGrid](#namedgrid)
+  - [Table](#table)
 - [Core Library](#core-library)
-  * [Wrapper](#wrapper)
-  * [Event management](#event-management)
-  * [State observation](#state-observation)
-  * [Component initialization](#component-initialization)
-  * [Props passthrough](#props-passthrough)
-  * [Component styling](#component-styling)
-  * [Utility](#utility)
-    + [mergeDicts(a,b)](#mergedicts-a-b-)
-    + [checkStates(name, props)](#checkstates-name--props-)
-  * [Hooks](#hooks)
-    + [useDim](#usedim)
+  - [Wrapper](#wrapper)
+  - [Event management](#event-management)
+  - [State observation](#state-observation)
+  - [Component initialization](#component-initialization)
+  - [Props passthrough](#props-passthrough)
+  - [Component styling](#component-styling)
+  - [Utility](#utility)
+    - [mergeDicts(a,b)](#mergedictsab)
+    - [checkStates(name, props)](#checkstatesname-props)
+  - [Hooks](#hooks)
+    - [useDim](#usedim)
 - [Components](#components)
   * [StatusColor Component](#statuscolor-component)
     + [StatusColor Props](#statuscolor-props)
@@ -52,13 +53,13 @@
   * [Progress Bar Props Passthrough](#progress-bar-props-passthrough)
     + [Progress Bar Example Usage](#progress-bar-example-usage)
 - [Layouts](#layouts)
-  * [NamedGrid](#namedgrid-1)
-  * [NamedGrid Props](#namedgrid-props)
-  * [NameGrid Example](#namegrid-example)
+  - [NamedGrid](#namedgrid-1)
+  - [NamedGrid Props](#namedgrid-props)
+  - [NameGrid Example](#namegrid-example)
 - [Contribution](#contribution)
-  * [Integrate with framework](#integrate-with-framework)
-  * [Embed your code](#embed-your-code)
-  * [Generating documentation](#generating-documentation)
+  - [Integrate with framework](#integrate-with-framework)
+  - [Embed your code](#embed-your-code)
+  - [Generating documentation](#generating-documentation)
 
 # Consuming packages
 
@@ -524,36 +525,40 @@ Basic map usage only consists of data, colors and steps
 
 - map - root map component (react-map-gl Map)
 - layers - each map layer
-- tooltip - both point and click tolltips (Tooltip component, wrapper for rendering function). The tooltip has atleast 5 values it sources from the geojson data: label, variable, name, value and units.  
-    * name:- name of highlighted area  
-    * label:- name description/ highlighted area level
-    * variable:- value description  
-    * units:- value suffix  
+- tooltip - both point and click tolltips (Tooltip component, wrapper for rendering function)
 
-    These variables can be added to the geojson as given in the example below:
-    ```jsx
+#### Tooltip
 
-    const geoData = geoJson.features.map((e) => ({
-      ...e,
-      properties: {
-        ...e.properties,
-        variable: "BCG",
-        units: "%",
-        label: "Region"
-      },
-    }))
+The tooltip has atleast 5 values it sources from the geojson data: label, variable, name, value and units.
+- name - name of highlighted area
+- label - name description/ highlighted area level
+- variable - value description
+- units - value suffix
 
-    return  (
-      <div>
-        <Map 
-          data = {{...geoJson, features: geoData }}
-          colors = {colors}
-          steps={steps}
-        />
-      <div/>
-    )
-    
-    ```
+These variables can be added to the geojson as given in the example below:
+
+```jsx
+const geoData = geoJson.features.map((e) => ({
+  ...e,
+  properties: {
+    ...e.properties,
+    variable: "BCG",
+    units: "%",
+    label: "Region"
+  },
+}))
+
+return  (
+  <div>
+    <Map
+      data = {{...geoJson, features: geoData }}
+      colors = {colors}
+      steps={steps}
+    />
+  <div/>
+)
+
+```
 
 ### Map Example
 
@@ -584,7 +589,7 @@ const steps = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
       // you can pass extra children to the map // since legend is only
       connected to a map with colors and not logic, it makes sense to pass
       it separately
-      <MapColorLegend colors={colors} steps={steps} />
+      <MapLegend colors={colors} steps={steps} />
       // controls are reexported from react-map-gl
       <MapFullscreenControl />
     </Map>
@@ -660,6 +665,7 @@ React component built around SVG to help visualize data conviniently. Has the ab
 - total - the SVG element representing the total
 - progress - the SVG element representing the progress
 - value - the element containing the value
+- counter - a counter value to aid in animations (from react-countup)
 
 ### ProgressCircle Example
 

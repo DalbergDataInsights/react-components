@@ -31,7 +31,7 @@
 
 #### Defined in
 
-[src/core/interface.tsx:24](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/interface.tsx#L24)
+[src/core/interface.tsx:24](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L24)
 
 ___
 
@@ -41,4 +41,4 @@ ___
 
 #### Defined in
 
-[src/core/interface.tsx:23](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/interface.tsx#L23)
+[src/core/interface.tsx:23](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L23)

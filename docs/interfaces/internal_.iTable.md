@@ -10,7 +10,7 @@
 
 - [data](internal_.iTable.md#data)
 - [displayHeader](internal_.iTable.md#displayheader)
-- [header](internal_.iTable.md#header)
+- [headers](internal_.iTable.md#headers)
 - [props](internal_.iTable.md#props)
 
 ## Properties
@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[src/components/Table/tableComponent.tsx:16](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Table/tableComponent.tsx#L16)
+[src/components/Table/tableInterface.tsx:11](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/Table/tableInterface.tsx#L11)
 
 ___
 
@@ -31,17 +31,17 @@ ___
 
 #### Defined in
 
-[src/components/Table/tableComponent.tsx:18](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Table/tableComponent.tsx#L18)
+[src/components/Table/tableInterface.tsx:13](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/Table/tableInterface.tsx#L13)
 
 ___
 
-### header
+### headers
 
-• `Optional` **header**: [`iHeader`](internal_.iHeader.md)[]
+• `Optional` **headers**: [`iHeader`](internal_.iHeader.md)[]
 
 #### Defined in
 
-[src/components/Table/tableComponent.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Table/tableComponent.tsx#L17)
+[src/components/Table/tableInterface.tsx:12](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/Table/tableInterface.tsx#L12)
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 #### Defined in
 
-[src/components/Table/tableComponent.tsx:19](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Table/tableComponent.tsx#L19)
+[src/components/Table/tableInterface.tsx:14](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/Table/tableInterface.tsx#L14)

@@ -34,7 +34,7 @@ const WrapperComponent = ({
 
   // this handles wrapper specific properties defaults < theme config < props
   let containerProps = mergeDicts(wrapperDefaults, config.Wrapper || {})
-  props["container"] = mergeDicts(containerProps, props["container"] || {})
+  containerProps = mergeDicts(containerProps, props.props?.container || {})
 
   props["controller"] = {}
 
@@ -42,7 +42,7 @@ const WrapperComponent = ({
   useStateListener({ observers, ...props })
   const handlers = useEventManagement({ subscribers })
   return (
-    <div {...props["container"]}>
+    <div {...containerProps}>
       <Component {...props} {...handlers} />
     </div>
   )

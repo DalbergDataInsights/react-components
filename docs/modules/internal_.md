@@ -127,6 +127,7 @@
 - [MultiLineString](../interfaces/internal_.MultiLineString.md)
 - [MultiPoint](../interfaces/internal_.MultiPoint.md)
 - [MultiPolygon](../interfaces/internal_.MultiPolygon.md)
+- [MutableRefObject](../interfaces/internal_.MutableRefObject.md)
 - [NewLifecycle](../interfaces/internal_.NewLifecycle.md)
 - [Object](../interfaces/internal_.Object.md)
 - [ObsoleteProperties](../interfaces/internal_.ObsoleteProperties.md)
