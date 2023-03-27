@@ -1,7 +1,7 @@
 export interface iLineChart {
   data: any[]
-  xAxisDataKey: string
-  yAxisDataKey: string
+  X: string
+  Y: string
   traces?: {
     dataKey: string
     stroke: string

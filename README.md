@@ -54,10 +54,6 @@
     - [Line Chart Props](#line-chart-props)
     - [Line Chart Props Passthrough](#line-chart-props-passthrough)
     - [Line Chart Example](#line-chart-example)
-- [Layouts](#layouts)
-  - [NamedGrid](#namedgrid-1)
-  - [NamedGrid Props](#namedgrid-props)
-  - [NameGrid Example](#namegrid-example)
 - [Contribution](#contribution)
   - [Integrate with framework](#integrate-with-framework)
   - [Embed your code](#embed-your-code)
@@ -721,60 +717,57 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
     data: { x: string | number, y: number }[]
   }
   ```
-- xLabel - required: string label for the x-axis
 - yLabel - required: string label for the y-axis
 - hue - required: string label for the grouping variable
 - colors - optional: an array of colors for multiple lines.
-- title - optional: title for your chart
-- useGrid - optional: boolean that sets the 
-  `<CartesianGrid />` component on when `true` and off otherwise
+-   data: any[]
+- X - required: string label for the x-axis
+- Y - required: string label for the y-axis
+- traces - optionally: an object to specify the data elements {
+    dataKey: string
+    stroke: string
+    activeDot?: any
+  }[]
+- children - Additional Chart components like   `<CartesianGrid />` and `<Legend />`
 - props - optional: allows for passing additional properties to the component
 
 ### Line Chart Props Passthrough
 
-- container - div container to habor the responsive line chart
-- chart - `<ResponsiveContainer />` container element
-- grid - `<CartesianGrid />` element
-- xaxis -  `<XAxis />` element
-- yaxis - `<YAxis />` element
-- line - `<Line />` element
-- legend - `<Legend />` element
+- chart - `<ResponsiveContainer />` element properties
+- xaxis -  `<XAxis />` element properties
+- yaxis - `<YAxis />` element properties
+- trace - `<Line />` element properties
+- tooltip - `<Tooltip />` element properties
 
 ### Line Chart Example
 
 ```jsx
+  import { Legend } from 'recharts'
   // visualizing the monthly vaccination levels for two drugs X and Y.
   const data = [
-            { "name": 'X', "pe": "Jan", "value": 4 },
-            { "name": 'X', "pe": "Feb", "value": 5 },
-            { "name": 'X', "pe": "Mar", "value": 8 },
-            { "name": 'X', "pe": "Apr", "value": 20 },
-            { "name": 'X', "pe": "May", "value": 35 },
-            { "name": 'X', "pe": "Jun", "value": 37 },
-            { "name": 'X', "pe": "Jul", "value": 45 },
-            { "name": 'X', "pe": "Aug", "value": 39 },
-            { "name": 'X', "pe": "Sep", "value": 46 },
-            { "name": 'X', "pe": "Oct", "value": 53 },
-            { "name": 'X', "pe": "Nov", "value": 54 },
-            { "name": 'X', "pe": "Dec", "value": 60 },
-            { "name": 'Y', "pe": "Jan", "value": 8 },
-            { "name": 'Y', "pe": "Feb", "value": 16 },
-            { "name": 'Y', "pe": "Mar", "value": 32 },
-            { "name": 'Y', "pe": "Apr", "value": 48 },
-            { "name": 'Y', "pe": "May", "value": 56 },
-            { "name": 'Y', "pe": "Jun", "value": 69 },
-            { "name": 'Y', "pe": "Jul", "value": 78 },
-            { "name": 'Y', "pe": "Aug", "value": 89 }, 
-            { "name": 'Y', "pe": "Sep", "value": 88 }, 
-            { "name": 'Y', "pe": "Oct", "value": 94 }, 
-            { "name": 'Y', "pe": "Nov", "value": 96 }, 
-            { "name": 'Y', "pe": "Dec", "value": 100 },
-  ]
-  // define the colors
-  const colors = ["#D1D1D6", "#8E8E93"] // two colors since we only have two names X and Y.
-  // plot the chart
-  <LineChart data={data} colors={colors} useGrid={true}/>
-```
+            { "pe": "Jan", "x": 4, "y": 8 },
+            { "pe": "Feb", "x": 5, "y": 16 },
+            { "pe": "Mar", "x": 8, "y": 32 },
+            { "pe": "Apr", "x": 20, "y": 48 },
+            { "pe": "May", "x": 35, "y": 56 },
+            { "pe": "Jun", "x": 37, "y": 69 },
+            { "pe": "Jul", "x": 45, "y": 78 },
+            { "pe": "Aug", "x": 39, "y": 89 },
+            { "pe": "Sep", "x": 46, "y": 88 },
+            { "pe": "Oct", "x": 53, "y": 94 },
+            { "pe": "Nov", "x": 54, "y": 96 },
+            { "pe": "Dec", "x": 60, "y": 100 },
+            ]
+  // plot
+  <LineChart data={data} 
+    X={'pe'} 
+    Y={'y'} 
+    traces={[
+      {dataKey: "x", stroke: "#D1D1D6"},
+      {dataKey: "y", stroke: "#8E8E93"},
+    ]}
+    children={<Legend />}
+  />
 
 # Layouts
 

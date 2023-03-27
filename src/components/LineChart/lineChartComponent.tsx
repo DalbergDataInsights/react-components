@@ -4,8 +4,8 @@ import { iLineChart } from "./lineChartInterface"
 
 export const LineChartComponent = ({
   data,
-  xAxisDataKey = "pe",
-  yAxisDataKey = "",
+  X = "pe",
+  Y = "",
   traces = [
     {dataKey: "value", stroke: "#D1D1D6"},
     {dataKey: "y", stroke: "#8E8E93"},
@@ -21,8 +21,8 @@ export const LineChartComponent = ({
           data={data}
         >
           {children}
-          <XAxis {...props.xaxis} dataKey={xAxisDataKey} />
-          <YAxis {...props.yaxis} dataKey={yAxisDataKey} />
+          <XAxis {...props.xaxis} dataKey={X} />
+          <YAxis {...props.yaxis} dataKey={Y} />
           <Tooltip 
             {...props.tooltip}
           />
