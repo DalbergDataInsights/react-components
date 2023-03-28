@@ -7,7 +7,7 @@ import { ComponentContext } from "./context"
 import { iWrapper, iReactive } from "./interface"
 
 // try wrapping the init function in the callback to avoid mount spam?
-const WrapperComponent = ({
+export const Wrapper = ({
   Component,
   defaults,
   name,
@@ -46,10 +46,4 @@ const WrapperComponent = ({
       <Component {...props} {...handlers} />
     </div>
   )
-}
-
-export const Wrapper = memo(WrapperComponent, arePropsEqual)
-
-function arePropsEqual(prevProp: {}, newProps: {}) {
-  return true
 }
