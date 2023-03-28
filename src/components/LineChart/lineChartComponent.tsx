@@ -6,7 +6,7 @@ export const LineChartComponent = ({
   data,
   X = "pe",
   traces = [
-    {dataKey: "value", stroke: "#D1D1D6"},
+    {dataKey: "x", stroke: "#D1D1D6"},
     {dataKey: "y", stroke: "#8E8E93"},
   ],
   children,

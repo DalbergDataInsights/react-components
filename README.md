@@ -739,7 +739,7 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
 ### Line Chart Props
 - data -required : any[] - Data Model used by DDI (List of objects for the rows). 
 - X - required: string label for the x-axis
-- traces - optional: an object to specify the data elements {
+- traces - required: an object to specify the data elements {
     dataKey: string
     stroke: string
     activeDot?: any
