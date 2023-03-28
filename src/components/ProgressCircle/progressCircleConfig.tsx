@@ -24,9 +24,13 @@ export const defaults = {
       },
     },
     value: {
+      textAnchor:"middle",
+      alignmentBaseline:"middle",
+      fill:"black",
       style: {
         color: "black",
         fontSize: "0.8rem",
+        fontWeight:"400",
         lineHeight: "1rem",
       },
     },
