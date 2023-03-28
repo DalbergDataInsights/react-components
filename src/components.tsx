@@ -66,3 +66,12 @@ import {
 export const ProgressCircle = (props: iProgressCircle & iReactive) => (
   <Wrapper {...progressCircleManifest} {...props} />
 )
+
+import {
+  manifest as lineChartManifest,
+  iLineChart,
+} from "./components/LineChart"
+
+export const LineChart = (props: iLineChart & iReactive) => (
+  <Wrapper {...lineChartManifest} {...props} />
+)
