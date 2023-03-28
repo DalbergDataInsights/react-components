@@ -18,38 +18,43 @@
   - [Hooks](#hooks)
     - [useDim](#usedim)
 - [Components](#components)
-  * [StatusColor Component](#statuscolor-component)
-    + [StatusColor Props](#statuscolor-props)
-    + [StatusColor Props Passthrough](#statuscolor-props-passthrough)
-    + [StatusColor Example](#statuscolor-example)
-  * [DropdownButton Component](#dropdownbutton-component)
-    + [DropdownButton States](#dropdownbutton-states)
-    + [DropdownButton Props](#dropdownbutton-props)
-    + [DropdownButton Props Passthrough](#dropdownbutton-props-passthrough)
-    + [DropdownButton Example](#dropdownbutton-example)
-  * [Toggle Button Component](#toggle-button-component)
-    + [Toggle Button States](#toggle-button-states)
-    + [Toggle Button Props](#toggle-button-props)
-    + [Toggle Button Props Passthrough](#toggle-button-props-passthrough)
-    + [Toggle Button Example](#toggle-button-example)
-  * [Table](#table-1)
-    + [Table Props](#table-props)
-    + [Table Props Passthrough](#table-props-passthrough)
-    + [Table Example](#table-example)
-  * [Map](#map)
-    + [Map Assumptions](#map-assumptions)
-    + [Map States](#map-states)
-    + [Map Props](#map-props)
-    + [Map Props Passthrough](#map-props-passthrough)
-    + [Map Example](#map-example)
-  * [Progress Circle](#progress-circle)
-    + [Progress Circle Props](#progress-circle-props)
-    + [Progress Circle Props Passthrough](#progress-circle-props-passthrough)
-    + [ProgressCircle Example](#progresscircle-example)
-- [Progress Bar](#progress-bar)
-  * [Progress Bar Props](#progress-bar-props)
-  * [Progress Bar Props Passthrough](#progress-bar-props-passthrough)
-    + [Progress Bar Example Usage](#progress-bar-example-usage)
+  - [StatusColor Component](#statuscolor-component)
+    - [StatusColor Props](#statuscolor-props)
+    - [StatusColor Props Passthrough](#statuscolor-props-passthrough)
+    - [StatusColor Example](#statuscolor-example)
+  - [DropdownButton Component](#dropdownbutton-component)
+    - [DropdownButton States](#dropdownbutton-states)
+    - [DropdownButton Props](#dropdownbutton-props)
+    - [DropdownButton Props Passthrough](#dropdownbutton-props-passthrough)
+    - [DropdownButton Example](#dropdownbutton-example)
+  - [Toggle Button Component](#toggle-button-component)
+    - [Toggle Button States](#toggle-button-states)
+    - [Toggle Button Props](#toggle-button-props)
+    - [Toggle Button Props Passthrough](#toggle-button-props-passthrough)
+    - [Toggle Button Example](#toggle-button-example)
+  - [Table](#table-1)
+    - [Table Props](#table-props)
+    - [Table Props Passthrough](#table-props-passthrough)
+    - [Table Example](#table-example)
+  - [Map](#map)
+    - [Map Assumptions](#map-assumptions)
+    - [Map States](#map-states)
+    - [Map Props](#map-props)
+    - [Map Props Passthrough](#map-props-passthrough)
+      - [Tooltip](#tooltip)
+    - [Map Example](#map-example)
+  - [Progress Circle](#progress-circle)
+    - [Progress Circle Props](#progress-circle-props)
+    - [Progress Circle Props Passthrough](#progress-circle-props-passthrough)
+    - [ProgressCircle Example](#progresscircle-example)
+  - [Progress Bar](#progress-bar)
+    - [Progress Bar Props](#progress-bar-props)
+    - [Progress Bar Props Passthrough](#progress-bar-props-passthrough)
+    - [Progress Bar Example Usage](#progress-bar-example-usage)
+  - [Line Chart](#line-chart)
+    - [Line Chart Props](#line-chart-props)
+    - [Line Chart Props Passthrough](#line-chart-props-passthrough)
+    - [Line Chart Example](#line-chart-example)
 - [Layouts](#layouts)
   - [NamedGrid](#namedgrid-1)
   - [NamedGrid Props](#namedgrid-props)
@@ -674,11 +679,11 @@ React component built around SVG to help visualize data conviniently. Has the ab
 <ProgressCircle value={100} minValue={10} maxValue={150} suffix={"$"} />
 ```
 
-# Progress Bar
+## Progress Bar
 
 React component that displays a progress bar based on a given value\
 
-## Progress Bar Props
+### Progress Bar Props
 
 - value - required - represents the current value of the progress bar.
 - color - optional - sets the color of the progress bar. The default value is "#7AA995".
@@ -687,7 +692,7 @@ React component that displays a progress bar based on a given value\
 - suffix – optional - sets the suffix to be added to the value displayed in the progress bar. The default value is "%".
 - props – optional – allows for additional properties to be passed to the element
 
-## Progress Bar Props Passthrough
+### Progress Bar Props Passthrough
 
 - bar – root component (div)
 - total – container for current progress (div)
@@ -726,6 +731,58 @@ React component that displays a progress bar based on a given value\
       }}
     />
 ```
+
+## Line Chart
+
+React component built on top of the [Recharts](https://recharts.org/en-US) library to help visualize data on a line chart.
+
+### Line Chart Props
+- data - required : List of objects of  rows
+- traces - required: an object to specify the data elements {
+    dataKey: string
+    stroke: string
+    activeDot?: any
+  }[]
+- children - Additional Chart components like   `<XAxis />`, `<YAxis />`, `<CartesianGrid />` and `<Legend />`  with their respective customized properties.
+- props - optional: allows for passing additional properties to the component
+
+### Line Chart Props Passthrough
+
+- chart - `<ResponsiveContainer />` element properties
+- trace - `<Line />` element properties
+- tooltip - `<Tooltip />` element properties
+
+### Line Chart Example
+
+```jsx
+  import { ChartLegend, ChartGrid } from '@dalbergdatainsights/react-components'
+  // visualizing the monthly vaccination levels for two drugs x and y.
+  const data = [
+            { "pe": "Jan", "x": 4, "y": 8 },
+            { "pe": "Feb", "x": 5, "y": 16 },
+            { "pe": "Mar", "x": 8, "y": 32 },
+            { "pe": "Apr", "x": 20, "y": 48 },
+            { "pe": "May", "x": 35, "y": 56 },
+            { "pe": "Jun", "x": 37, "y": 69 },
+            { "pe": "Jul", "x": 45, "y": 78 },
+            { "pe": "Aug", "x": 39, "y": 89 },
+            { "pe": "Sep", "x": 46, "y": 88 },
+            { "pe": "Oct", "x": 53, "y": 94 },
+            { "pe": "Nov", "x": 54, "y": 96 },
+            { "pe": "Dec", "x": 60, "y": 100 },
+            ]
+  // plot
+  <LineChart data={data}
+    X={'pe'}
+    traces={[
+      {dataKey: "x", stroke: "#D1D1D6"},
+      {dataKey: "y", stroke: "#8E8E93"},
+    ]}
+  >
+    <ChartLegend />
+    <ChartGrid />
+  </LineChart>
+  ```
 
 # Layouts
 
