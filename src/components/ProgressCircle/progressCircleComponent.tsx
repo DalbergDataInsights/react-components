@@ -11,7 +11,7 @@ export const ProgressCircleComponent = ({
   suffix = "%",
   props,
 }: iProgressCircle) => {
-  const { ref, prop: radius } = useDim({ getter: (c) => c.r.baseVal.value })
+  const { ref, prop: radius } = useDim({ getter: (c) => Math.min(c.viewportElement.clientWidth, c.viewportElement.clientHeight)/2 })
   const circumference = Math.round(radius * 2 * Math.PI)
   const [offset, setOffset] = useState("300%")
 
@@ -28,7 +28,7 @@ export const ProgressCircleComponent = ({
           {...props.total}
           cx={"50%"}
           cy={"50%"}
-          r={"calc(50% - 0.5rem)"}
+          r={`calc(${radius}px - 0.5rem)`}
           ref={ref}
         />
         <circle
@@ -38,23 +38,25 @@ export const ProgressCircleComponent = ({
           strokeDashoffset={offset}
           cx={"50%"}
           cy={"50%"}
-          r={"calc(50% - 0.5rem)"}
+          r={`calc(${radius}px - 0.5rem)`}
         />
+        <CountUp
+          {...props.counter}
+          start={minValue}
+          end={value}
+          suffix={suffix}
+        >
+          {({ countUpRef }) => (
+            <text
+              ref={countUpRef}
+              x={"50%"}
+              y={"50%"}
+              {...props.value}
+            >
+            </text>
+          )}
+        </CountUp>
       </svg>
-      <div
-        {...props.value}
-        style={{
-          ...{
-            position: "absolute",
-            top: "calc(50% - 0.5rem)",
-            left: `calc(50% - ${0.25 * (value.toString().length + 1)}rem)`,
-            textAlign: "center",
-          },
-          ...props.value.style,
-        }}
-      >
-        <CountUp {...props.counter} start={minValue} end={value} suffix={suffix} />
-      </div>
     </>
   )
 }

@@ -2,8 +2,8 @@ import { ProgressCircleComponent } from './progressCircleComponent'
 import { defaults } from './progressCircleConfig'
 
 export const manifest = {
-  name: "DonutChart",
-  version: "0.2",
+  name: "ProgressCircle",
+  version: "0.3",
   defaults: defaults,
   Component: ProgressCircleComponent,
 }
