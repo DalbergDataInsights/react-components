@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[src/components/Table/tableComponent.tsx:12](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Table/tableComponent.tsx#L12)
+[src/components/Table/tableInterface.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/Table/tableInterface.tsx#L7)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/components/Table/tableComponent.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Table/tableComponent.tsx#L7)
+[src/components/Table/tableInterface.tsx:2](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/Table/tableInterface.tsx#L2)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 #### Defined in
 
-[src/components/Table/tableComponent.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Table/tableComponent.tsx#L8)
+[src/components/Table/tableInterface.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/Table/tableInterface.tsx#L3)
 
 ___
 
@@ -53,17 +53,25 @@ ___
 
 #### Defined in
 
-[src/components/Table/tableComponent.tsx:11](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Table/tableComponent.tsx#L11)
+[src/components/Table/tableInterface.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/Table/tableInterface.tsx#L6)
 
 ___
 
 ### renderer
 
-• `Optional` **renderer**: [`ReactNode`](../modules/internal_.md#reactnode)
+• `Optional` **renderer**: () => [`Element`](internal_.Element.md)
+
+#### Type declaration
+
+▸ (): [`Element`](internal_.Element.md)
+
+##### Returns
+
+[`Element`](internal_.Element.md)
 
 #### Defined in
 
-[src/components/Table/tableComponent.tsx:10](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Table/tableComponent.tsx#L10)
+[src/components/Table/tableInterface.tsx:5](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/Table/tableInterface.tsx#L5)
 
 ___
 
@@ -73,4 +81,4 @@ ___
 
 #### Defined in
 
-[src/components/Table/tableComponent.tsx:9](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/Table/tableComponent.tsx#L9)
+[src/components/Table/tableInterface.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/Table/tableInterface.tsx#L4)

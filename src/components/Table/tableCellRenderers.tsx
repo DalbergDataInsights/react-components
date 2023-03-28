@@ -1,7 +1,7 @@
 import React from "react"
 import Tooltip from "@mui/material/Tooltip"
-import Typography from "@mui/material/Typography"
 import { shadows, styled } from "@mui/system"
+import { StatusColor } from "../../components"
 
 const LightTooltip = styled(Tooltip)(({}) => ({
   tooltip: {
@@ -12,24 +12,24 @@ const LightTooltip = styled(Tooltip)(({}) => ({
   },
 }))
 
-const TextCell = ({ data, ...props }: { data: string | number }) => {
-  return <Typography {...props}>{data}</Typography>
+const TextCell = ({ value, ...props }: { value: string | number }) => {
+  return <div {...props}>{value}</div>
 }
 
 const TextWithTooltip = ({
-  data,
+  value,
   tooltips,
   ...props
 }: {
-  data: string | number
+  value: string | number
   tooltips: { [key: string | number]: any }
 }) => {
-  const element = <Typography {...props}>{data}</Typography>
+  const element = <div {...props}>{value}</div>
 
-  if (tooltips[data]) {
+  if (tooltips[value]) {
     return (
       <LightTooltip
-        title={<p style={{ fontSize: "1rem" }}>{tooltips[data]}</p>}
+        title={<p style={{ fontSize: "1rem" }}>{tooltips[value]}</p>}
         placement="bottom-start"
       >
         {element}
@@ -40,9 +40,34 @@ const TextWithTooltip = ({
   return element
 }
 
+const StatusCell = ({
+  value,
+  map,
+  ...props
+}: {
+  value: string
+  map: { [key: string]: string }
+}) => {
+  return (
+    <div {...props}>
+      <StatusColor
+        props={{
+          circle: {
+            style: {
+              borderRadius: "0.5rem",
+            },
+          },
+        }}
+        color={map[value] || map["default"]}
+      />
+    </div>
+  )
+}
+
 const cellRenderers: { [key: string]: any } = {
   text: TextCell,
   tooltip: TextWithTooltip,
+  status: StatusCell,
 }
 
 export default cellRenderers

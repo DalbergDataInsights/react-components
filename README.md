@@ -531,6 +531,39 @@ Basic map usage only consists of data, colors and steps
 - layers - each map layer
 - tooltip - both point and click tolltips (Tooltip component, wrapper for rendering function)
 
+#### Tooltip
+
+The tooltip has atleast 5 values it sources from the geojson data: label, variable, name, value and units.
+- name - name of highlighted area
+- label - name description/ highlighted area level
+- variable - value description
+- units - value suffix
+
+These variables can be added to the geojson as given in the example below:
+
+```jsx
+const geoData = geoJson.features.map((e) => ({
+  ...e,
+  properties: {
+    ...e.properties,
+    variable: "BCG",
+    units: "%",
+    label: "Region"
+  },
+}))
+
+return  (
+  <div>
+    <Map
+      data = {{...geoJson, features: geoData }}
+      colors = {colors}
+      steps={steps}
+    />
+  <div/>
+)
+
+```
+
 ### Map Example
 
 ```jsx

@@ -1,30 +1,18 @@
 import React from "react"
-import Grid from "@mui/material/Grid"
+import { useDim } from "../../hooks"
 
 import cellRenderers from "./tableCellRenderers"
-
-export interface iHeader {
-  index?: number | string
-  name?: string | number
-  type?: string
-  renderer?: React.ReactNode
-  props?: Object
-  hidden?: boolean
-}
-
-export interface iTable {
-  data: {}[] | (number[] | string[])[]
-  header?: iHeader[]
-  displayHeader?: boolean
-  props?: { head: {}; cell: {}; row: {} } & any
-}
+import { mergeDicts } from "../../core"
+import { iTable, iHeader } from "./tableInterface"
 
 export const TableComponent = ({
   data,
-  header = [],
+  headers = [],
   displayHeader = true,
   props = {},
 }: iTable) => {
+  const { ref, prop: headerHeight } = useDim({ getter: (e) => e.offsetHeight })
+
   // data: List of lists or list of dictionaries where index of parent list is
   // a row and index of inner list is a column
   // header: list of dictionaries with properties like index, name, hidden, renderer
@@ -36,14 +24,14 @@ export const TableComponent = ({
   // Have a dictionary of pre-made cell renderers as well
   if (data.length < 1) return <div>Pas de données disponibles</div>
   // equalise header length
-  if (data.length > 0 && header.length === 0) {
-    while (Object.keys(data[0]).length > header.length) {
-      header.push({})
+  if (data.length > 0 && headers.length === 0) {
+    while (Object.keys(data[0]).length > headers.length) {
+      headers.push({})
     }
   }
 
   // check we have all necessary things for render
-  header.forEach((element: iHeader, index) => {
+  headers.forEach((element: iHeader, index) => {
     element["index"] = element["index"] || Object.keys(data[0])[index] || index
     element["name"] = element["name"] || element["index"]
     element["type"] =
@@ -53,31 +41,58 @@ export const TableComponent = ({
     element["hidden"] = element["hidden"] || false
   })
 
-  props["table"]["columns"] = props["table"]["columns"] || header.length
+  props["table"]["columns"] = props["table"]["columns"] || headers.length
 
   return (
-    <Grid container {...props.table}>
-      {displayHeader &&
-        header.map((head: any) =>
-          head.hidden ? (
-            ""
-          ) : (
-            <Grid {...props.head} item xs={head.props.xs}>
-              <div>{head.hidden ? "" : <p>{head.name}</p>}</div>
-            </Grid>
-          )
-        )}
-      {data.map((row: any) =>
-        header.map((cell: { renderer: React.ReactNode } & any) =>
-          cell.hidden ? (
-            ""
-          ) : (
-            <Grid item {...props.row} xs={cell.props.xs} key={cell.index}>
-              <cell.renderer data={row[cell.index]} {...cell.props} />
-            </Grid>
-          )
-        )
-      )}
-    </Grid>
+    <>
+      <div
+        _prop-target="rows-headers"
+        {...mergeDicts(props.rows, props.headers)}
+        ref={ref}
+        key={"table-headers"}
+      >
+        {displayHeader &&
+          headers.map((header, index) =>
+            header.hidden ? (
+              ""
+            ) : (
+              <div
+                _prop-target="row-header-header.props"
+                {...mergeDicts(
+                  mergeDicts(props.row, props.header),
+                  header.props
+                )}
+                key={`header-${index}`}
+              >
+                {header.name}
+              </div>
+            )
+          )}
+      </div>
+      <div
+        _prop-target="table"
+        {...mergeDicts(props.table, {
+          style: { height: `calc(100% - ${headerHeight}px)` },
+        })}
+        key={"table"}
+      >
+        {data.map((row, index) => (
+          <div {...props.rows} key={`rows-${index}`} _prop-target="rows">
+            {headers.map((header, index) =>
+              header.hidden ? (
+                ""
+              ) : (
+                <header.renderer
+                  _prop-target="row-header.props"
+                  {...mergeDicts(props.row, header.props)}
+                  value={row[header.index]}
+                  key={`row-${index}`}
+                />
+              )
+            )}
+          </div>
+        ))}
+      </div>
+    </>
   )
 }

@@ -42,6 +42,7 @@
 - [getBounds](modules.md#getbounds)
 - [getColor](modules.md#getcolor)
 - [mergeDicts](modules.md#mergedicts)
+- [useDim](modules.md#usedim)
 - [useEventManagement](modules.md#useeventmanagement)
 - [useStateListener](modules.md#usestatelistener)
 
@@ -53,7 +54,7 @@
 
 #### Defined in
 
-[src/core/context.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/context.tsx#L7)
+[src/core/context.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/context.tsx#L7)
 
 ## Functions
 
@@ -75,7 +76,7 @@
 
 #### Defined in
 
-[src/core/context.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/context.tsx#L8)
+[src/core/context.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/context.tsx#L8)
 
 ___
 
@@ -95,7 +96,7 @@ ___
 
 #### Defined in
 
-[src/components.tsx:40](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components.tsx#L40)
+[src/components.tsx:40](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components.tsx#L40)
 
 ___
 
@@ -115,7 +116,7 @@ ___
 
 #### Defined in
 
-[src/components.tsx:22](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components.tsx#L22)
+[src/components.tsx:22](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components.tsx#L22)
 
 ___
 
@@ -157,7 +158,7 @@ ___
 
 #### Defined in
 
-[src/components.tsx:27](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components.tsx#L27)
+[src/components.tsx:27](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components.tsx#L27)
 
 ___
 
@@ -265,7 +266,7 @@ ___
 
 #### Defined in
 
-[src/layouts/NamedGrid/namedGridAreaElement.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/layouts/NamedGrid/namedGridAreaElement.tsx#L3)
+[src/layouts/NamedGrid/namedGridAreaElement.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/layouts/NamedGrid/namedGridAreaElement.tsx#L3)
 
 ___
 
@@ -285,7 +286,7 @@ ___
 
 #### Defined in
 
-[src/layouts.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/layouts.tsx#L8)
+[src/layouts.tsx:8](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/layouts.tsx#L8)
 
 ___
 
@@ -305,7 +306,7 @@ ___
 
 #### Defined in
 
-[src/components.tsx:48](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components.tsx#L48)
+[src/components.tsx:48](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components.tsx#L48)
 
 ___
 
@@ -325,7 +326,7 @@ ___
 
 #### Defined in
 
-[src/components.tsx:66](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components.tsx#L66)
+[src/components.tsx:66](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components.tsx#L66)
 
 ___
 
@@ -345,7 +346,7 @@ ___
 
 #### Defined in
 
-[src/components.tsx:57](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components.tsx#L57)
+[src/components.tsx:57](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components.tsx#L57)
 
 ___
 
@@ -357,7 +358,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`iTable`](interfaces/internal_.iTable.md) & [`iWrapper`](interfaces/iWrapper.md) |
+| `props` | [`iTable`](interfaces/internal_.iTable.md) & [`iReactive`](interfaces/iReactive.md) |
 
 #### Returns
 
@@ -365,7 +366,7 @@ ___
 
 #### Defined in
 
-[src/components.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components.tsx#L7)
+[src/components.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components.tsx#L7)
 
 ___
 
@@ -385,7 +386,7 @@ ___
 
 #### Defined in
 
-[src/components.tsx:35](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components.tsx#L35)
+[src/components.tsx:35](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components.tsx#L35)
 
 ___
 
@@ -429,7 +430,7 @@ ___
 
 #### Defined in
 
-[src/core/util.tsx:26](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/util.tsx#L26)
+[src/core/util.tsx:43](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/util.tsx#L43)
 
 ___
 
@@ -449,7 +450,7 @@ ___
 
 #### Defined in
 
-[src/core/util.tsx:64](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/util.tsx#L64)
+[src/core/util.tsx:81](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/util.tsx#L81)
 
 ___
 
@@ -473,29 +474,53 @@ ___
 
 #### Defined in
 
-[src/core/util.tsx:39](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/util.tsx#L39)
+[src/core/util.tsx:56](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/util.tsx#L56)
 
 ___
 
 ### mergeDicts
 
-▸ **mergeDicts**(`a`, `b`, `path?`): `Object`
+▸ **mergeDicts**(`dict1`, `dict2`): `any`
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `a` | `Object` | `undefined` |
-| `b` | `Object` | `undefined` |
-| `path` | `undefined` \| `string`[] | `undefined` |
+| Name | Type |
+| :------ | :------ |
+| `dict1` | `any` |
+| `dict2` | `any` |
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+[src/core/util.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/util.tsx#L4)
+
+___
+
+### useDim
+
+▸ **useDim**(`«destructured»`): `Object`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
 
 #### Returns
 
 `Object`
 
+| Name | Type |
+| :------ | :------ |
+| `prop` | `number` |
+| `ref` | [`MutableRefObject`](interfaces/internal_.MutableRefObject.md)<``null``\> |
+
 #### Defined in
 
-[src/core/util.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/util.tsx#L4)
+[src/hooks/useDim.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/hooks/useDim.tsx#L3)
 
 ___
 
@@ -522,7 +547,7 @@ ___
 
 #### Defined in
 
-[src/core/eventManager.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/eventManager.tsx#L4)
+[src/core/eventManager.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/eventManager.tsx#L4)
 
 ___
 
@@ -548,4 +573,4 @@ ___
 
 #### Defined in
 
-[src/core/stateListener.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/core/stateListener.tsx#L17)
+[src/core/stateListener.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/stateListener.tsx#L17)

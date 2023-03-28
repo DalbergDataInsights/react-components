@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[src/components/ProgressBar/progressBarInterface.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/ProgressBar/progressBarInterface.tsx#L3)
+[src/components/ProgressBar/progressBarInterface.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/ProgressBar/progressBarInterface.tsx#L3)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/components/ProgressBar/progressBarInterface.tsx:5](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/ProgressBar/progressBarInterface.tsx#L5)
+[src/components/ProgressBar/progressBarInterface.tsx:5](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/ProgressBar/progressBarInterface.tsx#L5)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 #### Defined in
 
-[src/components/ProgressBar/progressBarInterface.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/ProgressBar/progressBarInterface.tsx#L6)
+[src/components/ProgressBar/progressBarInterface.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/ProgressBar/progressBarInterface.tsx#L6)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[src/components/ProgressBar/progressBarInterface.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/ProgressBar/progressBarInterface.tsx#L7)
+[src/components/ProgressBar/progressBarInterface.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/ProgressBar/progressBarInterface.tsx#L7)
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 #### Defined in
 
-[src/components/ProgressBar/progressBarInterface.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/ProgressBar/progressBarInterface.tsx#L4)
+[src/components/ProgressBar/progressBarInterface.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/ProgressBar/progressBarInterface.tsx#L4)
 
 ___
 
@@ -73,4 +73,4 @@ ___
 
 #### Defined in
 
-[src/components/ProgressBar/progressBarInterface.tsx:2](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/ProgressBar/progressBarInterface.tsx#L2)
+[src/components/ProgressBar/progressBarInterface.tsx:2](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/ProgressBar/progressBarInterface.tsx#L2)

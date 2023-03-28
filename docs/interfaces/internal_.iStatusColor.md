@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/components/StatusColor/statusColorInterface.tsx:2](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/StatusColor/statusColorInterface.tsx#L2)
+[src/components/StatusColor/statusColorInterface.tsx:2](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/StatusColor/statusColorInterface.tsx#L2)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/components/StatusColor/statusColorInterface.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/StatusColor/statusColorInterface.tsx#L4)
+[src/components/StatusColor/statusColorInterface.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/StatusColor/statusColorInterface.tsx#L4)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/components/StatusColor/statusColorInterface.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/eddc6af/src/components/StatusColor/statusColorInterface.tsx#L3)
+[src/components/StatusColor/statusColorInterface.tsx:3](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/components/StatusColor/statusColorInterface.tsx#L3)

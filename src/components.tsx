@@ -1,10 +1,10 @@
 import React from "react"
 import { Wrapper } from "./core"
-import { iWrapper, iReactive } from "./core"
+import { iReactive } from "./core"
 
 import { manifest as tableManifest, iTable, iHeader } from "./components/Table"
 
-export const Table = (props: iTable & iWrapper) => (
+export const Table = (props: iTable & iReactive) => (
   <Wrapper {...tableManifest} {...props} />
 )
 
