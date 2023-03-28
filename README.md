@@ -757,7 +757,7 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
 
 ```jsx
   import { Legend } from 'recharts'
-  // visualizing the monthly vaccination levels for two drugs X and Y.
+  // visualizing the monthly vaccination levels for two drugs x and y.
   const data = [
             { "pe": "Jan", "x": 4, "y": 8 },
             { "pe": "Feb", "x": 5, "y": 16 },
@@ -779,8 +779,9 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
       {dataKey: "x", stroke: "#D1D1D6"},
       {dataKey: "y", stroke: "#8E8E93"},
     ]}
-    children={<Legend />}
-  />
+  >
+    <Legend />
+  </LineChart>
   ```
 
 # Layouts
