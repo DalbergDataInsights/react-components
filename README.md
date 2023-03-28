@@ -41,6 +41,7 @@
     - [Map States](#map-states)
     - [Map Props](#map-props)
     - [Map Props Passthrough](#map-props-passthrough)
+      - [Tooltip](#tooltip)
     - [Map Example](#map-example)
   - [Progress Circle](#progress-circle)
     - [Progress Circle Props](#progress-circle-props)
@@ -736,43 +737,19 @@ React component that displays a progress bar based on a given value\
 React component built on top of the [Recharts](https://recharts.org/en-US) library to help visualize data on a line chart.
 
 ### Line Chart Props
-- data -required : iDataPoint[] - Data Model used by DDI (List of objects for the rows). 
-  The data model has a format shown below.
-  ```jsx
-  [
-    {name: "X", pe: "202201", value: "1"},
-    {name: "Y", pe: "202201", value: "8"},
-    ...
-  ]
-  ```
-  iDataPoint[] is the interface that defines the data model and is later transformed with the help of a utility function
-  to convert the data to the required format. 
-  The format consumed by this line chart is as shown below.
-  ```jsx
-  {
-    id: string
-    data: { x: string | number, y: number }[]
-  }
-  ```
-- yLabel - required: string label for the y-axis
-- hue - required: string label for the grouping variable
-- colors - optional: an array of colors for multiple lines.
--   data: any[]
+- data -required : any[] - Data Model used by DDI (List of objects for the rows). 
 - X - required: string label for the x-axis
-- Y - required: string label for the y-axis
-- traces - optionally: an object to specify the data elements {
+- traces - optional: an object to specify the data elements {
     dataKey: string
     stroke: string
     activeDot?: any
   }[]
-- children - Additional Chart components like   `<CartesianGrid />` and `<Legend />`
+- children - Additional Chart components like   `<XAxis />`, `<YAxis />`, `<CartesianGrid />` and `<Legend />`  with their respective customized properties.
 - props - optional: allows for passing additional properties to the component
 
 ### Line Chart Props Passthrough
 
 - chart - `<ResponsiveContainer />` element properties
-- xaxis -  `<XAxis />` element properties
-- yaxis - `<YAxis />` element properties
 - trace - `<Line />` element properties
 - tooltip - `<Tooltip />` element properties
 
@@ -798,7 +775,6 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
   // plot
   <LineChart data={data} 
     X={'pe'} 
-    Y={'y'} 
     traces={[
       {dataKey: "x", stroke: "#D1D1D6"},
       {dataKey: "y", stroke: "#8E8E93"},

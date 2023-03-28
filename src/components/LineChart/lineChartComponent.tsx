@@ -5,7 +5,6 @@ import { iLineChart } from "./lineChartInterface"
 export const LineChartComponent = ({
   data,
   X = "pe",
-  Y = "",
   traces = [
     {dataKey: "value", stroke: "#D1D1D6"},
     {dataKey: "y", stroke: "#8E8E93"},
@@ -22,7 +21,7 @@ export const LineChartComponent = ({
         >
           {children}
           <XAxis dataKey={X} />
-          <YAxis dataKey={Y} />
+          <YAxis />
           <Tooltip 
             {...props.tooltip}
           />

@@ -17,14 +17,6 @@ export const defaults = {
         overflow: "hidden",
       },
     },
-    xaxis: {
-      tickLine: false,
-      allowDataOverflow: true,
-      allowDuplicatedCategory: false,
-    },
-    yaxis: {
-      tickLine: false,
-    },
     trace: {
       type: "monotone",
       activeDot: { 
