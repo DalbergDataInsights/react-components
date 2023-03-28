@@ -19,33 +19,35 @@ export const defaults = {
     },
     trace: {
       type: "monotone",
-      activeDot: { 
+      activeDot: {
         stroke: "",
         strokeWidth: 2,
         r: 8,
       },
       animationDuration: 3000,
       animationEasing: "ease-in-out",
-
     },
     tooltip: {
-      contentStyle: { 
-        backgroundColor: '#fff', 
-        border: 'none' 
+      contentStyle: {
+        backgroundColor: "#fff",
+        border: "none",
       },
-      labelStyle: { 
-        color: '#000', 
-        fontWeight: 'bold' 
+      labelStyle: {
+        color: "#000",
+        fontWeight: "bold",
       },
       isAnimationActive: true,
       animationDuration: 3000,
       animationEasing: "ease-in-out",
-      style:{
-        alignItems:"center", 
+      style: {
+        alignItems: "center",
         display: "block",
         padding: unit,
       },
     },
-
-  }
+    xaxis: {
+      dataKey: "pe",
+    },
+    yaxis: {},
+  },
 }

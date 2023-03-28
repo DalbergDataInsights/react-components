@@ -737,8 +737,7 @@ React component that displays a progress bar based on a given value\
 React component built on top of the [Recharts](https://recharts.org/en-US) library to help visualize data on a line chart.
 
 ### Line Chart Props
-- data -required : any[] - Data Model used by DDI (List of objects for the rows). 
-- X - required: string label for the x-axis
+- data - required : List of objects of  rows
 - traces - required: an object to specify the data elements {
     dataKey: string
     stroke: string
@@ -756,7 +755,7 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
 ### Line Chart Example
 
 ```jsx
-  import { Legend } from 'recharts'
+  import { ChartLegend, ChartGrid } from '@dalbergdatainsights/react-components'
   // visualizing the monthly vaccination levels for two drugs x and y.
   const data = [
             { "pe": "Jan", "x": 4, "y": 8 },
@@ -773,14 +772,15 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
             { "pe": "Dec", "x": 60, "y": 100 },
             ]
   // plot
-  <LineChart data={data} 
-    X={'pe'} 
+  <LineChart data={data}
+    X={'pe'}
     traces={[
       {dataKey: "x", stroke: "#D1D1D6"},
       {dataKey: "y", stroke: "#8E8E93"},
     ]}
   >
-    <Legend />
+    <ChartLegend />
+    <ChartGrid />
   </LineChart>
   ```
 

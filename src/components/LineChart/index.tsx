@@ -3,7 +3,7 @@ import { defaults } from "./lineChartConfig"
 
 export const manifest = {
   name: "LineChart",
-  version: "0.1",
+  version: "0.2",
   defaults: defaults,
   Component: LineChartComponent,
 }

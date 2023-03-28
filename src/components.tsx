@@ -71,6 +71,7 @@ import {
   manifest as lineChartManifest,
   iLineChart,
 } from "./components/LineChart"
+export { CartesianGrid as ChartGrid, Legend as ChartLegend } from "recharts"
 
 export const LineChart = (props: iLineChart & iReactive) => (
   <Wrapper {...lineChartManifest} {...props} />
