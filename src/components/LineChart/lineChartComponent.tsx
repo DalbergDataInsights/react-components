@@ -21,8 +21,8 @@ export const LineChartComponent = ({
           data={data}
         >
           {children}
-          <XAxis {...props.xaxis} dataKey={X} />
-          <YAxis {...props.yaxis} dataKey={Y} />
+          <XAxis dataKey={X} />
+          <YAxis dataKey={Y} />
           <Tooltip 
             {...props.tooltip}
           />
