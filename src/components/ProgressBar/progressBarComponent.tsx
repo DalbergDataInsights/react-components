@@ -9,6 +9,7 @@ export const ProgressBarComponent = ({
   maxValue = 100,
   minValue = 0,
   suffix = "%",
+  naProgress = "Données non disponibles",
   props,
 }: iProgressBar) => {
   const [progress, setProgress] = useState(0)
@@ -22,16 +23,15 @@ export const ProgressBarComponent = ({
   }, [])
 
   return (
-    <div {...props.bar}>
-      <div {...props.total}>
+    <div _prop-target="bar" {...props.bar}>
+      <div _prop-target="total" {...props.total}>
         {progress === null ? (
-          <div
-            style={{ lineHeight: "100%", color: "#2c6693", fontWeight: "bold" }}
-          >
-            Données non disponibles
+          <div _prop-target="naProgress" {...props.naProgress}>
+            {naProgress}
           </div>
         ) : (
           <div
+            _prop-target="*progress"
             {...mergeDicts(props.progress, {
               style: {
                 width: `${progress}%`,
@@ -39,16 +39,17 @@ export const ProgressBarComponent = ({
               },
             })}
           >
-            <div {...props.pointer}></div>
+            <div _prop-target="pointer" {...props.pointer}></div>
           </div>
         )}
       </div>
-      <div {...props.labels}>
-        <div {...props.label}>
+      <div _prop-target="labels" {...props.labels}>
+        <div _prop-target="label" {...props.label}>
           {minValue}
           {suffix}
         </div>
         <div
+          _prop-target="value"
           {...mergeDicts(props.value, {
             style: {
               width: `calc(${progress}% - 0.5rem)`,
@@ -57,6 +58,7 @@ export const ProgressBarComponent = ({
         >
           {progress !== null && (
             <CountUp
+              _prop-target="counter"
               {...props.counter}
               start={minValue}
               end={value}
@@ -64,7 +66,10 @@ export const ProgressBarComponent = ({
             />
           )}
         </div>
-        <div {...mergeDicts(props.label, { style: { float: "right" } })}>
+        <div
+          _prop-target="label"
+          {...mergeDicts(props.label, { style: { float: "right" } })}
+        >
           {maxValue}
           {suffix}
         </div>

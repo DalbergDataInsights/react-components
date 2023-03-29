@@ -4,5 +4,6 @@ export interface iProgressBar {
   suffix?: string | any
   maxValue?: number
   minValue?: number
+  naProgress?: string
   props?: any
 }
