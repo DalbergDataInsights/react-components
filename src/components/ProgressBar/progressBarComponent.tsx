@@ -14,22 +14,34 @@ export const ProgressBarComponent = ({
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    setProgress(((value - minValue) / (maxValue - minValue)) * 100)
+    if (value == undefined || value == null || isNaN(value)) {
+      setProgress(null)
+    } else {
+      setProgress(((value - minValue) / maxValue) * 100)
+    }
   }, [])
 
   return (
     <div {...props.bar}>
       <div {...props.total}>
-        <div
-          {...mergeDicts(props.progress, {
-            style: {
-              width: `${progress}%`,
-              backgroundColor: color,
-            },
-          })}
-        >
-          <div {...props.pointer}></div>
-        </div>
+        {progress === null ? (
+          <div
+            style={{ lineHeight: "100%", color: "#2c6693", fontWeight: "bold" }}
+          >
+            Données non disponibles
+          </div>
+        ) : (
+          <div
+            {...mergeDicts(props.progress, {
+              style: {
+                width: `${progress}%`,
+                backgroundColor: color,
+              },
+            })}
+          >
+            <div {...props.pointer}></div>
+          </div>
+        )}
       </div>
       <div {...props.labels}>
         <div {...props.label}>
@@ -43,12 +55,14 @@ export const ProgressBarComponent = ({
             },
           })}
         >
-          <CountUp
-            {...props.counter}
-            start={minValue}
-            end={value}
-            suffix={suffix}
-          />
+          {progress !== null && (
+            <CountUp
+              {...props.counter}
+              start={minValue}
+              end={value}
+              suffix={suffix}
+            />
+          )}
         </div>
         <div {...mergeDicts(props.label, { style: { float: "right" } })}>
           {maxValue}
