@@ -16,6 +16,13 @@ export const defaults = {
         overflow: "hidden",
       },
     },
+    naProgress: {
+      style: {
+        lineHeight: "100%",
+        color: "#2c6693",
+        fontWeight: "bold",
+      },
+    },
     progress: {
       style: {
         height: "100%",
@@ -61,7 +68,7 @@ export const defaults = {
       prefix: "",
       style: {
         fontSize: "0.8rem",
-      }
-    }
+      },
+    },
   },
 }

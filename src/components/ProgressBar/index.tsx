@@ -3,7 +3,7 @@ import { defaults } from "./progressBarConfig"
 
 export const manifest = {
   name: "ProgressBar",
-  version: "0.2",
+  version: "0.3",
   defaults: defaults,
   Component: ProgressBarComponent,
 }
