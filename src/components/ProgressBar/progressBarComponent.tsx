@@ -31,7 +31,7 @@ export const ProgressBarComponent = ({
           </div>
         ) : (
           <div
-            _prop-target="*progress"
+            _prop-target="progress"
             {...mergeDicts(props.progress, {
               style: {
                 width: `${progress}%`,
