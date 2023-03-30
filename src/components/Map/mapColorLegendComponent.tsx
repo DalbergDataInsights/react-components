@@ -11,8 +11,8 @@ export const ColorLegendComponent = ({
   naText = "n.d",
   borderRadius = "2rem",
 }: iMapColorLegend) => {
-  colors = steps.length > 1 ? colors.slice(1, steps.length - 1) : colors
-
+  colors = steps.length > 1 ? colors.slice(0, steps.length - 1) : colors
+  
   return (
     <div {...props.legend}>
       <div {...props.colors}>
