@@ -4,7 +4,7 @@ import { useToggleButtonGroup } from "./toggleButtonGroupLogic"
 
 export const manifest = {
   name: "ToggleButtonGroup",
-  version: "0.3",
+  version: "0.4",
   defaults: defaults,
   Component: ToggleButtonGroup,
   init: useToggleButtonGroup,
