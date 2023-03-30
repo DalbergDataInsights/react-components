@@ -24,8 +24,8 @@ export const LineChartComponent = ({
         <XAxis {...props.xaxis} _prop-target="xaxis" />
         <YAxis {...props.yaxis} _prop-target="yaxis" />
         <Tooltip {...props.tooltip} _prop-target="tooltip" />
-        {traces.map((trace) => {
-          return <Line {...props.trace} {...trace} _prop-target="trace" />
+        {traces.map((trace, index) => {
+          return <Line key={index} {...props.trace} {...trace} _prop-target="trace" />
         })}
         {children}
       </LineChart>
