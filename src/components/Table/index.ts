@@ -3,7 +3,7 @@ import { defaults } from "./tableConfig"
 
 export const manifest = {
   name: "Table",
-  version: "0.1",
+  version: "1.0",
   defaults: defaults,
   Component: TableComponent,
 }
