@@ -3,7 +3,7 @@ import { defaults } from './progressCircleConfig'
 
 export const manifest = {
   name: "ProgressCircle",
-  version: "0.3",
+  version: "0.4",
   defaults: defaults,
   Component: ProgressCircleComponent,
 }

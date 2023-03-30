@@ -27,8 +27,9 @@ export const ProgressCircleComponent = ({
 
   return (
     <>
-      <svg {...props.circle}>
+      <svg _prop-target="circle" {...props.circle}>
         <circle
+          _prop-target="total"
           {...props.total}
           cx={"50%"}
           cy={"50%"}
@@ -36,6 +37,7 @@ export const ProgressCircleComponent = ({
           ref={ref}
         />
         <circle
+          _prop-target="progress"
           {...props.progress}
           stroke={color}
           strokeDasharray={circumference}
@@ -45,6 +47,7 @@ export const ProgressCircleComponent = ({
           r={radius}
         />
         <CountUp
+          _prop-target="counter"
           {...props.counter}
           start={minValue}
           end={value}
@@ -52,12 +55,12 @@ export const ProgressCircleComponent = ({
         >
           {({ countUpRef }) => (
             <text
+              _prop-target="value"
               ref={countUpRef}
               x={"50%"}
               y={"50%"}
               {...props.value}
-            >
-            </text>
+            ></text>
           )}
         </CountUp>
       </svg>
