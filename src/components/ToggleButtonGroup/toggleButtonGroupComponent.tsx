@@ -24,10 +24,16 @@ export const ToggleButtonGroup = ({
   const pointStyle = mergeDicts(props.button, props.point)
 
   return (
-    <div {...props.group} onMouseMove={onMove} onClick={onClick}>
+    <div
+      _prop-target="group"
+      {...props.group}
+      onMouseMove={onMove}
+      onClick={onClick}
+    >
       {options.map((element) => (
         <button
-          key={element.name}
+          _prop-target="button-/point/click"
+          key={element.value}
           {...(isClicked(element)
             ? clickStyle
             : isPointed(element)
