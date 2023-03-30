@@ -14,10 +14,11 @@ export const ColorLegendComponent = ({
   colors = steps.length > 1 ? colors.slice(0, steps.length - 1) : colors
   
   return (
-    <div {...props.legend}>
-      <div {...props.colors}>
-        <div {...props.empty}></div>
+    <div _prop-target="legend" {...props.legend}>
+      <div _prop-target="colors" {...props.colors}>
+        <div _prop-target="empty" {...props.empty}></div>
         <div
+          _prop-target="color"
           {...mergeDicts(props.color, {
             style: {
               backgroundColor: naColor,
@@ -28,6 +29,7 @@ export const ColorLegendComponent = ({
         {colors &&
           colors.map((color, index) => (
             <div
+              _prop-target="color"
               key={color}
               {...mergeDicts(props.color, {
                 style: {
@@ -40,13 +42,19 @@ export const ColorLegendComponent = ({
               })}
             ></div>
           ))}
-        <div {...props.empty}></div>
+        <div _prop-target="empty" {...props.empty}></div>
       </div>
-      <div {...props.steps}>
-        <div {...props.step}>{naText}</div>
+      <div _prop-target="steps" {...props.steps}>
+        <div _prop-target="step" {...props.step}>
+          {naText}
+        </div>
         {steps &&
           steps.map((step) => (
-            <div {...props.step} key={step}>{`${step}${suffix}`}</div>
+            <div
+              _prop-target="step"
+              {...props.step}
+              key={step}
+            >{`${step}${suffix}`}</div>
           ))}
       </div>
     </div>
