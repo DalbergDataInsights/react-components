@@ -11,7 +11,11 @@ export const ProgressCircleComponent = ({
   suffix = "%",
   props,
 }: iProgressCircle) => {
-  const { ref, prop: radius } = useDim({ getter: (c) => Math.min(c.viewportElement.clientWidth, c.viewportElement.clientHeight)/2 })
+  // calculating 0.5rem of root font size to offset radius in px
+  const rootFontSize = window.getComputedStyle(document.documentElement).fontSize.match(/\d+/g)
+  const radiusOffset = (rootFontSize ? Number(rootFontSize[0]): 16) * 0.5 
+
+  const { ref, prop: radius } = useDim({ getter: (c) => (Math.min(c.viewportElement.clientWidth, c.viewportElement.clientHeight)/2) - radiusOffset})
   const circumference = Math.round(radius * 2 * Math.PI)
   const [offset, setOffset] = useState("300%")
 
@@ -28,7 +32,7 @@ export const ProgressCircleComponent = ({
           {...props.total}
           cx={"50%"}
           cy={"50%"}
-          r={`calc(${radius}px - 0.5rem)`}
+          r={radius}
           ref={ref}
         />
         <circle
@@ -38,7 +42,7 @@ export const ProgressCircleComponent = ({
           strokeDashoffset={offset}
           cx={"50%"}
           cy={"50%"}
-          r={`calc(${radius}px - 0.5rem)`}
+          r={radius}
         />
         <CountUp
           {...props.counter}
