@@ -37,6 +37,7 @@ export const defaults = {
     counter: {
       duration:"3",
       prefix: "",
+      redraw:true,
     }
   },
 }

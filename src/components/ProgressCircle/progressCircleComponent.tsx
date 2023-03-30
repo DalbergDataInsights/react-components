@@ -11,7 +11,11 @@ export const ProgressCircleComponent = ({
   suffix = "%",
   props,
 }: iProgressCircle) => {
-  const { ref, prop: radius } = useDim({ getter: (c) => Math.min(c.viewportElement.clientWidth, c.viewportElement.clientHeight)/2 })
+  // calculating 0.5rem of root font size to offset radius in px
+  const rootFontSize = window.getComputedStyle(document.documentElement).fontSize.match(/\d+/g)
+  const radiusOffset = (rootFontSize ? Number(rootFontSize[0]): 16) * 0.5 
+
+  const { ref, prop: radius } = useDim({ getter: (c) => (Math.min(c.viewportElement.clientWidth, c.viewportElement.clientHeight)/2) - radiusOffset})
   const circumference = Math.round(radius * 2 * Math.PI)
   const [offset, setOffset] = useState("300%")
 
@@ -23,24 +27,27 @@ export const ProgressCircleComponent = ({
 
   return (
     <>
-      <svg {...props.circle}>
+      <svg _prop-target="circle" {...props.circle}>
         <circle
+          _prop-target="total"
           {...props.total}
           cx={"50%"}
           cy={"50%"}
-          r={`calc(${radius}px - 0.5rem)`}
+          r={radius}
           ref={ref}
         />
         <circle
+          _prop-target="progress"
           {...props.progress}
           stroke={color}
           strokeDasharray={circumference}
           strokeDashoffset={offset}
           cx={"50%"}
           cy={"50%"}
-          r={`calc(${radius}px - 0.5rem)`}
+          r={radius}
         />
         <CountUp
+          _prop-target="counter"
           {...props.counter}
           start={minValue}
           end={value}
@@ -48,12 +55,12 @@ export const ProgressCircleComponent = ({
         >
           {({ countUpRef }) => (
             <text
+              _prop-target="value"
               ref={countUpRef}
               x={"50%"}
               y={"50%"}
               {...props.value}
-            >
-            </text>
+            ></text>
           )}
         </CountUp>
       </svg>
