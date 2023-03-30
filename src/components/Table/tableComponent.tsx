@@ -22,8 +22,7 @@ export const TableComponent = ({
   // 2. For the dictionary to work we need at least type or renderer, accessor that can be index and a name of the column
   // 3. If the data is dictionary, name is sourced from the data index (either key or array index)
   // Have a dictionary of pre-made cell renderers as well
-  if (data.length < 1) return <div>Pas de données disponibles</div>
-  // equalise header length
+  // equalize header length
   if (data.length > 0 && headers.length === 0) {
     while (Object.keys(data[0]).length > headers.length) {
       headers.push({})
