@@ -26,6 +26,7 @@
     "registry": "https://npm.pkg.github.com/@DalbergDataInsights"
   },
   "dependencies": {
+    "@dhis2/app-runtime": "^3.9.1",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.8",
