@@ -48,8 +48,8 @@ export function checkState(stateString: string, props: any, initValue = {}) {
 
   if (!propKeys.includes(stateString) || !propKeys.includes(setStateString)) {
     const [state, setState] = useState(initValue)
-    props[stateString] = state
-    props[setStateString] = setState
+    props[stateString] = props[stateString] || state
+    props[setStateString] = props[setStateString] || setState
   }
 }
 
