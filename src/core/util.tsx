@@ -40,14 +40,14 @@ export function mergeDicts(dict1, dict2) {
   return { ...dict1, ...dict2, ...mergedDict }
 }
 
-export function checkState(stateString: string, props: any, initValue = {}) {
+export function checkState(stateString: string, props: any) {
   const propKeys = Object.keys(props)
   const setStateString = `set${
     stateString.charAt(0).toUpperCase() + stateString.slice(1)
   }`
 
   if (!propKeys.includes(stateString) || !propKeys.includes(setStateString)) {
-    const [state, setState] = useState(initValue)
+    const [state, setState] = useState()
     props[stateString] = props[stateString] || state
     props[setStateString] = props[setStateString] || setState
   }
