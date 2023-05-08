@@ -88,6 +88,12 @@ export const defaults = {
       ],
       "highlight-line-color": "#d2d4d4",
       "highlight-line-width": 2,
+      "layout-symbol-labels": {
+        "text-field": ["get", "name"],
+        'text-offset': [0, 0.6],
+        "text-anchor": "center",
+        "text-size": 10,
+      },
     },
   },
 }
