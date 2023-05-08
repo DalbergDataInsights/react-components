@@ -6,18 +6,33 @@ function createLayerObject(layer: any, props: any) {
 
 function createPaintProps(id: string, props: any) {
   const layerPropertiesKeys = Object.keys(props).filter((e) => e.startsWith(id))
-  const type = layerPropertiesKeys[0].split("-")[1]
-  const layerProps: { [key: string]: any } = {}
-  layerPropertiesKeys.forEach(
-    (key) => (layerProps[key.replace(`${id}-`, "")] = props[key])
+  if (layerPropertiesKeys.length > 0) {
+    const type = layerPropertiesKeys[0].split("-")[1]
+    const layerProps: { [key: string]: any } = {}
+    layerPropertiesKeys.forEach(
+      (key) => (layerProps[key.replace(`${id}-`, "")] = props[key])
+    )
+    return { key: id, id, type, paint: layerProps }
+  } else return { key: id, id}
+  
+}
+
+function createLayoutProps(id: string, props: any) {
+  const layerPropertiesKeys = Object.keys(props).filter(
+    (e) => e.startsWith("layout") && e.endsWith(id)
   )
-  return { key: id, id, type, paint: layerProps }
+  if (layerPropertiesKeys.length > 0) {
+    const type = layerPropertiesKeys[0].split("-")[1]
+    const layoutProps = props[layerPropertiesKeys[0]]
+    return { type, layout: layoutProps }
+  } else return {}
 }
 
 export function createLayer(id: string, props: any, states: any) {
   const layerProps = createPaintProps(id, props)
   const filterProps = createFilterProps(id, props, states)
-  return createLayerObject(layerProps, filterProps)
+  const layoutProps = createLayoutProps(id, props)
+  return createLayerObject(layerProps, {...filterProps, ...layoutProps})
 }
 
 // TODO think how to better align with mapbox documentation

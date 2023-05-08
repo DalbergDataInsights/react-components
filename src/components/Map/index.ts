@@ -13,7 +13,7 @@ import { useMapStates } from "./mapLogic"
 
 export const manifest = {
   name: "Map",
-  version: "0.4",
+  version: "0.5",
   defaults: defaults,
   Component: MapComponent,
   init: useMapStates,
