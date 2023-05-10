@@ -13,7 +13,7 @@
 
 ### func
 
-• **func**: (`event`: [`ChangeEvent`](internal_.ChangeEvent.md)<`HTMLInputElement`\>) => `void`
+• **func**: (`event`: `ChangeEvent`<`HTMLInputElement`\>) => `void`
 
 #### Type declaration
 
@@ -23,7 +23,7 @@
 
 | Name | Type |
 | :------ | :------ |
-| `event` | [`ChangeEvent`](internal_.ChangeEvent.md)<`HTMLInputElement`\> |
+| `event` | `ChangeEvent`<`HTMLInputElement`\> |
 
 ##### Returns
 
@@ -31,7 +31,7 @@
 
 #### Defined in
 
-[src/core/interface.tsx:24](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L24)
+[src/core/interface.tsx:29](https://github.com/DalbergDataInsights/react-components/blob/ec29d2b/src/core/interface.tsx#L29)
 
 ___
 
@@ -41,4 +41,4 @@ ___
 
 #### Defined in
 
-[src/core/interface.tsx:23](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L23)
+[src/core/interface.tsx:28](https://github.com/DalbergDataInsights/react-components/blob/ec29d2b/src/core/interface.tsx#L28)

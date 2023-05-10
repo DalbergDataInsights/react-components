@@ -18,13 +18,13 @@
 
 #### Defined in
 
-[src/core/interface.tsx:17](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L17)
+[src/core/interface.tsx:22](https://github.com/DalbergDataInsights/react-components/blob/ec29d2b/src/core/interface.tsx#L22)
 
 ___
 
 ### func
 
-• **func**: (`args`: [`Record`](../modules/internal_.md#record)<`string` \| `number`, `unknown`\>) => `void`
+• **func**: (`args`: `Record`<`string` \| `number`, `unknown`\>) => `void`
 
 #### Type declaration
 
@@ -34,7 +34,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `args` | [`Record`](../modules/internal_.md#record)<`string` \| `number`, `unknown`\> |
+| `args` | `Record`<`string` \| `number`, `unknown`\> |
 
 ##### Returns
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[src/core/interface.tsx:18](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L18)
+[src/core/interface.tsx:23](https://github.com/DalbergDataInsights/react-components/blob/ec29d2b/src/core/interface.tsx#L23)
 
 ___
 
@@ -52,4 +52,4 @@ ___
 
 #### Defined in
 
-[src/core/interface.tsx:19](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L19)
+[src/core/interface.tsx:24](https://github.com/DalbergDataInsights/react-components/blob/ec29d2b/src/core/interface.tsx#L24)

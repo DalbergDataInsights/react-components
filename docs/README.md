@@ -1,24 +1,23 @@
 @dalbergdatainsights/react-components / [Exports](modules.md)
 
 # Dalberg Data Insights React Components Library
-
 - [Dalberg Data Insights React Components Library](#dalberg-data-insights-react-components-library)
 - [Consuming packages](#consuming-packages)
 - [Developer TODO and Roadmap](#developer-todo-and-roadmap)
-  - [NamedGrid](#namedgrid)
-  - [Table](#table)
+  * [NamedGrid](#namedgrid)
+  * [Table](#table)
 - [Core Library](#core-library)
-  - [Wrapper](#wrapper)
-  - [Event management](#event-management)
-  - [State observation](#state-observation)
-  - [Component initialization](#component-initialization)
-  - [Props passthrough](#props-passthrough)
-  - [Component styling](#component-styling)
-  - [Utility](#utility)
-    - [mergeDicts(a,b)](#mergedictsab)
-    - [checkStates(name, props)](#checkstatesname-props)
-  - [Hooks](#hooks)
-    - [useDim](#usedim)
+  * [Wrapper](#wrapper)
+  * [Event management](#event-management)
+  * [State observation](#state-observation)
+  * [Component initialization](#component-initialization)
+  * [Props passthrough](#props-passthrough)
+  * [Component styling](#component-styling)
+  * [Utility](#utility)
+    + [mergeDicts(a,b)](#mergedicts-a-b-)
+    + [checkStates(name, props)](#checkstates-name--props-)
+  * [Hooks](#hooks)
+    + [useDim](#usedim)
 - [Components](#components)
   * [StatusColor Component](#statuscolor-component)
     + [StatusColor Props](#statuscolor-props)
@@ -43,23 +42,29 @@
     + [Map States](#map-states)
     + [Map Props](#map-props)
     + [Map Props Passthrough](#map-props-passthrough)
+    + [Map Layers Model](#map-layers-model)
+    + [Tooltip](#tooltip)
     + [Map Example](#map-example)
   * [Progress Circle](#progress-circle)
     + [Progress Circle Props](#progress-circle-props)
     + [Progress Circle Props Passthrough](#progress-circle-props-passthrough)
     + [ProgressCircle Example](#progresscircle-example)
-- [Progress Bar](#progress-bar)
-  * [Progress Bar Props](#progress-bar-props)
-  * [Progress Bar Props Passthrough](#progress-bar-props-passthrough)
+  * [Progress Bar](#progress-bar)
+    + [Progress Bar Props](#progress-bar-props)
+    + [Progress Bar Props Passthrough](#progress-bar-props-passthrough)
     + [Progress Bar Example Usage](#progress-bar-example-usage)
+  * [Line Chart](#line-chart)
+    + [Line Chart Props](#line-chart-props)
+    + [Line Chart Props Passthrough](#line-chart-props-passthrough)
+    + [Line Chart Example](#line-chart-example)
 - [Layouts](#layouts)
-  - [NamedGrid](#namedgrid-1)
-  - [NamedGrid Props](#namedgrid-props)
-  - [NameGrid Example](#namegrid-example)
+  * [NamedGrid](#namedgrid-1)
+  * [NamedGrid Props](#namedgrid-props)
+  * [NameGrid Example](#namegrid-example)
 - [Contribution](#contribution)
-  - [Integrate with framework](#integrate-with-framework)
-  - [Embed your code](#embed-your-code)
-  - [Generating documentation](#generating-documentation)
+  * [Integrate with framework](#integrate-with-framework)
+  * [Embed your code](#embed-your-code)
+  * [Generating documentation](#generating-documentation)
 
 # Consuming packages
 
@@ -78,7 +83,7 @@ always-auth=true
 
 # Developer TODO and Roadmap
 
-- [ ] come up with a better props drill ideas
+- [ ] come up with better props drill ideas
 - [ ] decide on the GridLayout directly into the container / new component
 - [ ] decide on the container defaults locations
 - [ ] Wrapper component still rerenders => research React docs for causes
@@ -103,11 +108,11 @@ always-auth=true
 ## Event management
 
 An easier way of creating and assigning common events to components.
-Events are then packed in a single function that is subscribing on a certain event type.
+Events are then packed in a single function that is subscribing to a certain event type.
 
 Common events currently include:
 
-- click: onClick -> usually sets click state
+- click: onClick -> usually sets "click" state
 - change: onChange -> triggers when active state changes (for dropdown)
 - move: onMove -> usually sets point state
 
@@ -131,7 +136,7 @@ To register your own event, pass a list of subscribers in the prop of any compon
 
 ## State observation
 
-State events are triggered when a dependency is changing instead of when a common event is occurring. You can pass any external or internal prop. The powerful difference of the state observers is that instead of event, the event handler can request arguments from withing the component without hoarding states in the parent component.
+State events are triggered when a dependency is changing instead of when a common event is occurring. You can pass any external or internal prop. The powerful difference between the state observers is that instead of an event, the event handler can request arguments from within the component without hoarding states in the parent component.
 
 ```js
 // example from map click handler
@@ -167,19 +172,19 @@ State events are triggered when a dependency is changing instead of when a commo
 ## Component initialization
 
 Every component is initialized with an init function that is executed in the body of a wrapper component before events and states are registered.
-With a list of utility methods, you can overwrite an init function by either importing component directly or passing an **init** prop in the body of the component.
+With a list of utility methods, you can overwrite an init function by either importing the component directly or passing an **init** prop in the body of the component.
 
 ```jsx
 <Component  init={(subs, obs, props) => { ...custom logic here}}/>
 ```
 
-Most of the interactions, however can be achieved with props passthrough, config context and event management system.
+Most of the interactions, however, can be achieved with props passthrough, config context and event management system.
 
 ## Props passthrough
 
-You can pass "props" prop to any component. Each component states which props are
-passed through. Usually component hierarchy consists of container - a div in a wrapper
-component that contains component metadata and initializes event and state listeners and component-specific structure that starts with a same name component frame (e.g. table for Table, map for Map) and children components where applicable (e.g. header, row, cell for Table, option for Switch etc)
+You can pass the "props" prop to any component. Each component states which props are
+passed through. Usually, component hierarchy consists of a container - a div in a wrapper
+component that contains component metadata and initializes event and state listeners and a component-specific structure that starts with a same name component frame (e.g. table for Table, map for Map) and children components where applicable (e.g. header, row, cell for Table, option for Switch etc)
 
 ## Component styling
 
@@ -204,7 +209,7 @@ Default props are overwritten by context props that are overwritten by local pro
 
 ### mergeDicts(a,b)
 
-recursively merging all properties of both dictionaries into a
+recursively merging all properties of both dictionaries into an
 advantage is that if both dictionaries have for example {style: {}}, it will be merged instead of overwritten
 
 ### checkStates(name, props)
@@ -215,7 +220,7 @@ checks if the name & setName are present in props and adds it there if not -- us
 
 ### useDim
 
-useDim hook gets updated component prop on window load and resize. Commonly used within the framework to response on the viewport or container values.
+useDim hook gets updated component prop on window load and resize. Commonly used within the framework to respond to the viewport or container values.
 
 ```jsx
 import { useDim } from "../../hooks/useDim"
@@ -249,7 +254,7 @@ export const Component = () => {
 
 # Components
 
-For full list of props please see generated documentation in [./docs]
+For the full list of props please see generated documentation in [./docs]
 
 ## StatusColor Component
 
@@ -257,11 +262,11 @@ Span of a given size and color to imitate the semaphore status. Animated and cen
 
 ### StatusColor Props
 
-- color: color of the circle
+- color: the color of the circle
 
 ### StatusColor Props Passthrough
 
-It is necessary to mention that this component edits default container properties, initializing wrapper ans flexbox to make sure it's tightly centered in the middle of the wrapper.
+It is necessary to mention that this component edits default container properties, initializing wrapper and flexbox to make sure it's tightly centered in the middle of the wrapper.
 
 - size - diameter of the span
 - circle - span props
@@ -284,12 +289,12 @@ It is necessary to mention that this component edits default container propertie
 
 ## DropdownButton Component
 
-React select that exposes click and point properties. Allows for custom tooltips of each value / component name.
+React select that exposes click and point properties. Allows for custom tooltips of each value/component name.
 
 ### DropdownButton States
 
-- click - feature properties of currently active (clicked) button
-- point - feature properties of currently hovered (mouseover) button
+- click - feature properties of the currently active (clicked) button
+- point - feature properties of the currently hovered (mouseover) button
 
 ### DropdownButton Props
 
@@ -308,11 +313,11 @@ React select that exposes click and point properties. Allows for custom tooltips
 - dropdown - root component (div)
 - button - container for label and arrow icon (div)
 - label - label and selected name (div)
-- icon - svg container (mui SvgIcon)
+- icon - an svg container (mui SvgIcon)
 - menu - container with dropdown options (div)
-- option - item in menu (a)
+- option - item in the menu (a)
 
-It is essential for the integrity of the component to not overwrite the display: flex and flex flow css.
+It is essential for the integrity of the component to not overwrite the display: flex and flex-flow CSS.
 
 ### DropdownButton Example
 
@@ -334,8 +339,8 @@ Switch/Radio style button with one active button at a time.
 
 ### Toggle Button States
 
-- click - feature properties of currently active (clicked) button
-- point - feature properties of currently hovered (mouseover) button
+- click - feature properties of the currently active (clicked) button
+- point - feature properties of the currently hovered (mouseover) button
 
 ### Toggle Button Props
 
@@ -345,8 +350,8 @@ Switch/Radio style button with one active button at a time.
 
 - group - root component (div)
 - button - option (button)
-- click - css of the clicked button (merge with button)
-- point - css of the pointed button (merge with button)
+- click - CSS of the clicked button (merge with button)
+- point - CSS of the pointed button (merge with button)
 
 ### Toggle Button Example
 
@@ -412,7 +417,7 @@ Switch/Radio style button with one active button at a time.
 
 ## Table
 
-React table component to conveniently display out of the box data.
+React table component to conveniently display out-of-the-box data.
 
 ### Table Props
 
@@ -423,7 +428,7 @@ React table component to conveniently display out of the box data.
 ### Table Props Passthrough
 
 - table - table container (MUI Grid container)
-- head - table head row (MUI Grid items row-wise for first row)
+- head - table head row (MUI Grid items row-wise for the first row)
 - row - table row (MUI Grid items row-wise)
 - cell - each table cell (cell renderer)
 
@@ -481,12 +486,12 @@ React table component to conveniently display out of the box data.
 React map component built around react-map-gl & mapbox-gl to rapidly
 develop map components.
 
-By default, Map generates significant amount of subscribers and observers to ease the development. They can be overridden by providing empty init prop.
+By default, Map generates a significant amount of subscribers and observers to ease the development. They can be overridden by providing an empty init prop.
 
 ### Map Assumptions
 
-By default, label is called "name" (e.g. org unit name)
-By default, value is called "value"
+By default, the label is called "name" (e.g. org unit name)
+By default, the value is called "value"
 You can add more keys in properties to enrich map tooltips as
 currently tooltips are being rendered as
 
@@ -495,7 +500,7 @@ label: name
 variable: value units
 ```
 
-current tooltips are generated using method that take in corresponding info state
+current tooltips are generated using the method that takes in corresponding info state
 and can be easily overridden (see iMap)
 
 > I am still deciding whether it's better to pass label/name and variable in props
@@ -519,18 +524,92 @@ Basic map usage only consists of data, colors and steps
 - data - geojson with feature properties\
 - colors - a list of colors in hex or rgb\
 - steps - a list of color steps\
-  !important Since colors are fit in the gaps, there should be 1 more color than steps
+  !important Since colors fit in the gaps, there should be 1 more color than the steps
 
 ### Map Props Passthrough
 
 - map - root map component (react-map-gl Map)
 - layers - each map layer
-- tooltip - both point and click tolltips (Tooltip component, wrapper for rendering function)
+- tooltip - both point and click tooltips (Tooltip component, wrapper for rendering function)
 
-#### Tooltip
+### Map Layers Model
 
-The tooltip has atleast 5 values it sources from the geojson data: label, variable, name, value and units.
-- name - name of highlighted area
+Generally speaking, we are following MapboxGL layer model. To create a new layer, add a layer of the following format under layers in the props passthrough:
+
+```js
+[layer-id] : {
+  type: [layer-type],
+  paint: {
+    ...[paint-props]
+  },
+  layout: {
+    ...[layout-props]
+  },
+  filter: [layer-filter]
+}
+```
+
+The filter should be an expression-type prop that is following MapboxGL model ["==", "name", f(states)] with one exception: the third argument is a function of states that returns value to compare the expression to. States include click, point etc.
+
+The data layer is a bit of a special case. You can still pass every layer-specific property like layout, but you want to leave paint-[type]-color property to be generated automatically based on steps, colors and value columns.
+
+```js
+[layer-id] : {
+  type: [layer-type],
+  paint: {
+    ...[paint-props]
+  },
+  layout: {
+    ...[layout-props]
+  },
+  filter: [layer-filter],
+  // data-specific-props
+  steps: [steps],
+  colors: [colors],
+  naColor: [naColor | "#BFBFBF"],
+  valueColumn: [valueColumn | "value"]
+}
+```
+
+Usually, you don't want colors or steps fixed in your layout props if you are not working with monotoneous same-type data across the entire application and instead pass dynamic steps or colors or both in your component props instead.
+
+The downside of adding layers is that if any layers beyond defaults need to be added, a user has to specify all layers that they want to be displayed - that generate redundancy. See an example below.
+
+```js
+<Map
+  {...props}
+  // this layer will be added to the default layers list
+  props={{
+    layers: {
+      label: {
+        type: "symbol",
+        layout: {
+          "text-field": ["get", "name"],
+          "text-offset": [0, 0.6],
+          "text-anchor": "center",
+          "text-size": 10,
+        },
+      },
+    },
+  }}
+  // you have to specify all layers that need to be displayed
+  layers={["outline", "blur", "highlight", "label"]}
+
+  />
+```
+
+Available layers are:
+data - choropleth by default (mandatory)
+outline - border around each polygon (enabled)
+blur - blur all other polygons when one of them is clicked (enabled)
+highlight - highlight border around the clicked polygon (enabled)
+label - display name of the polygon (disabled)
+
+### Tooltip
+
+The tooltip has at least 5 values it sources from the geojson data: label, variable, name, value and units.
+
+- name - name of the highlighted area
 - label - name description/ highlighted area level
 - variable - value description
 - units - value suffix
@@ -598,7 +677,7 @@ const steps = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
 ```
 
-For examples of creating custom events you can read components/Map/logic file,
+For examples of creating custom events you can read components/Map/logic files,
 there is an example coming from the default logic of the map
 
 ```javascript
@@ -648,7 +727,7 @@ const useMapStates = (subscribers, observers, props) => {
 
 ## Progress Circle
 
-React component built around SVG to help visualize data conviniently. Has the ability to visualize infinite progress and render customized content at the center.
+React component built around SVG to help visualize data conveniently . Has the ability to visualize infinite progress and render customized content at the center.
 
 ### Progress Circle Props
 
@@ -674,11 +753,11 @@ React component built around SVG to help visualize data conviniently. Has the ab
 <ProgressCircle value={100} minValue={10} maxValue={150} suffix={"$"} />
 ```
 
-# Progress Bar
+## Progress Bar
 
 React component that displays a progress bar based on a given value\
 
-## Progress Bar Props
+### Progress Bar Props
 
 - value - required - represents the current value of the progress bar.
 - color - optional - sets the color of the progress bar. The default value is "#7AA995".
@@ -687,7 +766,7 @@ React component that displays a progress bar based on a given value\
 - suffix – optional - sets the suffix to be added to the value displayed in the progress bar. The default value is "%".
 - props – optional – allows for additional properties to be passed to the element
 
-## Progress Bar Props Passthrough
+### Progress Bar Props Passthrough
 
 - bar – root component (div)
 - total – container for current progress (div)
@@ -727,17 +806,70 @@ React component that displays a progress bar based on a given value\
     />
 ```
 
+## Line Chart
+
+React component built on top of the [Recharts](https://recharts.org/en-US) library to help visualize data on a line chart.
+
+### Line Chart Props
+- data - required : List of objects of  rows
+- traces - required: an object to specify the data elements {
+    dataKey: string
+    stroke: string
+    activeDot?: any
+  }[]
+- children - Additional Chart components like   `<XAxis />`, `<YAxis />`, `<CartesianGrid />` and `<Legend />`  with their respective customized properties.
+- props - optional: allows for passing additional properties to the component
+
+### Line Chart Props Passthrough
+
+- chart - `<ResponsiveContainer />` element properties
+- trace - `<Line />` element properties
+- tooltip - `<Tooltip />` element properties
+
+### Line Chart Example
+
+```jsx
+  import { ChartLegend, ChartGrid } from '@dalbergdatainsights/react-components'
+  // visualizing the monthly vaccination levels for two drugs x and y.
+  const data = [
+            { "pe": "Jan", "x": 4, "y": 8 },
+            { "pe": "Feb", "x": 5, "y": 16 },
+            { "pe": "Mar", "x": 8, "y": 32 },
+            { "pe": "Apr", "x": 20, "y": 48 },
+            { "pe": "May", "x": 35, "y": 56 },
+            { "pe": "Jun", "x": 37, "y": 69 },
+            { "pe": "Jul", "x": 45, "y": 78 },
+            { "pe": "Aug", "x": 39, "y": 89 },
+            { "pe": "Sep", "x": 46, "y": 88 },
+            { "pe": "Oct", "x": 53, "y": 94 },
+            { "pe": "Nov", "x": 54, "y": 96 },
+            { "pe": "Dec", "x": 60, "y": 100 },
+            ]
+  // plot
+  <LineChart data={data}
+    X={'pe'}
+    traces={[
+      {dataKey: "x", stroke: "#D1D1D6"},
+      {dataKey: "y", stroke: "#8E8E93"},
+    ]}
+  >
+    <ChartLegend />
+    <ChartGrid />
+  </LineChart>
+  ```
+
 # Layouts
 
 ## NamedGrid
 
-Component that allows to map areas of the screen arbitrary. More on css grids and grid templates can be red here: https://css-tricks.com/wp-content/uploads/2022/02/css-grid-poster.png
+The component that allows mapping areas of the screen arbitrarily. More on CSS grids and grid templates can be read here: https://css-tricks.com/wp-content/uploads/2022/02/css-grid-poster.png
 
 ## NamedGrid Props
 
-areas - list of lists of grid areas (see example)
-columns - list of column sizes
-rows - list of row sizes
+- areas: list of lists of grid areas (see example)
+- columns: list of column sizes
+- rows: list of row sizes
+
 sizes support all grid sizes, including common px, rem, vh as well as relative as fr
 children and style are passed through as usual
 
@@ -800,16 +932,16 @@ children and style are passed through as usual
 
 ## Integrate with framework
 
-Make sure that you follow philosophy and the assumptions of the framework
+Make sure that you follow the philosophy and the assumptions of the framework
 
 ## Embed your code
 
 1. Add component folder
 2. Separate component render, logic, config
 3. Define component manifest
-4. Instantiate export with wrapper from related file (components/core/layouts)
-5. Add README section for the component
-6. Generate new table of content (https://ecotrust-canada.github.io/markdown-toc/)
+4. Instantiate export with the wrapper from related file (components/core/layouts)
+5. Add a README section for the component
+6. Generate a new table of content (https://ecotrust-canada.github.io/markdown-toc/)
 7. Generate documentation
 8. Iterate a version
 

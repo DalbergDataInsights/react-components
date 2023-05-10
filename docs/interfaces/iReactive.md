@@ -18,27 +18,17 @@
 
 #### Defined in
 
-[src/core/interface.tsx:12](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L12)
+[src/core/interface.tsx:12](https://github.com/DalbergDataInsights/react-components/blob/ec29d2b/src/core/interface.tsx#L12)
 
 ___
 
 ### props
 
-• `Optional` **props**: `Object`
-
-#### Index signature
-
-▪ [key: `string`]: `any`
-
-#### Type declaration
-
-| Name | Type |
-| :------ | :------ |
-| `container?` | `any` |
+• `Optional` **props**: `any`
 
 #### Defined in
 
-[src/core/interface.tsx:13](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L13)
+[src/core/interface.tsx:13](https://github.com/DalbergDataInsights/react-components/blob/ec29d2b/src/core/interface.tsx#L13)
 
 ___
 
@@ -48,4 +38,4 @@ ___
 
 #### Defined in
 
-[src/core/interface.tsx:11](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L11)
+[src/core/interface.tsx:11](https://github.com/DalbergDataInsights/react-components/blob/ec29d2b/src/core/interface.tsx#L11)

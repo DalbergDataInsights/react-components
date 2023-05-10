@@ -15,11 +15,11 @@
 
 ### Component
 
-• **Component**: [`FC`](../modules/internal_.md#fc)<`any`\>
+• **Component**: `FC`<`any`\>
 
 #### Defined in
 
-[src/core/interface.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L4)
+[src/core/interface.tsx:4](https://github.com/DalbergDataInsights/react-components/blob/ec29d2b/src/core/interface.tsx#L4)
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 #### Defined in
 
-[src/core/interface.tsx:5](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L5)
+[src/core/interface.tsx:5](https://github.com/DalbergDataInsights/react-components/blob/ec29d2b/src/core/interface.tsx#L5)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[src/core/interface.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L7)
+[src/core/interface.tsx:7](https://github.com/DalbergDataInsights/react-components/blob/ec29d2b/src/core/interface.tsx#L7)
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 #### Defined in
 
-[src/core/interface.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/7951db8/src/core/interface.tsx#L6)
+[src/core/interface.tsx:6](https://github.com/DalbergDataInsights/react-components/blob/ec29d2b/src/core/interface.tsx#L6)
