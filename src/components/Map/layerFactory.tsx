@@ -1,34 +1,25 @@
 import { Layer } from "react-map-gl"
+import { mergeDicts } from "../../core"
 
-function createLayerObject(layer: any, props: any) {
-  return <Layer {...layer} {...props} />
-}
-
-function createPaintProps(id: string, props: any) {
-  const layerPropertiesKeys = Object.keys(props).filter((e) => e.startsWith(id))
-  const type = layerPropertiesKeys[0].split("-")[1]
-  const layerProps: { [key: string]: any } = {}
-  layerPropertiesKeys.forEach(
-    (key) => (layerProps[key.replace(`${id}-`, "")] = props[key])
-  )
-  return { key: id, id, type, paint: layerProps }
+function createLayerObject(layer: any) {
+  return <Layer {...layer} />
 }
 
 export function createLayer(id: string, props: any, states: any) {
-  const layerProps = createPaintProps(id, props)
-  const filterProps = createFilterProps(id, props, states)
-  return createLayerObject(layerProps, filterProps)
+  const layerProps = {
+    key: id,
+    id,
+    ...props,
+  }
+  const filterProps = createFilterProps(props.filter || undefined, states)
+  return createLayerObject({ ...layerProps, ...filterProps })
 }
 
 // TODO think how to better align with mapbox documentation
 // this now will work for only very simple filters
 // also it expects 3rd argument to be a function
-function createFilterProps(id: string, props: any, states: any) {
-  const filterKey = Object.keys(props).filter(
-    (e) => e.startsWith("filter") && e.endsWith(id)
-  )
-  if (filterKey.length > 0) {
-    const filter = props[filterKey[0]]
+function createFilterProps(filter: any, states: any) {
+  if (filter) {
     let filterEval = filter[2](states)
     if (filterEval instanceof Array) {
       return { filter: [filter[0], filter[1], ...filterEval] }
@@ -38,37 +29,41 @@ function createFilterProps(id: string, props: any, states: any) {
 }
 
 // add interpolated color palette?
-export function createDataLyer(
-  id: string,
-  {
-    steps,
-    colors,
-    naColor = "#BFBFBF",
-    valueColumn = "value",
-    ...props
-  }: {
-    steps: number[]
-    colors: string[]
-    naColor: string
-    valueColumn: string
+export function createDataLyer(id: string, props: any) {
+  const layerProps = {
+    id,
+    key: id,
+    ...mergeDicts(createDataColor(props), props),
   }
-) {
-  const layerProps = createPaintProps(id, {
-    ...{
-      "data-fill-color": [
-        "case",
-        ["!=", ["get", valueColumn], null],
-        ["step", ["get", valueColumn], ...createPalette(steps, colors)],
-        props["na-fill-color"] || null,
-      ],
-    },
-    ...props,
-  })
-
-  return createLayerObject(layerProps, props)
+  return createLayerObject(layerProps)
 }
 
-export function createPalette(steps: number[], colors: string[]) {
+function createDataColor({
+  steps,
+  colors,
+  naColor = "#BFBFBF",
+  valueColumn = "value",
+  type = "fill",
+}: {
+  steps: number[]
+  colors: string[]
+  type: string
+  naColor: string
+  valueColumn: string
+}) {
+  return {
+    paint: {
+      [`${type}-color`]: [
+        "case",
+        ["!=", ["get", valueColumn], null],
+        ["step", ["get", valueColumn], ...createPaletteSteps(steps, colors)],
+        naColor,
+      ],
+    },
+  }
+}
+
+export function createPaletteSteps(steps: number[], colors: string[]) {
   const palette: Array<string | number> = colors ? [colors[0]] : []
   if (steps && colors) {
     steps.forEach((s, i) => {

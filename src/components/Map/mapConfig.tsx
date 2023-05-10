@@ -68,26 +68,52 @@ export const defaults = {
       },
     },
     layers: {
-      "data-fill-opacity": 1,
-      "na-fill-color": "#bfbfbf",
-      "filter-blur": [
-        "in",
-        "name",
-        (states: any) => {
-          return states.click?.noClick || []
+      data: {
+        naColor: "#bfbfbf",
+        valueColumn: "value",
+        type: "fill",
+        paint: {
+          "fill-opacity": 1,
         },
-      ],
-      "blur-fill-color": "#d2d4d4",
-      "blur-fill-opacity": 0.5,
-      "outline-line-color": "#d2d4d4",
-      "outline-line-width": 1,
-      "filter-highlight": [
-        "==",
-        "name",
-        (states: any) => states.point?.name || "",
-      ],
-      "highlight-line-color": "#d2d4d4",
-      "highlight-line-width": 2,
+      },
+      blur: {
+        type: "fill",
+        filter: [
+          "in",
+          "name",
+          (states: any) => {
+            return states.click?.noClick || []
+          },
+        ],
+        paint: {
+          "fill-color": "#d2d4d4",
+          "fill-opacity": 0.5,
+        },
+      },
+      outline: {
+        type: "line",
+        paint: {
+          "line-color": "#d2d4d4",
+          "line-width": 1,
+        },
+      },
+      highlight: {
+        type: "line",
+        filter: ["==", "name", (states: any) => states.point?.name || ""],
+        paint: {
+          "line-color": "#d2d4d4",
+          "line-width": 2,
+        },
+      },
+      label: {
+        type: "symbol",
+        layout: {
+          "text-field": ["get", "name"],
+          "text-offset": [0, 0.6],
+          "text-anchor": "center",
+          "text-size": 10,
+        },
+      },
     },
   },
 }
