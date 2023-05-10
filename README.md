@@ -606,7 +606,7 @@ blur - blur all other polygons when one of them is clicked (enabled)
 highlight - highlight border around clicked polygon (enabled)
 label - display name of the polygon (disabled)
 
-#### Tooltip
+### Tooltip
 
 The tooltip has at least 5 values it sources from the geojson data: label, variable, name, value and units.
 
