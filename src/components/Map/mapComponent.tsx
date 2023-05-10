@@ -84,11 +84,11 @@ export const MapComponent = ({
         {createDataLyer("data", {
           steps,
           colors,
-          ...props.layers,
+          ...props.layers["data"],
         })}
         {layers.map((layer) => {
           if (typeof layer === "string")
-            return createLayer(layer, props.layers, { click, point })
+            return createLayer(layer, props.layers[layer], { click, point })
           else return layer
         })}
       </Source>

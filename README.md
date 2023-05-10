@@ -532,9 +532,84 @@ Basic map usage only consists of data, colors and steps
 - layers - each map layer
 - tooltip - both point and click tolltips (Tooltip component, wrapper for rendering function)
 
+### Map Layers Model
+
+Generally speaking, we are following MapboxGL layer model. To create a new layer, add layer of the following format under layers in props passthrough:
+
+```js
+[layer-id] : {
+  type: [layer-type],
+  paint: {
+    ...[paint-props]
+  },
+  layout: {
+    ...[layout-props]
+  },
+  filter: [layer-filter]
+}
+```
+
+Filter should be an expression-type prop that is following MapboxGL model ["==", "name", f(states)] with one exception: third argument is a function of states that returns value to compare the expression to. States include click, point etc.
+
+Data layer is a bit of a special case. You can still pass every layer-specific property like layout, but you want to leave paint-[type]-color property to be generated automatically based on steps, colors and value column.
+
+
+```js
+[layer-id] : {
+  type: [layer-type],
+  paint: {
+    ...[paint-props]
+  },
+  layout: {
+    ...[layout-props]
+  },
+  filter: [layer-filter],
+  // data-specific-props
+  steps: [steps],
+  colors: [colors],
+  naColor: [naColor | "#BFBFBF"],
+  valueColumn: [valueColumn | "value"]
+}
+```
+
+Usually you don't want colors or steps fixed in your layout props if you are not working with monotoneous same-type data across the entire application and instead pass dynamic steps or colors or both in your component props instead.
+
+Downside of adding layers is that if any layers beyond defaults need to be added, user has specify all layers that they want to be displayed - that generate redundancy. See example below.
+
+```js
+<Map
+  {...props}
+  // this layer will be added to the default layers list
+  props={{
+    layers: {
+      label: {
+        type: "symbol",
+        layout: {
+          "text-field": ["get", "name"],
+          "text-offset": [0, 0.6],
+          "text-anchor": "center",
+          "text-size": 10,
+        },
+      },
+    },
+  }}
+  // you have to specify all layers that need to be displayed
+  layers={["outline", "blur", "highlight", "label"]}
+
+  />
+```
+
+Available layers are:
+data - choropleth by default (mandatory)
+outline - border around each polygon (enabled)
+blur - blur all other polygons when one of them is clicked (enabled)
+highlight - highlight border around clicked polygon (enabled)
+label - display name of the polygon (disabled)
+
 #### Tooltip
 
-The tooltip has atleast 5 values it sources from the geojson data: label, variable, name, value and units.
+The tooltip has at least 5 values it sources from the geojson data: label, variable, name, value and units.
+
 - name - name of highlighted area
 - label - name description/ highlighted area level
 - variable - value description
