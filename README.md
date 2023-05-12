@@ -859,6 +859,61 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
   </LineChart>
   ```
 
+## Chart
+
+React component built on top of the [Recharts](https://recharts.org/en-US) library to help visualize data on a chart.
+
+### Chart Props
+- data - required: list of objects of rows
+- traces - optional: list of objects to specify which data columns to visualize with dataKey at the very least {
+    dataKey: string
+  }[] (see iTrace)
+- axis - optional: a list of exact length 2 [xaxis, yaxis] - properties to unwrap in X and Y axis in the component. Can pass [undefined, {xaxis}] to remove one of them (see iAxis)
+- children - Additional Chart components like   `<XAxis />`, `<YAxis />`, `<CartesianGrid />` and `<Legend />`  with their respective customized properties.
+- props - optional: allows for passing additional properties to the component
+
+### Chart Props Passthrough
+
+- chart: `<ResponsiveContainer />` element properties
+- trace: `<Line />` element properties
+- tooltip: `<Tooltip />` element properties
+- x/yaxis: `<XAxis />` and `<YAxis />`
+
+### Line Chart Example
+
+```jsx
+  import { ChartLegend, ChartGrid, Chart } from '@dalbergdatainsights/react-components'
+  // visualizing the monthly vaccination levels for two drugs x and y.
+  const data = [
+            { "pe": "Jan", "x": 4, "y": 8 },
+            { "pe": "Feb", "x": 5, "y": 16 },
+            { "pe": "Mar", "x": 8, "y": 32 },
+            { "pe": "Apr", "x": 20, "y": 48 },
+            { "pe": "May", "x": 35, "y": 56 },
+            { "pe": "Jun", "x": 37, "y": 69 },
+            { "pe": "Jul", "x": 45, "y": 78 },
+            { "pe": "Aug", "x": 39, "y": 89 },
+            { "pe": "Sep", "x": 46, "y": 88 },
+            { "pe": "Oct", "x": 53, "y": 94 },
+            { "pe": "Nov", "x": 54, "y": 96 },
+            { "pe": "Dec", "x": 60, "y": 100 },
+            ]
+  <Chart
+    // Linechart, see recharts to see available charts
+    type="Line"
+    data={data}
+    traces={[
+      {dataKey: "x", stroke: "#D1D1D6"},
+      {dataKey: "y", stroke: "#8E8E93"},
+    ]}
+    // XAxis pe, YAxis display with no label
+    axis={[{dataKey: "pe"}, {}]}
+  >
+    <ChartLegend />
+    <ChartGrid />
+  </Chart>
+  ```
+
 # Layouts
 
 ## NamedGrid
