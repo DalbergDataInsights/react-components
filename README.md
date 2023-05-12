@@ -1,4 +1,3 @@
-# Dalberg Data Insights React Components Library
 - [Dalberg Data Insights React Components Library](#dalberg-data-insights-react-components-library)
 - [Consuming packages](#consuming-packages)
 - [Developer TODO and Roadmap](#developer-todo-and-roadmap)
@@ -55,6 +54,10 @@
     + [Line Chart Props](#line-chart-props)
     + [Line Chart Props Passthrough](#line-chart-props-passthrough)
     + [Line Chart Example](#line-chart-example)
+  * [Chart](#chart)
+    + [Chart Props](#chart-props)
+    + [Chart Props Passthrough](#chart-props-passthrough)
+    + [Line Chart Example](#line-chart-example-1)
 - [Layouts](#layouts)
   * [NamedGrid](#namedgrid-1)
   * [NamedGrid Props](#namedgrid-props)
@@ -1007,5 +1010,6 @@ Make sure that you follow the philosophy and the assumptions of the framework
 2. Install typedoc-plugin-markdown
 3. Install typedoc-plugin-missing-exports
 4. Run `npx typedoc --plugin typedoc-plugin-markdown --plugin typedoc-plugin-missing-exports`
+5. If (4) does not work, try `npx typedoc --plugin typedoc-plugin-markdown --skipErrorChecking`
 
 > Don't forget to increment your version before publishing!
