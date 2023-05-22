@@ -46,7 +46,6 @@ export const defaults = {
         fontSize: "0.8rem",
         lineHeight: "1rem",
         flexBasis: "80%",
-        width: "100%",
       },
     },
     icon: {
