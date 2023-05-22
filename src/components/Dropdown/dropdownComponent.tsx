@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { Tooltip } from "@mui/material"
 import { mergeDicts } from "../../core/util"
 import SvgIcon from "@mui/material/SvgIcon"
@@ -22,11 +22,33 @@ export const Dropdown = ({
   const [buttonLabel, setButtonLabel] = useState(
     (label ? label : "") + click?.name || click?.value
   )
+  const [search, setSearch] = useState("")
+  const [displayOptions, setDisplayOptions] = useState(options)
+  const searchInput  = useRef(null)
+
+  useEffect(() => {
+    setDisplayOptions(options.filter((option) => 
+      option.value.toLowerCase().includes(search.toLowerCase())
+    ))
+  }, [search, options])
+
+  useEffect(() => {
+    isOpen ? searchInput.current.focus() : setSearch("")
+  }, [isOpen])
 
   return (
     <div {...props.dropdown} onClick={() => setOpen(!isOpen)}>
       <div {...props.button}>
-        <div {...props.label}>{buttonLabel}</div>
+        {isOpen ? (
+          <input
+            {...props.input}
+            ref={searchInput}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        ) : (
+          <div {...props.label}>{buttonLabel}</div>
+        )}
         <SvgIcon {...props.icon}>
           <path d="M6 9l6 6 6-6" />
         </SvgIcon>
@@ -34,7 +56,7 @@ export const Dropdown = ({
 
       {isOpen ? (
         <div {...props.menu} onMouseLeave={() => setOpen(false)}>
-          {options.map((option, index) => {
+          {displayOptions.map((option, index) => {
             const isPointed = option.value === point?.value
             return (
               <DropdownOptionComponent

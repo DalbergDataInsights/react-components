@@ -32,6 +32,23 @@ export const defaults = {
         lineHeight: "1rem",
       },
     },
+    input: {
+      type: "text",
+      style: {
+        textOverflow: "elipsis",
+        overflow: "hidden",
+        whiteSpace: "nowrap",
+        color: "black",
+        marginLeft: "1rem",
+        background: "#FAFAFC",
+        border: "none",
+        outline: "none",
+        fontSize: "0.8rem",
+        lineHeight: "1rem",
+        flexBasis: "80%",
+        width: "100%",
+      },
+    },
     icon: {
       style: {
         width: "1.5rem",
