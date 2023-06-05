@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactNode } from "react"
+import React, { useState, useEffect } from "react"
 import { iProgressCircle } from "./progressCircleInterface"
 import CountUp from "react-countup"
 import { useDim } from "../../hooks/useDim"
@@ -15,7 +15,7 @@ export const ProgressCircleComponent = ({
   const rootFontSize = window.getComputedStyle(document.documentElement).fontSize.match(/\d+/g)
   const radiusOffset = (rootFontSize ? Number(rootFontSize[0]): 16) * 0.5 
 
-  const getter = (current: any ) => {
+  const getter = (current: any) => {
     const { viewportElement } = current
     const { parentElement: child } = viewportElement
     const targetElement = child.parentElement || child.parentElement?.parentElement || child
