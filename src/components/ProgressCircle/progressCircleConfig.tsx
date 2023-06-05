@@ -6,6 +6,7 @@ export const defaults = {
     circle: {
       height: "100%",
       width: "100%",
+      preserveAspectRatio: "xMidYMin slice",
       style: {},
     },
     total: {
