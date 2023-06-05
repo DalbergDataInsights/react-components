@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, ReactNode } from "react"
 import { iProgressCircle } from "./progressCircleInterface"
 import CountUp from "react-countup"
 import { useDim } from "../../hooks/useDim"
@@ -15,7 +15,21 @@ export const ProgressCircleComponent = ({
   const rootFontSize = window.getComputedStyle(document.documentElement).fontSize.match(/\d+/g)
   const radiusOffset = (rootFontSize ? Number(rootFontSize[0]): 16) * 0.5 
 
-  const { ref, prop: radius } = useDim({ getter: (c) => (Math.min(c.viewportElement.clientWidth, c.viewportElement.clientHeight)/2) - radiusOffset})
+  const getter = (current: any ) => {
+    const { viewportElement } = current
+    const { parentElement: child } = viewportElement
+    const targetElement = child.parentElement?.parentElement || child.parentElement || child
+
+    const style = window.getComputedStyle(targetElement)
+    const { paddingTop, paddingBottom, paddingLeft, paddingRight } = style
+
+    const width = viewportElement.clientWidth - parseFloat(paddingLeft) - parseFloat(paddingRight)
+    const height = viewportElement.clientHeight - parseFloat(paddingTop) - parseFloat(paddingBottom)
+
+    return Math.min(width, height)/2 - radiusOffset
+  }
+
+  const { ref, prop: radius } = useDim({ getter })
   const circumference = Math.round(radius * 2 * Math.PI)
   const [offset, setOffset] = useState("300%")
 
