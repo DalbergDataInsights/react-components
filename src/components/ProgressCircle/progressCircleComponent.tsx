@@ -18,7 +18,7 @@ export const ProgressCircleComponent = ({
   const getter = (current: any ) => {
     const { viewportElement } = current
     const { parentElement: child } = viewportElement
-    const targetElement = child.parentElement?.parentElement || child.parentElement || child
+    const targetElement = child.parentElement || child.parentElement?.parentElement || child
 
     const style = window.getComputedStyle(targetElement)
     const { paddingTop, paddingBottom, paddingLeft, paddingRight } = style
