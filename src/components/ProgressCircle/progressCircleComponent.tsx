@@ -15,21 +15,9 @@ export const ProgressCircleComponent = ({
   const rootFontSize = window.getComputedStyle(document.documentElement).fontSize.match(/\d+/g)
   const radiusOffset = (rootFontSize ? Number(rootFontSize[0]): 16) * 0.5 
 
-  const getter = (current: any) => {
-    const { viewportElement } = current
-    const { parentElement: child } = viewportElement
-    const targetElement = child.parentElement || child.parentElement?.parentElement || child
 
-    const style = window.getComputedStyle(targetElement)
-    const { paddingTop, paddingBottom, paddingLeft, paddingRight } = style
 
-    const width = viewportElement.clientWidth - parseFloat(paddingLeft) - parseFloat(paddingRight)
-    const height = viewportElement.clientHeight - parseFloat(paddingTop) - parseFloat(paddingBottom)
-
-    return Math.min(width, height)/2 - radiusOffset
-  }
-
-  const { ref, prop: radius } = useDim({ getter })
+  const { ref, prop: radius } = useDim({ getter: "nopadding", radiusOffset })
   const circumference = Math.round(radius * 2 * Math.PI)
   const [offset, setOffset] = useState("300%")
 
