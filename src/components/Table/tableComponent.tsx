@@ -12,31 +12,40 @@ export const TableComponent = ({
   props = {},
 }: iTable) => {
   const { ref, prop: headerHeight } = useDim({ getter: (e) => e.offsetHeight })
-  const { tooltip: TextWithTooltip } = cellRenderers
-  const { sortedData, sortTable, sortConfig, setSortConfig } = useSortData(data)
+
+  const customSortFunction = (a, b, direction) => {
+    if (direction === "ascending") {
+      return a - b
+    }
+
+    if (direction === "descending") {
+      return b - a
+    }
+
+    return 0
+  }
+  const { sortedData, sortTable, sortConfig, setSortConfig } = useSortData(
+    data,
+    customSortFunction
+  )
 
   const renderSortIcon = (columnIndex) => {
+    const handleSort = () => {
+      sortTable(columnIndex)
+    }
     if (sortConfig && sortConfig.column === columnIndex) {
       const sortIcon = sortConfig.direction === "ascending" ? "↓" : "↑"
-      const tooltipText =
-        sortConfig.direction === "ascending"
-          ? "sort in descending order"
-          : "sort in ascending order"
       return (
-        <TextWithTooltip
-          value={sortIcon}
-          tooltips={{ [sortIcon]: tooltipText }}
-          {...props.icon}
-        />
+        <span onClick={handleSort} {...props.icon}>
+          {sortIcon}
+        </span>
       )
     }
 
     return (
-      <TextWithTooltip
-        value="↕"
-        tooltips={{ "↕": "sort in ascending order" }}
-        {...props.icon}
-      />
+      <span onClick={handleSort} {...props.icon}>
+        ↕
+      </span>
     )
   }
   // data: List of lists or list of dictionaries where index of parent list is
@@ -90,9 +99,7 @@ export const TableComponent = ({
                 key={`header-${index}`}
               >
                 {header.name}
-                <span onClick={() => sortTable(header.index)}>
-                  {renderSortIcon(header.index)}
-                </span>
+                {renderSortIcon(header.index)}
               </div>
             )
           )}

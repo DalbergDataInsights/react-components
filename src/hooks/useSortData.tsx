@@ -1,6 +1,9 @@
 import React, { useState } from "react"
 
-export const useSortData = (initialData: any[]) => {
+export const useSortData = (
+  initialData: any[],
+  customSortFunction: Function
+) => {
   const [sortedData, setSortedData] = useState<any[]>(initialData)
   const [sortConfig, setSortConfig] = useState<any | null>(null)
 
@@ -13,13 +16,7 @@ export const useSortData = (initialData: any[]) => {
     }
     let sortedDataCopy = [...sortedData]
     sortedDataCopy.sort((a, b) => {
-      if (a[column] < b[column]) {
-        return direction === "ascending" ? -1 : 1
-      }
-      if (a[column] > b[column]) {
-        return direction === "ascending" ? 1 : -1
-      }
-      return 0
+      return customSortFunction(a[column], b[column], direction)
     })
 
     setSortedData(sortedDataCopy)
