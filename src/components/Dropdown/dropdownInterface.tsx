@@ -1,6 +1,7 @@
 export interface iDropdown {
   options: iDropdownOption[]
   label?: string
+  toggleSearch?: boolean
   DropdownOptionComponent?: Function
   click?: iDropdownOption
   point?: iDropdownOption
