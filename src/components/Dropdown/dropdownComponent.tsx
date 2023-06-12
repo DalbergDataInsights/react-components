@@ -7,6 +7,7 @@ import { iDropdown, iDropdownOption } from "./dropdownInterface"
 export const Dropdown = ({
   label,
   options,
+  toggleSearch,
   // states
   click,
   point,
@@ -33,13 +34,13 @@ export const Dropdown = ({
   }, [search, options])
 
   useEffect(() => {
-    isOpen ? searchInput.current.focus() : setSearch("")
+    toggleSearch && isOpen ? searchInput.current.focus() : setSearch("")
   }, [isOpen])
 
   return (
     <div {...props.dropdown} onClick={() => setOpen(!isOpen)}>
       <div {...props.button}>
-        {isOpen ? (
+        {toggleSearch && isOpen ? (
           <input
             {...props.input}
             ref={searchInput}
