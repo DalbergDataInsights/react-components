@@ -316,6 +316,7 @@ Also allows for search filtering from the dropdown menu options.
   - tooltip?: string
 
 - label - string to append to a selected label
+- toggleSearch - boolean logic to turn on the search functionality in the dropdown
 
 ### DropdownButton Props Passthrough
 
@@ -340,6 +341,8 @@ It is essential for the integrity of the component to not overwrite the display:
     { value: "PENTA1", name: "Penta 1" },
     { value: "PENTA3", name: "Penta 3", tooltip: "Second Penta vaccine" },
   ]}
+  // turn search feature on
+  toggleSearch={true}
 />
 ```
 
