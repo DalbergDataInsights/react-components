@@ -3,13 +3,16 @@ export interface iHeader {
   name?: string | number
   type?: string
   renderer?: () => JSX.Element
-  props?: Object
+  sort?: boolean
+  sortFn?: () => number | string
+  props?: object
   hidden?: boolean
 }
 
 export interface iTable {
-  data: {}[] | (number[] | string[])[]
+  data: object[] | (number[] | string[])[]
+  sortArgs?: object
   headers?: iHeader[]
   displayHeader?: boolean
-  props?: { head: {}; cell: {}; row: {} } & any
+  props?: { head: object; cell: object; row: object } & any
 }

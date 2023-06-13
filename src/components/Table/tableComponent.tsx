@@ -1,5 +1,5 @@
-import React from "react"
-import { useDim, useSortData } from "../../hooks"
+import React, { useState } from "react"
+import { useDim, useSort } from "../../hooks"
 
 import cellRenderers from "./tableCellRenderers"
 import { mergeDicts } from "../../core"
@@ -9,44 +9,41 @@ export const TableComponent = ({
   data,
   headers = [],
   displayHeader = true,
+  sortArgs = {},
   props = {},
 }: iTable) => {
   const { ref, prop: headerHeight } = useDim({ getter: (e) => e.offsetHeight })
 
-  const customSortFunction = (a, b, direction) => {
-    if (direction === "ascending") {
-      return a - b
-    }
+  const [sortConfig, setSortConfig] = useState({
+    column: undefined,
+    ascending: undefined,
+    sortFn: "flex",
+    ...sortArgs,
+  })
 
-    if (direction === "descending") {
-      return b - a
-    }
+  const { sorted } = useSort(data, sortConfig)
 
-    return 0
-  }
-  const { sortedData, sortTable, sortConfig, setSortConfig } = useSortData(
-    data,
-    customSortFunction
-  )
-
-  const renderSortIcon = (columnIndex) => {
+  const renderSortIcon = (header: iHeader) => {
     const handleSort = () => {
-      sortTable(columnIndex)
+      setSortConfig({
+        column: header.index,
+        sortFn: header.sortFn || "flex",
+        ascending: !sortConfig.ascending,
+      })
     }
-    if (sortConfig && sortConfig.column === columnIndex) {
-      const sortIcon = sortConfig.direction === "ascending" ? "↓" : "↑"
+
+    const renderIcon = (icon: string) => {
       return (
-        <span onClick={handleSort} {...props.icon}>
-          {sortIcon}
+        <span _prop-target="icon" onClick={handleSort} {...props.icon}>
+          {icon}
         </span>
       )
     }
 
-    return (
-      <span onClick={handleSort} {...props.icon}>
-        ↕
-      </span>
-    )
+    if (sortConfig.column != header.index) return renderIcon("↕")
+
+    const sortIcon = sortConfig.ascending ? "↓" : "↑"
+    return renderIcon(sortIcon)
   }
   // data: List of lists or list of dictionaries where index of parent list is
   // a row and index of inner list is a column
@@ -99,7 +96,7 @@ export const TableComponent = ({
                 key={`header-${index}`}
               >
                 {header.name}
-                {renderSortIcon(header.index)}
+                {header.sort ? renderSortIcon(header) : ""}
               </div>
             )
           )}
@@ -111,7 +108,7 @@ export const TableComponent = ({
         })}
         key={"table"}
       >
-        {sortedData.map((row, index) => (
+        {sorted.map((row, index) => (
           <div {...props.rows} key={`rows-${index}`} _prop-target="rows">
             {headers.map((header, index) =>
               header.hidden ? (

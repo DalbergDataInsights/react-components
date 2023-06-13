@@ -1,2 +1,2 @@
 export * from "./hooks/useDim"
-export * from "./hooks/useSortData"
+export * from "./hooks/useSort"
