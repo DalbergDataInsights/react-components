@@ -1,64 +1,75 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useState } from "react"
 import { Tooltip } from "@mui/material"
 import { mergeDicts } from "../../core/util"
 import SvgIcon from "@mui/material/SvgIcon"
 import { iDropdown, iDropdownOption } from "./dropdownInterface"
+import { useSearch } from "../../hooks"
 
 export const Dropdown = ({
   label,
   options,
-  toggleSearch,
   // states
   click,
   point,
+  search,
+  // functionality addons
+  enableSearch = false,
   // events
+  onLeave = (e: any) => {},
   onMove = (e: any) => {},
   onClick = (e: any) => {},
-  // props
+  onSearch = (e: any) => {},
   // dependency inversion
   DropdownOptionComponent = DropdownOption,
+  // props
   props,
 }: iDropdown) => {
+  // it's essential that name is part of the options since some
+  // functionalities like search are dependent on it
+  options = options.map((option) => ({
+    ...option,
+    name: option.name || option.value,
+  }))
+
   const [isOpen, setOpen] = useState(false)
   const [buttonLabel, setButtonLabel] = useState(
-    (label ? label : "") + click?.name || click?.value
+    (label ? label : "") + click?.name
   )
-  const [search, setSearch] = useState("")
-  const [displayOptions, setDisplayOptions] = useState(options)
-  const searchInput  = useRef<HTMLInputElement | null>(null)
 
-  useEffect(() => {
-    setDisplayOptions(options.filter((option) => 
-      option.name?.toLowerCase().includes(search.toLowerCase())
-    ))
-  }, [search, options])
-
-  useEffect(() => {
-    toggleSearch && isOpen && searchInput.current 
-      ? searchInput.current.focus() : setSearch("")
-  }, [isOpen])
+  const { filtered } = useSearch([...options], { search, column: "name" })
 
   return (
     <div {...props.dropdown} onClick={() => setOpen(!isOpen)}>
       <div {...props.button}>
-        {toggleSearch && isOpen ? (
+        {enableSearch && isOpen ? (
           <input
-            {...props.input}
-            ref={searchInput}
+            _prop-target="label-search"
+            placeholder="..."
+            {...mergeDicts(props.label, props.search)}
+            autoFocus={true}
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={onSearch}
           />
         ) : (
-          <div {...props.label}>{buttonLabel}</div>
+          <div _prop-target="label" {...props.label}>
+            {buttonLabel}
+          </div>
         )}
-        <SvgIcon {...props.icon}>
+        <SvgIcon _prop-target="icon" {...props.icon}>
           <path d="M6 9l6 6 6-6" />
         </SvgIcon>
       </div>
 
       {isOpen ? (
-        <div {...props.menu} onMouseLeave={() => setOpen(false)}>
-          {displayOptions.map((option, index) => {
+        <div
+          _prop-target="menu"
+          {...props.menu}
+          onMouseLeave={() => {
+            setOpen(false)
+            onLeave()
+          }}
+        >
+          {filtered.map((option, index) => {
             const isPointed = option.value === point?.value
             return (
               <DropdownOptionComponent
@@ -101,6 +112,7 @@ export const DropdownOption = ({
   const pointOption = mergeDicts(props.option, props.point)
   const element = (
     <a
+      _prop-target="option"
       onClick={onClick}
       onMouseMove={onMove}
       key={option.value}
@@ -116,6 +128,7 @@ export const DropdownOption = ({
     <Tooltip
       title={option.tooltip}
       placement={"right-end"}
+      _prop-target="tooltip"
       {...props.tooltip}
       arrow
     >

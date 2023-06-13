@@ -12,11 +12,20 @@ export function useDropdown({
     props.options.filter((o: any) => o.selected)[0] || {}
   )
   checkState("point", props)
+  checkState("search", props, "")
+
+  subscribers.unshift({
+    on: "search",
+    func: (event) => {
+      props["setSearch"](event.target.value)
+    },
+  })
 
   subscribers.unshift({
     on: "click",
     func: (event) => {
       props["setClick"](getInfo(event))
+      props["setSearch"]("")
     },
   })
 

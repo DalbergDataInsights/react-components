@@ -32,20 +32,14 @@ export const defaults = {
         lineHeight: "1rem",
       },
     },
-    input: {
+    search: {
       type: "text",
       style: {
-        textOverflow: "elipsis",
-        overflow: "hidden",
-        whiteSpace: "nowrap",
-        color: "black",
         marginLeft: "1rem",
-        background: "#FAFAFC",
-        border: "none",
         outline: "none",
-        fontSize: "0.8rem",
-        lineHeight: "1rem",
+        border: "none",
         flexBasis: "80%",
+        background: "#FAFAFC",
       },
     },
     icon: {
