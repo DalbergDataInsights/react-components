@@ -1,5 +1,5 @@
-import React from "react"
-import { useDim } from "../../hooks"
+import React, { useState } from "react"
+import { useDim, useSort } from "../../hooks"
 
 import cellRenderers from "./tableCellRenderers"
 import { mergeDicts } from "../../core"
@@ -9,10 +9,42 @@ export const TableComponent = ({
   data,
   headers = [],
   displayHeader = true,
+  sortArgs = {},
   props = {},
 }: iTable) => {
   const { ref, prop: headerHeight } = useDim({ getter: (e) => e.offsetHeight })
 
+  const [sortConfig, setSortConfig] = useState({
+    column: undefined,
+    ascending: undefined,
+    sortFn: "flex",
+    ...sortArgs,
+  })
+
+  const { sorted } = useSort(data, sortConfig)
+
+  const renderSortIcon = (header: iHeader) => {
+    const handleSort = () => {
+      setSortConfig({
+        column: header.index,
+        sortFn: header.sortFn || "flex",
+        ascending: !sortConfig.ascending,
+      })
+    }
+
+    const renderIcon = (icon: string) => {
+      return (
+        <span _prop-target="icon" onClick={handleSort} {...props.icon}>
+          {icon}
+        </span>
+      )
+    }
+
+    if (sortConfig.column != header.index) return renderIcon("↕")
+
+    const sortIcon = sortConfig.ascending ? "↓" : "↑"
+    return renderIcon(sortIcon)
+  }
   // data: List of lists or list of dictionaries where index of parent list is
   // a row and index of inner list is a column
   // header: list of dictionaries with properties like index, name, hidden, renderer
@@ -64,6 +96,7 @@ export const TableComponent = ({
                 key={`header-${index}`}
               >
                 {header.name}
+                {header.sort ? renderSortIcon(header) : ""}
               </div>
             )
           )}
@@ -75,7 +108,7 @@ export const TableComponent = ({
         })}
         key={"table"}
       >
-        {data.map((row, index) => (
+        {sorted.map((row, index) => (
           <div {...props.rows} key={`rows-${index}`} _prop-target="rows">
             {headers.map((header, index) =>
               header.hidden ? (
