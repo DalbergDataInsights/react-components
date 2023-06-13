@@ -1,13 +1,15 @@
 import React, { useLayoutEffect, useRef, useState } from "react"
 
-export const useDim = ({ getter = defaultGetter, on = "resize" }) => {
+export const useDim = ({ getter = "offset", on = "resize" }) => {
   const ref = useRef(null)
 
   const [prop, setProp] = useState(0)
 
+  const getterFn = GETTERS[getter] || getter
+
   const handleWindowSizeChange = () => {
     try {
-      setProp(getter(ref.current))
+      setProp(getterFn(ref.current))
     } catch {
       setProp(undefined)
     }
@@ -19,19 +21,31 @@ export const useDim = ({ getter = defaultGetter, on = "resize" }) => {
       handleWindowSizeChange()
     })
 
-    window.addEventListener("resize", () => {
+    window.addEventListener(on, () => {
       handleWindowSizeChange()
     })
 
     return () => {
       window.removeEventListener("load", handleWindowSizeChange)
-      window.removeEventListener("resize", handleWindowSizeChange)
+      window.removeEventListener(on, handleWindowSizeChange)
     }
   }, [])
 
   return { ref, prop }
 }
 
-function defaultGetter(current: any) {
+function offsetGetter(current: any) {
   return { width: current.offsetWidth, height: current.offsetHeight }
+}
+
+const clientGetter = (current: any) => {
+  return {
+    width: current.viewportElement.clientWidth,
+    height: current.viewportElement.clientHeight,
+  }
+}
+
+const GETTERS = {
+  offset: offsetGetter,
+  client: clientGetter,
 }
