@@ -47,6 +47,14 @@ export const defaults = {
         padding: "0.5rem",
       },
     },
+    icon: {
+      style: {
+        display: "inline-block",
+        marginLeft: "0.1rem",
+        cursor: "pointer",
+      },
+    },
+
     //   table: {
     //     spacing: 2,
     //     justifyContent: "space-evenly",
