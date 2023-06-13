@@ -12,10 +12,17 @@ export const ProgressCircleComponent = ({
   props,
 }: iProgressCircle) => {
   // calculating 0.5rem of root font size to offset radius in px
-  const rootFontSize = window.getComputedStyle(document.documentElement).fontSize.match(/\d+/g)
-  const radiusOffset = (rootFontSize ? Number(rootFontSize[0]): 16) * 0.5 
+  const rootFontSize = window
+    .getComputedStyle(document.documentElement)
+    .fontSize.match(/\d+/g)
+  const radiusOffset = rootFontSize ? Number(rootFontSize[0]) : 16
 
-  const { ref, prop: radius } = useDim({ getter: (c) => (Math.min(c.viewportElement.clientWidth, c.viewportElement.clientHeight)/2) - radiusOffset})
+  const { ref, prop: radius } = useDim({
+    getter: (c) =>
+      Math.min(c.viewportElement.clientWidth, c.viewportElement.clientHeight) /
+        2 -
+      radiusOffset,
+  })
   const circumference = Math.round(radius * 2 * Math.PI)
   const [offset, setOffset] = useState("300%")
 
