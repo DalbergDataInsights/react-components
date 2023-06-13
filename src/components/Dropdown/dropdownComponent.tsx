@@ -15,10 +15,10 @@ export const Dropdown = ({
   // functionality addons
   enableSearch = false,
   // events
-  onLeave = (e: any) => {},
-  onMove = (e: any) => {},
-  onClick = (e: any) => {},
-  onSearch = (e: any) => {},
+  onLeave = () => {},
+  onMove = () => {},
+  onClick = () => {},
+  onSearch = () => {},
   // dependency inversion
   DropdownOptionComponent = DropdownOption,
   // props
@@ -107,7 +107,7 @@ export const DropdownOption = ({
   option: iDropdownOption
   onClick: Function
   onMove: Function
-  props: any
+  props: object
 }) => {
   const pointOption = mergeDicts(props.option, props.point)
   const element = (
