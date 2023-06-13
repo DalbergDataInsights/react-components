@@ -20,7 +20,7 @@ export const useEventManagement = ({
   function generateHandler(on: string) {
     const handler = useCallback(
       (event: ChangeEvent<HTMLInputElement>) => {
-        event.preventDefault()
+        event?.preventDefault()
         subscribe(subscribers, on, event)
       },
       [subscribers]
@@ -32,5 +32,7 @@ export const useEventManagement = ({
     onClick: generateHandler("click"),
     onChange: generateHandler("change"),
     onMove: generateHandler("move"),
+    onSearch: generateHandler("search"),
+    onLeave: generateHandler("leave"),
   }
 }

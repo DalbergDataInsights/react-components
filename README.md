@@ -293,11 +293,17 @@ It is necessary to mention that this component edits default container propertie
 ## DropdownButton Component
 
 React select that exposes click and point properties. Allows for custom tooltips of each value/component name.
+Also allows for search filtering from the dropdown menu options.
 
 ### DropdownButton States
 
 - click - feature properties of the currently active (clicked) button
 - point - feature properties of the currently hovered (mouseover) button
+- search - a string representing the current input in the search field of the dropdown menu
+
+### DropdownButton Refs
+- searchInput - a ref to the search input field, which allows DOM focus manipulation when the dropdown menu is opened
+
 
 ### DropdownButton Props
 
@@ -310,12 +316,14 @@ React select that exposes click and point properties. Allows for custom tooltips
   - tooltip?: string
 
 - label - string to append to a selected label
+- toggleSearch - boolean logic to turn on the search functionality in the dropdown
 
 ### DropdownButton Props Passthrough
 
 - dropdown - root component (div)
 - button - container for label and arrow icon (div)
 - label - label and selected name (div)
+- input - input search string from user (div)
 - icon - an svg container (mui SvgIcon)
 - menu - container with dropdown options (div)
 - option - item in the menu (a)
@@ -333,6 +341,8 @@ It is essential for the integrity of the component to not overwrite the display:
     { value: "PENTA1", name: "Penta 1" },
     { value: "PENTA3", name: "Penta 3", tooltip: "Second Penta vaccine" },
   ]}
+  // turn search feature on
+  toggleSearch={true}
 />
 ```
 

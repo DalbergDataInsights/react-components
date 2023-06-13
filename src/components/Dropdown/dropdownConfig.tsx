@@ -32,6 +32,16 @@ export const defaults = {
         lineHeight: "1rem",
       },
     },
+    search: {
+      type: "text",
+      style: {
+        marginLeft: "1rem",
+        outline: "none",
+        border: "none",
+        flexBasis: "80%",
+        background: "#FAFAFC",
+      },
+    },
     icon: {
       style: {
         width: "1.5rem",
