@@ -25,16 +25,17 @@ export const Dropdown = ({
   )
   const [search, setSearch] = useState("")
   const [displayOptions, setDisplayOptions] = useState(options)
-  const searchInput  = useRef(null)
+  const searchInput  = useRef<HTMLInputElement | null>(null)
 
   useEffect(() => {
     setDisplayOptions(options.filter((option) => 
-      option.value.toLowerCase().includes(search.toLowerCase())
+      option.name?.toLowerCase().includes(search.toLowerCase())
     ))
   }, [search, options])
 
   useEffect(() => {
-    toggleSearch && isOpen ? searchInput.current.focus() : setSearch("")
+    toggleSearch && isOpen && searchInput.current 
+      ? searchInput.current.focus() : setSearch("")
   }, [isOpen])
 
   return (
