@@ -16,7 +16,7 @@ export const useSearch = (
       })
     }
     setFiltered(filteredData)
-  }, [data, search, searchFn, column])
+  }, [search, searchFn, column])
 
   return { filtered }
 }
