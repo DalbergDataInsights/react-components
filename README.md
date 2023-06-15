@@ -36,7 +36,6 @@
     - [Table Props](#table-props)
     - [Table Props Passthrough](#table-props-passthrough)
     - [Table sortArgs Passthrough](#table-sortargs-passthrough)
-    - [renderSortIcon](#rendersorticon)
     - [Table Example](#table-example)
   - [Map](#map)
     - [Map Assumptions](#map-assumptions)
@@ -230,9 +229,9 @@ The hook accepts the following parameters:
 
 - data (array of object) - The initial data to be sorted
 - options - An object containing configuration options for sorting :
-  - column (string or optional) - The key or property of the object to sort by
-  - sortFn (string or function, optional) - The sorting function to be used. It can be a string representing a predefined sort function or a custom sorting function. By default, the "flex" sorting function is used
-  - ascending (boolean,optional) - Specifies whether the sorting order is ascending (True) or descending (False). If not provided, the default sorting order is ascending
+  - column (string) - The key or property of the object to sort by
+  - sortFn (string or function) - The sorting function to be used. It can be a string representing a predefined sort function or a custom sorting function. By default, the "flex" sorting function is used
+  - ascending (boolean) - Specifies whether the sorting order is ascending (True) or descending (False). If not provided, the default sorting order is ascending
 
 The hook returns an object with the following properties:
 
@@ -248,9 +247,9 @@ The hook also includes two predefined functions:
 import { useSort } from "../../hooks/useSort"
 export const Component = ({ data }) => {
   const { sorted, ascending } = useSort(data, {
-    column: "name",
-    sortFn: "flex",
-    ascending: true,
+    column: "name", //sort by the name column
+    sortFn: "flex", //sort alphabetically
+    ascending: true, //sort in ascending order
   })
   return (
     <div>
@@ -496,23 +495,7 @@ React table component to conveniently display out-of-the-box data.
 ### Table sortArgs Passthrough
 
 The sortArgs are the arguments used to decide how the table should be sorted.
-These arguments are passed through the setConfig which is a state varable used to manage the following properties:
-
-- column - The name of the column to be sorted
-- ascending - boolean value of which true sorts in ascending order whilst false sends in dscending order
-- sortFn - The sorting function used for the currently sorted column. It can be a string representing a predefined sort function or a custom sorting function. the currently defined functions are : flex (sort alphabetically) or numsort (sort numerically)
-
-### renderSortIcon
-
-This function is used to render the sorting icon for each table header. It handles the click event to trigger column sorting and updates the sorting configuration accordingly.
-
-The parameters passed include :
-
-- header - The header object representing the column configuration. It should have the following properties:
-  - index - The key of the object corresponding to the column
-  - sortFn - The sorting function to be used for the column. It can be a string representing a predefined sort function or a custom sorting function
-
-The function renders an arrow icon pointing up or down, depending on the current sorting configuration. Clicking on the icon triggers the handleSort function, which updates the sorting configuration and triggers the table re-render
+These arguments are passed through the setConfig which is a state varable used to manage the column,ascending and sortFn properties which have been explained in the useSort hook
 
 ### Table Example
 
@@ -535,7 +518,7 @@ The function renders an arrow icon pointing up or down, depending on the current
       index: "id",
       name: "Product ID",
       type: "text",
-      sort: true //column to sort by
+      sort: true //pass sort: true if you want to sort by this column
       hidden: false, // set this to true if you want to hide the column
       // you can pass custom here, then you need to pass renderer
       // renderer: (props) => <div>{props.data {data is a value of a cell}</div> example of simple div around the value
