@@ -117,6 +117,8 @@ Common events currently include:
 - click: onClick -> usually sets "click" state
 - change: onChange -> triggers when active state changes (for dropdown)
 - move: onMove -> usually sets point state
+- search: onSearch -> triggers whenever the search value changes (for dropdown)
+- leave: onLeave -> triggers when the mouse leaves a component
 
 To register your own event, pass a list of subscribers in the prop of any component.
 
