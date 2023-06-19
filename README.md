@@ -15,6 +15,7 @@
     + [checkStates(name, props)](#checkstates-name--props-)
   * [Hooks](#hooks)
     + [useDim](#usedim)
+    + [useSearch](#usesearch)
 - [Components](#components)
   * [StatusColor Component](#statuscolor-component)
     + [StatusColor Props](#statuscolor-props)
@@ -116,6 +117,8 @@ Common events currently include:
 - click: onClick -> usually sets "click" state
 - change: onChange -> triggers when active state changes (for dropdown)
 - move: onMove -> usually sets point state
+- search: onSearch -> triggers whenever the search value changes (for dropdown)
+- leave: onLeave -> triggers when the mouse leaves a component
 
 To register your own event, pass a list of subscribers in the prop of any component.
 
@@ -254,6 +257,47 @@ export const Component = () => {
 
 ```
 
+### useSearch
+
+useSearch hook is used to filter an array of objects based on a search term and a specified column. It returns the filtered data as a result. It accepts the following parameters:
+
+- data: object[] - The initial array of objects to be filtered
+- options: object - An object containing the following options:
+  + column: string - The column to be searched within each object 
+  + search: string - The search term to filter the data
+  + searchFn: string or function - The search criteria to be used. Valid options are "flex" that is a greedy search and "exact" that is not greedy.
+
+The hook then returns: 
+- filtered: object[] - The filtered array of objects based on the search term and column.
+
+```jsx
+import { useSearch } from "../../hooks/useSearch"
+
+export const Component = () => {
+  const data = [
+    { value: "BCG", name: "BCG" },
+    { value: "VAR", name: "VAR", selected: true, label: "(1)" },
+    { value: "PENTA1", name: "Penta 1" },
+    { value: "PENTA3", name: "Penta 3", tooltip: "Second Penta vaccine" },
+  ] // Array of objects to be filtered
+
+  const { filtered } = useSearch(data, {
+    column: "name",
+    search: "penta 3",
+    searchFn: "flex",
+  })
+
+  return (
+    <>
+      {filtered.map((item) => (
+        // Render filtered data
+        <div key={item.value}>{item.name}</div>
+      ))}
+    </>
+  )
+}
+
+```
 
 # Components
 
@@ -292,18 +336,13 @@ It is necessary to mention that this component edits default container propertie
 
 ## DropdownButton Component
 
-React select that exposes click and point properties. Allows for custom tooltips of each value/component name.
-Also allows for search filtering from the dropdown menu options.
+React select that exposes click, point and search properties. Allows for custom tooltips of each value/component name. Also allows for search filtering from the dropdown menu options.
 
 ### DropdownButton States
 
 - click - feature properties of the currently active (clicked) button
 - point - feature properties of the currently hovered (mouseover) button
 - search - a string representing the current input in the search field of the dropdown menu
-
-### DropdownButton Refs
-- searchInput - a ref to the search input field, which allows DOM focus manipulation when the dropdown menu is opened
-
 
 ### DropdownButton Props
 
@@ -316,14 +355,14 @@ Also allows for search filtering from the dropdown menu options.
   - tooltip?: string
 
 - label - string to append to a selected label
-- toggleSearch - boolean logic to turn on the search functionality in the dropdown
+- enableSearch - boolean logic to turn on the search functionality in the dropdown
 
 ### DropdownButton Props Passthrough
 
 - dropdown - root component (div)
 - button - container for label and arrow icon (div)
-- label - label and selected name (div)
-- input - input search string from user (div)
+- label - label and selected name (div and input)
+- search - input search string from user (input)
 - icon - an svg container (mui SvgIcon)
 - menu - container with dropdown options (div)
 - option - item in the menu (a)
@@ -342,7 +381,7 @@ It is essential for the integrity of the component to not overwrite the display:
     { value: "PENTA3", name: "Penta 3", tooltip: "Second Penta vaccine" },
   ]}
   // turn search feature on
-  toggleSearch={true}
+  enableSearch={true}
 />
 ```
 
