@@ -15,6 +15,7 @@
     + [checkStates(name, props)](#checkstates-name--props-)
   * [Hooks](#hooks)
     + [useDim](#usedim)
+    + [useSearch](#usesearch)
 - [Components](#components)
   * [StatusColor Component](#statuscolor-component)
     + [StatusColor Props](#statuscolor-props)
@@ -254,6 +255,47 @@ export const Component = () => {
 
 ```
 
+### useSearch
+
+useSearch hook is used to filter an array of objects based on a search term and a specified column. It returns the filtered data as a result. It accepts the following parameters:
+
+- data: object[] - The initial array of objects to be filtered
+- options: object - An object containing the following options:
+  + column: string - The column to be searched within each object 
+  + search: string - The search term to filter the data
+  + searchFn: string or function - The search criteria to be used. Valid options are "flex" that is a greedy search and "exact" that is not greedy.
+
+The hook then returns: 
+- filtered: object[] - The filtered array of objects based on the search term and column.
+
+```jsx
+import { useSearch } from "../../hooks/useSearch"
+
+export const Component = () => {
+  const data = [
+    { value: "BCG", name: "BCG" },
+    { value: "VAR", name: "VAR", selected: true, label: "(1)" },
+    { value: "PENTA1", name: "Penta 1" },
+    { value: "PENTA3", name: "Penta 3", tooltip: "Second Penta vaccine" },
+  ] // Array of objects to be filtered
+
+  const { filtered } = useSearch(data, {
+    column: "name",
+    search: "penta 3",
+    searchFn: "flex",
+  })
+
+  return (
+    <>
+      {filtered.map((item) => (
+        // Render filtered data
+        <div key={item.value}>{item.name}</div>
+      ))}
+    </>
+  )
+}
+
+```
 
 # Components
 
