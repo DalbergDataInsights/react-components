@@ -2,6 +2,7 @@ import { ChangeEvent } from "react"
 
 export interface iWrapper {
   Component: React.FC<any>
+  enableDownload?: boolean
   defaults: any
   name: string
   init?: ({}: iReactive) => void
