@@ -82,3 +82,9 @@ import { manifest as chartManifest, iChart } from "./components/Chart"
 export const Chart = (props: iChart & iReactive) => (
   <Wrapper {...chartManifest} {...props} />
 )
+
+import { manifest as downloadManifest, iDownload } from "./components/Download"
+
+export const Download = (
+  props: { children: object } & iDownload & iReactive
+) => <Wrapper enableDownload={true} {...downloadManifest} {...props} />
