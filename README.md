@@ -422,6 +422,8 @@ It is essential for the integrity of the component to not overwrite the display:
 
 ### DropdownButton Example
 
+It's important for the parent components to have overflow: visible otherwise you are risking the flow of your Dropdown pane.
+
 ```jsx
 <Dropdown
   label="Coverage: "
