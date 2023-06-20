@@ -11,17 +11,17 @@ export const useSearch = (
 
     if (column !== undefined) {
       filteredData = filteredData.filter((row) => {
-        const fn = SEARCES[searchFn] || searchFn
+        const fn = SEARCHES[searchFn] || searchFn
         return fn(row, column, search)
       })
     }
     setFiltered(filteredData)
-  }, [data, search, searchFn, column])
+  }, [search, searchFn, column])
 
   return { filtered }
 }
 
-const SEARCES = {
+const SEARCHES = {
   flex: flexSearch,
   exact: exactSearch,
 }

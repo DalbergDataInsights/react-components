@@ -36,7 +36,7 @@ export const Dropdown = ({
     (label ? label : "") + click?.name
   )
 
-  const { filtered } = useSearch([...options], { search, column: "name" })
+  const { filtered } = useSearch(options, { search, column: "name" })
 
   return (
     <div {...props.dropdown} onClick={() => setOpen(!isOpen)}>
