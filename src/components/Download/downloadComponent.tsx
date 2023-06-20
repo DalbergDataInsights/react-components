@@ -32,8 +32,8 @@ export const DownloadIcon = ({ props }: { props: object }) => {
     <SvgIcon {...props.svg}>
       <path
         d="m 12 16 v -10 m 4 6 l -4 4 l -4 -4"
-        stroke="currentColor"
-        strokeWidth="2"
+        stroke="#212429"
+        strokeWidth="0.125rem"
         strokeLinecap="round"
         strokeLinejoin="round"
         {...props.path}
@@ -43,8 +43,8 @@ export const DownloadIcon = ({ props }: { props: object }) => {
         y1="18"
         x2="19"
         y2="18"
-        stroke="currentColor"
-        strokeWidth="2"
+        stroke="#212429"
+        strokeWidth="0.125rem"
         strokeLinecap="round"
         strokeLinejoin="round"
         {...props.line}
