@@ -57,8 +57,12 @@ export const downloadDefaults = {
   props: {
     button: {
       style: {
+        display: "flex",
+        backgroundColor: "transparent",
+        border: "0.5px solid",
+        justifyContent: "center",
         height: "2rem",
-        width: "2.5rem",
+        width: "2.0rem",
         bottom: "1rem",
         left: "1rem",
         paddingTop: "0.25rem",
