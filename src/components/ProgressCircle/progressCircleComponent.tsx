@@ -18,7 +18,9 @@ export const ProgressCircleComponent = ({
   const radiusOffset = rootFontSize ? Number(rootFontSize[0]) : 16
 
   const { ref, prop } = useDim({ getter: "client" })
-  const radius = Math.min(prop.width, prop.height) / 2 - radiusOffset
+  const radius = isNaN(Math.min(prop.width, prop.height) / 2 - radiusOffset)
+    ? 0
+    : Math.min(prop.width, prop.height) / 2 - radiusOffset
   const circumference = Math.round(radius * 2 * Math.PI)
   const [offset, setOffset] = useState("300%")
 
