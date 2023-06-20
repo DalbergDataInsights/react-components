@@ -1,72 +1,75 @@
 - [Dalberg Data Insights React Components Library](#dalberg-data-insights-react-components-library)
 - [Consuming packages](#consuming-packages)
 - [Developer TODO and Roadmap](#developer-todo-and-roadmap)
-  * [NamedGrid](#namedgrid)
-  * [Table](#table)
+  - [NamedGrid](#namedgrid)
+  - [Table](#table)
 - [Core Library](#core-library)
-  * [Wrapper](#wrapper)
-  * [Event management](#event-management)
-  * [State observation](#state-observation)
-  * [Component initialization](#component-initialization)
-  * [Props passthrough](#props-passthrough)
-  * [Component styling](#component-styling)
-  * [Utility](#utility)
-    + [mergeDicts(a,b)](#mergedicts-a-b-)
-    + [checkStates(name, props)](#checkstates-name--props-)
-  * [Hooks](#hooks)
-    + [useDim](#usedim)
-    + [useSearch](#usesearch)
+  - [Wrapper](#wrapper)
+  - [Event management](#event-management)
+  - [State observation](#state-observation)
+  - [Component initialization](#component-initialization)
+  - [Props passthrough](#props-passthrough)
+  - [Component styling](#component-styling)
+  - [Utility](#utility)
+    - [mergeDicts(a,b)](#mergedicts-a-b-)
+    - [checkStates(name, props)](#checkstates-name--props-)
+  - [Hooks](#hooks)
+    - [useSort](#usesort)
+    - [useDim](#usedim)
+    - [useSearch](#usesearch)
 - [Components](#components)
-  * [StatusColor Component](#statuscolor-component)
-    + [StatusColor Props](#statuscolor-props)
-    + [StatusColor Props Passthrough](#statuscolor-props-passthrough)
-    + [StatusColor Example](#statuscolor-example)
-  * [DropdownButton Component](#dropdownbutton-component)
-    + [DropdownButton States](#dropdownbutton-states)
-    + [DropdownButton Props](#dropdownbutton-props)
-    + [DropdownButton Props Passthrough](#dropdownbutton-props-passthrough)
-    + [DropdownButton Example](#dropdownbutton-example)
-  * [Toggle Button Component](#toggle-button-component)
-    + [Toggle Button States](#toggle-button-states)
-    + [Toggle Button Props](#toggle-button-props)
-    + [Toggle Button Props Passthrough](#toggle-button-props-passthrough)
-    + [Toggle Button Example](#toggle-button-example)
-  * [Table](#table-1)
-    + [Table Props](#table-props)
-    + [Table Props Passthrough](#table-props-passthrough)
-    + [Table Example](#table-example)
-  * [Map](#map)
-    + [Map Assumptions](#map-assumptions)
-    + [Map States](#map-states)
-    + [Map Props](#map-props)
-    + [Map Props Passthrough](#map-props-passthrough)
-    + [Map Layers Model](#map-layers-model)
-    + [Tooltip](#tooltip)
-    + [Map Example](#map-example)
-  * [Progress Circle](#progress-circle)
-    + [Progress Circle Props](#progress-circle-props)
-    + [Progress Circle Props Passthrough](#progress-circle-props-passthrough)
-    + [ProgressCircle Example](#progresscircle-example)
-  * [Progress Bar](#progress-bar)
-    + [Progress Bar Props](#progress-bar-props)
-    + [Progress Bar Props Passthrough](#progress-bar-props-passthrough)
-    + [Progress Bar Example Usage](#progress-bar-example-usage)
-  * [Line Chart](#line-chart)
-    + [Line Chart Props](#line-chart-props)
-    + [Line Chart Props Passthrough](#line-chart-props-passthrough)
-    + [Line Chart Example](#line-chart-example)
-  * [Chart](#chart)
-    + [Chart Props](#chart-props)
-    + [Chart Props Passthrough](#chart-props-passthrough)
-    + [Line Chart Example](#line-chart-example-1)
+  - [StatusColor Component](#statuscolor-component)
+    - [StatusColor Props](#statuscolor-props)
+    - [StatusColor Props Passthrough](#statuscolor-props-passthrough)
+    - [StatusColor Example](#statuscolor-example)
+  - [DropdownButton Component](#dropdownbutton-component)
+    - [DropdownButton States](#dropdownbutton-states)
+    - [DropdownButton Refs](#dropdownbutton-refs)
+    - [DropdownButton Props](#dropdownbutton-props)
+    - [DropdownButton Props Passthrough](#dropdownbutton-props-passthrough)
+    - [DropdownButton Example](#dropdownbutton-example)
+  - [Toggle Button Component](#toggle-button-component)
+    - [Toggle Button States](#toggle-button-states)
+    - [Toggle Button Props](#toggle-button-props)
+    - [Toggle Button Props Passthrough](#toggle-button-props-passthrough)
+    - [Toggle Button Example](#toggle-button-example)
+  - [Table](#table-1)
+    - [Table Props](#table-props)
+    - [Table Props Passthrough](#table-props-passthrough)
+    - [Table sortArgs Passthrough](#table-sortargs-passthrough)
+    - [Table Example](#table-example)
+  - [Map](#map)
+    - [Map Assumptions](#map-assumptions)
+    - [Map States](#map-states)
+    - [Map Props](#map-props)
+    - [Map Props Passthrough](#map-props-passthrough)
+    - [Map Layers Model](#map-layers-model)
+    - [Tooltip](#tooltip)
+    - [Map Example](#map-example)
+  - [Progress Circle](#progress-circle)
+    - [Progress Circle Props](#progress-circle-props)
+    - [Progress Circle Props Passthrough](#progress-circle-props-passthrough)
+    - [ProgressCircle Example](#progresscircle-example)
+  - [Progress Bar](#progress-bar)
+    - [Progress Bar Props](#progress-bar-props)
+    - [Progress Bar Props Passthrough](#progress-bar-props-passthrough)
+    - [Progress Bar Example Usage](#progress-bar-example-usage)
+  - [Line Chart](#line-chart)
+    - [Line Chart Props](#line-chart-props)
+    - [Line Chart Props Passthrough](#line-chart-props-passthrough)
+    - [Line Chart Example](#line-chart-example)
+  - [Chart](#chart)
+    - [Chart Props](#chart-props)
+    - [Chart Props Passthrough](#chart-props-passthrough)
+    - [Line Chart Example](#line-chart-example-1)
 - [Layouts](#layouts)
-  * [NamedGrid](#namedgrid-1)
-  * [NamedGrid Props](#namedgrid-props)
-  * [NameGrid Example](#namegrid-example)
+  - [NamedGrid](#namedgrid-1)
+  - [NamedGrid Props](#namedgrid-props)
+  - [NameGrid Example](#namegrid-example)
 - [Contribution](#contribution)
-  * [Integrate with framework](#integrate-with-framework)
-  * [Embed your code](#embed-your-code)
-  * [Generating documentation](#generating-documentation)
+  - [Integrate with framework](#integrate-with-framework)
+  - [Embed your code](#embed-your-code)
+  - [Generating documentation](#generating-documentation)
 
 # Consuming packages
 
@@ -222,6 +225,45 @@ checks if the name & setName are present in props and adds it there if not -- us
 
 ## Hooks
 
+### useSort
+
+useSort hook is a custom hook that enables sorting fucntionality for an array of objects in the react components
+The hook accepts the following parameters:
+
+- data (array of object) - The initial data to be sorted
+- options - An object containing configuration options for sorting :
+  - column (string) - The key or property of the object to sort by
+  - sortFn (string or function) - The sorting function to be used. It can be a string representing a predefined sort function or a custom sorting function. By default, the "flex" sorting function is used
+  - ascending (boolean) - Specifies whether the sorting order is ascending (True) or descending (False). If not provided, the default sorting order is ascending
+
+The hook returns an object with the following properties:
+
+- sorted (array of objects) - The sorted data based on the specified sorting options.
+- ascending (boolean) - Indicates the current sorting order (true for ascending, false for descending)
+
+The hook also includes two predefined functions:
+
+- flex - Performs a flexible comparison for sorting. It handles various data types and allows for custom sorting
+- num - Performs numeric comparison for sorting. It works specifically for numeric data
+
+```jsx
+import { useSort } from "../../hooks/useSort"
+export const Component = ({ data }) => {
+  const { sorted, ascending } = useSort(data, {
+    column: "name", //sort by the name column
+    sortFn: "flex", //sort alphabetically
+    ascending: true, //sort in ascending order
+  })
+  return (
+    <div>
+      {sorted.map((row, index) => (
+        <div key={`rows-${index}`} _prop-target="rows"></div>
+      ))}
+    </div>
+  )
+}
+```
+
 ### useDim
 
 useDim hook gets updated component prop on window load and resize. Commonly used within the framework to respond to the viewport or container values.
@@ -231,15 +273,22 @@ import { useDim } from "../../hooks/useDim"
 
 export const Component = () => {
   // by default it will return width and height of the component
-  const { ref, prop: {width, height} } = useDim()
+  const {
+    ref,
+    prop: { width, height },
+  } = useDim()
   // but it can be anything with a custom getter - for example a radius of an svg circle
-  const { ref: refCircle, prop: {width, height} } = useDim({ getter: (c) => c.r.baseVal.value })
+  const {
+    ref: refCircle,
+    prop: { width, height },
+  } = useDim({ getter: (c) => c.r.baseVal.value })
 
   return (
     <>
       <div
-      // pass to a div directly
-      ref={ref}>
+        // pass to a div directly
+        ref={ref}
+      >
         <svg>
           <circle
             cx={"50%"}
@@ -253,8 +302,6 @@ export const Component = () => {
     </>
   )
 }
-
-
 ```
 
 ### useSearch
@@ -263,11 +310,12 @@ useSearch hook is used to filter an array of objects based on a search term and 
 
 - data: object[] - The initial array of objects to be filtered
 - options: object - An object containing the following options:
-  + column: string - The column to be searched within each object 
-  + search: string - The search term to filter the data
-  + searchFn: string or function - The search criteria to be used. Valid options are "flex" that is a greedy search and "exact" that is not greedy.
+  - column: string - The column to be searched within each object
+  - search: string - The search term to filter the data
+  - searchFn: string or function - The search criteria to be used. Valid options are "flex" that is a greedy search and "exact" that is not greedy.
 
-The hook then returns: 
+The hook then returns:
+
 - filtered: object[] - The filtered array of objects based on the search term and column.
 
 ```jsx
@@ -296,7 +344,6 @@ export const Component = () => {
     </>
   )
 }
-
 ```
 
 # Components
@@ -343,6 +390,10 @@ React select that exposes click, point and search properties. Allows for custom 
 - click - feature properties of the currently active (clicked) button
 - point - feature properties of the currently hovered (mouseover) button
 - search - a string representing the current input in the search field of the dropdown menu
+
+### DropdownButton Refs
+
+- searchInput - a ref to the search input field, which allows DOM focus manipulation when the dropdown menu is opened
 
 ### DropdownButton Props
 
@@ -476,6 +527,7 @@ React table component to conveniently display out-of-the-box data.
 - data - required - list of records (objects or lists) - data for visualization\
 - header - list of iHeader type (see [./docs])
 - displayHeader - boolean that blanket hides header if needed
+- sortArgs - An object containing the initial configuration for the table.
 
 ### Table Props Passthrough
 
@@ -483,6 +535,11 @@ React table component to conveniently display out-of-the-box data.
 - head - table head row (MUI Grid items row-wise for the first row)
 - row - table row (MUI Grid items row-wise)
 - cell - each table cell (cell renderer)
+
+### Table sortArgs Passthrough
+
+The sortArgs are the arguments used to decide how the table should be sorted.
+These arguments are passed through the setConfig which is a state varable used to manage the column,ascending and sortFn properties which have been explained in the useSort hook
 
 ### Table Example
 
@@ -505,6 +562,7 @@ React table component to conveniently display out-of-the-box data.
       index: "id",
       name: "Product ID",
       type: "text",
+      sort: true //pass sort: true if you want to sort by this column
       hidden: false, // set this to true if you want to hide the column
       // you can pass custom here, then you need to pass renderer
       // renderer: (props) => <div>{props.data {data is a value of a cell}</div> example of simple div around the value
@@ -605,7 +663,6 @@ The filter should be an expression-type prop that is following MapboxGL model ["
 
 The data layer is a bit of a special case. You can still pass every layer-specific property like layout, but you want to leave paint-[type]-color property to be generated automatically based on steps, colors and value columns.
 
-
 ```js
 [layer-id] : {
   type: [layer-type],
@@ -647,8 +704,7 @@ The downside of adding layers is that if any layers beyond defaults need to be a
   }}
   // you have to specify all layers that need to be displayed
   layers={["outline", "blur", "highlight", "label"]}
-
-  />
+/>
 ```
 
 Available layers are:
@@ -830,33 +886,32 @@ React component that displays a progress bar based on a given value\
 ### Progress Bar Example Usage
 
 ```jsx
-  <ProgressBar
-    value="85"
-    props={{
-        // root component container
-        bar: {
-          style: {
-            padding: 0,
-            margin: 0,
-          },
-        },
-        // total div wraps progress bar
-        total: {
-        },
-        progress: {
-        // progress bar is set to a % of a total div
-        },
-        labels: {
-        // holds the progress bar labels (min and max value)
-        },
-        label: {
-        // additive styling formats for the labels used (min, max, progress value)
-        },
-        value: {
-        // specific styling for progress value
-        }
-      }}
-    />
+<ProgressBar
+  value="85"
+  props={{
+    // root component container
+    bar: {
+      style: {
+        padding: 0,
+        margin: 0,
+      },
+    },
+    // total div wraps progress bar
+    total: {},
+    progress: {
+      // progress bar is set to a % of a total div
+    },
+    labels: {
+      // holds the progress bar labels (min and max value)
+    },
+    label: {
+      // additive styling formats for the labels used (min, max, progress value)
+    },
+    value: {
+      // specific styling for progress value
+    },
+  }}
+/>
 ```
 
 ## Line Chart
@@ -864,13 +919,14 @@ React component that displays a progress bar based on a given value\
 React component built on top of the [Recharts](https://recharts.org/en-US) library to help visualize data on a line chart.
 
 ### Line Chart Props
-- data - required : List of objects of  rows
+
+- data - required : List of objects of rows
 - traces - required: an object to specify the data elements {
-    dataKey: string
-    stroke: string
-    activeDot?: any
+  dataKey: string
+  stroke: string
+  activeDot?: any
   }[]
-- children - Additional Chart components like   `<XAxis />`, `<YAxis />`, `<CartesianGrid />` and `<Legend />`  with their respective customized properties.
+- children - Additional Chart components like `<XAxis />`, `<YAxis />`, `<CartesianGrid />` and `<Legend />` with their respective customized properties.
 - props - optional: allows for passing additional properties to the component
 
 ### Line Chart Props Passthrough
@@ -909,19 +965,20 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
     <ChartLegend />
     <ChartGrid />
   </LineChart>
-  ```
+```
 
 ## Chart
 
 React component built on top of the [Recharts](https://recharts.org/en-US) library to help visualize data on a chart.
 
 ### Chart Props
+
 - data - required: list of objects of rows
 - traces - optional: list of objects to specify which data columns to visualize with dataKey at the very least {
-    dataKey: string
+  dataKey: string
   }[] (see iTrace)
 - axis - optional: a list of exact length 2 [xaxis, yaxis] - properties to unwrap in X and Y axis in the component. Can pass [undefined, {xaxis}] to remove one of them (see iAxis)
-- children - Additional Chart components like   `<XAxis />`, `<YAxis />`, `<CartesianGrid />` and `<Legend />`  with their respective customized properties.
+- children - Additional Chart components like `<XAxis />`, `<YAxis />`, `<CartesianGrid />` and `<Legend />` with their respective customized properties.
 - props - optional: allows for passing additional properties to the component
 
 ### Chart Props Passthrough
@@ -964,7 +1021,7 @@ React component built on top of the [Recharts](https://recharts.org/en-US) libra
     <ChartLegend />
     <ChartGrid />
   </Chart>
-  ```
+```
 
 # Layouts
 
