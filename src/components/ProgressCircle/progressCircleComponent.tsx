@@ -19,77 +19,61 @@ export const ProgressCircleComponent = ({
 
   const { ref, prop } = useDim({ getter: "client" })
 
-  const radius = isNaN(Math.min(prop.width, prop.height) / 2 - radiusOffset)
-    ? 0
-    : Math.min(prop.width, prop.height) / 2 - radiusOffset
+  const radius = prop ? Math.min(prop.width, prop.height) / 2 - radiusOffset : 0
 
   const circumference = Math.round(radius * 2 * Math.PI)
   const [offset, setOffset] = useState("300%")
 
-  const isValueInvalid = value == null || isNaN(value) || value === 0
-
   useEffect(() => {
-    const progress = (value - minValue) / (maxValue - minValue)
+    let progress = Math.min(value, maxValue)
+    progress = Math.max(progress, minValue)
+    progress = isNaN(value) ? 0 : (progress - minValue) / (maxValue - minValue)
+
     const offset = (1 - progress) * circumference
     setOffset(`${offset}`)
   }, [radius])
 
   return (
     <>
-      {radius !== 0 && !isValueInvalid && (
-        <svg _prop-target="circle" {...props.circle}>
-          <circle
-            _prop-target="total"
-            {...props.total}
-            cx={"50%"}
-            cy={"50%"}
-            r={radius}
-            ref={ref}
-          />
-          <circle
-            _prop-target="progress"
-            {...props.progress}
-            stroke={color}
-            strokeDasharray={circumference}
-            strokeDashoffset={offset}
-            cx={"50%"}
-            cy={"50%"}
-            r={radius}
-          />
-          <CountUp
-            _prop-target="counter"
-            {...props.counter}
-            start={minValue}
-            end={value}
-            suffix={suffix}
-          >
-            {({ countUpRef }) => (
-              <text
-                _prop-target="value"
-                ref={countUpRef}
-                x={"50%"}
-                y={"50%"}
-                {...props.value}
-              ></text>
-            )}
-          </CountUp>
-        </svg>
-      )}
-      {(radius === 0 || isValueInvalid) && (
-        <svg _prop-target="circle" {...props.circle}>
-          <circle
-            _prop-target="total"
-            {...props.total}
-            cx={"50%"}
-            cy={"50%"}
-            r={radius}
-            ref={ref}
-          />
-          <text _prop-target="value" x={"50%"} y={"50%"} {...props.value}>
-            NA
-          </text>
-        </svg>
-      )}
+      <svg _prop-target="circle" {...props.circle}>
+        <circle
+          _prop-target="total"
+          {...props.total}
+          cx={"50%"}
+          cy={"50%"}
+          r={radius}
+          ref={ref}
+        />
+        <circle
+          _prop-target="progress"
+          {...props.progress}
+          stroke={color}
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          cx={"50%"}
+          cy={"50%"}
+          r={radius}
+        />
+        <CountUp
+          _prop-target="counter"
+          {...props.counter}
+          start={minValue}
+          end={value}
+          suffix={suffix}
+        >
+          {({ countUpRef }) => (
+            <text
+              _prop-target="value"
+              ref={isNaN(value) ? null : countUpRef}
+              x={"50%"}
+              y={"50%"}
+              {...props.value}
+            >
+              N/A
+            </text>
+          )}
+        </CountUp>
+      </svg>
     </>
   )
 }
