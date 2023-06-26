@@ -5,6 +5,10 @@ import { useStateListener } from "./stateListener"
 import { mergeDicts } from "./util"
 import { ComponentContext } from "./context"
 import { iWrapper, iReactive } from "./interface"
+import {
+  DownloadElement,
+  downloadDefaults,
+} from "../components/Download/downloadComponent"
 
 // try wrapping the init function in the callback to avoid mount spam?
 export const Wrapper = ({
@@ -12,6 +16,7 @@ export const Wrapper = ({
   defaults,
   name,
   init = ({ subscribers, observers, props }: iReactive) => {},
+  enableDownload,
   subscribers = [],
   observers = [],
   ...props
@@ -24,6 +29,7 @@ export const Wrapper = ({
       overflow: "none",
       fontSize: "1rem",
       margin: "0 auto",
+      position: "relative",
     },
   }
 
@@ -36,14 +42,31 @@ export const Wrapper = ({
   let containerProps = mergeDicts(wrapperDefaults, config.Wrapper || {})
   containerProps = mergeDicts(containerProps, props.props?.container || {})
 
+  let downloadProps = mergeDicts(downloadDefaults, config.Download || {})
+  downloadProps = mergeDicts(downloadProps, props.props?.download || {})
+
   props["controller"] = {}
 
   init({ subscribers, observers, props })
   useStateListener({ observers, ...props })
   const handlers = useEventManagement({ subscribers })
+
   return (
     <div {...containerProps} key={props?.key}>
       <Component {...props} {...handlers} />
+      {enableDownload && (
+        <DownloadElement
+          name={name}
+          {...(name === "Download"
+            ? mergeDicts(downloadProps, props)
+            : downloadProps)}
+          data={
+            name === "Map"
+              ? props.data.features.map((f) => f.properties)
+              : props.data
+          }
+        />
+      )}
     </div>
   )
 }

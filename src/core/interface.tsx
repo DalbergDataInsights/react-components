@@ -8,6 +8,7 @@ export interface iWrapper {
 }
 
 export interface iReactive {
+  enableDownload?: boolean
   subscribers?: iSubscriber[]
   observers?: iObserver[]
   props?: {
