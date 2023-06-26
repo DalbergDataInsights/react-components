@@ -36,7 +36,7 @@ export const ProgressCircleComponent = ({
 
   return (
     <>
-      {!isValueInvalid && (
+      {radius !== 0 && !isValueInvalid && (
         <svg _prop-target="circle" {...props.circle}>
           <circle
             _prop-target="total"
@@ -75,7 +75,7 @@ export const ProgressCircleComponent = ({
           </CountUp>
         </svg>
       )}
-      {isValueInvalid && (
+      {(radius === 0 || isValueInvalid) && (
         <svg _prop-target="circle" {...props.circle}>
           <circle
             _prop-target="total"
