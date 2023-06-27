@@ -18,12 +18,17 @@ export const ProgressCircleComponent = ({
   const radiusOffset = rootFontSize ? Number(rootFontSize[0]) : 16
 
   const { ref, prop } = useDim({ getter: "client" })
-  const radius = Math.min(prop.width, prop.height) / 2 - radiusOffset
+
+  const radius = prop ? Math.min(prop.width, prop.height) / 2 - radiusOffset : 0
+
   const circumference = Math.round(radius * 2 * Math.PI)
   const [offset, setOffset] = useState("300%")
 
   useEffect(() => {
-    const progress = (value - minValue) / (maxValue - minValue)
+    let progress = Math.min(value, maxValue)
+    progress = Math.max(progress, minValue)
+    progress = isNaN(value) ? 0 : (progress - minValue) / (maxValue - minValue)
+
     const offset = (1 - progress) * circumference
     setOffset(`${offset}`)
   }, [radius])
@@ -59,11 +64,13 @@ export const ProgressCircleComponent = ({
           {({ countUpRef }) => (
             <text
               _prop-target="value"
-              ref={countUpRef}
+              ref={isNaN(value) ? null : countUpRef}
               x={"50%"}
               y={"50%"}
               {...props.value}
-            ></text>
+            >
+              N/A
+            </text>
           )}
         </CountUp>
       </svg>
