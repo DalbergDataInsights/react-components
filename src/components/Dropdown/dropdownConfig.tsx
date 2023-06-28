@@ -14,7 +14,7 @@ export const defaults = {
         display: "flex",
         flexDirection: "row",
         flexWrap: "nowrap",
-        background: "#FAFAFC",
+        backgroundColor: "#FAFAFC",
         alignItems: "center",
         justifyContent: "space-between",
         height: "calc(2rem - 2px)",
@@ -39,7 +39,7 @@ export const defaults = {
         outline: "none",
         border: "none",
         flexBasis: "80%",
-        background: "#FAFAFC",
+        backgroundColor: "#FAFAFC",
       },
     },
     icon: {
@@ -82,7 +82,7 @@ export const defaults = {
     },
     point: {
       style: {
-        background: "#D1D1D6",
+        backgroundColor: "#D1D1D6",
       },
     },
   },
