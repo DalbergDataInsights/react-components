@@ -11,15 +11,14 @@ export const ColorLegendComponent = ({
   naText = "n.d",
   borderRadius = "2rem",
   stepLimits = ["-inf", "inf"],
-  showStepLimits = true,
+  showStepLimits = false,
 }: iMapColorLegend) => {
-
 
   let legendSteps = [...steps]
 
   if (showStepLimits) {
     legendSteps = [stepLimits[0], ...steps, stepLimits[1]]
-    colors = colors.slice(0, steps.length + 1)
+    colors = colors.slice(0, legendSteps.length - 1)
   } else {
     colors = steps.length > 1 ? colors.slice(1, steps.length) : colors
   }
