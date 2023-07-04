@@ -17,7 +17,7 @@ export const ColorLegendComponent = ({
   if (showLimits) {
     steps = [limits[0], ...steps, limits[1]]
   } else {
-    colors.shift()
+    colors = colors.slice(1)
   }
 
   colors =
