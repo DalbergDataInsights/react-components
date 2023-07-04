@@ -34,4 +34,6 @@ export interface iMapColorLegend {
   props?: any
   naText?: string
   borderRadius?: string | number
+  borderSteps?: Array<any>
+  showBorderColors?: boolean
 }
