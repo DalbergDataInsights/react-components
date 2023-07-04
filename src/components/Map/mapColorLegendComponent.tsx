@@ -10,18 +10,18 @@ export const ColorLegendComponent = ({
   naColor = "#6C6C6D",
   naText = "n.d",
   borderRadius = "2rem",
-  stepLimits = ["-inf", "inf"],
-  showStepLimits = false,
+  limits = ["-inf", "inf"],
+  showLimits = false,
 }: iMapColorLegend) => {
 
-  let legendSteps = [...steps]
-
-  if (showStepLimits) {
-    legendSteps = [stepLimits[0], ...steps, stepLimits[1]]
-    colors = colors.slice(0, legendSteps.length - 1)
+  if (showLimits) {
+    steps = [limits[0], ...steps, limits[1]]
   } else {
-    colors = steps.length > 1 ? colors.slice(1, steps.length) : colors
+    colors.shift()
   }
+
+  colors =
+    colors.length >= steps.length ? colors.slice(0, steps.length - 1) : colors
 
   return (
     <div _prop-target="legend" {...props.legend}>
@@ -58,13 +58,10 @@ export const ColorLegendComponent = ({
         <div _prop-target="step" {...props.step}>
           {naText}
         </div>
-        {legendSteps &&
-          legendSteps.map((step) => (
+        {steps &&
+          steps.map((step) => (
             <div _prop-target="step" {...props.step} key={step}>
-              {`${step}${
-                // only adding suffix to steps between the limits
-                stepLimits.some((label) => step === label) ? "" : suffix
-              }`}
+              {`${step}${suffix}`}
             </div>
           ))}
       </div>
