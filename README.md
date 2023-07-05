@@ -37,6 +37,7 @@
     - [Table Props](#table-props)
     - [Table Props Passthrough](#table-props-passthrough)
     - [Table sortArgs Passthrough](#table-sortargs-passthrough)
+    - [Table tooltip](#table-tooltip)
     - [Table Example](#table-example)
   - [Map](#map)
     - [Map Assumptions](#map-assumptions)
@@ -542,6 +543,12 @@ React table component to conveniently display out-of-the-box data.
 
 The sortArgs are the arguments used to decide how the table should be sorted.
 These arguments are passed through the setConfig which is a state varable used to manage the column,ascending and sortFn properties which have been explained in the useSort hook
+
+### Table tooltip ###
+
+The Tooltip is originally set as a constant variable for display of custom value on point/hover. However, in the case of a filter being applied, no tooltip value is displayed. 
+ 
+This is a re-render issue as Tooltips have to be a stateful variable instead a constant. Hence, best solution to apply is to use a useState hook to enable a re-render of the component with the applied filter.
 
 ### Table Example
 
