@@ -21,7 +21,7 @@ export const manifest = {
 
 export const mapColorLegendManifest = {
   name: "MapColorLegend",
-  version: "0.6",
+  version: "0.7",
   defaults: colorLegendDefaults,
   Component: ColorLegendComponent
 }

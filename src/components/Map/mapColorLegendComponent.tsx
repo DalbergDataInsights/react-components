@@ -10,9 +10,19 @@ export const ColorLegendComponent = ({
   naColor = "#6C6C6D",
   naText = "n.d",
   borderRadius = "2rem",
+  limits = ["-inf", "inf"],
+  showLimits = false,
 }: iMapColorLegend) => {
-  colors = steps.length > 1 ? colors.slice(1, steps.length) : colors
-  
+
+  if (showLimits) {
+    steps = [limits[0], ...steps, limits[1]]
+  } else {
+    colors = colors.slice(1)
+  }
+
+  colors =
+    colors.length >= steps.length ? colors.slice(0, steps.length - 1) : colors
+
   return (
     <div _prop-target="legend" {...props.legend}>
       <div _prop-target="colors" {...props.colors}>
@@ -50,11 +60,9 @@ export const ColorLegendComponent = ({
         </div>
         {steps &&
           steps.map((step) => (
-            <div
-              _prop-target="step"
-              {...props.step}
-              key={step}
-            >{`${step}${suffix}`}</div>
+            <div _prop-target="step" {...props.step} key={step}>
+              {`${step}${suffix}`}
+            </div>
           ))}
       </div>
     </div>
