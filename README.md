@@ -37,6 +37,7 @@
     - [Table Props](#table-props)
     - [Table Props Passthrough](#table-props-passthrough)
     - [Table sortArgs Passthrough](#table-sortargs-passthrough)
+    - [Table tooltip](#table-tooltip)
     - [Table Example](#table-example)
   - [Map](#map)
     - [Map Assumptions](#map-assumptions)
@@ -541,7 +542,11 @@ React table component to conveniently display out-of-the-box data.
 ### Table sortArgs Passthrough
 
 The sortArgs are the arguments used to decide how the table should be sorted.
-These arguments are passed through the setConfig which is a state varable used to manage the column,ascending and sortFn properties which have been explained in the useSort hook
+These arguments are passed through the setConfig which is a state variable used to manage the column, ascending and sortFn properties which have been explained in the useSort hook
+
+### Table Tooltip ###
+
+Make sure the tooltip is a stateful variable rather than constant, as when it is set as a constant variable no tooltip can be displayed after partial re-rendering (e.g. filtering). 
 
 ### Table Example
 
