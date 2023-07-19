@@ -40,7 +40,7 @@ export const ColorLegendComponent = ({
           colors.map((color, index) => (
             <div
               _prop-target="color"
-              key={color}
+              key={index}
               {...mergeDicts(props.color, {
                 style: {
                   backgroundColor: color,
