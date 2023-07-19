@@ -33,6 +33,10 @@ export const ProgressCircleComponent = ({
     setOffset(`${offset}`)
   }, [radius])
 
+  if (!radius) {
+    return <></>
+  }
+
   return (
     <>
       <svg _prop-target="circle" {...props.circle}>
