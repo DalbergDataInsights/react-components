@@ -16,7 +16,6 @@ export const ProgressCircleComponent = ({
     .getComputedStyle(document.documentElement)
     .fontSize.match(/\d+/g)
   const radiusOffset = rootFontSize ? Number(rootFontSize[0]) : 16
-
   const { ref, prop } = useDim({ getter: "client" })
 
   const radius = prop ? Math.min(prop.width, prop.height) / 2 - radiusOffset : 0
@@ -32,6 +31,10 @@ export const ProgressCircleComponent = ({
     const offset = (1 - progress) * circumference
     setOffset(`${offset}`)
   }, [radius])
+
+  if (radius && radius <= 0) {
+    return <></>
+  }
 
   return (
     <>
