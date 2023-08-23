@@ -30,7 +30,7 @@ export const ProgressCircleComponent = ({
 
     const offset = (1 - progress) * circumference
     setOffset(`${offset}`)
-  }, [radius])
+  }, [radius,value])
 
   if (radius && radius <= 0) {
     return <></>
