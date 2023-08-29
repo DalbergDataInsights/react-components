@@ -34,5 +34,6 @@ export const useEventManagement = ({
     onMove: generateHandler("move"),
     onSearch: generateHandler("search"),
     onLeave: generateHandler("leave"),
+    onLoad: generateHandler("load")
   }
 }

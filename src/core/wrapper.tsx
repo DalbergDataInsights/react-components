@@ -1,4 +1,4 @@
-import React, { memo, useContext } from "react"
+import React, { memo, useContext, useId } from "react"
 
 import { useEventManagement } from "./eventManager"
 import { useStateListener } from "./stateListener"
@@ -51,9 +51,11 @@ export const Wrapper = ({
   useStateListener({ observers, ...props })
   const handlers = useEventManagement({ subscribers })
 
+  const id = useId()
+
   return (
-    <div {...containerProps} key={props?.key}>
-      <Component {...props} {...handlers} />
+    <MyDiv {...containerProps} id={props?.key || id} onLoad={handlers["onLoad"]}>
+      <Component {...props} {...handlers}/>
       {enableDownload && (
         <DownloadElement
           name={name}
@@ -67,6 +69,28 @@ export const Wrapper = ({
           }
         />
       )}
-    </div>
+    </MyDiv>
   )
 }
+
+
+// Finished renderring check.
+function runAfterFramePaint(callback) {
+  requestAnimationFrame(() => {
+      const messageChannel = new MessageChannel();
+      messageChannel.port1.onmessage = callback;
+      messageChannel.port2.postMessage("Finished loading");
+  });
+}
+
+
+const MyDiv = ({ onLoad, children, id,  ...props }) => {
+    
+  // Queues a requestAnimationFrame and onmessage
+  runAfterFramePaint(() => {
+      // Set a performance mark shortly after the frame has been produced.
+      onLoad()
+  });
+
+  return <div {...props} key={id}>{children}</div>
+} 
