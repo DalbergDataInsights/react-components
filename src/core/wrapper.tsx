@@ -1,4 +1,4 @@
-import React, { memo, useContext, useId } from "react"
+import React, { memo, useContext, useEffect, useId } from "react"
 
 import { useEventManagement } from "./eventManager"
 import { useStateListener } from "./stateListener"
@@ -74,22 +74,20 @@ export const Wrapper = ({
 }
 
 
-// Finished renderring check.
 function runAfterFramePaint(callback) {
   requestAnimationFrame(() => {
       const messageChannel = new MessageChannel();
       messageChannel.port1.onmessage = callback;
-      messageChannel.port2.postMessage("Finished loading");
+      messageChannel.port2.postMessage(undefined);
   });
 }
 
-const CustomDiv = ({ onLoad, children, id,  ...props }) => {
-    
-  // Queues a requestAnimationFrame and onmessage
-  runAfterFramePaint(() => {
-      // Set a performance mark shortly after the frame has been produced.
-      onLoad()
-  });
+const CustomDiv = ({ onLoad, children, id, ...props }) => {
+  useEffect(() => {
+    runAfterFramePaint(() => {
+        onLoad()
+    })
+  }, [])
 
   return <div {...props} key={id}>{children}</div>
 } 
