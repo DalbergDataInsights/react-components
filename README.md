@@ -123,6 +123,7 @@ Common events currently include:
 - move: onMove -> usually sets point state
 - search: onSearch -> triggers whenever the search value changes (for dropdown)
 - leave: onLeave -> triggers when the mouse leaves a component
+- load: onLoad -> triggers when the object is fully rendered for the first time. For Map, Chart, and other components with loading animations: fires when object is first rendered rather than after the animation. For Dropdown components: fires when dropdown button is first loaded, does not fire during or after input selection.
 
 To register your own event, pass a list of subscribers in the prop of any component.
 
