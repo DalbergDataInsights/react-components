@@ -54,7 +54,7 @@ export const Wrapper = ({
   const id = useId()
 
   return (
-    <MyDiv {...containerProps} id={props?.key || id} onLoad={handlers["onLoad"]}>
+    <CustomDiv {...containerProps} id={props?.key || id} onLoad={handlers["onLoad"]}>
       <Component {...props} {...handlers}/>
       {enableDownload && (
         <DownloadElement
@@ -69,7 +69,7 @@ export const Wrapper = ({
           }
         />
       )}
-    </MyDiv>
+    </CustomDiv>
   )
 }
 
@@ -83,8 +83,7 @@ function runAfterFramePaint(callback) {
   });
 }
 
-
-const MyDiv = ({ onLoad, children, id,  ...props }) => {
+const CustomDiv = ({ onLoad, children, id,  ...props }) => {
     
   // Queues a requestAnimationFrame and onmessage
   runAfterFramePaint(() => {
