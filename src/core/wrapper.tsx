@@ -5,6 +5,7 @@ import { useStateListener } from "./stateListener"
 import { mergeDicts } from "./util"
 import { ComponentContext } from "./context"
 import { iWrapper, iReactive } from "./interface"
+import { useOnLoad } from "../hooks"
 import {
   DownloadElement,
   downloadDefaults,
@@ -52,10 +53,15 @@ export const Wrapper = ({
   const handlers = useEventManagement({ subscribers })
 
   const id = useId()
+  const { OnLoadWrapper } = useOnLoad({
+    onLoad: handlers["onLoad"],
+    id: props?.key || id,
+    ...containerProps,
+  })
 
   return (
-    <CustomDiv {...containerProps} id={props?.key || id} onLoad={handlers["onLoad"]}>
-      <Component {...props} {...handlers}/>
+    <OnLoadWrapper>
+      <Component {...props} {...handlers} />
       {enableDownload && (
         <DownloadElement
           name={name}
@@ -69,25 +75,6 @@ export const Wrapper = ({
           }
         />
       )}
-    </CustomDiv>
+    </OnLoadWrapper>
   )
 }
-
-
-function runAfterFramePaint(callback) {
-  requestAnimationFrame(() => {
-      const messageChannel = new MessageChannel();
-      messageChannel.port1.onmessage = callback;
-      messageChannel.port2.postMessage(undefined);
-  });
-}
-
-const CustomDiv = ({ onLoad, children, id, ...props }) => {
-  useEffect(() => {
-    runAfterFramePaint(() => {
-        onLoad()
-    })
-  }, [])
-
-  return <div {...props} key={id}>{children}</div>
-} 
