@@ -53,14 +53,14 @@ export const Wrapper = ({
   const handlers = useEventManagement({ subscribers })
 
   const id = useId()
-  const { OnLoadWrapper } = useOnLoad({
+
+  useOnLoad({
     onLoad: handlers["onLoad"],
     id: props?.key || id,
-    ...containerProps,
   })
 
   return (
-    <OnLoadWrapper>
+    <div {...containerProps} key={props?.key}>
       <Component {...props} {...handlers} />
       {enableDownload && (
         <DownloadElement
@@ -75,6 +75,6 @@ export const Wrapper = ({
           }
         />
       )}
-    </OnLoadWrapper>
+    </div>
   )
 }

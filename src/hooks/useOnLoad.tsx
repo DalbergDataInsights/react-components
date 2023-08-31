@@ -1,26 +1,15 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 
 export const useOnLoad = ({
   onLoad,
-  children,
   id,
-  ...props
 }: {
   onLoad?: Function
-  children: React.ReactNode
   id: string
 }) => {
   useEffect(() => {
     runAfterFramePaint(onLoad)
   }, [])
-  const OnLoadWrapper = () => {
-    return (
-      <div {...props} key={id}>
-        {children}
-      </div>
-    )
-  }
-  return { OnLoadWrapper }
 }
 
 function runAfterFramePaint(callback) {
