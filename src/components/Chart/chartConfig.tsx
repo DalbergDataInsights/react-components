@@ -30,9 +30,6 @@ export const defaults = {
         color: "#000",
         fontWeight: "bold",
       },
-      isAnimationActive: true,
-      animationDuration: 3000,
-      animationEasing: "ease-in-out",
       style: {
         alignItems: "center",
         display: "block",
