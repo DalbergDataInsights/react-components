@@ -27,7 +27,8 @@ const SEARCHES = {
 }
 
 function flexSearch(row, column, value) {
-  return row[column].toLowerCase().includes(value.toLowerCase())
+  const rowValue = row?.[column]?.toLowerCase() || ""
+  return rowValue.includes(value.toLowerCase())
 }
 
 function exactSearch(row, column, value) {
