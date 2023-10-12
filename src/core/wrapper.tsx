@@ -1,10 +1,11 @@
-import React, { memo, useContext } from "react"
+import React, { memo, useContext, useEffect, useId } from "react"
 
 import { useEventManagement } from "./eventManager"
 import { useStateListener } from "./stateListener"
 import { mergeDicts } from "./util"
 import { ComponentContext } from "./context"
 import { iWrapper, iReactive } from "./interface"
+import { useOnLoad } from "../hooks"
 import {
   DownloadElement,
   downloadDefaults,
@@ -50,6 +51,13 @@ export const Wrapper = ({
   init({ subscribers, observers, props })
   useStateListener({ observers, ...props })
   const handlers = useEventManagement({ subscribers })
+
+  const id = useId()
+
+  useOnLoad({
+    onLoad: handlers["onLoad"],
+    id: props?.key || id,
+  })
 
   return (
     <div {...containerProps} key={props?.key}>
