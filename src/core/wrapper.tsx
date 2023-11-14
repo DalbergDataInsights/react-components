@@ -1,4 +1,4 @@
-import React, { memo, useContext, useEffect, useId } from "react"
+import React, { memo, useContext, useId } from "react"
 
 import { useEventManagement } from "./eventManager"
 import { useStateListener } from "./stateListener"
