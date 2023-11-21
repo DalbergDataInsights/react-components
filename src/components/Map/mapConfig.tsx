@@ -21,6 +21,7 @@ export const defaults = {
       },
       style: {
         display: "flex",
+        flexDirection: "column",
         position: "absolute",
         width: "fit-content",
         gap: "0.5rem",
@@ -45,6 +46,15 @@ export const defaults = {
           borderWidth: "0.3rem",
           borderStyle: "solid",
           borderColor: "transparent #1F456E transparent transparent",
+        },
+      },
+      title: { style: { textAlign: "center", textTransform: "capitalize" } },
+      content: {
+        style: {
+          display: "flex",
+          alignItems: "flex-start",
+          justifyContent: "space-between",
+          gap: "0.5rem",
         },
       },
       label: {

@@ -36,17 +36,36 @@ export const renderTooltip = ({
 }: iTooltipRenderer): JSX.Element => {
   return (
     <>
-      <div {...props.label}>
-        <div>{info.label ? `${info.label}: ` : ""}</div>
-        <div>{info.variable ? `${info.variable}: ` : ""}</div>
-      </div>
-      <div {...props.value}>
-        <div>{info.name || ""}</div>
-        <div>
-          {info.value ? Math.round(info.value) : "N/A"}
-          {info.units ? info.units : ""}
-        </div>
-      </div>
+      <div {...props.title}>{info.title}</div>
+      {info.customTooltipData &&
+      Object.keys(JSON.parse(info.customTooltipData)).length > 0 ? (
+        Object.entries(JSON.parse(info.customTooltipData)).map(
+          ([key, value]) => {
+            return (
+              <div {...props.content}>
+                <div {...props.label}>{`${key}:` || ""}</div>
+                <div {...props.value}>{value || ""}</div>
+              </div>
+            )
+          }
+        )
+      ) : (
+        <>
+          <div {...props.content}>
+            <div {...props.label}>{info.label ? `${info.label}: ` : ""}</div>
+            <div {...props.value}>{info.name || ""}</div>
+          </div>
+          <div {...props.content}>
+            <div {...props.label}>
+              {info.variable ? `${info.variable}: ` : ""}
+            </div>
+            <div {...props.value}>
+              {Math.round(info.value) || "N/A"}
+              {info.units || ""}
+            </div>
+          </div>
+        </>
+      )}
       <span {...props.pointer}></span>
     </>
   )
